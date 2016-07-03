@@ -1,0 +1,13 @@
+Flask
+Flask-Admin
+Flask-Babel
+Flask-Cache
+Flask-ErrorHandler
+Flask-FormEncode
+Flask-GraphQL
+Flask-Login
+Flask-MIME-Encoders
+Flask-Mailer
+Flask-SQLAlchemy
+Flask-Security
+flask-hookserver
