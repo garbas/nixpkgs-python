@@ -1,7 +1,7 @@
-# generated using pypi2nix tool (version: 1.1.1)
+# generated using pypi2nix tool (version: 1.3.0dev)
 #
 # COMMAND:
-#   pypi2nix -r scipy/requirements.txt -E freetype libpng pkgconfig
+#   pypi2nix -r science/requirements.txt -V 3.5 -E freetype libpng pkgconfig
 #
 
 { pkgs, python, commonBuildInputs ? [], commonDoCheck ? false }:
@@ -12,18 +12,19 @@ self: {
     name = "Jinja2-2.8";
     src = pkgs.fetchurl {
       url = "https://pypi.python.org/packages/f2/2f/0b98b06a345a761bec91a079ccae392d282690c2d8272e708f4d10829e22/Jinja2-2.8.tar.gz";
-      md5= "edb51693fe22c53cee5403775c71a99e";
+      sha256= "bc1ff2ff88dbfacefde4ddde471d1417d3b304e8df103a7a9437d47269201bf4";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
-    self."MarkupSafe"
-  ];
-    meta = {
+      self."MarkupSafe"
+    ];
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "BSD";
+      license = licenses.bsdOriginal;
       description = "A small but fast and easy to use stand-alone template engine written in pure python.";
     };
+    passthru.top_level = false;
   };
 
 
@@ -32,16 +33,17 @@ self: {
     name = "MarkupSafe-0.23";
     src = pkgs.fetchurl {
       url = "https://pypi.python.org/packages/c0/41/bae1254e0396c0cc8cf1751cb7d9afc90a602353695af5952530482c963f/MarkupSafe-0.23.tar.gz";
-      md5= "f5ab3deee4c37cd6a922fb81e730da6e";
+      sha256= "a4ec1aff59b95a14b45eb2e23761a0179e98319da5a7eb76b56ea8cdc7b871c3";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
-    meta = {
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "BSD";
+      license = licenses.bsdOriginal;
       description = "Implements a XML/HTML/XHTML Markup safe string for Python";
     };
+    passthru.top_level = false;
   };
 
 
@@ -49,71 +51,37 @@ self: {
   "PyYAML" = python.mkDerivation {
     name = "PyYAML-3.11";
     src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/04/60/abfb3a665ee0569b60c89148b7187ddd8a36cb65e254fba945ae1315645d/PyYAML-3.11.zip";
-      md5= "89cbc92cda979042533b640b76e6e055";
+      url = "https://pypi.python.org/packages/75/5e/b84feba55e20f8da46ead76f14a3943c8cb722d40360702b2365b91dec00/PyYAML-3.11.tar.gz";
+      sha256= "c36c938a872e5ff494938b33b14aaa156cb439ec67548fcab3535bb78b0846e8";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
-    meta = {
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "lib.mit";
+      license = licenses.mit;
       description = "YAML parser and emitter for Python";
     };
+    passthru.top_level = false;
   };
 
 
 
-  "backports-abc" = python.mkDerivation {
-    name = "backports-abc-0.4";
+  "Pygments" = python.mkDerivation {
+    name = "Pygments-2.1.3";
     src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/f5/d0/1d02695c0dd4f0cf01a35c03087c22338a4f72e24e2865791ebdb7a45eac/backports_abc-0.4.tar.gz";
-      md5= "0b65a216ce9dc9c1a7e20a729dd7c05b";
+      url = "https://pypi.python.org/packages/b8/67/ab177979be1c81bc99c8d0592ef22d547e70bb4c6815c383286ed5dec504/Pygments-2.1.3.tar.gz";
+      sha256= "88e4c8a91b2af5962bfa5ea2447ec6dd357018e86e94c7d14bd8cacbc5b55d81";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
-    meta = {
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "";
-      description = "A backport of recent additions to the 'collections.abc' module.";
+      license = licenses.bsdOriginal;
+      description = "Pygments is a syntax highlighting package written in Python.";
     };
-  };
-
-
-
-  "backports.shutil-get-terminal-size" = python.mkDerivation {
-    name = "backports.shutil-get-terminal-size-1.0.0";
-    src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/ec/9c/368086faa9c016efce5da3e0e13ba392c9db79e3ab740b763fe28620b18b/backports.shutil_get_terminal_size-1.0.0.tar.gz";
-      md5= "03267762480bd86b50580dc19dff3c66";
-    };
-    doCheck = commonDoCheck;
-    buildInputs = commonBuildInputs;
-    propagatedBuildInputs = [ ];
-    meta = {
-      homepage = "";
-      license = "lib.mit";
-      description = "A backport of the get_terminal_size function from Python 3.3's shutil.";
-    };
-  };
-
-
-
-  "backports.ssl-match-hostname" = python.mkDerivation {
-    name = "backports.ssl-match-hostname-3.5.0.1";
-    src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/76/21/2dc61178a2038a5cb35d14b61467c6ac632791ed05131dda72c20e7b9e23/backports.ssl_match_hostname-3.5.0.1.tar.gz";
-      md5= "c03fc5e2c7b3da46b81acf5cbacfe1e6";
-    };
-    doCheck = commonDoCheck;
-    buildInputs = commonBuildInputs;
-    propagatedBuildInputs = [ ];
-    meta = {
-      homepage = "";
-      license = "Python Software Foundation License";
-      description = "The ssl.match_hostname() function from Python 3.5";
-    };
+    passthru.top_level = false;
   };
 
 
@@ -122,43 +90,25 @@ self: {
     name = "bokeh-0.12.0";
     src = pkgs.fetchurl {
       url = "https://pypi.python.org/packages/45/c7/c0738637a16e4174ab7ec5f7f487786b9217846f1f2245358e368633682e/bokeh-0.12.0.tar.gz";
-      md5= "7c50e4a4afc42c240a04184587344078";
+      sha256= "b8ec2f18929dc637c3e3b8971e5ebfdc472c19c7e323327557cdb28ddc5e61cf";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
-    self."Jinja2"
-    self."PyYAML"
-    self."futures"
-    self."numpy"
-    self."python-dateutil"
-    self."requests"
-    self."six"
-    self."tornado"
-  ];
-    meta = {
+      self."Jinja2"
+      self."PyYAML"
+      self."numpy"
+      self."python-dateutil"
+      self."requests"
+      self."six"
+      self."tornado"
+    ];
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
       license = "New BSD";
       description = "Statistical and novel interactive HTML plots for Python";
     };
-  };
-
-
-
-  "certifi" = python.mkDerivation {
-    name = "certifi-2016.2.28";
-    src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/5c/f8/f6c54727c74579c6bbe5926f5deb9677c5810a33e11da58d1a4e2d09d041/certifi-2016.2.28.tar.gz";
-      md5= "5d672aa766e1f773c75cfeccd02d3650";
-    };
-    doCheck = commonDoCheck;
-    buildInputs = commonBuildInputs;
-    propagatedBuildInputs = [ ];
-    meta = {
-      homepage = "";
-      license = "ISC";
-      description = "Python package for providing Mozilla's CA Bundle.";
-    };
+    passthru.top_level = false;
   };
 
 
@@ -167,18 +117,19 @@ self: {
     name = "cycler-0.10.0";
     src = pkgs.fetchurl {
       url = "https://pypi.python.org/packages/c2/4b/137dea450d6e1e3d474e1d873cd1d4f7d3beed7e0dc973b06e8e10d32488/cycler-0.10.0.tar.gz";
-      md5= "4cb42917ac5007d1cdff6cccfe2d016b";
+      sha256= "cd7b2d1018258d7247a71425e9f26463dfb444d411c39569972f4ce586b0c9d8";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
-    self."six"
-  ];
-    meta = {
+      self."six"
+    ];
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "BSD";
+      license = licenses.bsdOriginal;
       description = "Composable style cycles";
     };
+    passthru.top_level = false;
   };
 
 
@@ -187,60 +138,46 @@ self: {
     name = "decorator-4.0.10";
     src = pkgs.fetchurl {
       url = "https://pypi.python.org/packages/13/8a/4eed41e338e8dcc13ca41c94b142d4d20c0de684ee5065523fee406ce76f/decorator-4.0.10.tar.gz";
-      md5= "434b57fdc3230c500716c5aff8896100";
+      sha256= "9c6e98edcb33499881b86ede07d9968c81ab7c769e28e9af24075f0a5379f070";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
-    meta = {
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
       license = "new BSD License";
       description = "Better living through Python with decorators";
     };
-  };
-
-
-
-  "futures" = python.mkDerivation {
-    name = "futures-3.0.5";
-    src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/55/db/97c1ca37edab586a1ae03d6892b6633d8eaa23b23ac40c7e5bbc55423c78/futures-3.0.5.tar.gz";
-      md5= "ced2c365e518242512d7a398b515ff95";
-    };
-    doCheck = commonDoCheck;
-    buildInputs = commonBuildInputs;
-    propagatedBuildInputs = [ ];
-    meta = {
-      homepage = "";
-      license = "BSD";
-      description = "Backport of the concurrent.futures package from Python 3.2";
-    };
+    passthru.top_level = false;
   };
 
 
 
   "ipython" = python.mkDerivation {
-    name = "ipython-4.2.1";
+    name = "ipython-5.0.0";
     src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/24/94/a38aebdeb696e03dc4b8a4d3243c8ae4a5ab232a00ed590c74ad063412f2/ipython-4.2.1.tar.gz";
-      md5= "f86f4fe7a80997704294383ea775627d";
+      url = "https://pypi.python.org/packages/09/2e/870d1058768f5240062beb0bd2ff789ac689923501b0dd6b480fb83314fc/ipython-5.0.0.tar.gz";
+      sha256= "7ec0737169c74056c7fc8298246db5478a2d6c90cfd19c3253222112357545df";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
-    self."backports.shutil-get-terminal-size"
-    self."decorator"
-    self."pexpect"
-    self."pickleshare"
-    self."requests"
-    self."simplegeneric"
-    self."traitlets"
-  ];
-    meta = {
+      self."Pygments"
+      self."decorator"
+      self."numpy"
+      self."pexpect"
+      self."pickleshare"
+      self."prompt-toolkit"
+      self."requests"
+      self."simplegeneric"
+      self."traitlets"
+    ];
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "BSD";
+      license = licenses.bsdOriginal;
       description = "IPython: Productive Interactive Computing";
     };
+    passthru.top_level = false;
   };
 
 
@@ -249,40 +186,17 @@ self: {
     name = "ipython-genutils-0.1.0";
     src = pkgs.fetchurl {
       url = "https://pypi.python.org/packages/71/b7/a64c71578521606edbbce15151358598f3dfb72a3431763edc2baf19e71f/ipython_genutils-0.1.0.tar.gz";
-      md5= "9a8afbe0978adbcbfcb3b35b2d015a56";
+      sha256= "3a0624a251a26463c9dfa0ffa635ec51c4265380980d9a50d65611c3c2bd82a6";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
-    meta = {
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "BSD";
+      license = licenses.bsdOriginal;
       description = "Vestigial utilities from IPython";
     };
-  };
-
-
-
-  "matplotlib" = python.mkDerivation {
-    name = "matplotlib-1.5.1";
-    src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/8f/f4/c0c7e81f64d5f4d36e52e393af687f28882c53dcd924419d684dc9859f40/matplotlib-1.5.1.tar.gz";
-      md5= "f51847d8692cb63df64cd0bd0304fd20";
-    };
-    doCheck = commonDoCheck;
-    buildInputs = commonBuildInputs;
-    propagatedBuildInputs = [
-    self."cycler"
-    self."numpy"
-    self."pyparsing"
-    self."python-dateutil"
-    self."pytz"
-  ];
-    meta = {
-      homepage = "";
-      license = "BSD";
-      description = "Python plotting package";
-    };
+    passthru.top_level = false;
   };
 
 
@@ -291,16 +205,17 @@ self: {
     name = "mpmath-0.19";
     src = pkgs.fetchurl {
       url = "https://pypi.python.org/packages/74/39/08b1b5c9848b498f922c7c92d31bb6edf00fe5a3bd87b04ebe1cc1d63948/mpmath-0.19.tar.gz";
-      md5= "af5cc956b2673b33a25c3e57299bae7b";
+      sha256= "68ddf6426dcda445323467d89892d2cffbbd1ae0b31ac1241b1b671749d63222";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
-    meta = {
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "BSD";
+      license = licenses.bsdOriginal;
       description = "Python library for arbitrary-precision floating-point arithmetic";
     };
+    passthru.top_level = false;
   };
 
 
@@ -308,77 +223,103 @@ self: {
   "numpy" = python.mkDerivation {
     name = "numpy-1.11.1";
     src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/dd/9f/cd0ec9c50e4ed8650901ad4afde164e5252b6182a9e0c7bff5f8b4441960/numpy-1.11.1.zip";
-      md5= "5caa3428b24aaa07e72c79d115140e46";
+      url = "https://pypi.python.org/packages/e0/4c/515d7c4ac424ff38cc919f7099bf293dd064ba9a600e1e3835b3edefdb18/numpy-1.11.1.tar.gz";
+      sha256= "dc4082c43979cc856a2bf352a8297ea109ccb3244d783ae067eb2ee5b0d577cd";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
-    meta = {
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "BSD";
+      license = licenses.bsdOriginal;
       description = "NumPy: array processing for numbers, strings, records, and objects.";
     };
+    passthru.top_level = false;
   };
 
 
 
-  "pathlib2" = python.mkDerivation {
-    name = "pathlib2-2.1.0";
+  "pandas" = python.mkDerivation {
+    name = "pandas-0.18.1";
     src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/c9/27/8448b10d8440c08efeff0794adf7d0ed27adb98372c70c7b38f3947d4749/pathlib2-2.1.0.tar.gz";
-      md5= "38e4f58b4d69dfcb9edb49a54a8b28d2";
+      url = "https://pypi.python.org/packages/11/09/e66eb844daba8680ddff26335d5b4fead77f60f957678243549a8dd4830d/pandas-0.18.1.tar.gz";
+      sha256= "d2e483692c7915916dffd1b83256ea9761b4224c8d45646ceddf48b977ee77b2";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
-    self."six"
-  ];
-    meta = {
+      self."numpy"
+      self."python-dateutil"
+      self."pytz"
+    ];
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "lib.mit";
-      description = "Object-oriented filesystem paths";
+      license = licenses.bsdOriginal;
+      description = "Powerful data structures for data analysis, time series,and statistics";
     };
+    passthru.top_level = false;
   };
 
 
 
   "pexpect" = python.mkDerivation {
-    name = "pexpect-4.1.0";
+    name = "pexpect-4.2.0";
     src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/56/2b/9c9c113fb88082950067a42cc99e3c61f1df72035f89bb0bdf0a60308ca0/pexpect-4.1.0.tar.gz";
-      md5= "562a1a21f2a60b36dfd5d906dbf0943e";
+      url = "https://pypi.python.org/packages/b3/7b/7b3659b9d7059d6d21e23b2464c5c84bffd4a34450cbf0ed19c9a8a4a52f/pexpect-4.2.0.tar.gz";
+      sha256= "bf6816b8cc8d301a499e7adf338828b39bc7548eb64dbed4dd410ed93d95f853";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
-    self."ptyprocess"
-  ];
-    meta = {
+      self."ptyprocess"
+    ];
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
       license = "ISC license";
       description = "Pexpect allows easy control of interactive console applications.";
     };
+    passthru.top_level = false;
   };
 
 
 
   "pickleshare" = python.mkDerivation {
-    name = "pickleshare-0.7.2";
+    name = "pickleshare-0.7.3";
     src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/ad/69/bcf0c55ded3779e6e1c9460c69854678d4b78f08482449caaf8e82d5f8eb/pickleshare-0.7.2.tar.gz";
-      md5= "29d74cde0255546b6b2e1b48a0b31a54";
+      url = "https://pypi.python.org/packages/5d/29/5f3eb419067a98fe98d78a7e309fef03abceb2dc3e3587c88e2ca704ba20/pickleshare-0.7.3.tar.gz";
+      sha256= "b9710d01f777b1bf3b69c8f889b1d05a5145668f79e980cbd0f849e059edd274";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "Tiny 'shelve'-like database with concurrency support";
+    };
+    passthru.top_level = false;
+  };
+
+
+
+  "prompt-toolkit" = python.mkDerivation {
+    name = "prompt-toolkit-1.0.3";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/8d/de/412f23919929c01e6b55183e124623f705e4b91796d3d2dce2cb53d595ad/prompt_toolkit-1.0.3.tar.gz";
+      sha256= "805e026f0cbad27467e93f9dd3e3777718d401a62788c1e84ca038e967ad8ba2";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
-    self."pathlib2"
-  ];
-    meta = {
+      self."six"
+      self."wcwidth"
+    ];
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "lib.mit";
-      description = "Tiny 'shelve'-like database with concurrency support";
+      license = "";
+      description = "Library for building powerful interactive command lines in Python";
     };
+    passthru.top_level = false;
   };
 
 
@@ -387,16 +328,17 @@ self: {
     name = "ptyprocess-0.5.1";
     src = pkgs.fetchurl {
       url = "https://pypi.python.org/packages/db/d7/b465161910f3d1cef593c5e002bff67e0384898f597f1a7fdc8db4c02bf6/ptyprocess-0.5.1.tar.gz";
-      md5= "94e537122914cc9ec9c1eadcd36e73a1";
+      sha256= "0530ce63a9295bfae7bd06edc02b6aa935619f486f0f1dc0972f516265ee81a6";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
-    meta = {
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
       license = "";
       description = "Run a subprocess in a pseudo terminal";
     };
+    passthru.top_level = false;
   };
 
 
@@ -405,16 +347,17 @@ self: {
     name = "pyparsing-2.1.5";
     src = pkgs.fetchurl {
       url = "https://pypi.python.org/packages/30/c3/a424fb888af373b54df495a0582379df374322caabd4f3a549bcca72aeeb/pyparsing-2.1.5.tar.gz";
-      md5= "28d0c3cf39ee5859d408d2b4d311a9c2";
+      sha256= "b9ace99b581174d7ca98891a7bc57fd08892b94f17922645d90835f7b9b54a56";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
-    meta = {
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "MIT License";
+      license = licenses.mit;
       description = "Python parsing module";
     };
+    passthru.top_level = false;
   };
 
 
@@ -423,36 +366,38 @@ self: {
     name = "python-dateutil-2.5.3";
     src = pkgs.fetchurl {
       url = "https://pypi.python.org/packages/3e/f5/aad82824b369332a676a90a8c0d1e608b17e740bbb6aeeebca726f17b902/python-dateutil-2.5.3.tar.gz";
-      md5= "05ffc6d2cc85a7fd93bb245807f715ef";
+      sha256= "1408fdb07c6a1fa9997567ce3fcee6a337b39a503d80699e0f213de4aa4b32ed";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
-    self."six"
-  ];
-    meta = {
+      self."six"
+    ];
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
       license = "Simplified BSD";
       description = "Extensions to the standard Python datetime module";
     };
+    passthru.top_level = false;
   };
 
 
 
   "pytz" = python.mkDerivation {
-    name = "pytz-2016.4";
+    name = "pytz-2016.6.1";
     src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/6c/4a/eb896a5629813b56f5a79cc6b7f5551598f27f1eea6c00c68b47541c1501/pytz-2016.4.zip";
-      md5= "eeb649e63d56fac3566a3fefaa35c7fa";
+      url = "https://pypi.python.org/packages/f7/c7/08e54702c74baf9d8f92d0bc331ecabf6d66a56f6d36370f0a672fc6a535/pytz-2016.6.1.tar.bz2";
+      sha256= "b5aff44126cf828537581e534cc94299b223b945a2bb3b5434d37bf8c7f3a10c";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
-    meta = {
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "lib.mit";
+      license = licenses.mit;
       description = "World timezone definitions, modern and historical";
     };
+    passthru.top_level = false;
   };
 
 
@@ -461,16 +406,17 @@ self: {
     name = "requests-2.10.0";
     src = pkgs.fetchurl {
       url = "https://pypi.python.org/packages/49/6f/183063f01aae1e025cf0130772b55848750a2f3a89bfa11b385b35d7329d/requests-2.10.0.tar.gz";
-      md5= "a36f7a64600f1bfec4d55ae021d232ae";
+      sha256= "63f1815788157130cee16a933b2ee184038e975f0017306d723ac326b5525b54";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
-    meta = {
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "lib.asl20";
+      license = licenses.asl20;
       description = "Python HTTP for Humans.";
     };
+    passthru.top_level = false;
   };
 
 
@@ -479,36 +425,17 @@ self: {
     name = "simplegeneric-0.8.1";
     src = pkgs.fetchurl {
       url = "https://pypi.python.org/packages/3d/57/4d9c9e3ae9a255cd4e1106bb57e24056d3d0709fc01b2e3e345898e49d5b/simplegeneric-0.8.1.zip";
-      md5= "f9c1fab00fd981be588fc32759f474e3";
+      sha256= "dc972e06094b9af5b855b3df4a646395e43d1c9d0d39ed345b7393560d0b9173";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
-    meta = {
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "lib.zpt21";
+      license = licenses.zpt21;
       description = "Simple generic functions (similar to Python's own len(), pickle.dump(), etc.)";
     };
-  };
-
-
-
-  "singledispatch" = python.mkDerivation {
-    name = "singledispatch-3.4.0.3";
-    src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/d9/e9/513ad8dc17210db12cb14f2d4d190d618fb87dd38814203ea71c87ba5b68/singledispatch-3.4.0.3.tar.gz";
-      md5= "af2fc6a3d6cc5a02d0bf54d909785fcb";
-    };
-    doCheck = commonDoCheck;
-    buildInputs = commonBuildInputs;
-    propagatedBuildInputs = [
-    self."six"
-  ];
-    meta = {
-      homepage = "";
-      license = "lib.mit";
-      description = "This library brings functools.singledispatch from Python 3.4 to Python 2.6-3.3.";
-    };
+    passthru.top_level = false;
   };
 
 
@@ -517,16 +444,17 @@ self: {
     name = "six-1.10.0";
     src = pkgs.fetchurl {
       url = "https://pypi.python.org/packages/b3/b2/238e2590826bfdd113244a40d9d3eb26918bd798fc187e2360a8367068db/six-1.10.0.tar.gz";
-      md5= "34eed507548117b2ab523ab14b2f8b55";
+      sha256= "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
-    meta = {
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "lib.mit";
+      license = licenses.mit;
       description = "Python 2 and 3 compatibility utilities";
     };
+    passthru.top_level = false;
   };
 
 
@@ -535,41 +463,38 @@ self: {
     name = "sympy-1.0";
     src = pkgs.fetchurl {
       url = "https://pypi.python.org/packages/f3/ae/585ca7545c7e8d3a8130cc3d0cf53cfa489c137f8257e743fd3e18d7c401/sympy-1.0.tar.gz";
-      md5= "43e797de799f00f9e8fd2307dba9fab1";
+      sha256= "3eacd210d839e4db911d216a9258a3ac6f936992f66db211e22767983297ffae";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
-    self."mpmath"
-  ];
-    meta = {
+      self."mpmath"
+    ];
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "BSD";
+      license = licenses.bsdOriginal;
       description = "Computer algebra system (CAS) in Python";
     };
+    passthru.top_level = false;
   };
 
 
 
   "tornado" = python.mkDerivation {
-    name = "tornado-4.3";
+    name = "tornado-4.4";
     src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/21/29/e64c97013e97d42d93b3d5997234a6f17455f3744847a7c16289289f8fa6/tornado-4.3.tar.gz";
-      md5= "d13a99dc0b60ba69f5f8ec1235e5b232";
+      url = "https://pypi.python.org/packages/8b/01/e7b4bcee946b356060639582fa71946130b5fe5ab0d0557c4340275f2dff/tornado-4.4.tar.gz";
+      sha256= "3176545b6cb2966870db4def4f646da6ab7a0c19400576969c57279a7561ab02";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
-    propagatedBuildInputs = [
-    self."backports-abc"
-    self."backports.ssl-match-hostname"
-    self."certifi"
-    self."singledispatch"
-  ];
-    meta = {
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
       license = "http://www.apache.org/licenses/LICENSE-2.0";
       description = "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed.";
     };
+    passthru.top_level = false;
   };
 
 
@@ -577,20 +502,40 @@ self: {
   "traitlets" = python.mkDerivation {
     name = "traitlets-4.2.2";
     src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/27/62/c6906577a9a87e576941fa3c089c4254e92190c7524327af0e72b8ee165f/traitlets-4.2.2.zip";
-      md5= "b0da7131d974ab487f5eb5750d15338e";
+      url = "https://pypi.python.org/packages/a4/07/9b7636322c152ab1dacae9d38131067523d6ce5ca926a656586f6f947e77/traitlets-4.2.2.tar.gz";
+      sha256= "7d7e3070484b2fe490fa55e0acf7023afc5ed9ddabec57405f25c355158e152a";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
-    self."decorator"
-    self."ipython-genutils"
-  ];
-    meta = {
+      self."decorator"
+      self."ipython-genutils"
+    ];
+    meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = "BSD";
+      license = licenses.bsdOriginal;
       description = "Traitlets Python config system";
     };
+    passthru.top_level = false;
+  };
+
+
+
+  "wcwidth" = python.mkDerivation {
+    name = "wcwidth-0.1.7";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/55/11/e4a2bb08bb450fdbd42cc709dd40de4ed2c472cf0ccb9e64af22279c5495/wcwidth-0.1.7.tar.gz";
+      sha256= "3df37372226d6e63e1b1e1eda15c594bca98a22d33a23832a90998faa96bc65e";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "Measures number of Terminal column cells of wide-character codes";
+    };
+    passthru.top_level = false;
   };
 
 }
