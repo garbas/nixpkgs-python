@@ -37,5 +37,5 @@ after_success:
     git --no-pager diff $PKGS_SET;
     git add $PKGS_SET;
     git commit -m "Travis update for $PKGS_SET [skip ci]";
-    git push git@github.com:garbas/nixpkgs-python.git
+    git push git@github.com:garbas/nixpkgs-python.git $TRAVIS_BRANCH
   fi
