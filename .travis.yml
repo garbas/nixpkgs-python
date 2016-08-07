@@ -20,6 +20,8 @@ script:
   fi
 
 before_install:
+- git branch
+- echo $TRAVIS_BRANCH
 - echo 'binary-caches = https://cache.nixos.org/ https://travis.garbas.si/nixpkgs-python/' | sudo tee -a /etc/nix/nix.conf > /dev/null
 - openssl aes-256-cbc -K $encrypted_1ae048d151c2_key -iv $encrypted_1ae048d151c2_iv -in deploy_rsa.enc -out deploy_rsa -d
 - eval "$(ssh-agent -s)"
@@ -35,5 +37,5 @@ after_success:
     git --no-pager diff $PKGS_SET;
     git add $PKGS_SET;
     git commit -m "Travis update for $PKGS_SET [skip ci]";
-    git push git@github.com:/garbas/nixpkgs-python.git $TRAVIS_BRANCH;
+    git push git@github.com:/garbas/nixpkgs-python.git
   fi
