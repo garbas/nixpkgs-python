@@ -20,7 +20,7 @@ let
   };
 
   commonBuildInputs = with pkgs; [ openssl libffi ];
-  commonDoCheck = false;
+  commonDoCheck = true;
 
   buildEnv = { pkgs ? {} }:
     let
