@@ -23,9 +23,11 @@ before_install:
 - echo 'binary-caches = https://cache.nixos.org/ https://travis.garbas.si/nixpkgs-python/' | sudo tee -a /etc/nix/nix.conf > /dev/null
 - openssl aes-256-cbc -K $encrypted_1ae048d151c2_key -iv $encrypted_1ae048d151c2_iv
   -in deploy_rsa.enc -out deploy_rsa -d
-deploy:
-  provider: script
-  skip_cleanup: true
-  script: rsync -avh --ignore-existing $TRAVIS_BUILD_DIR/nars/ travis@garbas.si:/var/travis/nixpkgs-python/
-  on:
-    branch: master
+after_success:
+- rsync -avh --ignore-existing $TRAVIS_BUILD_DIR/nars/ travis@garbas.si:/var/travis/nixpkgs-python/
+- git remote set-url --push origin git@github.com:garbas/nixpkgs-python.git
+- git config user.name 'travis'
+- git config user.email 'travis@garbas.si'
+- git add --all .
+- git commit -m 'travis: update for $PKGS_SET [ci skip]'
+- git push origin $TRAVIS_BRANCH
