@@ -5,7 +5,7 @@ env:
 - PKGS_SET=flask
 - PKGS_SET=django
 - PKGS_SET=pyramid
-- PKGS_SET=scipy
+- PKGS_SET=science
 script:
 - if [ "$TRAVIS_EVENT_TYPE" == "cron" ]; then
     nix-shell update.nix --pure;

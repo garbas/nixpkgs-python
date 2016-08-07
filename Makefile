@@ -1,5 +1,5 @@
 
-all: flask pyramid django scipy
+all: flask pyramid django science
 
 pypi2nix:
 	git clone https://github.com/garbas/pypi2nix
@@ -17,9 +17,9 @@ django:
 	cd django/ && pypi2nix -v -V 3.5 -r requirements.txt
 	nix-build -A django -o result-django
 
-scipy:
-	cd scipy/ && pypi2nix -v -V 3.5 -r requirements.txt -E "freetype libpng pkgconfig"
-	nix-build -A scipy -o result-scipy
+science:
+	cd science/ && pypi2nix -v -V 3.5 -r requirements.txt -E "freetype libpng pkgconfig"
+	nix-build -A science -o result-science
 
 
-.PHONY: pypi2nix flask pyramid django scipy
+.PHONY: pypi2nix flask pyramid django science
