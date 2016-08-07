@@ -28,7 +28,7 @@ before_install:
 
 after_success:
 - rsync -avh --ignore-existing $TRAVIS_BUILD_DIR/nars/ travis@garbas.si:/var/travis/nixpkgs-python/
-- if [ ! -z `git diff --exit-code` ]; then
+- if [[ -n `git diff --exit-code` ]]; then
     git config user.name 'travis';
     git config user.email 'travis@garbas.si';
     git status;
