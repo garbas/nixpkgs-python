@@ -1,6 +1,6 @@
 language: nix
 addons:
-  ssh_known_hosts: floki.garbas.si
+  ssh_known_hosts: garbas.si
 env:
 - PKGS_SET=flask
 - PKGS_SET=django
@@ -25,6 +25,6 @@ before_install:
 deploy:
   provider: script
   skip_cleanup: true
-  script: rsync -avh --ignore-existing $TRAVIS_BUILD_DIR/nars/ travis@floki.garbas.si:/var/travis/nixpkgs-python/
+  script: rsync -avh --ignore-existing $TRAVIS_BUILD_DIR/nars/ travis@garbas.si:/var/travis/nixpkgs-python/
   on:
     branch: master
