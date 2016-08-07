@@ -1,7 +1,15 @@
+-r ./../requirements-common.txt
+-r ./requirements-dev.txt
+
 Flask
+Flask-Cache
+Flask-Cors
+Flask-Login
+Flask-SQLAlchemy
+connexion
+
 #Flask-Admin
 #Flask-Babel
-#Flask-Cache
 #Flask-ErrorHandler
 #Flask-FormEncode
 #Flask-GraphQL

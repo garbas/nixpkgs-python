@@ -2,18 +2,13 @@
 
 self: super: {
 
-  #"click" = python.overrideDerivation super."click" (old: {
-  #  buildInputs = old.buildInputs ++ [ self."pytest" ];
-  #  checkPhase = ''
-  #    py.test tests
-  #  '';
-  #});
-
   "Werkzeug" = python.overrideDerivation super."Werkzeug" (old: {
+    doCheck = true;
     buildInputs = old.buildInputs ++ [ self."pytest" ];
   });
 
   "click" = python.overrideDerivation super."click" (old: {
+    doCheck = true;
     pathPhase = ''
      rm click/_winconsole.py
     '';
