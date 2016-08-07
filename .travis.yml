@@ -29,13 +29,11 @@ before_install:
 after_success:
 - rsync -avh --ignore-existing $TRAVIS_BUILD_DIR/nars/ travis@garbas.si:/var/travis/nixpkgs-python/
 - if [ ! -z `git diff --exit-code` ]; then
-    REPO=`git config remote.origin.url`;
-    SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:};
     git config user.name 'travis';
     git config user.email 'travis@garbas.si';
-    git status
-    git diff
-    git add .
-    git commit -m 'travis: update for $PKGS_SET [ci skip]'
-    git push $SSH_REPO $TRAVIS_BRANCH
+    git status;
+    git diff;
+    git add .;
+    git commit -m "Travis update for $PKGS_SET [skip ci]";
+    git push git@github.com:/garbas/nixpkgs-python.git $TRAVIS_BRANCH;
   fi
