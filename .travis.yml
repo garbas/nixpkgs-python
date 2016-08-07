@@ -21,9 +21,9 @@ before_deploy:
 - ssh-add $TRAVIS_BUILD_DIR/deploy_rsa
 before_install:
 - cat /etc/nix/nix.conf
-- echo 'build-use-sandbox = true' | sudo tee /etc/nix/nix.conf > /dev/null
-- echo 'signed-binary-caches = https://cache.nixos.org/' | sudo tee /etc/nix/nix.conf > /dev/null
-- echo 'binary-caches = https://cache.nixos.org/ https://travis.garbas.si/nixpkgs-python/' | sudo tee /etc/nix/nix.conf > /dev/null
+- echo 'build-use-sandbox = true' | sudo tee -a /etc/nix/nix.conf > /dev/null
+- echo 'signed-binary-caches = https://cache.nixos.org/' | sudo tee -a /etc/nix/nix.conf > /dev/null
+- echo 'binary-caches = https://cache.nixos.org/ https://travis.garbas.si/nixpkgs-python/' | sudo tee -a /etc/nix/nix.conf > /dev/null
 - cat /etc/nix/nix.conf
 - openssl aes-256-cbc -K $encrypted_1ae048d151c2_key -iv $encrypted_1ae048d151c2_iv
   -in deploy_rsa.enc -out deploy_rsa -d
