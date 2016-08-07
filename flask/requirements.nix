@@ -1,7 +1,8 @@
-# generated using pypi2nix tool (version: 1.1.1)
+# generated using pypi2nix tool (version: 1.4.0.dev0)
+# See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -r flask/requirements.txt -E openssl libffi
+#   pypi2nix -v -V 3.5 -r requirements.txt -E openssl libffi
 #
 
 { pkgs ? import <nixpkgs> {}
@@ -11,27 +12,37 @@ let
 
   inherit (pkgs.stdenv.lib) fix' extends inNixShell;
 
-  pythonPackages = pkgs.python27Packages;
+  pythonPackages = import <nixpkgs/pkgs/top-level/python-packages.nix> {
+    inherit pkgs;
+    inherit (pkgs) stdenv;
+    python = pkgs.python35;
+    self = pythonPackages;
+  };
+
   commonBuildInputs = with pkgs; [ openssl libffi ];
   commonDoCheck = false;
 
-  buildEnv = { pkgs ? {}, modules ? {} }:
+  buildEnv = { pkgs ? {} }:
     let
       interpreter = pythonPackages.python.buildEnv.override {
-        extraLibs = (builtins.attrValues pkgs) ++ (builtins.attrValues modules);
+        extraLibs = builtins.attrValues pkgs;
       };
     in {
       mkDerivation = pythonPackages.buildPythonPackage;
       interpreter = if inNixShell then interpreter.env else interpreter;
       overrideDerivation = drv: f: pythonPackages.buildPythonPackage (drv.drvAttrs // f drv.drvAttrs);
-      inherit buildEnv pkgs modules;
+      withPackages = pkgs': buildEnv { pkgs = pkgs'; };
+      inherit buildEnv pkgs;
+      __old = pythonPackages;
     };
 
+  python = buildEnv {};
   generated = import ./requirements_generated.nix { inherit pkgs python commonBuildInputs commonDoCheck; };
   overrides = import ./requirements_override.nix { inherit pkgs python; };
 
-  python = buildEnv {
-    pkgs = fix' (extends overrides generated);
+  python' = buildEnv {
+    pkgs = builtins.removeAttrs (fix' (extends overrides generated)) ["__unfix__"];
+
   };
 
-in python
+in python'

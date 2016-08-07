@@ -1,14 +1,25 @@
 
 all: flask pyramid django scipy
 
+pypi2nix:
+	git clone https://github.com/garbas/pypi2nix
+	nix-env -f pypi2nix/release.nix -iA build."x86_64-linux"
+
 flask:
-	pypi2nix -r flask/requirements.txt -E "openssl libffi"
+	cd flask/ && pypi2nix -v -V 3.5 -r requirements.txt -E "openssl libffi"
+	nix-build -A flask -o flask
 
 pyramid:
-	pypi2nix -r pyramid/requirements.txt
+	cd pyramid/ && pypi2nix -v -V 3.5 -r requirements.txt
+	nix-build -A pyramid -o pyramid
 
 django:
-	pypi2nix -r django/requirements.txt
+	cd django/ && pypi2nix -v -V 3.5 -r requirements.txt
+	nix-build -A django -o django
 
 scipy:
-	pypi2nix -r scipy/requirements.txt -E "freetype libpng pkgconfig"
+	cd scipy/ && pypi2nix -v -V 3.5 -r requirements.txt -E "freetype libpng pkgconfig"
+	nix-build -A scipy -o scipy
+
+
+.PHONY: pypi2nix flask pyramid django scipy
