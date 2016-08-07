@@ -7,19 +7,19 @@ pypi2nix:
 
 flask:
 	cd flask/ && pypi2nix -v -V 3.5 -r requirements.txt -E "openssl libffi"
-	nix-build -A flask -o flask
+	nix-build -A flask -o result-flask
 
 pyramid:
 	cd pyramid/ && pypi2nix -v -V 3.5 -r requirements.txt
-	nix-build -A pyramid -o pyramid
+	nix-build -A pyramid -o result-pyramid
 
 django:
 	cd django/ && pypi2nix -v -V 3.5 -r requirements.txt
-	nix-build -A django -o django
+	nix-build -A django -o result-django
 
 scipy:
 	cd scipy/ && pypi2nix -v -V 3.5 -r requirements.txt -E "freetype libpng pkgconfig"
-	nix-build -A scipy -o scipy
+	nix-build -A scipy -o result-scipy
 
 
 .PHONY: pypi2nix flask pyramid django scipy
