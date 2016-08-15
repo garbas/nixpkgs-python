@@ -1,7 +1,15 @@
+astropy
+blaze
 bokeh
 ipython
+h5py
 matplotlib
+numba
 numpy
 pandas
+scikit-image
+scikit-learn
 scipy
+sumatra
 sympy
+xarray
