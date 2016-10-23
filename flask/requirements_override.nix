@@ -9,7 +9,7 @@ self: super: {
 
   "click" = python.overrideDerivation super."click" (old: {
     doCheck = true;
-    pathPhase = ''
+    patchPhase = ''
      rm click/_winconsole.py
     '';
   });
@@ -21,7 +21,9 @@ self: super: {
   });
 
   "pytest" = python.overrideDerivation super."pytest" (old: {
-    doCheck = true;
+    # circular dependency with hypothesis
+    #buildInputs = old.buildInputs ++ [ self."mock" self."nose" self."hypothesis" ];
+    doCheck = false;
     patchPhase = ''
       rm testing/test_argcomplete.py
     '';
