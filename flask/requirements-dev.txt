@@ -1,1 +1,7 @@
-pytest
+#decorator
+#mock
+#nose
+#pytest
+#pytest-cov
+#green
+#vcversioner
