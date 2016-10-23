@@ -72,6 +72,26 @@ self: {
 
 
 
+  "Flask-Login" = python.mkDerivation {
+    name = "Flask-Login-0.3.2";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/06/e6/61ed90ed8ce6752b745ed13fac3ba407dc9db95dfa2906edc8dd55dde454/Flask-Login-0.3.2.tar.gz";
+      sha256 = "e72eff5c35e5a31db1aeca1db5d2501be702674ea88e8f223b5d2b11644beee6";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."Flask"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "User session management for Flask";
+    };
+  };
+
+
+
   "Jinja2" = python.mkDerivation {
     name = "Jinja2-2.8";
     src = pkgs.fetchurl {

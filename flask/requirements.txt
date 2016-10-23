@@ -1,6 +1,6 @@
 Flask
 Flask-Cache
 Flask-Cors
-#Flask-Login
+Flask-Login
 #Flask-SQLAlchemy
 #connexion

@@ -34,4 +34,12 @@ self: super: {
     buildInputs = old.buildInputs ++ [ self."pytest" ];
   });
 
+  "Flask-Login" = python.overrideDerivation super."Flask-Login" (old: {
+    doCheck = false;
+    #buildInputs = old.buildInputs ++ [ self."nose" ];
+    #checkPhase = ''
+    #  nosetests
+    #'';
+  });
+
 }
