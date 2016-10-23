@@ -148,6 +148,24 @@ self: {
 
 
 
+  "apipkg" = python.mkDerivation {
+    name = "apipkg-1.4";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/32/37/6ce6dbaa8035730efa95e60b09498ec17000d137742391ff46974d9ef859/apipkg-1.4.tar.gz";
+      sha256 = "2e38399dbe842891fe85392601aab8f40a8f4cc5a9053c326de35a1cc0297ac6";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "apipkg: namespace control and lazy-import mechanism";
+    };
+  };
+
+
+
   "click" = python.mkDerivation {
     name = "click-6.6";
     src = pkgs.fetchurl {
@@ -166,6 +184,26 @@ self: {
 
 
 
+  "execnet" = python.mkDerivation {
+    name = "execnet-1.4.1";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/eb/ee/43729e7dee8772e69b3b01715ab9742790be2eace2d18cf53d219b9c31f8/execnet-1.4.1.tar.gz";
+      sha256 = "f66dd4a7519725a1b7e14ad9ae7d3df8e09b2da88062386e08e941cafc0ef3e6";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."apipkg"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "execnet: rapid multi-Python deployment";
+    };
+  };
+
+
+
   "itsdangerous" = python.mkDerivation {
     name = "itsdangerous-0.24";
     src = pkgs.fetchurl {
@@ -179,6 +217,24 @@ self: {
       homepage = "";
       license = licenses.bsdOriginal;
       description = "Various helpers to pass trusted data to untrusted environments and back.";
+    };
+  };
+
+
+
+  "nose" = python.mkDerivation {
+    name = "nose-1.3.7";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/58/a5/0dc93c3ec33f4e281849523a5a913fa1eea9a3068acfa754d44d88107a44/nose-1.3.7.tar.gz";
+      sha256 = "f1bffef9cbc82628f6e7d7b40d7e255aefaa1adb6a1b1d26c69a8b79e6208a98";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.lgpl2;
+      description = "nose extends unittest to make testing easier";
     };
   };
 
@@ -217,6 +273,46 @@ self: {
       homepage = "";
       license = licenses.mit;
       description = "pytest: simple powerful testing with Python";
+    };
+  };
+
+
+
+  "pytest-xdist" = python.mkDerivation {
+    name = "pytest-xdist-1.15.0";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/dc/b2/a59db3ef996b93c3ef35dbbc33557a71ef67a6839d94a52c88eeb1086002/pytest-xdist-1.15.0.tar.gz";
+      sha256 = "6238395f8bd050f9288a3b10f34330edece80f4424cf2b4204d6e7d622f0f00b";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."execnet"
+      self."py"
+      self."pytest"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "py.test xdist plugin for distributed testing and loop-on-failing modes";
+    };
+  };
+
+
+
+  "setuptools-scm" = python.mkDerivation {
+    name = "setuptools-scm-1.15.0";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/80/b7/31b6ae5fcb188e37f7e31abe75f9be90490a5456a72860fa6e643f8a3cbc/setuptools_scm-1.15.0.tar.gz";
+      sha256 = "daf12d05aa2155a46aa357453757ffdc47d87f839e62114f042bceac6a619e2f";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "the blessed package to manage your versions by scm tags";
     };
   };
 
