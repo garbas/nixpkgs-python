@@ -7,14 +7,9 @@ env:
 - PKGS_SET=flask
 
 script:
-- if [ "$TRAVIS_EVENT_TYPE" == "cron" ]; then
-    nix-shell update.nix --pure;
-  fi
-- if [ "$TRAVIS_PULL_REQUEST" != "true" -a "$TRAVIS_BRANCH" = "master" ]; then
-    make pypi2nix $PKGS_SET;
-    mkdir nars/;
-    nix-push --dest "$PWD/nars/" --force ./result-$PKGS_SET;
-  fi
+- make pypi2nix $PKGS_SET;
+- mkdir nars/;
+- nix-push --dest "$PWD/nars/" --force ./result-$PKGS_SET;
 
 before_install:
 - git branch
