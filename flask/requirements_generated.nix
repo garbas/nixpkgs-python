@@ -51,6 +51,27 @@ self: {
 
 
 
+  "Flask-Cors" = python.mkDerivation {
+    name = "Flask-Cors-3.0.2";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/1d/ea/86765a4ae667b4517dc16ef0fc8dd632ca3ea56ef419c4a6de31e715324e/Flask-Cors-3.0.2.tar.gz";
+      sha256 = "0a09f3559ded4759387dfa2a355de59bc161f67269a1f4b7b0712a64b1f7dad6";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."Flask"
+      self."six"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "A Flask extension adding a decorator for CORS support";
+    };
+  };
+
+
+
   "Jinja2" = python.mkDerivation {
     name = "Jinja2-2.8";
     src = pkgs.fetchurl {
@@ -176,6 +197,24 @@ self: {
       homepage = "";
       license = licenses.mit;
       description = "pytest: simple powerful testing with Python";
+    };
+  };
+
+
+
+  "six" = python.mkDerivation {
+    name = "six-1.10.0";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/b3/b2/238e2590826bfdd113244a40d9d3eb26918bd798fc187e2360a8367068db/six-1.10.0.tar.gz";
+      sha256 = "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "Python 2 and 3 compatibility utilities";
     };
   };
 

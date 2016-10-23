@@ -28,4 +28,10 @@ self: super: {
       rm testing/test_argcomplete.py
     '';
   });
+
+  "six" = python.overrideDerivation super."six" (old: {
+    doCheck = true;
+    buildInputs = old.buildInputs ++ [ self."pytest" ];
+  });
+
 }
