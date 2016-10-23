@@ -92,6 +92,27 @@ self: {
 
 
 
+  "Flask-SQLAlchemy" = python.mkDerivation {
+    name = "Flask-SQLAlchemy-2.1";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/b3/52/227aaf4e8cebb153e239c518a9e916590b2fe0e4350e6b02d92b546b69b7/Flask-SQLAlchemy-2.1.tar.gz";
+      sha256 = "c5244de44cc85d2267115624d83faef3f9e8f088756788694f305a5d5ad137c5";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."Flask"
+      self."SQLAlchemy"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.bsdOriginal;
+      description = "Adds SQLAlchemy support to your Flask application";
+    };
+  };
+
+
+
   "Jinja2" = python.mkDerivation {
     name = "Jinja2-2.8";
     src = pkgs.fetchurl {
@@ -125,6 +146,24 @@ self: {
       homepage = "";
       license = licenses.bsdOriginal;
       description = "Implements a XML/HTML/XHTML Markup safe string for Python";
+    };
+  };
+
+
+
+  "SQLAlchemy" = python.mkDerivation {
+    name = "SQLAlchemy-1.1.2";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/44/88/a86ba3fddb1fd7fc2c271355fc11e5f50634e30a0859ccc613fe62973a98/SQLAlchemy-1.1.2.tar.gz";
+      sha256 = "1692c35bc0f7026d20cabd43b0f6f265e855129f44eb4574fea361e3c5cc89a5";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "Database Abstraction Library";
     };
   };
 
@@ -222,6 +261,28 @@ self: {
 
 
 
+  "mock" = python.mkDerivation {
+    name = "mock-2.0.0";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/0c/53/014354fc93c591ccc4abff12c473ad565a2eb24dcd82490fae33dbf2539f/mock-2.0.0.tar.gz";
+      sha256 = "b158b6df76edd239b8208d481dc46b6afd45a846b7812ff0ce58971cf5bc8bba";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."Jinja2"
+      self."pbr"
+      self."six"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.bsdOriginal;
+      description = "Rolling backport of unittest.mock for all Pythons";
+    };
+  };
+
+
+
   "nose" = python.mkDerivation {
     name = "nose-1.3.7";
     src = pkgs.fetchurl {
@@ -235,6 +296,24 @@ self: {
       homepage = "";
       license = licenses.lgpl2;
       description = "nose extends unittest to make testing easier";
+    };
+  };
+
+
+
+  "pbr" = python.mkDerivation {
+    name = "pbr-1.10.0";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/c3/2c/63275fab26a0fd8cadafca71a3623e4d0f0ee8ed7124a5bb128853d178a7/pbr-1.10.0.tar.gz";
+      sha256 = "186428c270309e6fdfe2d5ab0949ab21ae5f7dea831eab96701b86bd666af39c";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = "License :: OSI Approved :: Apache Software License";
+      description = "Python Build Reasonableness";
     };
   };
 
@@ -331,6 +410,24 @@ self: {
       homepage = "";
       license = licenses.mit;
       description = "Python 2 and 3 compatibility utilities";
+    };
+  };
+
+
+
+  "unittest2py3k" = python.mkDerivation {
+    name = "unittest2py3k-0.5.1";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/4e/3d/d44421e8d828af1399c1509c196db92e2a58f3764b01a0ee928d7025d1ca/unittest2py3k-0.5.1.tar.gz";
+      sha256 = "78249c5f1ac508a34d9d131d43a89d77bf154186f3ea5f7a6b993d3f3535d403";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.bsdOriginal;
+      description = "A Python 3 compatible version of unittest2";
     };
   };
 

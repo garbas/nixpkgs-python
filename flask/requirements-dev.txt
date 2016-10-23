@@ -2,3 +2,5 @@ pytest
 pytest-xdist
 setuptools-scm
 nose
+mock
+unittest2py3k

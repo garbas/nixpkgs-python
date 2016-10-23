@@ -58,21 +58,38 @@ self: super: {
     buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
   });
 
+  "mock" = python.overrideDerivation super."mock" (old: {
+    doCheck = true;
+    buildInputs = old.buildInputs ++ [ self."unittest2py3k" ];
+    checkPhase = ''
+      ${python.__old.python.interpreter} -m unittest discover
+    '';
+  });
+
   "apipkg" = python.overrideDerivation super."apipkg" (old: {
     doCheck = true;
     buildInputs = old.buildInputs ++ [ self."pytest" ];
+  });
+
+  "SQLAlchemy" = python.overrideDerivation super."SQLAlchemy" (old: {
+    doCheck = true;
+    buildInputs = old.buildInputs ++ [ self."pytest" self."mock" self."pytest-xdist" ];
   });
 
   "nose" = python.overrideDerivation super."nose" (old: {
     doCheck = false;
   });
 
+  "unittest2py3k" = python.overrideDerivation super."unittest2py3k" (old: {
+    doCheck = false;
+  });
+
+  "pbr" = python.overrideDerivation super."pbr" (old: {
+    doCheck = false;
+  });
+
   "Flask-Login" = python.overrideDerivation super."Flask-Login" (old: {
     doCheck = false;
-    #buildInputs = old.buildInputs ++ [ self."nose" ];
-    #checkPhase = ''
-    #  nosetests
-    #'';
   });
 
 }
