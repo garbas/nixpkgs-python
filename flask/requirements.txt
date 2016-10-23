@@ -1,18 +1,6 @@
--r ./requirements-dev.txt
-
 Flask
-#Flask-Cache
+Flask-Cache
 #Flask-Cors
 #Flask-Login
 #Flask-SQLAlchemy
 #connexion
-#Flask-Admin
-#Flask-Babel
-#Flask-ErrorHandler
-#Flask-FormEncode
-#Flask-GraphQL
-#Flask-Login
-#Flask-Mailer
-#Flask-SQLAlchemy
-#Flask-Security
-#flask-hookserver

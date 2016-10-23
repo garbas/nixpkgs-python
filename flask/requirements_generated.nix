@@ -31,6 +31,26 @@ self: {
 
 
 
+  "Flask-Cache" = python.mkDerivation {
+    name = "Flask-Cache-0.13.1";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/91/c4/f71095437bd4b691c63f240e72a20c57e2c216085cbc271f79665885d3da/Flask-Cache-0.13.1.tar.gz";
+      sha256 = "90126ca9bc063854ef8ee276e95d38b2b4ec8e45fd77d5751d37971ee27c7ef4";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."Flask"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.bsdOriginal;
+      description = "Adds cache support to your Flask application";
+    };
+  };
+
+
+
   "Jinja2" = python.mkDerivation {
     name = "Jinja2-2.8";
     src = pkgs.fetchurl {
