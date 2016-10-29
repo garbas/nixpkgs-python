@@ -73,10 +73,10 @@ self: {
 
 
   "Flask-Login" = python.mkDerivation {
-    name = "Flask-Login-0.3.2";
+    name = "Flask-Login-0.4.0";
     src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/06/e6/61ed90ed8ce6752b745ed13fac3ba407dc9db95dfa2906edc8dd55dde454/Flask-Login-0.3.2.tar.gz";
-      sha256 = "e72eff5c35e5a31db1aeca1db5d2501be702674ea88e8f223b5d2b11644beee6";
+      url = "https://pypi.python.org/packages/70/96/20cae731ef27084dcb183f3a6e3073d0232f10c1fd7be76729bd7bd4b994/Flask-Login-0.4.0.tar.gz";
+      sha256 = "d25e356b14a59f52da0ab30c31c2ad285fa23a840f0f6971df7ed247c77082a7";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
@@ -151,11 +151,29 @@ self: {
 
 
 
-  "SQLAlchemy" = python.mkDerivation {
-    name = "SQLAlchemy-1.1.2";
+  "PyYAML" = python.mkDerivation {
+    name = "PyYAML-3.12";
     src = pkgs.fetchurl {
-      url = "https://pypi.python.org/packages/44/88/a86ba3fddb1fd7fc2c271355fc11e5f50634e30a0859ccc613fe62973a98/SQLAlchemy-1.1.2.tar.gz";
-      sha256 = "1692c35bc0f7026d20cabd43b0f6f265e855129f44eb4574fea361e3c5cc89a5";
+      url = "https://pypi.python.org/packages/4a/85/db5a2df477072b2902b0eb892feb37d88ac635d36245a72a6a69b23b383a/PyYAML-3.12.tar.gz";
+      sha256 = "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "YAML parser and emitter for Python";
+    };
+  };
+
+
+
+  "SQLAlchemy" = python.mkDerivation {
+    name = "SQLAlchemy-1.1.3";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/84/83/322a268e3187c088aa2867c2560869227da5fc7b9a697c5e382df811bd3c/SQLAlchemy-1.1.3.tar.gz";
+      sha256 = "8b0ed90292a294e17d24482c9328abe69eb8e3143e2bd7103b6fadae2562638f";
     };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
@@ -223,6 +241,90 @@ self: {
 
 
 
+  "clickclick" = python.mkDerivation {
+    name = "clickclick-1.2.1";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/6f/46/28462eb039bbce3651084d5260c50ab83dc3af0724626e6a81c93d950b2c/clickclick-1.2.1.tar.gz";
+      sha256 = "22eedfce2499d7a8c5b8c868fc93a495eb74bf7b753a6cb9ed2aa6a32a3ddd05";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."PyYAML"
+      self."click"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.asl20;
+      description = "Click utility functions";
+    };
+  };
+
+
+
+  "connexion" = python.mkDerivation {
+    name = "connexion-1.0.129";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/ca/b1/1b40f5ba85b275bfc1878d030722809281e4a6f05c62b75abba3861be9f7/connexion-1.0.129.tar.gz";
+      sha256 = "dbee8e66c66c09e0db3083bd40f6c2c1a6ae193e06bb57c48202642429da70ad";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."Flask"
+      self."PyYAML"
+      self."clickclick"
+      self."jsonschema"
+      self."requests"
+      self."six"
+      self."strict-rfc3339"
+      self."swagger-spec-validator"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.asl20;
+      description = "Connexion - API first applications with OpenAPI/Swagger and Flask";
+    };
+  };
+
+
+
+  "coverage" = python.mkDerivation {
+    name = "coverage-4.2";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/53/fe/9e0fbdbca15c2c1253379c3a694f4315a420555e7874445b06edeaeacaea/coverage-4.2.tar.gz";
+      sha256 = "e312776d3ef04632ec742ce2d2b7048b635073e0245e4f44dfe8b08cc50ac656";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.asl20;
+      description = "Code coverage measurement for Python";
+    };
+  };
+
+
+
+  "decorator" = python.mkDerivation {
+    name = "decorator-4.0.10";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/13/8a/4eed41e338e8dcc13ca41c94b142d4d20c0de684ee5065523fee406ce76f/decorator-4.0.10.tar.gz";
+      sha256 = "9c6e98edcb33499881b86ede07d9968c81ab7c769e28e9af24075f0a5379f070";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.bsdOriginal;
+      description = "Better living through Python with decorators";
+    };
+  };
+
+
+
   "execnet" = python.mkDerivation {
     name = "execnet-1.4.1";
     src = pkgs.fetchurl {
@@ -243,6 +345,28 @@ self: {
 
 
 
+  "flake8" = python.mkDerivation {
+    name = "flake8-3.0.4";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/b0/56/48727b2a6c92b7e632180cf2c1411a0de7cf4f636b4f844c6c46f7edc86b/flake8-3.0.4.tar.gz";
+      sha256 = "b4c210c998f07d6ff24325dd91fbc011f2c37bcd6bf576b188de01d8656e970d";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."mccabe"
+      self."pycodestyle"
+      self."pyflakes"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "the modular source code checker: pep8, pyflakes and co";
+    };
+  };
+
+
+
   "itsdangerous" = python.mkDerivation {
     name = "itsdangerous-0.24";
     src = pkgs.fetchurl {
@@ -256,6 +380,44 @@ self: {
       homepage = "";
       license = licenses.bsdOriginal;
       description = "Various helpers to pass trusted data to untrusted environments and back.";
+    };
+  };
+
+
+
+  "jsonschema" = python.mkDerivation {
+    name = "jsonschema-2.5.1";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/58/0d/c816f5ea5adaf1293a1d81d32e4cdfdaf8496973aa5049786d7fdb14e7e7/jsonschema-2.5.1.tar.gz";
+      sha256 = "36673ac378feed3daa5956276a829699056523d7961027911f064b52255ead41";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."strict-rfc3339"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "An implementation of JSON Schema validation for Python";
+    };
+  };
+
+
+
+  "mccabe" = python.mkDerivation {
+    name = "mccabe-0.5.2";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/f1/b7/ff36d1a163079688633a776e1717b5459caccbb68973afab2aa8345ac40f/mccabe-0.5.2.tar.gz";
+      sha256 = "3473f06c8b757bbb5cdf295099bf64032e5f7d6fe0ec2f97ee9b23cb0a435aff";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "McCabe checker, plugin for flake8";
     };
   };
 
@@ -337,6 +499,42 @@ self: {
 
 
 
+  "pycodestyle" = python.mkDerivation {
+    name = "pycodestyle-2.0.0";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/db/b1/9f798e745a4602ab40bf6a9174e1409dcdde6928cf800d3aab96a65b1bbf/pycodestyle-2.0.0.tar.gz";
+      sha256 = "37f0420b14630b0eaaf452978f3a6ea4816d787c3e6dcbba6fb255030adae2e7";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "Python style guide checker";
+    };
+  };
+
+
+
+  "pyflakes" = python.mkDerivation {
+    name = "pyflakes-1.2.3";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/54/80/6a641f832eb6c6a8f7e151e7087aff7a7c04dd8b4aa6134817942cdda1b6/pyflakes-1.2.3.tar.gz";
+      sha256 = "2e4a1b636d8809d8f0a69f341acf15b2e401a3221ede11be439911d23ce2139e";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "passive checker of Python programs";
+    };
+  };
+
+
+
   "pytest" = python.mkDerivation {
     name = "pytest-3.0.3";
     src = pkgs.fetchurl {
@@ -352,6 +550,45 @@ self: {
       homepage = "";
       license = licenses.mit;
       description = "pytest: simple powerful testing with Python";
+    };
+  };
+
+
+
+  "pytest-cov" = python.mkDerivation {
+    name = "pytest-cov-2.4.0";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/00/c0/2bfd1fcdb9d407b8ac8185b1cb5ff458105c6b207a9a7f0e13032de9828f/pytest-cov-2.4.0.tar.gz";
+      sha256 = "53d4179086e1eec1c688705977387432c01031b0a7bd91b8ff6c912c08c3820d";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."coverage"
+      self."pytest"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.bsdOriginal;
+      description = "Pytest plugin for measuring coverage.";
+    };
+  };
+
+
+
+  "pytest-runner" = python.mkDerivation {
+    name = "pytest-runner-2.9";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/11/d4/c335ddf94463e451109e3494e909765c3e5205787b772e3b25ee8601b86a/pytest-runner-2.9.tar.gz";
+      sha256 = "50378de59b02f51f64796d3904dfe71b9dc6f06d88fc6bfbd5c8e8366ae1d131";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "Invoke py.test as distutils command with dependency resolution";
     };
   };
 
@@ -374,6 +611,24 @@ self: {
       homepage = "";
       license = licenses.mit;
       description = "py.test xdist plugin for distributed testing and loop-on-failing modes";
+    };
+  };
+
+
+
+  "requests" = python.mkDerivation {
+    name = "requests-2.11.1";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/2e/ad/e627446492cc374c284e82381215dcd9a0a87c4f6e90e9789afefe6da0ad/requests-2.11.1.tar.gz";
+      sha256 = "5acf980358283faba0b897c73959cecf8b841205bb4b2ad3ef545f46eae1a133";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.asl20;
+      description = "Python HTTP for Humans.";
     };
   };
 
@@ -415,6 +670,45 @@ self: {
 
 
 
+  "strict-rfc3339" = python.mkDerivation {
+    name = "strict-rfc3339-0.7";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/56/e4/879ef1dbd6ddea1c77c0078cd59b503368b0456bcca7d063a870ca2119d3/strict-rfc3339-0.7.tar.gz";
+      sha256 = "5cad17bedfc3af57b399db0fed32771f18fc54bbd917e85546088607ac5e1277";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.gpl3;
+      description = "Strict, simple, lightweight RFC3339 functions";
+    };
+  };
+
+
+
+  "swagger-spec-validator" = python.mkDerivation {
+    name = "swagger-spec-validator-2.0.2";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/98/79/b3243192c42cf3ce983e76f2bf38b3dc343f594f35dec6ec3793055f50b8/swagger_spec_validator-2.0.2.tar.gz";
+      sha256 = "1947d671cac6096eb578d28767209a65e02a4d24081bf6fc605f09ed6ae1d66b";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."jsonschema"
+      self."six"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.asl20;
+      description = "Validation of Swagger specifications";
+    };
+  };
+
+
+
   "unittest2py3k" = python.mkDerivation {
     name = "unittest2py3k-0.5.1";
     src = pkgs.fetchurl {
@@ -428,6 +722,24 @@ self: {
       homepage = "";
       license = licenses.bsdOriginal;
       description = "A Python 3 compatible version of unittest2";
+    };
+  };
+
+
+
+  "vcversioner" = python.mkDerivation {
+    name = "vcversioner-2.16.0.0";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/c5/cc/33162c0a7b28a4d8c83da07bc2b12cee58c120b4a9e8bba31c41c8d35a16/vcversioner-2.16.0.0.tar.gz";
+      sha256 = "dae60c17a479781f44a4010701833f1829140b1eeccd258762a74974aa06e19b";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.isc;
+      description = "Use version control tags to discover version numbers";
     };
   };
 

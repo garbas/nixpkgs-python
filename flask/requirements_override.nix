@@ -66,9 +66,47 @@ self: super: {
     '';
   });
 
+  "mccabe" = python.overrideDerivation super."mccabe" (old: {
+    doCheck = true;
+    buildInputs = old.buildInputs ++ [ self."pytest" self."pytest-runner" ];
+  });
+
+  "pytest-runner" = python.overrideDerivation super."pytest-runner" (old: {
+    doCheck = false;
+    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
+  });
+
+  "clickclick" = python.overrideDerivation super."clickclick" (old: {
+    doCheck = false;
+    buildInputs = old.buildInputs ++ [ self."flake8" self."six" self."pytest" self."pytest-cov" ];
+  });
+
+  "flake8" = python.overrideDerivation super."flake8" (old: {
+    doCheck = true;
+    buildInputs = old.buildInputs ++ [ self."pytest" self."mock" self."pytest-runner" ];
+    patchPhase = ''
+      sed -i -e "/^norecursedirs/d" setup.cfg
+      rm tests/unit/test_config_file_finder.py
+    '';
+  });
+
+  "requests" = python.overrideDerivation super."requests" (old: {
+    doCheck = false;
+  });
+
   "apipkg" = python.overrideDerivation super."apipkg" (old: {
     doCheck = true;
     buildInputs = old.buildInputs ++ [ self."pytest" ];
+  });
+
+  "jsonschema" = python.overrideDerivation super."jsonschema" (old: {
+    doCheck = false;
+    buildInputs = old.buildInputs ++ [ self."vcversioner" ];
+  });
+
+  "connexion" = python.overrideDerivation super."connexion" (old: {
+    doCheck = false;
+    buildInputs = old.buildInputs ++ [ self."flake8" self."decorator" self."mock" self."pytest" self."pytest-cov" ];
   });
 
   "SQLAlchemy" = python.overrideDerivation super."SQLAlchemy" (old: {
@@ -85,6 +123,10 @@ self: super: {
   });
 
   "pbr" = python.overrideDerivation super."pbr" (old: {
+    doCheck = false;
+  });
+
+  "coverage" = python.overrideDerivation super."coverage" (old: {
     doCheck = false;
   });
 

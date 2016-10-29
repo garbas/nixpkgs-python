@@ -7,7 +7,6 @@ pypi2nix:
 
 flask:
 	cd flask/ && pypi2nix -v -T -V 3.5 -r requirements.txt -r requirements-dev.txt
-	#-E "openssl libffi"
 	nix-build -A flask -o result-flask
 
 pyramid:

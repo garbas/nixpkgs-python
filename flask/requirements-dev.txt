@@ -1,6 +1,11 @@
+flake8
+mock
+nose
 pytest
+pytest-cov
+pytest-runner
 pytest-xdist
 setuptools-scm
-nose
-mock
 unittest2py3k
+vcversioner
+decorator
