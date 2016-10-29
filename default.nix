@@ -6,6 +6,9 @@
   # maintainers: garbas
   flask = import ./flask/requirements.nix { inherit pkgs; };
 
+  # maintainers: peterhoeg
+  home-assistant = import ./home-assistant/requirements.nix { inherit pkgs; };
+
   # XXX: currently looking maintainers
   #pyramid = import ./pyramid/requirements.nix { inherit pkgs; };
   #django = import ./django/requirements.nix { inherit pkgs; };
