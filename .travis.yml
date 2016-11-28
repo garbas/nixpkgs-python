@@ -5,7 +5,7 @@ addons:
 
 env:
 - PKGS_SET=flask
-- PKGS_SET=home-assistant
+- PKGS_SET=homeassistant
 
 script:
 - make pypi2nix $PKGS_SET;

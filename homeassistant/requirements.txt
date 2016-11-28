@@ -1,5 +1,6 @@
 homeassistant
 
+# homeassistant.components.discovery
 netdisco==0.7.7
 
 pytest-runner
