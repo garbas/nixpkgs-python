@@ -2,7 +2,7 @@
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -v -V 3.5 -r requirements.txt -E libffi openssl -s pytz
+#   pypi2nix -v -V 3.5 -r requirements.txt
 #
 
 { pkgs ? import <nixpkgs> {}
@@ -20,7 +20,7 @@ let
     self = pythonPackages;
   };
 
-  commonBuildInputs = with pkgs; [ libffi openssl ];
+  commonBuildInputs = [];
   commonDoCheck = false;
 
   withPackages = pkgs':

@@ -1,0 +1,6 @@
+homeassistant
+
+netdisco==0.7.7
+
+pytest-runner
+setuptools-scm

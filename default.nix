@@ -7,7 +7,7 @@
   flask = import ./flask/requirements.nix { inherit pkgs; };
 
   # maintainers: peterhoeg
-  home-assistant = import ./home-assistant/requirements.nix { inherit pkgs; };
+  homeassistant = import ./homeassistant/requirements.nix { inherit pkgs; };
 
   # XXX: currently looking maintainers
   #pyramid = import ./pyramid/requirements.nix { inherit pkgs; };
