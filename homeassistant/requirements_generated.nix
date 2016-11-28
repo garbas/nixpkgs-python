@@ -309,7 +309,7 @@ self: {
     ];
     meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = licenses.lgpk2;
+      license = licenses.lgpl2;
       description = "Pure Python Multicast DNS Service Discovery Library (Bonjour/Avahi compatible)";
     };
   };
