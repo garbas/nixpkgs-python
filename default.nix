@@ -6,7 +6,7 @@
   # maintainers: garbas
   flask = import ./flask/requirements.nix { inherit pkgs; };
 
-  # maintainers: peterhoeg
+  # maintainers: garbas
   homeassistant = import ./homeassistant/requirements.nix { inherit pkgs; };
 
   # XXX: currently looking maintainers

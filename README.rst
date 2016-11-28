@@ -23,11 +23,18 @@ Flask
 
 This is a collections of Flask_ micro framework and its extensions.
 
+HomeAssistant
+^^^^^^^^^^^^^
+
+:maintainers: `garbas`_
+
+This is a collections of HomeAssistant_ and its components.
+
 
 TODO
 ----
 
-- [ ] publish binary cache
+- [ ] publish a signed binary cache
 
 - [ ] create (bi-)monthly release cycle and create channels accordingly
 
@@ -50,5 +57,6 @@ TODO: answers questions below. for now i'm just writting down questions i'm
 
 
 .. _Flask: http://flask.pocoo.org
+.. _HomeAssistant: http://home-assistant.io
 .. _PyPi: https://pypi.python.org
 .. _garbas: https://github.com/garbas
