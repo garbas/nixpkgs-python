@@ -5,6 +5,7 @@ addons:
 
 env:
 - PKGS_SET=flask
+- PKGS_SET=pyramid
 - PKGS_SET=homeassistant
 
 script:

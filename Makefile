@@ -12,7 +12,7 @@ flask:
 	nix-build -A flask -o result-flask
 
 pyramid:
-	cd pyramid/ && $(PYPI2NIX) -v -V 3.5 -r requirements.txt
+	cd pyramid/ && $(PYPI2NIX) -v -V 3.5 -r requirements.txt  -r requirements-dev.txt -E "postgresql"
 	nix-build -A pyramid -o result-pyramid
 
 django:

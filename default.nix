@@ -9,6 +9,9 @@
   # maintainers: garbas
   homeassistant = import ./homeassistant/requirements.nix { inherit pkgs; };
 
+  # maintainers: ???
+  pyramid = import ./pyramid/requirements.nix { inherit pkgs; };
+
   # XXX: currently looking maintainers
   #pyramid = import ./pyramid/requirements.nix { inherit pkgs; };
   #django = import ./django/requirements.nix { inherit pkgs; };
