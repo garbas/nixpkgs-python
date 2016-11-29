@@ -20,7 +20,7 @@ django:
 	nix-build -A django -o result-django
 
 science:
-	cd science/ && $(PYPI2NIX) -v -V 3.5 -r requirements.txt -E "freetype libpng pkgconfig"
+	cd science/ && $(PYPI2NIX) -v -V 3.5 -r requirements.txt -s numpy -E gfortran -E blas
 	nix-build -A science -o result-science
 
 homeassistant:
