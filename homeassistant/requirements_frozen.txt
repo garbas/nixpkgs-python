@@ -11,7 +11,7 @@ netifaces==0.10.5
 pytest-runner==2.9
 pytz==2016.7
 PyYAML==3.12
-requests==2.12.1
+requests==2.12.2
 setuptools-scm==1.15.0
 six==1.10.0
 typing==3.5.2.2

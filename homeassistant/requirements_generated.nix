@@ -223,8 +223,8 @@ self: {
 
 
   "requests" = python.mkDerivation {
-    name = "requests-2.12.1";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/6e/40/7434b2d9fe24107ada25ec90a1fc646e97f346130a2c51aa6a2b1aba28de/requests-2.12.1.tar.gz"; sha256 = "2109ecea94df90980be040490ff1d879971b024861539abb00054062388b612e"; };
+    name = "requests-2.12.2";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/18/87/3c46a06df7b29cd3ab51f055cae2a954758ee3dcbd075d7f4c9a4e8aafbc/requests-2.12.2.tar.gz"; sha256 = "09dadb7c5c4210ebbc7f1b14a351a754f1191bd7cd5a5b60ee1929b8c7dcbbe6"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
