@@ -28,7 +28,7 @@ pytest-cov==2.4.0
 pytest-runner==2.9
 pytest-xdist==1.15.0
 PyYAML==3.12
-requests==2.12.1
+requests==2.12.2
 setuptools-scm==1.15.0
 six==1.10.0
 SQLAlchemy==1.1.4
