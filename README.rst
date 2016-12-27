@@ -36,7 +36,7 @@ This is a collections of Pelican_ and Pelican extensions packages.
 HomeAssistant
 ^^^^^^^^^^^^^
 
-:maintainers: `garbas`_
+:maintainers: ??? (Looking for maintainer)
 
 This is a collections of HomeAssistant_ and its components.
 
@@ -44,7 +44,7 @@ This is a collections of HomeAssistant_ and its components.
 Science
 ^^^^^^^^
 
-:maintainers: ???
+:maintainers: ??? (Looking for maintainer)
 
 This is a collections of science related packages.
 
@@ -53,7 +53,7 @@ This is a collections of science related packages.
 Django
 ^^^^^^
 
-:maintainers: ???
+:maintainers: ??? (Looking for maintainer)
 
 This is a collections of Django_ framework and its extensions.
 
@@ -61,7 +61,7 @@ This is a collections of Django_ framework and its extensions.
 Pyramid
 ^^^^^^^
 
-:maintainers: ???
+:maintainers: ??? (Looking for maintainer)
 
 This is a collections of Pyramid_ framework and its extensions.
 
