@@ -66,31 +66,6 @@ Pyramid
 This is a collections of Pyramid_ framework and its extensions.
 
 
-TODO
-----
-
-- [ ] publish a signed binary cache
-
-- [ ] create (bi-)monthly release cycle and create channels accordingly
-
-- [ ] start science collection. this should be a collection of all the science
-  python packages (numpy, scipy, ...)
-  
-- [ ] create status page of a collection and publish it on some url (eg. S3).
-  alongside binary cache.
-
-
-FAQ
----
-
-TODO: answers questions below. for now i'm just writting down questions i'm
-      receiving.
-
-- Why not contribute this to ``nixpkgs``?
-
-- Why not package all of PyPi_ index?
-
-
 .. _Flask: http://flask.pocoo.org
 .. _HomeAssistant: http://home-assistant.io
 .. _Pelican: http://blog.getpelican.com
