@@ -9,8 +9,8 @@
 self: {
 
   "Flask" = python.mkDerivation {
-    name = "Flask-0.11.1";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/55/8a/78e165d30f0c8bb5d57c429a30ee5749825ed461ad6c959688872643ffb3/Flask-0.11.1.tar.gz"; sha256 = "b4713f2bfb9ebc2966b8a49903ae0d3984781d5c878591cf2f7b484d28756b0e"; };
+    name = "Flask-0.12";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4b/3a/4c20183df155dd2e39168e35d53a388efb384a512ca6c73001d8292c094a/Flask-0.12.tar.gz"; sha256 = "93e803cdbe326a61ebd5c5d353959397c85f829bec610d59cb635c9f97d7ca8b"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
@@ -161,8 +161,8 @@ self: {
 
 
   "Werkzeug" = python.mkDerivation {
-    name = "Werkzeug-0.11.11";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/43/2e/d822b4a4216804519ace92e0368dcfc4b0b2887462d852fdd476b253ecc9/Werkzeug-0.11.11.tar.gz"; sha256 = "e72c46bc14405cba7a26bd2ce28df734471bc9016bc8b4cb69466c2c14c2f7e5"; };
+    name = "Werkzeug-0.11.13";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4a/4a/0e5f691c1e00d8b5678f35225cfc9e21dcebec794fb9702648b8fac716b1/Werkzeug-0.11.13.zip"; sha256 = "ebf720bc2f0ac7739ee2d6de63da8a323d73d91fddc16f5fadae915ae9e1e690"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
@@ -346,8 +346,8 @@ self: {
 
 
   "mccabe" = python.mkDerivation {
-    name = "mccabe-0.5.2";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f1/b7/ff36d1a163079688633a776e1717b5459caccbb68973afab2aa8345ac40f/mccabe-0.5.2.tar.gz"; sha256 = "3473f06c8b757bbb5cdf295099bf64032e5f7d6fe0ec2f97ee9b23cb0a435aff"; };
+    name = "mccabe-0.5.3";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c9/0b/b66016d49fc1b24864743e388bc4fa7dcbb83c29553b867404fad5b5855d/mccabe-0.5.3.tar.gz"; sha256 = "16293af41e7242031afd73896fef6458f4cad38201d21e28f344fff50ae1c25e"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
@@ -425,8 +425,8 @@ self: {
 
 
   "py" = python.mkDerivation {
-    name = "py-1.4.31";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f4/9a/8dfda23f36600dd701c6722316ba8a3ab4b990261f83e7d3ffc6dfedf7ef/py-1.4.31.tar.gz"; sha256 = "a6501963c725fc2554dabfece8ae9a8fb5e149c0ac0a42fd2b02c5c1c57fc114"; };
+    name = "py-1.4.32";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/93/bd/8a90834a287e0c1682eab8e20ada672e4f4cf7d5b99f2833ddbf31ed1a6d/py-1.4.32.tar.gz"; sha256 = "c4b89fd1ff1162375115608d01f77c38cca1d0f28f37fd718005e19b28be41a7"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
@@ -470,8 +470,8 @@ self: {
 
 
   "pytest" = python.mkDerivation {
-    name = "pytest-3.0.4";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2f/03/0c636d7191255e1737012e5f9c42368f11b55463aeea46fb1955892cab0d/pytest-3.0.4.tar.gz"; sha256 = "879fee2c1fdbaacd1bf2c0047677c6dd4aee05b9c1e64330b34d130a584fa40d"; };
+    name = "pytest-3.0.5";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a8/87/b7ca49efe52d2b4169f2bfc49aa5e384173c4619ea8e635f123a0dac5b75/pytest-3.0.5.tar.gz"; sha256 = "4a003aa956f023ce91aa6e166b555e6f02a4b0aeb459ac61e14f64c0d39037fd"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
@@ -539,8 +539,8 @@ self: {
 
 
   "requests" = python.mkDerivation {
-    name = "requests-2.12.2";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/18/87/3c46a06df7b29cd3ab51f055cae2a954758ee3dcbd075d7f4c9a4e8aafbc/requests-2.12.2.tar.gz"; sha256 = "09dadb7c5c4210ebbc7f1b14a351a754f1191bd7cd5a5b60ee1929b8c7dcbbe6"; };
+    name = "requests-2.12.4";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/5b/0b/34be574b1ec997247796e5d516f3a6b6509c4e064f2885a96ed885ce7579/requests-2.12.4.tar.gz"; sha256 = "ed98431a0631e309bb4b63c81d561c1654822cb103de1ac7b47e45c26be7ae34"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];

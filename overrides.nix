@@ -25,6 +25,9 @@ in skipOverrides {
     doCheck = true;
     LANG = "en_US.UTF-8";
     buildInputs = old.buildInputs ++ [ self."pytest" pkgs.glibcLocales ];
+    patchPhase = ''
+      rm -rf examples/
+    '';
     checkPhase = ''
       pytest
     '';

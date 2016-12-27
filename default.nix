@@ -3,11 +3,11 @@
 
 {
 
-  # maintainers: garbas
   flask = import ./flask/requirements.nix { inherit pkgs; };
 
-  # maintainers: garbas
   homeassistant = import ./homeassistant/requirements.nix { inherit pkgs; };
+
+  pelican = import ./pelican/requirements.nix { inherit pkgs; };
 
   # XXX: currently looking maintainers
   #pyramid = import ./pyramid/requirements.nix { inherit pkgs; };

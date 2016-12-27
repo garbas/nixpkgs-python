@@ -17,7 +17,6 @@ let
     inherit pkgs;
     inherit (pkgs) stdenv;
     python = pkgs.python35;
-    self = pythonPackages;
   };
 
   commonBuildInputs = [];
