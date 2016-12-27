@@ -1,7 +1,7 @@
 NIX_PATH=nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
 PYPI2NIX=./../result-pypi2nix/bin/pypi2nix
 
-all: flask pyramid django science
+all: pypi2nix flask pyramid django science homeassistant pelican
 
 pypi2nix:
 	@if [ ! -e pypi2nix ]; then git clone https://github.com/garbas/pypi2nix; fi
@@ -27,5 +27,8 @@ homeassistant:
 	@cd homeassistant/ && $(PYPI2NIX) -v -V 3.5 -r requirements.txt #-E "libffi openssl" -s pytz
 	@nix-build -A homeassistant -o result-homeassistant
 
+pelican:
+	cd pelican/ && $(PYPI2NIX) -v -V 3.5 -r requirements.txt
+	nix-build -A pelican -o result-pelican
 
-.PHONY: pypi2nix flask pyramid django science homeassistant
+.PHONY: pypi2nix flask pyramid django science homeassistant pelican

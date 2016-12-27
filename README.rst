@@ -16,12 +16,22 @@ TODO: once flask collection is finished add how to use collection with existing
 Current collections
 -------------------
 
+
 Flask
 ^^^^^
 
 :maintainers: `garbas`_
 
 This is a collections of Flask_ micro framework and its extensions.
+
+
+Pelican
+^^^^^^^
+
+:maintainers: `garbas`_
+
+This is a collections of Pelican_ and Pelican extensions packages.
+
 
 HomeAssistant
 ^^^^^^^^^^^^^
@@ -57,6 +67,7 @@ TODO: answers questions below. for now i'm just writting down questions i'm
 
 
 .. _Flask: http://flask.pocoo.org
+.. _Pelican: http://blog.getpelican.com
 .. _HomeAssistant: http://home-assistant.io
 .. _PyPi: https://pypi.python.org
 .. _garbas: https://github.com/garbas

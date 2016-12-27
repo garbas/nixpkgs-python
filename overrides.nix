@@ -1,41 +1,88 @@
 { pkgs, python }:
 
-self: super: {
+let
 
-  "Werkzeug" = python.overrideDerivation super."Werkzeug" (old: {
+  skipOverrides = overrides: self: super:
+    let
+      overridesNames = builtins.attrNames overrides;
+      superNames = builtins.attrNames super;
+    in
+      builtins.listToAttrs
+        (builtins.map
+          (name: { inherit name;
+                   value = python.overrideDerivation super."${name}" (overrides."${name}" self);
+                 }
+          )
+          (builtins.filter
+            (name: builtins.elem name superNames)
+            overridesNames
+          )
+        );
+
+in skipOverrides {
+
+  "Flask" = self: old: {
+    doCheck = true;
+    LANG = "en_US.UTF-8";
+    buildInputs = old.buildInputs ++ [ self."pytest" pkgs.glibcLocales ];
+    checkPhase = ''
+      pytest
+    '';
+  };
+
+  "Flask-Cors" = self: old: {
+    doCheck = true;
+    buildInputs = old.buildInputs ++ [ self."nose" ];
+  };
+
+  "Flask-Login" = self: old: {
+    # no tests available
+    doCheck = false;
+    buildInputs = old.buildInputs ++ [ self."pep8" self."pyflakes" self."nose" ];
+  };
+
+  "SQLAlchemy" = self: old: {
+    doCheck = true;
+    buildInputs = old.buildInputs ++ [ self."pytest" self."mock" self."pytest-xdist" ];
+  };
+
+  "Werkzeug" = self: old: {
     doCheck = true;
     LANG = "en_US.UTF-8";
     buildInputs = old.buildInputs ++ [ self."pytest" self."requests" pkgs.glibcLocales ];
-  });
+  };
 
-  "click" = python.overrideDerivation super."click" (old: {
+  "apipkg" = self: old: {
+    doCheck = true;
+    buildInputs = old.buildInputs ++ [ self."pytest" self."py" ];
+  };
+
+  "async-timeout" = self: old: {
+    buildInputs = [ self."pytest-runner" ];
+  };
+
+  "click" = self: old: {
     doCheck = true;
     patchPhase = ''
      rm click/_winconsole.py
     '';
-  });
+  };
 
-  "py" = python.overrideDerivation super."py" (old: {
-    # circular dependency with pytest
-    #buildInputs = old.buildInputs ++ [ self."pytest" ];
+  "clickclick" = self: old: {
     doCheck = false;
-  });
+    buildInputs = old.buildInputs ++ [ self."flake8" self."six" self."pytest" self."pytest-cov" ];
+  };
 
-  "pytest" = python.overrideDerivation super."pytest" (old: {
-    # circular dependency with hypothesis
-    #buildInputs = old.buildInputs ++ [ self."mock" self."nose" self."hypothesis" ];
+  "connexion" = self: old: {
     doCheck = false;
-    patchPhase = ''
-      rm testing/test_argcomplete.py
-    '';
-  });
+    buildInputs = old.buildInputs ++ [ self."flake8" self."decorator" self."mock" self."pytest" self."pytest-cov" ];
+  };
 
-  "six" = python.overrideDerivation super."six" (old: {
-    doCheck = true;
-    buildInputs = old.buildInputs ++ [ self."pytest" ];
-  });
+  "coverage" = self: old: {
+    doCheck = false;
+  };
 
-  "execnet" = python.overrideDerivation super."execnet" (old: {
+  "execnet" = self: old: {
     doCheck = true;
     buildInputs = old.buildInputs ++ [ self."pytest" self."setuptools-scm" ];
     patchPhase = ''
@@ -47,103 +94,84 @@ self: super: {
     checkPhase = ''
       pytest testing/
     '';
-  });
+  };
 
-  "Flask-Cors" = python.overrideDerivation super."Flask-Cors" (old: {
-    doCheck = true;
-    buildInputs = old.buildInputs ++ [ self."nose" ];
-  });
-
-  "pytest-xdist" = python.overrideDerivation super."pytest-xdist" (old: {
-    doCheck = true;
-    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
-  });
-
-  "mock" = python.overrideDerivation super."mock" (old: {
-    doCheck = true;
-    buildInputs = old.buildInputs ++ [ self."unittest2py3k" ];
-    checkPhase = ''
-      ${python.__old.python.interpreter} -m unittest discover
-    '';
-  });
-
-  "mccabe" = python.overrideDerivation super."mccabe" (old: {
-    doCheck = true;
-    buildInputs = old.buildInputs ++ [ self."pytest" self."pytest-runner" ];
-  });
-
-  "pytest-runner" = python.overrideDerivation super."pytest-runner" (old: {
-    doCheck = false;
-    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
-  });
-
-  "clickclick" = python.overrideDerivation super."clickclick" (old: {
-    doCheck = false;
-    buildInputs = old.buildInputs ++ [ self."flake8" self."six" self."pytest" self."pytest-cov" ];
-  });
-
-  "flake8" = python.overrideDerivation super."flake8" (old: {
+  "flake8" = self: old: {
     doCheck = true;
     buildInputs = old.buildInputs ++ [ self."pytest" self."mock" self."pytest-runner" ];
     patchPhase = ''
       sed -i -e "/^norecursedirs/d" setup.cfg
       rm tests/unit/test_config_file_finder.py
     '';
-  });
+  };
 
-  "requests" = python.overrideDerivation super."requests" (old: {
-    doCheck = false;
-  });
-
-  "apipkg" = python.overrideDerivation super."apipkg" (old: {
-    doCheck = true;
-    buildInputs = old.buildInputs ++ [ self."pytest" self."py" ];
-  });
-
-  "jsonschema" = python.overrideDerivation super."jsonschema" (old: {
+  "jsonschema" = self: old: {
     doCheck = false;
     buildInputs = old.buildInputs ++ [ self."vcversioner" ];
-  });
+  };
 
-  "connexion" = python.overrideDerivation super."connexion" (old: {
-    doCheck = false;
-    buildInputs = old.buildInputs ++ [ self."flake8" self."decorator" self."mock" self."pytest" self."pytest-cov" ];
-  });
-
-  "SQLAlchemy" = python.overrideDerivation super."SQLAlchemy" (old: {
+  "mccabe" = self: old: {
     doCheck = true;
-    buildInputs = old.buildInputs ++ [ self."pytest" self."mock" self."pytest-xdist" ];
-  });
+    buildInputs = old.buildInputs ++ [ self."pytest" self."pytest-runner" ];
+  };
 
-  "nose" = python.overrideDerivation super."nose" (old: {
-    doCheck = false;
-  });
-
-  "unittest2py3k" = python.overrideDerivation super."unittest2py3k" (old: {
-    doCheck = false;
-  });
-
-  "pbr" = python.overrideDerivation super."pbr" (old: {
-    doCheck = false;
-  });
-
-  "coverage" = python.overrideDerivation super."coverage" (old: {
-    doCheck = false;
-  });
-
-  "Flask-Login" = python.overrideDerivation super."Flask-Login" (old: {
-    # no tests available
-    doCheck = false;
-    buildInputs = old.buildInputs ++ [ self."pep8" self."pyflakes" self."nose" ];
-  });
-
-  "Flask" = python.overrideDerivation super."Flask" (old: {
+  "mock" = self: old: {
     doCheck = true;
-    LANG = "en_US.UTF-8";
-    buildInputs = old.buildInputs ++ [ self."pytest" pkgs.glibcLocales ];
+    buildInputs = old.buildInputs ++ [ self."unittest2py3k" ];
     checkPhase = ''
-      pytest
+      ${python.__old.python.interpreter} -m unittest discover
     '';
-  });
+  };
+
+  "nose" = self: old: {
+    doCheck = false;
+  };
+
+  "pelican" = self: old: {
+    LANG = "en_US.UTF-8";
+    buildInputs = old.buildInputs ++ [ pkgs.glibcLocales ];
+  };
+
+  "pbr" = self: old: {
+    doCheck = false;
+  };
+
+  "py" = self: old: {
+    # circular dependency with pytest
+    #buildInputs = old.buildInputs ++ [ self."pytest" ];
+    doCheck = false;
+  };
+
+  "pytest" = self: old: {
+    # circular dependency with hypothesis
+    #buildInputs = old.buildInputs ++ [ self."mock" self."nose" self."hypothesis" ];
+    doCheck = false;
+    patchPhase = ''
+      rm testing/test_argcomplete.py
+    '';
+  };
+
+  "pytest-runner" = self: old: {
+    doCheck = false;
+    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
+  };
+
+  "six" = self: old: {
+    doCheck = true;
+    buildInputs = old.buildInputs ++ [ self."pytest" ];
+  };
+
+  "pytest-xdist" = self: old: {
+    doCheck = true;
+    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
+  };
+
+  "requests" = self: old: {
+    doCheck = false;
+  };
+
+  "unittest2py3k" = self: old: {
+    doCheck = false;
+  };
 
 }
