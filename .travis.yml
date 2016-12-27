@@ -4,9 +4,12 @@ addons:
   ssh_known_hosts: garbas.si
 
 env:
+- PKGS_SET=django
 - PKGS_SET=flask
 - PKGS_SET=homeassistant
 - PKGS_SET=pelican
+- PKGS_SET=pyramid
+- PKGS_SET=science
 
 script:
 - make pypi2nix $PKGS_SET;

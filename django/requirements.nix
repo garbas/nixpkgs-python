@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 1.4.0.dev0)
+# generated using pypi2nix tool (version: 1.6.0)
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
@@ -10,39 +10,59 @@
 
 let
 
+  inherit (pkgs) makeWrapper;
   inherit (pkgs.stdenv.lib) fix' extends inNixShell;
 
-  pythonPackages = import <nixpkgs/pkgs/top-level/python-packages.nix> {
+  pythonPackages = import "${toString pkgs.path}/pkgs/top-level/python-packages.nix" {
     inherit pkgs;
     inherit (pkgs) stdenv;
     python = pkgs.python35;
-    self = pythonPackages;
   };
 
   commonBuildInputs = [];
   commonDoCheck = false;
 
-  buildEnv = { pkgs ? {} }:
+  withPackages = pkgs':
     let
-      interpreter = pythonPackages.python.buildEnv.override {
-        extraLibs = builtins.attrValues pkgs;
+      pkgs = builtins.removeAttrs pkgs' ["__unfix__"];
+      interpreter = pythonPackages.buildPythonPackage {
+        name = "python35-interpreter";
+        buildInputs = [ makeWrapper ] ++ (builtins.attrValues pkgs);
+        buildCommand = ''
+          mkdir -p $out/bin
+          ln -s ${pythonPackages.python.interpreter} $out/bin/${pythonPackages.python.executable}
+          for dep in ${builtins.concatStringsSep " " (builtins.attrValues pkgs)}; do
+            if [ -d "$dep/bin" ]; then
+              for prog in "$dep/bin/"*; do
+                if [ -f $prog ]; then
+                  ln -s $prog $out/bin/`basename $prog`
+                fi
+              done
+            fi
+          done
+          for prog in "$out/bin/"*; do
+            wrapProgram "$prog" --prefix PYTHONPATH : "$PYTHONPATH"
+          done
+          pushd $out/bin
+          ln -s ${pythonPackages.python.executable} python
+          popd
+        '';
+        passthru.interpreter = pythonPackages.python;
       };
     in {
-      mkDerivation = pythonPackages.buildPythonPackage;
-      interpreter = if inNixShell then interpreter.env else interpreter;
-      overrideDerivation = drv: f: pythonPackages.buildPythonPackage (drv.drvAttrs // f drv.drvAttrs);
-      withPackages = pkgs': buildEnv { pkgs = pkgs'; };
-      inherit buildEnv pkgs;
       __old = pythonPackages;
+      inherit interpreter;
+      mkDerivation = pythonPackages.buildPythonPackage;
+      packages = pkgs;
+      overrideDerivation = drv: f:
+        pythonPackages.buildPythonPackage (drv.drvAttrs // f drv.drvAttrs);
+      withPackages = pkgs'':
+        withPackages (pkgs // pkgs'');
     };
 
-  python = buildEnv {};
+  python = withPackages {};
+
   generated = import ./requirements_generated.nix { inherit pkgs python commonBuildInputs commonDoCheck; };
   overrides = import ./requirements_override.nix { inherit pkgs python; };
 
-  python' = buildEnv {
-    pkgs = builtins.removeAttrs (fix' (extends overrides generated)) ["__unfix__"];
-
-  };
-
-in python'
+in python.withPackages (fix' (extends overrides generated))

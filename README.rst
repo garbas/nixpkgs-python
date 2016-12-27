@@ -41,6 +41,31 @@ HomeAssistant
 This is a collections of HomeAssistant_ and its components.
 
 
+Science
+^^^^^^^^
+
+:maintainers: ???
+
+This is a collections of science related packages.
+
+
+
+Django
+^^^^^^
+
+:maintainers: ???
+
+This is a collections of Django_ framework and its extensions.
+
+
+Pyramid
+^^^^^^^
+
+:maintainers: ???
+
+This is a collections of Pyramid_ framework and its extensions.
+
+
 TODO
 ----
 
@@ -67,7 +92,9 @@ TODO: answers questions below. for now i'm just writting down questions i'm
 
 
 .. _Flask: http://flask.pocoo.org
-.. _Pelican: http://blog.getpelican.com
 .. _HomeAssistant: http://home-assistant.io
+.. _Pelican: http://blog.getpelican.com
+.. _Pyramid: https://trypyramid.com
+.. _Django: https://www.djangoproject.com
 .. _PyPi: https://pypi.python.org
 .. _garbas: https://github.com/garbas

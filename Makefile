@@ -9,7 +9,19 @@ pypi2nix:
 
 flask:
 	cd flask/ && $(PYPI2NIX) -v -T -V 3.5 -r requirements.txt -r requirements-dev.txt
-	nix-build -A flask -o result-flask 
+	nix-build -A flask -o result-flask
+
+homeassistant:
+	cd homeassistant/ && $(PYPI2NIX) -v -V 3.5 -r requirements.txt  -r requirements-dev.txt
+	nix-build -A homeassistant -o result-homeassistant
+
+pelican:
+	cd pelican/ && $(PYPI2NIX) -v -V 3.5 -r requirements.txt -r requirements-dev.txt
+	nix-build -A pelican -o result-pelican
+
+science:
+	cd science/ && $(PYPI2NIX) -v -V 3.5 --basename scipy -r requirements.txt -s numpy -E gfortran -E blas
+	nix-build -A science -o result-science
 
 pyramid:
 	cd pyramid/ && $(PYPI2NIX) -v -V 3.5 -r requirements.txt
@@ -19,16 +31,5 @@ django:
 	cd django/ && $(PYPI2NIX) -v -V 3.5 -r requirements.txt
 	nix-build -A django -o result-django
 
-science:
-	cd science/ && $(PYPI2NIX) -v -V 3.5 -r requirements.txt -E "freetype libpng pkgconfig"
-	nix-build -A science -o result-science
-
-homeassistant:
-	@cd homeassistant/ && $(PYPI2NIX) -v -V 3.5 -r requirements.txt #-E "libffi openssl" -s pytz
-	@nix-build -A homeassistant -o result-homeassistant
-
-pelican:
-	cd pelican/ && $(PYPI2NIX) -v -V 3.5 -r requirements.txt
-	nix-build -A pelican -o result-pelican
 
 .PHONY: pypi2nix flask pyramid django science homeassistant pelican

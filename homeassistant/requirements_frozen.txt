@@ -8,6 +8,8 @@ MarkupSafe==0.23
 multidict==2.1.4
 netdisco==0.7.7
 netifaces==0.10.5
+py==1.4.32
+pytest==3.0.5
 pytest-runner==2.9
 pytz==2016.10
 PyYAML==3.12

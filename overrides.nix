@@ -83,6 +83,8 @@ in skipOverrides {
 
   "coverage" = self: old: {
     doCheck = false;
+    LANG = "en_US.UTF-8";
+    buildInputs = old.buildInputs ++ [ pkgs.glibcLocales ];
   };
 
   "execnet" = self: old: {

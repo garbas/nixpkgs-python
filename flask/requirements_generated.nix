@@ -248,8 +248,8 @@ self: {
 
 
   "coverage" = python.mkDerivation {
-    name = "coverage-4.2";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/53/fe/9e0fbdbca15c2c1253379c3a694f4315a420555e7874445b06edeaeacaea/coverage-4.2.tar.gz"; sha256 = "e312776d3ef04632ec742ce2d2b7048b635073e0245e4f44dfe8b08cc50ac656"; };
+    name = "coverage-4.3";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/00/3d/0baaae35e79066bc074d8de5d62946c4f2c53f2c718a64b2d8735545c693/coverage-4.3.tar.gz"; sha256 = "babc2503bc41a3044cae734221517443730ebfc6c414ccac5a7a4a3fb358b423"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
