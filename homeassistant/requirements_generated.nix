@@ -56,14 +56,15 @@ self: {
 
 
   "aiohttp" = python.mkDerivation {
-    name = "aiohttp-1.0.5";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/09/5a/7b81ea8729d41f44c6fe6a116e466c8fb884950a0061aa3768dbd6bee2f8/aiohttp-1.0.5.tar.gz"; sha256 = "c3e1897726f97d40e067e8b658b2dbdfe216f32b801c5c589212e1b1f9aa8388"; };
+    name = "aiohttp-1.1.6";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e4/c5/c131fb2c8e42eb8cf0e42d41c8cecfc22e1247307c25a0f77c4565ca690f/aiohttp-1.1.6.tar.gz"; sha256 = "0742feb9759a5832aa4a30abf64e53055e139ed41e26f79b9558d08e05c74d60"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
       self."async-timeout"
       self."chardet"
       self."multidict"
+      self."yarl"
     ];
     meta = with pkgs.stdenv.lib; {
       homepage = "";
@@ -75,8 +76,8 @@ self: {
 
 
   "async-timeout" = python.mkDerivation {
-    name = "async-timeout-1.0.0";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c3/5b/d00e06296f5fe2c1db230f5f3f39538a4ae23c153adb1672e87e94137f89/async_timeout-1.0.0.tar.gz"; sha256 = "c7afd7355b93fca0aecc15811aa53eea57f6fd7307b5bff2336b01419ebeda36"; };
+    name = "async-timeout-1.1.0";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/29/f6/eeac39dfadd3a7610bb33842cf611a1f09fcd2e445ab76e4c951efde0c2b/async-timeout-1.1.0.tar.gz"; sha256 = "b88bd1fe001b800ec23c7bf27a81b32819e2a56668e9fba5646a7f3618143081"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
@@ -120,8 +121,8 @@ self: {
 
 
   "homeassistant" = python.mkDerivation {
-    name = "homeassistant-0.33.4";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/fa/02/28939eef1102209800825b7dea5670b27c6c29bde522d749c55c5b967acf/homeassistant-0.33.4.tar.gz"; sha256 = "de8a6081eefc4b88aa5b439faad48f67607a7696f9aedd220d9bac7a11295aff"; };
+    name = "homeassistant-0.35.3";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/5f/bc/47e5185f283b4ea7d5cb5ffda00bdcb1e8f1010fa745b934a4a931fc9d9a/homeassistant-0.35.3.tar.gz"; sha256 = "e2eb230b6597a17e200e91823f91cf48dcb71da9704b22577334236c31a0558b"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
@@ -144,8 +145,8 @@ self: {
 
 
   "multidict" = python.mkDerivation {
-    name = "multidict-2.1.3";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/10/41/ef9b03ea23bc662d97a0301e57aa2c9b023437519a4988ab8ac79a47f470/multidict-2.1.3.tar.gz"; sha256 = "6353221c765eed82599cd9c2f33c737e5cf067f1239c43dff36e0b1f0b2db6b6"; };
+    name = "multidict-2.1.4";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2a/df/eaea73e46a58fd780c35ecc304ca42364fa3c1f4cd03568ed33b9d2c7547/multidict-2.1.4.tar.gz"; sha256 = "a77aa8c9f68846c3b5db43ff8ed2a7a884dbe845d01f55113a3fba78518c4cd7"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
@@ -208,8 +209,8 @@ self: {
 
 
   "pytz" = python.mkDerivation {
-    name = "pytz-2016.7";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/53/35/6376f58fb82ce69e2c113ca0ebe5c0f69b20f006e184bcc238a6007f4bdb/pytz-2016.7.tar.bz2"; sha256 = "6eab31709e3a4aea748457707da45e805b650cbb352583805d2417de2a1dd71e"; };
+    name = "pytz-2016.10";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d0/e1/aca6ef73a7bd322a7fc73fd99631ee3454d4fc67dc2bee463e2adf6bb3d3/pytz-2016.10.tar.bz2"; sha256 = "7016b2c4fa075c564b81c37a252a5fccf60d8964aa31b7f5eae59aeb594ae02b"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
@@ -223,8 +224,8 @@ self: {
 
 
   "requests" = python.mkDerivation {
-    name = "requests-2.12.2";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/18/87/3c46a06df7b29cd3ab51f055cae2a954758ee3dcbd075d7f4c9a4e8aafbc/requests-2.12.2.tar.gz"; sha256 = "09dadb7c5c4210ebbc7f1b14a351a754f1191bd7cd5a5b60ee1929b8c7dcbbe6"; };
+    name = "requests-2.12.4";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/5b/0b/34be574b1ec997247796e5d516f3a6b6509c4e064f2885a96ed885ce7579/requests-2.12.4.tar.gz"; sha256 = "ed98431a0631e309bb4b63c81d561c1654822cb103de1ac7b47e45c26be7ae34"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
@@ -292,6 +293,23 @@ self: {
       homepage = "";
       license = licenses.bsdOriginal;
       description = "# Voluptuous is a Python data validation library";
+    };
+  };
+
+
+
+  "yarl" = python.mkDerivation {
+    name = "yarl-0.8.1";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/10/1b/be30529bde22c85c2975a4e21cf7f13edbcb291350fbbde8bc13938620c8/yarl-0.8.1.tar.gz"; sha256 = "9f0397ae540124bf16a8a5b89bc3ea1c07f8ae70c3e44231a40a9edd254d5712"; };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."multidict"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.asl20;
+      description = "Yet another URL library";
     };
   };
 
