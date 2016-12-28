@@ -238,8 +238,8 @@ self: {
 
 
   "smartypants" = python.mkDerivation {
-    name = "smartypants-1.8.6";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b9/5a/e7491c562a5be81da0a09972b24e1f564c326a1ff501d5907000a5b83dd8/smartypants-1.8.6.tar.gz"; sha256 = "dcc206478e633b03e9abfeb7512a0acf90191cb4b38d251e05468ef063386512"; };
+    name = "smartypants-2.0.0";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/09/dd/08848ea21422a585ecd2dd32c032fd8f75f0f8345225b455f3bf9e5a0feb/smartypants-2.0.0.tar.gz"; sha256 = "7812353a32022699a1aa8cd5626e01c94a946dcaeedaee2d0b382bae4c4cbf36"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
