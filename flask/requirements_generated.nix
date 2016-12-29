@@ -99,8 +99,8 @@ self: {
 
 
   "Jinja2" = python.mkDerivation {
-    name = "Jinja2-2.8";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f2/2f/0b98b06a345a761bec91a079ccae392d282690c2d8272e708f4d10829e22/Jinja2-2.8.tar.gz"; sha256 = "bc1ff2ff88dbfacefde4ddde471d1417d3b304e8df103a7a9437d47269201bf4"; };
+    name = "Jinja2-2.8.1";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/5f/bd/5815d4d925a2b8cbbb4b4960f018441b0c65f24ba29f3bdcfb3c8218a307/Jinja2-2.8.1.tar.gz"; sha256 = "35341f3a97b46327b3ef1eb624aadea87a535b8f50863036e085e7c426ac5891"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
@@ -248,8 +248,8 @@ self: {
 
 
   "coverage" = python.mkDerivation {
-    name = "coverage-4.3";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/00/3d/0baaae35e79066bc074d8de5d62946c4f2c53f2c718a64b2d8735545c693/coverage-4.3.tar.gz"; sha256 = "babc2503bc41a3044cae734221517443730ebfc6c414ccac5a7a4a3fb358b423"; };
+    name = "coverage-4.3.1";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/88/3c/b4d4774e8254bd327e5303542109497d1304670c2a3e8b8f1cd8beb3de93/coverage-4.3.1.tar.gz"; sha256 = "fcc5838147c7b98871f32404ea9d60efc686ccca9adad3024291cb08c0b433cf"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
