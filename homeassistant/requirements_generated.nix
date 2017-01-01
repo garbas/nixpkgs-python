@@ -301,8 +301,8 @@ self: {
 
 
   "typing" = python.mkDerivation {
-    name = "typing-3.5.2.2";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/19/2f/b1090ace275335a9c0dde9a4623b109b7960a2b5370ae59d1eb1539afd8a/typing-3.5.2.2.tar.gz"; sha256 = "2bce34292653af712963c877f3085250a336738e64f99048d1b8509bebc4772f"; };
+    name = "typing-3.5.3.0";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b6/0c/53c42edca789378b8c05a5496e689f44e5dd82bc6861d1ae5a926ee51b84/typing-3.5.3.0.tar.gz"; sha256 = "ca2daac7e393e8ee86e9140cd0cf0172ff6bb50ebdf0b06281770f98f31bff21"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
