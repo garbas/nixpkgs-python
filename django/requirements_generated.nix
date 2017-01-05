@@ -9,8 +9,8 @@
 self: {
 
   "Django" = python.mkDerivation {
-    name = "Django-1.10.4";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3b/14/6c1e7508b1342afde8e80f50a55d6b305c0755c702f741db6094924f7499/Django-1.10.4.tar.gz"; sha256 = "fff7f062e510d812badde7cfc57745b7779edb4d209b2bc5ea8d954c22305c2b"; };
+    name = "Django-1.10.5";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c3/c2/6096bf5d0caa4e3d5b985ac72e3a0c795e37fa7407d6c85460b2a105b467/Django-1.10.5.tar.gz"; sha256 = "0db89374b691b9c8b057632a6cd64b18d08db2f4d63b4d4af6024267ab965f8b"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
