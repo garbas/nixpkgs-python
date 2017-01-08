@@ -1,7 +1,7 @@
 # generated using pypi2nix tool (version: 1.6.0)
 #
 # COMMAND:
-#   pypi2nix -v -V 3.5 -r requirements.txt -r requirements-dev.txt
+#   pypi2nix -v -V 3.5 -r requirements.txt
 #
 
 { pkgs, python, commonBuildInputs ? [], commonDoCheck ? false }:
@@ -193,53 +193,6 @@ self: {
 
 
 
-  "py" = python.mkDerivation {
-    name = "py-1.4.32";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/93/bd/8a90834a287e0c1682eab8e20ada672e4f4cf7d5b99f2833ddbf31ed1a6d/py-1.4.32.tar.gz"; sha256 = "c4b89fd1ff1162375115608d01f77c38cca1d0f28f37fd718005e19b28be41a7"; };
-    doCheck = commonDoCheck;
-    buildInputs = commonBuildInputs;
-    propagatedBuildInputs = [ ];
-    meta = with pkgs.stdenv.lib; {
-      homepage = "";
-      license = licenses.mit;
-      description = "library with cross-python path, ini-parsing, io, code, log facilities";
-    };
-  };
-
-
-
-  "pytest" = python.mkDerivation {
-    name = "pytest-3.0.5";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a8/87/b7ca49efe52d2b4169f2bfc49aa5e384173c4619ea8e635f123a0dac5b75/pytest-3.0.5.tar.gz"; sha256 = "4a003aa956f023ce91aa6e166b555e6f02a4b0aeb459ac61e14f64c0d39037fd"; };
-    doCheck = commonDoCheck;
-    buildInputs = commonBuildInputs;
-    propagatedBuildInputs = [
-      self."py"
-    ];
-    meta = with pkgs.stdenv.lib; {
-      homepage = "";
-      license = licenses.mit;
-      description = "pytest: simple powerful testing with Python";
-    };
-  };
-
-
-
-  "pytest-runner" = python.mkDerivation {
-    name = "pytest-runner-2.9";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/11/d4/c335ddf94463e451109e3494e909765c3e5205787b772e3b25ee8601b86a/pytest-runner-2.9.tar.gz"; sha256 = "50378de59b02f51f64796d3904dfe71b9dc6f06d88fc6bfbd5c8e8366ae1d131"; };
-    doCheck = commonDoCheck;
-    buildInputs = commonBuildInputs;
-    propagatedBuildInputs = [ ];
-    meta = with pkgs.stdenv.lib; {
-      homepage = "";
-      license = licenses.mit;
-      description = "Invoke py.test as distutils command with dependency resolution";
-    };
-  };
-
-
-
   "pytz" = python.mkDerivation {
     name = "pytz-2016.10";
     src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d0/e1/aca6ef73a7bd322a7fc73fd99631ee3454d4fc67dc2bee463e2adf6bb3d3/pytz-2016.10.tar.bz2"; sha256 = "7016b2c4fa075c564b81c37a252a5fccf60d8964aa31b7f5eae59aeb594ae02b"; };
@@ -265,21 +218,6 @@ self: {
       homepage = "";
       license = licenses.asl20;
       description = "Python HTTP for Humans.";
-    };
-  };
-
-
-
-  "setuptools-scm" = python.mkDerivation {
-    name = "setuptools-scm-1.15.0";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/80/b7/31b6ae5fcb188e37f7e31abe75f9be90490a5456a72860fa6e643f8a3cbc/setuptools_scm-1.15.0.tar.gz"; sha256 = "daf12d05aa2155a46aa357453757ffdc47d87f839e62114f042bceac6a619e2f"; };
-    doCheck = commonDoCheck;
-    buildInputs = commonBuildInputs;
-    propagatedBuildInputs = [ ];
-    meta = with pkgs.stdenv.lib; {
-      homepage = "";
-      license = licenses.mit;
-      description = "the blessed package to manage your versions by scm tags";
     };
   };
 

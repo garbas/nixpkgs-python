@@ -4,3 +4,6 @@ Flask-Cors
 Flask-Login
 Flask-SQLAlchemy
 connexion
+
+# 
+Jinja2==2.8.1  # something got broken with Jinja2>=2.9

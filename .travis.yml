@@ -9,7 +9,7 @@ env:
 - PKGS_SET=homeassistant
 - PKGS_SET=pelican
 - PKGS_SET=pyramid
-- PKGS_SET=science
+#- PKGS_SET=science
 
 script:
 - make pypi2nix $PKGS_SET;

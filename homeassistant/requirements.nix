@@ -2,7 +2,7 @@
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -v -V 3.5 -r requirements.txt -r requirements-dev.txt
+#   pypi2nix -v -V 3.5 -r requirements.txt
 #
 
 { pkgs ? import <nixpkgs> {}

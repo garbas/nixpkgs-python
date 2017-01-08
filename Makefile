@@ -1,4 +1,5 @@
-NIX_PATH=nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
+#NIX_PATH=nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
+NIX_PATH=nixpkgs=/home/rok/dev/nixos/nixpkgs-channels
 PYPI2NIX=./../result-pypi2nix/bin/pypi2nix
 
 
@@ -23,10 +24,9 @@ django:
 
 flask:
 	cd flask/ && \
-		$(PYPI2NIX) -v -T \
+		$(PYPI2NIX) -v \
 					-V 3.5 \
-					-r requirements.txt \
-					-r requirements-dev.txt
+					-r requirements.txt
 	nix-build -A flask -o result-flask
 
 
@@ -34,8 +34,7 @@ homeassistant:
 	cd homeassistant/ && \
 		$(PYPI2NIX) -v \
 					-V 3.5 \
-					-r requirements.txt \
-					-r requirements-dev.txt
+					-r requirements.txt
 	nix-build -A homeassistant -o result-homeassistant
 
 
@@ -43,8 +42,7 @@ pelican:
 	cd pelican/ && \
 		$(PYPI2NIX) -v \
 					-V 3.5 \
-					-r requirements.txt \
-					-r requirements-dev.txt
+					-r requirements.txt
 	nix-build -A pelican -o result-pelican
 
 
@@ -62,7 +60,6 @@ science:
 					-V 3.5 \
 					-s numpy \
 					-r requirements.txt \
-					-r requirements-dev.txt \
 					-E gfortran -E blas
 	nix-build -A science -o result-science
 
