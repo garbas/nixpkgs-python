@@ -2,7 +2,7 @@ blinker==1.4
 docutils==0.13.1
 feedgenerator==1.9
 ghp-import==0.5.4
-Jinja2==2.8.1
+Jinja2==2.9.1
 MarkupSafe==0.23
 pelican==3.7.0
 py==1.4.32
