@@ -1,5 +1,4 @@
-#NIX_PATH=nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
-NIX_PATH=nixpkgs=/home/rok/dev/nixos/nixpkgs-channels
+NIX_PATH=nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
 PYPI2NIX=./../result-pypi2nix/bin/pypi2nix
 
 
