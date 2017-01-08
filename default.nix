@@ -51,9 +51,9 @@ in createSets [
     description = "Pyramid framework and its extensions.";
   }
 
-  #{ name = "science";
-  #  maintainers = [ maintainers.unknown ];
-  #  description = "Science related python packages.";
-  #}
+  { name = "science";
+    maintainers = [ maintainers.unknown ];
+    description = "Science related python packages.";
+  }
 
 ]
