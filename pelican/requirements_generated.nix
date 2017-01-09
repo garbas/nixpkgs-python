@@ -9,8 +9,8 @@
 self: {
 
   "Jinja2" = python.mkDerivation {
-    name = "Jinja2-2.9.2";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/de/24/bad6dc9f0d7a0f835d940c5f5076f29824fce45ccd673cc843abf30b9117/Jinja2-2.9.2.tar.gz"; sha256 = "2333eae399fb538f934d661f7debab8a9736002c343c8e95c56f1e413076c0ce"; };
+    name = "Jinja2-2.9.3";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/7e/ea/f515b991b63346ad62efeae073d613c12216c551f9f9c2fa74c916e731c0/Jinja2-2.9.3.tar.gz"; sha256 = "ad82db536885b24aef5d2cb9d4d8da48a4202533fc1b7e60c068867426396488"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
