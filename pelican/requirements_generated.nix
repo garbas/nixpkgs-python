@@ -134,8 +134,8 @@ self: {
 
 
   "pelican" = python.mkDerivation {
-    name = "pelican-3.7.0";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/9f/4e/371a31c405a47f979f8d46385303214995e99c3f84d8a9a2163e5d19641c/pelican-3.7.0.tar.gz"; sha256 = "0786bcb1a7ab58b3bd81db13175b09a446fe0a1ab8d100252ad844195e9e877b"; };
+    name = "pelican-3.7.1";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d0/9e/c5cf3f7e98b84ac666422d7f6707cc415d4c96247c266377c0ed5a489f49/pelican-3.7.1.tar.gz"; sha256 = "2a5347fe47464ee743bff99b6e81d1b5823f2e70e7be5bd6ed66a5bdd5f3578b"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
