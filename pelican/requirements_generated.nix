@@ -9,8 +9,8 @@
 self: {
 
   "Jinja2" = python.mkDerivation {
-    name = "Jinja2-2.9.3";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/7e/ea/f515b991b63346ad62efeae073d613c12216c551f9f9c2fa74c916e731c0/Jinja2-2.9.3.tar.gz"; sha256 = "ad82db536885b24aef5d2cb9d4d8da48a4202533fc1b7e60c068867426396488"; };
+    name = "Jinja2-2.9.4";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f4/3f/28387a5bbc6883082c16784c6135440b94f9d5938fb156ff579798e18eda/Jinja2-2.9.4.tar.gz"; sha256 = "aab8d8ca9f45624f1e77f2844bf3c144d180e97da8824c2a6d7552ad039b5442"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
@@ -56,8 +56,8 @@ self: {
 
 
   "Unidecode" = python.mkDerivation {
-    name = "Unidecode-0.4.19";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/5a/73/053be0fafe387d41ce705585412808093f5a333aaa71cabbab641f677c11/Unidecode-0.04.19.tar.gz"; sha256 = "51477646a9169469e37e791b13ae65fcc75b7f7f570d0d3e514d077805c02e1e"; };
+    name = "Unidecode-0.4.20";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ba/64/410af95d27f2a8824112d17ed41ea7ce6d2cbc8a4832c2e548d3408fad0a/Unidecode-0.04.20.tar.gz"; sha256 = "ed4418b4b1b190487753f1cca6299e8076079258647284414e6d607d1f8a00e0"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
