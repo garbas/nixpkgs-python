@@ -209,8 +209,8 @@ self: {
 
 
   "connexion" = python.mkDerivation {
-    name = "connexion-1.1.2";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/7e/bd/65a83d33aac9f7b6ba794667b9c7900cfeec59bba030e01f4fffaf0461d1/connexion-1.1.2.tar.gz"; sha256 = "965c9fc024ceaae190a99b7012b5519734db7557e640a94552d90eb6cda10735"; };
+    name = "connexion-1.1.3";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/14/ef/c3a2008418a6abe834d4559d0a83b2e9a0eb79981bb392cd4adacb9a94da/connexion-1.1.3.tar.gz"; sha256 = "19bf09342e1dbefcb20b753ca71b1db4aae51b3e831597df4258c7c94494c1c1"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
