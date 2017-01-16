@@ -56,8 +56,8 @@ self: {
 
 
   "aiohttp" = python.mkDerivation {
-    name = "aiohttp-1.1.6";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e4/c5/c131fb2c8e42eb8cf0e42d41c8cecfc22e1247307c25a0f77c4565ca690f/aiohttp-1.1.6.tar.gz"; sha256 = "0742feb9759a5832aa4a30abf64e53055e139ed41e26f79b9558d08e05c74d60"; };
+    name = "aiohttp-1.2.0";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e5/a5/ade96691f6423c56f7911a42a51ecd5454619efd6d5026df7e08a556a36a/aiohttp-1.2.0.tar.gz"; sha256 = "8ce0ab4301bf38db2ae13e4921bdb3841507919c9121373405a43c7bd0a07f78"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
@@ -121,8 +121,8 @@ self: {
 
 
   "homeassistant" = python.mkDerivation {
-    name = "homeassistant-0.35.3";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/5f/bc/47e5185f283b4ea7d5cb5ffda00bdcb1e8f1010fa745b934a4a931fc9d9a/homeassistant-0.35.3.tar.gz"; sha256 = "e2eb230b6597a17e200e91823f91cf48dcb71da9704b22577334236c31a0558b"; };
+    name = "homeassistant-0.36.0";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/8b/e6/83967796e29eb262dcc010d2f759909034ca206d56fbfe445280dec5e95b/homeassistant-0.36.0.tar.gz"; sha256 = "864f497dc0986f9a945d2db4e1f9048b69d79893d95d5b040b8b502df7785dae"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
@@ -254,8 +254,8 @@ self: {
 
 
   "voluptuous" = python.mkDerivation {
-    name = "voluptuous-0.9.2";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4a/f8/82762db7c28d36800052a61ce26a9c8d362d765aff1c5ce8cb6a01418b7a/voluptuous-0.9.2.tar.gz"; sha256 = "01f21a3168a911551cbf89373763273189cb84196f0c7a5c0b86bd48c01f8d8b"; };
+    name = "voluptuous-0.9.3";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e6/5d/2b9ed56f2e69fe54cf00d07b7b3b9b43e8c9763dff3015365bd4c3f6f2a6/voluptuous-0.9.3.tar.gz"; sha256 = "ed5a11fda273754caabb6becd5fe172ee2621cd2c8ff8279433173bb7b0ec568"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
