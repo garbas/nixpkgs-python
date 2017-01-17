@@ -24,8 +24,8 @@ self: {
 
 
   "WebOb" = python.mkDerivation {
-    name = "WebOb-1.7.0";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/96/6a/1fa3aaf61a2f60b60c54cdeda5303fef5ac53fc46669d883a6befd886518/WebOb-1.7.0.tar.gz"; sha256 = "d8ba8fbf5fc30ad7e68f37388b34526c604e4c3b342e654b72edbcb40b2e6b03"; };
+    name = "WebOb-1.7.1";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c3/6f/fc168ab701ab8f3741ed0b1377edda676c3e7db61858cef1f72969413968/WebOb-1.7.1.tar.gz"; sha256 = "3b2e3e4a46ce92614fb7d85081a63d03fa0c714dbe0195d5d91ec0205526c83f"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
