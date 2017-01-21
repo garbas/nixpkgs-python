@@ -133,6 +133,24 @@ self: {
 
 
 
+  "livereload" = python.mkDerivation {
+    name = "livereload-2.5.1";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e9/2e/c4972828cf526a2e5f5571d647fb2740df68f17e8084a9a1092f4d209f4c/livereload-2.5.1.tar.gz"; sha256 = "422de10d7ea9467a1ba27cbaffa84c74b809d96fb1598d9de4b9b676adf35e2c"; };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."six"
+      self."tornado"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.bsdOriginal;
+      description = "Python LiveReload is an awesome tool for web developers";
+    };
+  };
+
+
+
   "pelican" = python.mkDerivation {
     name = "pelican-3.7.1";
     src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d0/9e/c5cf3f7e98b84ac666422d7f6707cc415d4c96247c266377c0ed5a489f49/pelican-3.7.1.tar.gz"; sha256 = "2a5347fe47464ee743bff99b6e81d1b5823f2e70e7be5bd6ed66a5bdd5f3578b"; };
@@ -215,6 +233,21 @@ self: {
       homepage = "";
       license = licenses.bsdOriginal;
       description = "Python with the SmartyPants";
+    };
+  };
+
+
+
+  "tornado" = python.mkDerivation {
+    name = "tornado-4.4.2";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/1e/7c/ea047f7bbd1ff22a7f69fe55e7561040e3e54d6f31da6267ef9748321f98/tornado-4.4.2.tar.gz"; sha256 = "2898f992f898cd41eeb8d53b6df75495f2f423b6672890aadaf196ea1448edcc"; };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = "License :: OSI Approved :: Apache Software License";
+      description = "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed.";
     };
   };
 

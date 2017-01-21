@@ -1,3 +1,4 @@
 ghp-import
+livereload
 pelican
 typogrify
