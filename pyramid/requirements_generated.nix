@@ -38,14 +38,30 @@ self: {
 
 
 
+  "hupper" = python.mkDerivation {
+    name = "hupper-0.4.1";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/df/e8/b5a87b4878e8b67bd57354d6c6856d37aa261a676add4d9480c8e21ce245/hupper-0.4.1.tar.gz"; sha256 = "7d6eda2bb54a35f0045122de80354711f4eeaeeb625bbedc5410f826b2aa1457"; };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "Integrated process monitor for developing servers.";
+    };
+  };
+
+
+
   "pyramid" = python.mkDerivation {
-    name = "pyramid-1.7.3";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/9c/6d/9b9f9acf22c5d221f25cf6756645bce9ea54ee741466197674fe77f2eee3/pyramid-1.7.3.tar.gz"; sha256 = "74b8eedf2b0a1a658ab79ae4b0ecf68fa8cdd5debcfec579c8b40bec83d1864e"; };
+    name = "pyramid-1.8";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d3/3c/d5e1353f1d737b90d2d1a89e00b447086473e4b1cb7dda4671bc37bd86cd/pyramid-1.8.tar.gz"; sha256 = "ba27a33739c55500acfd5d369387938a59ee2c142d00fe0dc50881da495b7348"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
       self."PasteDeploy"
       self."WebOb"
+      self."hupper"
       self."repoze.lru"
       self."translationstring"
       self."venusian"
