@@ -1,7 +1,7 @@
 # generated using pypi2nix tool (version: 1.6.0)
 #
 # COMMAND:
-#   pypi2nix -v -V 3.5 -r requirements.txt
+#   pypi2nix -v -V 3.5 --setup-requires six packaging appdirs -r requirements.txt
 #
 
 { pkgs, python, commonBuildInputs ? [], commonDoCheck ? false }:
@@ -38,9 +38,24 @@ self: {
 
 
 
+  "appdirs" = python.mkDerivation {
+    name = "appdirs-1.4.0";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/bd/66/0a7f48a0f3fb1d3a4072bceb5bbd78b1a6de4d801fb7135578e7c7b1f563/appdirs-1.4.0.tar.gz"; sha256 = "8fc245efb4387a4e3e0ac8ebcc704582df7d72ff6a42a53f5600bbb18fdaadc5"; };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "A small Python module for determining appropriate \" +         \"platform-specific dirs, e.g. a \"user data dir\".";
+    };
+  };
+
+
+
   "hupper" = python.mkDerivation {
-    name = "hupper-0.4.1";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/df/e8/b5a87b4878e8b67bd57354d6c6856d37aa261a676add4d9480c8e21ce245/hupper-0.4.1.tar.gz"; sha256 = "7d6eda2bb54a35f0045122de80354711f4eeaeeb625bbedc5410f826b2aa1457"; };
+    name = "hupper-0.4.2";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/58/72/3fa084a9b68cfb0442b100431533af1c3ff189a33406e9dad066062eb5fc/hupper-0.4.2.tar.gz"; sha256 = "c638b88b1a1505522870219a68272d2f1ae5778cf046c267925edec97678b0fb"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
@@ -53,9 +68,42 @@ self: {
 
 
 
+  "packaging" = python.mkDerivation {
+    name = "packaging-16.8";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c6/70/bb32913de251017e266c5114d0a645f262fb10ebc9bf6de894966d124e35/packaging-16.8.tar.gz"; sha256 = "5d50835fdf0a7edf0b55e311b7c887786504efea1177abd7e69329a8e5ea619e"; };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."pyparsing"
+      self."six"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.bsdOriginal;
+      description = "Core utilities for Python packages";
+    };
+  };
+
+
+
+  "pyparsing" = python.mkDerivation {
+    name = "pyparsing-2.1.10";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/38/bb/bf325351dd8ab6eb3c3b7c07c3978f38b2103e2ab48d59726916907cd6fb/pyparsing-2.1.10.tar.gz"; sha256 = "811c3e7b0031021137fc83e051795025fcb98674d07eb8fe922ba4de53d39188"; };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "Python parsing module";
+    };
+  };
+
+
+
   "pyramid" = python.mkDerivation {
-    name = "pyramid-1.8";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d3/3c/d5e1353f1d737b90d2d1a89e00b447086473e4b1cb7dda4671bc37bd86cd/pyramid-1.8.tar.gz"; sha256 = "ba27a33739c55500acfd5d369387938a59ee2c142d00fe0dc50881da495b7348"; };
+    name = "pyramid-1.8.1";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d5/ed/501974a3bcb034af9e5c582e3d5e096ac3a2842620098f85862f10bf8e17/pyramid-1.8.1.tar.gz"; sha256 = "359782ed643d923411595d84b3fde2f0caf790ce9eb33b0f019c25436c4c30ec"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
@@ -87,6 +135,21 @@ self: {
       homepage = "";
       license = "License :: Repoze Public License";
       description = "A tiny LRU cache implementation and decorator";
+    };
+  };
+
+
+
+  "six" = python.mkDerivation {
+    name = "six-1.10.0";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b3/b2/238e2590826bfdd113244a40d9d3eb26918bd798fc187e2360a8367068db/six-1.10.0.tar.gz"; sha256 = "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a"; };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "Python 2 and 3 compatibility utilities";
     };
   };
 
