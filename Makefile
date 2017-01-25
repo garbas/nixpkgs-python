@@ -25,6 +25,7 @@ flask:
 	cd flask/ && \
 		$(PYPI2NIX) -v \
 					-V 3.5 \
+					--setup-requires "six packaging appdirs" \
 					-r requirements.txt
 	nix-build -A flask -o result-flask
 
@@ -33,6 +34,7 @@ homeassistant:
 	cd homeassistant/ && \
 		$(PYPI2NIX) -v \
 					-V 3.5 \
+					--setup-requires "six packaging appdirs" \
 					-r requirements.txt
 	nix-build -A homeassistant -o result-homeassistant
 
@@ -49,6 +51,7 @@ pyramid:
 	cd pyramid/ && \
 		$(PYPI2NIX) -v \
 					-V 3.5 \
+					--setup-requires "six packaging appdirs" \
 					-r requirements.txt
 	nix-build -A pyramid -o result-pyramid
 
