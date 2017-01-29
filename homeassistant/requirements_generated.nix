@@ -9,8 +9,8 @@
 self: {
 
   "Jinja2" = python.mkDerivation {
-    name = "Jinja2-2.9.4";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f4/3f/28387a5bbc6883082c16784c6135440b94f9d5938fb156ff579798e18eda/Jinja2-2.9.4.tar.gz"; sha256 = "aab8d8ca9f45624f1e77f2844bf3c144d180e97da8824c2a6d7552ad039b5442"; };
+    name = "Jinja2-2.9.5";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/71/59/d7423bd5e7ddaf3a1ce299ab4490e9044e8dfd195420fc83a24de9e60726/Jinja2-2.9.5.tar.gz"; sha256 = "702a24d992f856fa8d5a7a36db6128198d0c21e1da34448ca236c42e92384825"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
@@ -136,8 +136,8 @@ self: {
 
 
   "homeassistant" = python.mkDerivation {
-    name = "homeassistant-0.36.1";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/1f/45/3f93ed235fd7e341e6aaf90db2e454e39f58ef3a509d10369db47bc9f7e3/homeassistant-0.36.1.tar.gz"; sha256 = "9064aa0a4ba4ad6ec318b18b3536d129259832dfc8cc470bbe5c8fb43e078114"; };
+    name = "homeassistant-0.37.0";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/32/28/66fcc60132880b29a843cdfe90a396f26c3db691f34e90c682d3b309b26f/homeassistant-0.37.0.tar.gz"; sha256 = "3c0e6d772cb8675e370b20559219ad86353946a6fdc547ae65c1268a36bb428d"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
@@ -152,7 +152,7 @@ self: {
     ];
     meta = with pkgs.stdenv.lib; {
       homepage = "";
-      license = licenses.mit;
+      license = licenses.asl20;
       description = "Open-source home automation platform running on Python 3.";
     };
   };
