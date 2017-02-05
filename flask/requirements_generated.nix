@@ -263,8 +263,8 @@ self: {
 
 
   "jsonschema" = python.mkDerivation {
-    name = "jsonschema-2.5.1";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/58/0d/c816f5ea5adaf1293a1d81d32e4cdfdaf8496973aa5049786d7fdb14e7e7/jsonschema-2.5.1.tar.gz"; sha256 = "36673ac378feed3daa5956276a829699056523d7961027911f064b52255ead41"; };
+    name = "jsonschema-2.6.0";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/58/b9/171dbb07e18c6346090a37f03c7e74410a1a56123f847efed59af260a298/jsonschema-2.6.0.tar.gz"; sha256 = "6ff5f3180870836cae40f06fa10419f557208175f13ad7bc26caa77beb1f6e02"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
