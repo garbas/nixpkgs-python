@@ -56,8 +56,8 @@ self: {
 
 
   "aiohttp" = python.mkDerivation {
-    name = "aiohttp-1.2.0";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e5/a5/ade96691f6423c56f7911a42a51ecd5454619efd6d5026df7e08a556a36a/aiohttp-1.2.0.tar.gz"; sha256 = "8ce0ab4301bf38db2ae13e4921bdb3841507919c9121373405a43c7bd0a07f78"; };
+    name = "aiohttp-1.3.1";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/41/42/76a4cff04488799e78d37c5bb3b607e36d2c4686141621002d2479b54dbe/aiohttp-1.3.1.tar.gz"; sha256 = "e147b0cea568773443683becce9de4071506431118609b5d477fe61508417af1"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
@@ -136,8 +136,8 @@ self: {
 
 
   "homeassistant" = python.mkDerivation {
-    name = "homeassistant-0.37.1";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/8e/86/43777315e9df48ce4386e70dc91b78d5dd1e0424a0008df6ff1ce7da589e/homeassistant-0.37.1.tar.gz"; sha256 = "4f8e51c749bba1f6a5b866f389b3cf98e7f41ac514df2df6c0f0bcf2204112a2"; };
+    name = "homeassistant-0.38.2";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/de/97/62e7d7af2cac0ed335dcaaba7dd4c34d74081fc1021ab219b12b611de55d/homeassistant-0.38.2.tar.gz"; sha256 = "99004ae91c9ec0837b13c1ff1c029e950a8a33b38841960f8fb3d4cbef7030d3"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
