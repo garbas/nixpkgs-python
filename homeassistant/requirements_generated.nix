@@ -136,8 +136,8 @@ self: {
 
 
   "homeassistant" = python.mkDerivation {
-    name = "homeassistant-0.38.2";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/de/97/62e7d7af2cac0ed335dcaaba7dd4c34d74081fc1021ab219b12b611de55d/homeassistant-0.38.2.tar.gz"; sha256 = "99004ae91c9ec0837b13c1ff1c029e950a8a33b38841960f8fb3d4cbef7030d3"; };
+    name = "homeassistant-0.38.3";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/62/15/fb055dfb233c4c7d778292a856e651f287af32ac68d1d8b561afb0c9a723/homeassistant-0.38.3.tar.gz"; sha256 = "1c5808c5ed0c03e72f512ee51230da03d908ff5db8eecb09ae5291125ac6f97d"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
@@ -317,8 +317,8 @@ self: {
 
 
   "yarl" = python.mkDerivation {
-    name = "yarl-0.9.2";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4a/15/a9f1b82bb88c2c11fee12d0e4248f0ed4cb0ec3e2b25fa4b0e52baff0899/yarl-0.9.2.tar.gz"; sha256 = "4c63264bdf022e4ab509dd8946147dec026a4110c90e0a2dda9499385c312ece"; };
+    name = "yarl-0.9.6";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2f/08/b197bd19930410d647939af91cc3a26125b826a2d7b22bf28c3ccad79819/yarl-0.9.6.tar.gz"; sha256 = "b6f16314b3944ac9aa412caa2cb9ac5f34de0af9f79aac35879676a04f9a04b1"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
