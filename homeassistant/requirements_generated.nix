@@ -317,8 +317,8 @@ self: {
 
 
   "yarl" = python.mkDerivation {
-    name = "yarl-0.9.6";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2f/08/b197bd19930410d647939af91cc3a26125b826a2d7b22bf28c3ccad79819/yarl-0.9.6.tar.gz"; sha256 = "b6f16314b3944ac9aa412caa2cb9ac5f34de0af9f79aac35879676a04f9a04b1"; };
+    name = "yarl-0.9.8";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/66/2e/646e7da82260ad1dce86ebeed0befbd487941b7aa61ee2291fa47aa71bf4/yarl-0.9.8.tar.gz"; sha256 = "a7818b0654265623525b56e78b901315a9ffb7ef0bf21b4af7e0e27572d54dec"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
