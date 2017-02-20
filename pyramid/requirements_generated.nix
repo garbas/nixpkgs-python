@@ -102,8 +102,8 @@ self: {
 
 
   "pyramid" = python.mkDerivation {
-    name = "pyramid-1.8.1";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d5/ed/501974a3bcb034af9e5c582e3d5e096ac3a2842620098f85862f10bf8e17/pyramid-1.8.1.tar.gz"; sha256 = "359782ed643d923411595d84b3fde2f0caf790ce9eb33b0f019c25436c4c30ec"; };
+    name = "pyramid-1.8.2";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ba/d3/715e2958317ad43606596a1521614da8c170f3f8cdc3291f141db8dfd358/pyramid-1.8.2.tar.gz"; sha256 = "a481f990ad3166ed9d26449524556dad20d69d93f738033f56a37abf044c8df6"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [
