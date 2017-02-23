@@ -1,4 +1,4 @@
-appdirs==1.4.0
+appdirs==1.4.1
 click==6.7
 clickclick==1.2.1
 connexion==1.1.5
