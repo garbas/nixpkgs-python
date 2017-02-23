@@ -1,4 +1,4 @@
-appdirs==1.4.0
+appdirs==1.4.1
 hupper==0.4.2
 packaging==16.8
 PasteDeploy==1.5.2
