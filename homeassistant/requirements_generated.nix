@@ -76,8 +76,8 @@ self: {
 
 
   "appdirs" = python.mkDerivation {
-    name = "appdirs-1.4.0";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/bd/66/0a7f48a0f3fb1d3a4072bceb5bbd78b1a6de4d801fb7135578e7c7b1f563/appdirs-1.4.0.tar.gz"; sha256 = "8fc245efb4387a4e3e0ac8ebcc704582df7d72ff6a42a53f5600bbb18fdaadc5"; };
+    name = "appdirs-1.4.1";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/7c/26/b6b1222f79a56bc96a705eae343ec48fb3725c530c31af2133a3c4a33b2c/appdirs-1.4.1.tar.gz"; sha256 = "95259bccef631e5e44438c50087f761d699005e472f8f77f20ec968e51a7e10e"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
