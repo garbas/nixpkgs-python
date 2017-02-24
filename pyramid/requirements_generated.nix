@@ -39,15 +39,15 @@ self: {
 
 
   "appdirs" = python.mkDerivation {
-    name = "appdirs-1.4.1";
-    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/7c/26/b6b1222f79a56bc96a705eae343ec48fb3725c530c31af2133a3c4a33b2c/appdirs-1.4.1.tar.gz"; sha256 = "95259bccef631e5e44438c50087f761d699005e472f8f77f20ec968e51a7e10e"; };
+    name = "appdirs-1.4.2";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/88/99/293dac0b3cdf58ce029ec5393624fac5c6bde52f737f9775bd9ef608ec98/appdirs-1.4.2.tar.gz"; sha256 = "e2de7ae2b3be52542b711eacf4221683f1d2f7706a5550cb2c562ee4ba93ee74"; };
     doCheck = commonDoCheck;
     buildInputs = commonBuildInputs;
     propagatedBuildInputs = [ ];
     meta = with pkgs.stdenv.lib; {
       homepage = "";
       license = licenses.mit;
-      description = "A small Python module for determining appropriate \" +         \"platform-specific dirs, e.g. a \"user data dir\".";
+      description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\".";
     };
   };
 
