@@ -176,8 +176,8 @@ let
 
 
     "ghp-import" = python.mkDerivation {
-      name = "ghp-import-0.5.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f5/cd/c780b2248dd364fdc77837a020bad3e176933d7ce5643217d9475465e871/ghp-import-0.5.4.tar.gz"; sha256 = "65d576f107e2a52abdd10866476053a8c2c8ad7e2148a62bc0bc23f501b924cc"; };
+      name = "ghp-import-0.5.5";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/bd/95/27cb11b5d09643c2756f04a1412b0d62aadeb0b909564f85122270c4097c/ghp-import-0.5.5.tar.gz"; sha256 = "3e924ea720e4e1f82d56753db2154bfb86067472c5830732159c3a4c4fbc75d7"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
