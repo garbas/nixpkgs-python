@@ -3,7 +3,7 @@ appdirs==1.4.2
 async-timeout==1.1.0
 chardet==2.3.0
 enum-compat==0.0.2
-homeassistant==0.39.1
+homeassistant==0.39.2
 Jinja2==2.9.5
 MarkupSafe==0.23
 multidict==2.1.4
