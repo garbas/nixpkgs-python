@@ -2,7 +2,7 @@ appdirs==1.4.2
 hupper==0.4.2
 packaging==16.8
 PasteDeploy==1.5.2
-pyparsing==2.1.10
+pyparsing==2.2.0
 pyramid==1.8.2
 repoze.lru==0.6
 six==1.10.0
