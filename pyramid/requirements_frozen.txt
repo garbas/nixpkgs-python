@@ -1,5 +1,5 @@
 appdirs==1.4.3
-hupper==0.4.2
+hupper==0.4.3
 packaging==16.8
 PasteDeploy==1.5.2
 pyparsing==2.2.0
