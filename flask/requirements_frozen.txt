@@ -10,7 +10,7 @@ Flask-SQLAlchemy==2.2
 itsdangerous==0.24
 Jinja2==2.9.5
 jsonschema==2.6.0
-MarkupSafe==0.23
+MarkupSafe==1.0
 packaging==16.8
 pyparsing==2.2.0
 PyYAML==3.12
