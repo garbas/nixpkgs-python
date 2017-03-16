@@ -218,8 +218,8 @@ let
 
 
     "Werkzeug" = python.mkDerivation {
-      name = "Werkzeug-0.12";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/13/a2/c4f2a1e1e9239cd979de00a2d7e0008559c46d920e9842e9b8063c5e6bf5/Werkzeug-0.12.tar.gz"; sha256 = "f007848ed997101cb5c09a47e46c0b0b6f193d0f8a01cd2af920d77bf1ab4e68"; };
+      name = "Werkzeug-0.12.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ab/65/d3f1edd1109cb1beb6b82f4139addad482df5b5ea113bdc98242383bf402/Werkzeug-0.12.1.tar.gz"; sha256 = "6716830febe9808bb7521fd26db3b398450cbed0886b2b4bea678b87340f534e"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];

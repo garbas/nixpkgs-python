@@ -19,4 +19,4 @@ six==1.10.0
 SQLAlchemy==1.1.6
 strict-rfc3339==0.7
 swagger-spec-validator==2.0.4
-Werkzeug==0.12
+Werkzeug==0.12.1
