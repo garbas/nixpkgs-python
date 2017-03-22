@@ -367,8 +367,8 @@ let
 
 
     "swagger-spec-validator" = python.mkDerivation {
-      name = "swagger-spec-validator-2.0.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f1/45/f0d42353cafc5da7ea61e8de36cc159dc6e7a1a14437e4c904af2f790730/swagger-spec-validator-2.0.4.tar.gz"; sha256 = "869930c23459a40aa425a61f60883663d92c000d1e7e8b4441e2bc54d3a71a0e"; };
+      name = "swagger-spec-validator-2.1.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e3/2f/3767da696617ee72190361805dff4bca68a611d4673de848857654789534/swagger-spec-validator-2.1.0.tar.gz"; sha256 = "dc9219c6572ce0def6e1c160ca253c0e7fcde75812628f0c0199334f85bd138e"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
