@@ -113,8 +113,8 @@ let
 
 
     "aiohttp" = python.mkDerivation {
-      name = "aiohttp-1.3.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/da/c1/b95412e44f81622a8aa743bddcd28f8192ccf5db81d228ab7d713d6ec9e8/aiohttp-1.3.3.tar.gz"; sha256 = "103433f594442b98ed4af9db02331e548a0ef2d4cfd02207ea24ed9eb85862e4"; };
+      name = "aiohttp-1.3.5";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e9/08/721f2e99f4ed694335f533a2910b4c75b1b37a376fe65da07903e0bbe1d2/aiohttp-1.3.5.tar.gz"; sha256 = "cd14a45da385b5e860849ffaff3ecee56f9b37bf9e7f3f7bc5ce3f17556cf842"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -148,8 +148,8 @@ let
 
 
     "async-timeout" = python.mkDerivation {
-      name = "async-timeout-1.1.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/29/f6/eeac39dfadd3a7610bb33842cf611a1f09fcd2e445ab76e4c951efde0c2b/async-timeout-1.1.0.tar.gz"; sha256 = "b88bd1fe001b800ec23c7bf27a81b32819e2a56668e9fba5646a7f3618143081"; };
+      name = "async-timeout-1.2.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/55/67/3870ef0811ee3e40b67d776b3144743f34a2a2d094690af83a1c5390806e/async-timeout-1.2.0.tar.gz"; sha256 = "0652d108c0156ae5ac94d99f53a6bdd039b0c076346ff8f58c9a1551fac17a19"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -193,8 +193,8 @@ let
 
 
     "homeassistant" = python.mkDerivation {
-      name = "homeassistant-0.40.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3d/96/5b40b12a782eecf52becad99cbfab697e9f036b4da04792ac5a6e106c8fc/homeassistant-0.40.2.tar.gz"; sha256 = "75c03b65eab015e6c91ce523e0b3ac24a915b132562f8b04dfeeac8a84db262c"; };
+      name = "homeassistant-0.41.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d5/07/c95f50189b11f5b965b0a6ad8865f259a479820a43ed7b80cad5ddb6b724/homeassistant-0.41.0.tar.gz"; sha256 = "51b8e77577dfa55837c66cfc918b030d9f51d3894f6987be4d3506e6c6199dae"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
