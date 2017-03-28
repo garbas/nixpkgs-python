@@ -16,7 +16,7 @@ pyparsing==2.1.10
 PyYAML==3.12
 requests==2.13.0
 six==1.10.0
-SQLAlchemy==1.1.6
+SQLAlchemy==1.1.7
 strict-rfc3339==0.7
 swagger-spec-validator==2.1.0
 Werkzeug==0.12.1
