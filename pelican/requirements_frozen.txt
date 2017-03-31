@@ -11,9 +11,9 @@ pelican==3.7.1
 Pygments==2.2.0
 pyparsing==2.1.10
 python-dateutil==2.6.0
-pytz==2016.10
+pytz==2017.2
 six==1.10.0
 smartypants==2.0.0
-tornado==4.4.2
+tornado==4.4.3
 typogrify==2.0.7
 Unidecode==0.4.20
