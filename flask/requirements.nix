@@ -66,8 +66,8 @@ let
   generated = self: {
 
     "Flask" = python.mkDerivation {
-      name = "Flask-0.12";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4b/3a/4c20183df155dd2e39168e35d53a388efb384a512ca6c73001d8292c094a/Flask-0.12.tar.gz"; sha256 = "93e803cdbe326a61ebd5c5d353959397c85f829bec610d59cb635c9f97d7ca8b"; };
+      name = "Flask-0.12.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/24/6e/11b9c57e46f276a8a8dfda85a2fa7ada62b0463b68693616c7ab5df356fa/Flask-0.12.1.tar.gz"; sha256 = "9dce4b6bfbb5b062181d3f7da8f727ff70c1156cbb4024351eafd426deb5fb88"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -203,8 +203,8 @@ let
 
 
     "SQLAlchemy" = python.mkDerivation {
-      name = "SQLAlchemy-1.1.7";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/29/18/a78469bc449d9f92f6269cc62d0d6fbe6bf394d1031b447ad5e54463c3a0/SQLAlchemy-1.1.7.tar.gz"; sha256 = "9308b2886285dec57aa9e569a0519220e83515e15c6e3eda803c07deb7c1cbad"; };
+      name = "SQLAlchemy-1.1.8";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b8/df/cf8fa190708f1b50144f185e1fcd63f25ec51dbe2e6240933ea7565c2e16/SQLAlchemy-1.1.8.tar.gz"; sha256 = "e6f2b0c0b89fad86ff589c2d1da88cc8a88f88a2818a8c5e3b9717ac81ce979e"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
