@@ -3,7 +3,7 @@ blinker==1.4
 docutils==0.13.1
 feedgenerator==1.9
 ghp-import==0.5.5
-Jinja2==2.9.5
+Jinja2==2.9.6
 livereload==2.5.1
 MarkupSafe==1.0
 packaging==16.8
