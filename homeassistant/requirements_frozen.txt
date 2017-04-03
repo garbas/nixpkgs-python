@@ -4,7 +4,7 @@ async-timeout==1.2.0
 chardet==2.3.0
 enum-compat==0.0.2
 homeassistant==0.41.0
-Jinja2==2.9.5
+Jinja2==2.9.6
 MarkupSafe==1.0
 multidict==2.1.4
 netdisco==0.7.7
