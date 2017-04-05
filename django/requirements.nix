@@ -66,15 +66,32 @@ let
   generated = self: {
 
     "Django" = python.mkDerivation {
-      name = "Django-1.10.7";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/15/b4/d4bb7313e02386bd23a60e1eb5670321313fb67289c6f36ec43bce747aff/Django-1.10.7.tar.gz"; sha256 = "593d779dbc2350a245c4f76d26bdcad58a39895e87304fe6d725bbdf84b5b0b8"; };
+      name = "Django-1.11";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/79/43/ed9ca4d69f35b5e64f2ecad73f75a8529a9c6f0d562e5af9a1f65beda355/Django-1.11.tar.gz"; sha256 = "b6f3b864944276b4fd1d099952112696558f78b77b39188ac92b6c5e80152c30"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."pytz"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "";
+        license = licenses.bsdOriginal;
+        description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design.";
+      };
+    };
+
+
+
+    "pytz" = python.mkDerivation {
+      name = "pytz-2017.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a4/09/c47e57fc9c7062b4e83b075d418800d322caa87ec0ac21e6308bd3a2d519/pytz-2017.2.zip"; sha256 = "f5c056e8f62d45ba8215e5cb8f50dfccb198b4b9fbea8500674f3443e4689589"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "";
-        license = licenses.bsdOriginal;
-        description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design.";
+        license = licenses.mit;
+        description = "World timezone definitions, modern and historical";
       };
     };
 
