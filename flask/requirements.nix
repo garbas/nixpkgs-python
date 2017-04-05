@@ -203,8 +203,8 @@ let
 
 
     "SQLAlchemy" = python.mkDerivation {
-      name = "SQLAlchemy-1.1.8";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b8/df/cf8fa190708f1b50144f185e1fcd63f25ec51dbe2e6240933ea7565c2e16/SQLAlchemy-1.1.8.tar.gz"; sha256 = "e6f2b0c0b89fad86ff589c2d1da88cc8a88f88a2818a8c5e3b9717ac81ce979e"; };
+      name = "SQLAlchemy-1.1.9";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/02/69/9473d60abef55445f8e967cfae215da5de29ca21b865c99d2bf02a45ee01/SQLAlchemy-1.1.9.tar.gz"; sha256 = "b65cdc73cd348448ef0164f6c77d45a9f27ca575d3c5d71ccc33adf684bc6ef0"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -266,24 +266,39 @@ let
 
 
     "connexion" = python.mkDerivation {
-      name = "connexion-1.1.5";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/00/87/de8d2fea2b919bb4ac0ddc8101cbdaa2b358ed19b4372d1a3e243374c8ff/connexion-1.1.5.tar.gz"; sha256 = "2689e8c88aa2e8df5b544d04fbfe925ed14405648e840eb30fcea212f03f0a76"; };
+      name = "connexion-1.1.7";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e3/7d/d85dca0c67850c2a05c3639ab20754f740031825f77f9971062a8833d1d1/connexion-1.1.7.tar.gz"; sha256 = "08601ea95d9b48024367b1bcc88fd44b6dedf909d33c0842762ef6415c0e8eac"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."Flask"
       self."PyYAML"
       self."clickclick"
+      self."inflection"
       self."jsonschema"
       self."requests"
       self."six"
-      self."strict-rfc3339"
       self."swagger-spec-validator"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "";
         license = licenses.asl20;
         description = "Connexion - API first applications with OpenAPI/Swagger and Flask";
+      };
+    };
+
+
+
+    "inflection" = python.mkDerivation {
+      name = "inflection-0.3.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d5/35/a6eb45b4e2356fe688b21570864d4aa0d0a880ce387defe9c589112077f8/inflection-0.3.1.tar.gz"; sha256 = "18ea7fb7a7d152853386523def08736aa8c32636b047ade55f7578c4edeb16ca"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "";
+        license = licenses.mit;
+        description = "A port of Ruby on Rails inflector to Python";
       };
     };
 
@@ -309,9 +324,7 @@ let
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/58/b9/171dbb07e18c6346090a37f03c7e74410a1a56123f847efed59af260a298/jsonschema-2.6.0.tar.gz"; sha256 = "6ff5f3180870836cae40f06fa10419f557208175f13ad7bc26caa77beb1f6e02"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."strict-rfc3339"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "";
         license = licenses.mit;
@@ -346,21 +359,6 @@ let
         homepage = "";
         license = licenses.mit;
         description = "Python 2 and 3 compatibility utilities";
-      };
-    };
-
-
-
-    "strict-rfc3339" = python.mkDerivation {
-      name = "strict-rfc3339-0.7";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/56/e4/879ef1dbd6ddea1c77c0078cd59b503368b0456bcca7d063a870ca2119d3/strict-rfc3339-0.7.tar.gz"; sha256 = "5cad17bedfc3af57b399db0fed32771f18fc54bbd917e85546088607ac5e1277"; };
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "";
-        license = licenses.gpl3;
-        description = "Strict, simple, lightweight RFC3339 functions";
       };
     };
 
