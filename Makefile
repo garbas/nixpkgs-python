@@ -16,53 +16,59 @@ all: \
 django:
 	cd django/ && \
 		$(PYPI2NIX) -v \
-					-V 3.5 \
-					-r requirements.txt
+			-V 3.5 \
+			-O ../overrides.nix \
+			-r requirements.txt
 	nix-build -A django -o result-django
 
 
 flask:
 	cd flask/ && \
 		$(PYPI2NIX) -v \
-					-V 3.5 \
-					--setup-requires "six packaging appdirs" \
-					-r requirements.txt
+			-V 3.5 \
+			--setup-requires "six packaging appdirs" \
+			-r requirements.txt \
+			-O ../overrides.nix
 	nix-build -A flask -o result-flask
 
 
 homeassistant:
 	cd homeassistant/ && \
 		$(PYPI2NIX) -v \
-					-V 3.5 \
-					--setup-requires "six packaging appdirs" \
-					-r requirements.txt
+			-V 3.5 \
+			--setup-requires "six packaging appdirs" \
+			-O ../overrides.nix \
+			-r requirements.txt
 	nix-build -A homeassistant -o result-homeassistant
 
 
 pelican:
 	cd pelican/ && \
 		$(PYPI2NIX) -v \
-					-V 3.5 \
-					-r requirements.txt
+			-V 3.5 \
+			-O ../overrides.nix \
+			-r requirements.txt
 	nix-build -A pelican -o result-pelican
 
 
 pyramid:
 	cd pyramid/ && \
 		$(PYPI2NIX) -v \
-					-V 3.5 \
-					--setup-requires "six packaging appdirs" \
-					-r requirements.txt
+			-V 3.5 \
+			--setup-requires "six packaging appdirs" \
+			-O ../overrides.nix \
+			-r requirements.txt
 	nix-build -A pyramid -o result-pyramid
 
 
 science:
 	cd science/ && \
 		$(PYPI2NIX) -v \
-					-V 3.5 \
-					-s numpy \
-					-r requirements.txt \
-					-E gfortran -E blas
+			-V 3.5 \
+			-s numpy \
+			-r requirements.txt \
+			-O ../overrides.nix \
+			-E gfortran -E blas
 	nix-build -A science -o result-science
 
 

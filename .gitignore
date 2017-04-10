@@ -2,3 +2,4 @@
 /pypi2nix
 /deploy_rsa
 /deploy_rsa.pub
+requirements_override.nix
