@@ -2,7 +2,7 @@
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -v -V 3.5 --setup-requires six packaging appdirs -r requirements.txt
+#   pypi2nix -v -V 3.5 --setup-requires six packaging appdirs -O ../overrides.nix -r requirements.txt
 #
 
 { pkgs ? import <nixpkgs> {}
@@ -113,8 +113,8 @@ let
 
 
     "aiohttp" = python.mkDerivation {
-      name = "aiohttp-1.3.5";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e9/08/721f2e99f4ed694335f533a2910b4c75b1b37a376fe65da07903e0bbe1d2/aiohttp-1.3.5.tar.gz"; sha256 = "cd14a45da385b5e860849ffaff3ecee56f9b37bf9e7f3f7bc5ce3f17556cf842"; };
+      name = "aiohttp-2.0.5";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ba/f0/59bead4038ccc3f42d2dfdcab43bfb6411684bfb0d0764948c778e0f15a8/aiohttp-2.0.5.tar.gz"; sha256 = "ea5d251f8a0a2734e3c19f293307560b9bf52b300e69fdae3060bffb0c433714"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -126,7 +126,7 @@ let
       meta = with pkgs.stdenv.lib; {
         homepage = "";
         license = licenses.asl20;
-        description = "http client/server for asyncio";
+        description = "Async http client/server framework (asyncio)";
       };
     };
 
@@ -193,8 +193,8 @@ let
 
 
     "homeassistant" = python.mkDerivation {
-      name = "homeassistant-0.41.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d5/07/c95f50189b11f5b965b0a6ad8865f259a479820a43ed7b80cad5ddb6b724/homeassistant-0.41.0.tar.gz"; sha256 = "51b8e77577dfa55837c66cfc918b030d9f51d3894f6987be4d3506e6c6199dae"; };
+      name = "homeassistant-0.42.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c7/5e/d40c539973b2f66c56c2ee6f7581bed3d537ce9aa8f7b72d1784da5c884d/homeassistant-0.42.2.tar.gz"; sha256 = "5fbc413f019bbf2c2f947ed1e0da0468c724302b2ff084fcccd03e680034f39f"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -374,8 +374,8 @@ let
 
 
     "yarl" = python.mkDerivation {
-      name = "yarl-0.9.8";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/66/2e/646e7da82260ad1dce86ebeed0befbd487941b7aa61ee2291fa47aa71bf4/yarl-0.9.8.tar.gz"; sha256 = "a7818b0654265623525b56e78b901315a9ffb7ef0bf21b4af7e0e27572d54dec"; };
+      name = "yarl-0.10.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e4/aa/bc97551a2eb0c25711da61e16940decefdcc41b7bb8897b3c24e1623ef74/yarl-0.10.0.tar.gz"; sha256 = "d92947434946bf47e3ee2123f4ea785ea4c7d5ba37c93fd2142470868dc2a01b"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -410,7 +410,7 @@ let
   };
   overrides = import ./requirements_override.nix { inherit pkgs python; };
   commonOverrides = [
-
+    (import ../overrides.nix { inherit pkgs python ; })
   ];
 
 in python.withPackages
