@@ -2,7 +2,7 @@
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -v -V 3.5 -r requirements.txt
+#   pypi2nix -v -V 3.5 -O ../overrides.nix -r requirements.txt
 #
 
 { pkgs ? import <nixpkgs> {}
@@ -98,7 +98,7 @@ let
   };
   overrides = import ./requirements_override.nix { inherit pkgs python; };
   commonOverrides = [
-
+    (import ../overrides.nix { inherit pkgs python ; })
   ];
 
 in python.withPackages
