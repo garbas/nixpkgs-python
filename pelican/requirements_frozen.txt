@@ -1,4 +1,4 @@
-appdirs==1.4.0
+appdirs==1.4.3
 blinker==1.4
 docutils==0.13.1
 feedgenerator==1.9
@@ -9,7 +9,7 @@ MarkupSafe==1.0
 packaging==16.8
 pelican==3.7.1
 Pygments==2.2.0
-pyparsing==2.1.10
+pyparsing==2.2.0
 python-dateutil==2.6.0
 pytz==2017.2
 six==1.10.0
