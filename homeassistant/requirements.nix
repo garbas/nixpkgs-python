@@ -163,8 +163,8 @@ let
 
 
     "chardet" = python.mkDerivation {
-      name = "chardet-2.3.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/7d/87/4e3a3f38b2f5c578ce44f8dc2aa053217de9f0b6d737739b0ddac38ed237/chardet-2.3.0.tar.gz"; sha256 = "e53e38b3a4afe6d1132de62b7400a4ac363452dc5dfcf8d88e8e0cce663c68aa"; };
+      name = "chardet-3.0.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/42/d1/c7e0023643df3c53ff72513f53f28bc1e948cb18a56f8a20aee289537ee9/chardet-3.0.1.tar.gz"; sha256 = "0d9688b015b3493f2f486214a2181b8f29fbe21c4034711bd9140a1d3467808d"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -193,8 +193,8 @@ let
 
 
     "homeassistant" = python.mkDerivation {
-      name = "homeassistant-0.42.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c7/5e/d40c539973b2f66c56c2ee6f7581bed3d537ce9aa8f7b72d1784da5c884d/homeassistant-0.42.2.tar.gz"; sha256 = "5fbc413f019bbf2c2f947ed1e0da0468c724302b2ff084fcccd03e680034f39f"; };
+      name = "homeassistant-0.42.3";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/15/66/1ef5cbd1180b5a26fcb4ed3ea7a17c1ce8c91bef34df93a2937063ceb022/homeassistant-0.42.3.tar.gz"; sha256 = "bb3d621d13314bc859dec990a183c2460cb7b472487769c95722666aff18b22a"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
