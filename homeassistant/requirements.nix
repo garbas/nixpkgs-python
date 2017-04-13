@@ -163,8 +163,8 @@ let
 
 
     "chardet" = python.mkDerivation {
-      name = "chardet-3.0.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/42/d1/c7e0023643df3c53ff72513f53f28bc1e948cb18a56f8a20aee289537ee9/chardet-3.0.1.tar.gz"; sha256 = "0d9688b015b3493f2f486214a2181b8f29fbe21c4034711bd9140a1d3467808d"; };
+      name = "chardet-3.0.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/91/05/28f23094cdf1410fb03533f0d71e6b4aad3c504100e83b8cea6fc899552c/chardet-3.0.2.tar.gz"; sha256 = "4f7832e7c583348a9eddd927ee8514b3bf717c061f57b21dbe7697211454d9bb"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
