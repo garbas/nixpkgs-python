@@ -1,9 +1,9 @@
-aiohttp==2.0.5
+aiohttp==2.0.7
 appdirs==1.4.3
 async-timeout==1.2.0
 chardet==3.0.2
 enum-compat==0.0.2
-homeassistant==0.42.3
+homeassistant==0.42.4
 Jinja2==2.9.6
 MarkupSafe==1.0
 multidict==2.1.4
