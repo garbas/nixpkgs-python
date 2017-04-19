@@ -74,7 +74,7 @@ let
       self."MarkupSafe"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://jinja.pocoo.org/";
         license = licenses.bsdOriginal;
         description = "A small but fast and easy to use stand-alone template engine written in pure python.";
       };
@@ -89,7 +89,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://github.com/pallets/markupsafe";
         license = licenses.bsdOriginal;
         description = "Implements a XML/HTML/XHTML Markup safe string for Python";
       };
@@ -104,7 +104,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://pygments.org/";
         license = licenses.bsdOriginal;
         description = "Pygments is a syntax highlighting package written in Python.";
       };
@@ -134,7 +134,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://pythonhosted.org/blinker/";
         license = licenses.mit;
         description = "Fast, simple object-to-object and broadcast signaling";
       };
@@ -149,7 +149,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://docutils.sourceforge.net/";
         license = licenses.publicDomain;
         description = "Docutils -- Python Documentation Utilities";
       };
@@ -167,7 +167,7 @@ let
       self."six"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "https://github.com/getpelican/feedgenerator";
         license = licenses.bsdOriginal;
         description = "Standalone version of django.utils.feedgenerator";
       };
@@ -182,7 +182,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://github.com/davisp/ghp-import";
         license = "Tumbolia Public License";
         description = "Copy your docs directly to the gh-pages branch.";
       };
@@ -200,7 +200,7 @@ let
       self."tornado"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "https://github.com/lepture/python-livereload";
         license = licenses.bsdOriginal;
         description = "Python LiveReload is an awesome tool for web developers";
       };
@@ -225,7 +225,7 @@ let
       self."six"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://getpelican.com/";
         license = licenses.agpl3;
         description = "Static site generator supporting reStructuredText and Markdown source content.";
       };
@@ -242,7 +242,7 @@ let
       self."six"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "https://dateutil.readthedocs.io";
         license = licenses.bsdOriginal;
         description = "Extensions to the standard Python datetime module";
       };
@@ -257,7 +257,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://pythonhosted.org/pytz";
         license = licenses.mit;
         description = "World timezone definitions, modern and historical";
       };
@@ -272,7 +272,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://pypi.python.org/pypi/six/";
         license = licenses.mit;
         description = "Python 2 and 3 compatibility utilities";
       };
@@ -287,7 +287,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "https://bitbucket.org/livibetter/smartypants.py";
         license = licenses.bsdOriginal;
         description = "Python with the SmartyPants";
       };
@@ -302,7 +302,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://www.tornadoweb.org/";
         license = "License :: OSI Approved :: Apache Software License";
         description = "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed.";
       };
@@ -319,7 +319,7 @@ let
       self."smartypants"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "https://github.com/mintchaos/typogrify";
         license = licenses.bsdOriginal;
         description = "Filters to enhance web typography, including support for Django & Jinja templates";
       };
