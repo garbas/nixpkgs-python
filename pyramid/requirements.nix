@@ -72,7 +72,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://pythonpaste.org/deploy/";
         license = licenses.mit;
         description = "Load, configure, and compose WSGI applications and servers";
       };
@@ -87,7 +87,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://webob.org/";
         license = licenses.mit;
         description = "WSGI request and response object";
       };
@@ -102,7 +102,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://github.com/ActiveState/appdirs";
         license = licenses.mit;
         description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\".";
       };
@@ -117,7 +117,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "https://github.com/Pylons/hupper";
         license = licenses.mit;
         description = "Integrated process monitor for developing servers.";
       };
@@ -135,7 +135,7 @@ let
       self."six"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "https://github.com/pypa/packaging";
         license = licenses.bsdOriginal;
         description = "Core utilities for Python packages";
       };
@@ -150,7 +150,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://pyparsing.wikispaces.com/";
         license = licenses.mit;
         description = "Python parsing module";
       };
@@ -174,7 +174,7 @@ let
       self."zope.interface"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "https://trypyramid.com";
         license = "License :: Repoze Public License";
         description = "The Pyramid Web Framework, a Pylons project";
       };
@@ -189,7 +189,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://www.repoze.org";
         license = "License :: Repoze Public License";
         description = "A tiny LRU cache implementation and decorator";
       };
@@ -204,7 +204,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://pypi.python.org/pypi/six/";
         license = licenses.mit;
         description = "Python 2 and 3 compatibility utilities";
       };
@@ -219,7 +219,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://pylonsproject.org";
         license = "BSD-like (http://repoze.org/license.html)";
         description = "Utility library for i18n relied on by various Repoze and Pyramid packages";
       };
@@ -234,7 +234,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://pylonsproject.org";
         license = "BSD-derived (http://www.repoze.org/LICENSE.txt)";
         description = "A library for deferring decorator actions";
       };
@@ -249,7 +249,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://pypi.python.org/pypi/zope.deprecation";
         license = licenses.zpt21;
         description = "Zope Deprecation Infrastructure";
       };
@@ -264,7 +264,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "https://github.com/zopefoundation/zope.interface";
         license = licenses.zpt21;
         description = "Interfaces for Python";
       };
