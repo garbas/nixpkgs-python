@@ -74,7 +74,7 @@ let
       self."pytz"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "https://www.djangoproject.com/";
         license = licenses.bsdOriginal;
         description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design.";
       };
@@ -89,7 +89,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://pythonhosted.org/pytz";
         license = licenses.mit;
         description = "World timezone definitions, modern and historical";
       };
