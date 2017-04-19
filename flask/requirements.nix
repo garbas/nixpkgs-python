@@ -77,7 +77,7 @@ let
       self."itsdangerous"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://github.com/pallets/flask/";
         license = licenses.bsdOriginal;
         description = "A microframework based on Werkzeug, Jinja2 and good intentions";
       };
@@ -94,7 +94,7 @@ let
       self."Flask"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://github.com/thadeusb/flask-cache";
         license = licenses.bsdOriginal;
         description = "Adds cache support to your Flask application";
       };
@@ -112,7 +112,7 @@ let
       self."six"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "https://github.com/corydolphin/flask-cors";
         license = licenses.mit;
         description = "A Flask extension adding a decorator for CORS support";
       };
@@ -129,7 +129,7 @@ let
       self."Flask"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "https://github.com/maxcountryman/flask-login";
         license = licenses.mit;
         description = "User session management for Flask";
       };
@@ -147,7 +147,7 @@ let
       self."SQLAlchemy"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://github.com/mitsuhiko/flask-sqlalchemy";
         license = licenses.bsdOriginal;
         description = "Adds SQLAlchemy support to your Flask application";
       };
@@ -164,7 +164,7 @@ let
       self."MarkupSafe"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://jinja.pocoo.org/";
         license = licenses.bsdOriginal;
         description = "A small but fast and easy to use stand-alone template engine written in pure python.";
       };
@@ -179,7 +179,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://github.com/pallets/markupsafe";
         license = licenses.bsdOriginal;
         description = "Implements a XML/HTML/XHTML Markup safe string for Python";
       };
@@ -194,7 +194,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://pyyaml.org/wiki/PyYAML";
         license = licenses.mit;
         description = "YAML parser and emitter for Python";
       };
@@ -209,7 +209,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://www.sqlalchemy.org";
         license = licenses.mit;
         description = "Database Abstraction Library";
       };
@@ -224,7 +224,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://werkzeug.pocoo.org/";
         license = licenses.bsdOriginal;
         description = "The Swiss Army knife of Python web development";
       };
@@ -239,7 +239,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://github.com/mitsuhiko/click";
         license = licenses.bsdOriginal;
         description = "A simple wrapper around optparse for powerful command line utilities.";
       };
@@ -257,7 +257,7 @@ let
       self."click"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "https://github.com/zalando/python-clickclick";
         license = licenses.asl20;
         description = "Click utility functions";
       };
@@ -281,7 +281,7 @@ let
       self."swagger-spec-validator"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "https://github.com/zalando/connexion";
         license = licenses.asl20;
         description = "Connexion - API first applications with OpenAPI/Swagger and Flask";
       };
@@ -296,7 +296,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://github.com/jpvanhal/inflection";
         license = licenses.mit;
         description = "A port of Ruby on Rails inflector to Python";
       };
@@ -311,7 +311,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://github.com/mitsuhiko/itsdangerous";
         license = licenses.bsdOriginal;
         description = "Various helpers to pass trusted data to untrusted environments and back.";
       };
@@ -326,7 +326,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://github.com/Julian/jsonschema";
         license = licenses.mit;
         description = "An implementation of JSON Schema validation for Python";
       };
@@ -341,7 +341,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://python-requests.org";
         license = licenses.asl20;
         description = "Python HTTP for Humans.";
       };
@@ -356,7 +356,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://pypi.python.org/pypi/six/";
         license = licenses.mit;
         description = "Python 2 and 3 compatibility utilities";
       };
@@ -374,7 +374,7 @@ let
       self."six"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
+        homepage = "http://github.com/Yelp/swagger_spec_validator";
         license = licenses.asl20;
         description = "Validation of Swagger specifications";
       };
