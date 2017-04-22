@@ -193,8 +193,8 @@ let
 
 
     "homeassistant" = python.mkDerivation {
-      name = "homeassistant-0.42.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b7/9e/ae04242df07d1bc8a10960b83c089d768388c40d0466101d6b15a1a8350e/homeassistant-0.42.4.tar.gz"; sha256 = "6508c57a44cf1a1cd79f3be1a27d0e69cdb8c520aeda54a9388ea3007d4d7172"; };
+      name = "homeassistant-0.43.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b9/08/0b43b17b146de768e094628fb45091811a53a014c6f21722ea2e996a4b79/homeassistant-0.43.0.tar.gz"; sha256 = "08afa3e784fedef1d49f520b80b459c1c1c280877a2b5fe1f3cce45957161aa6"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -202,6 +202,7 @@ let
       self."PyYAML"
       self."aiohttp"
       self."async-timeout"
+      self."chardet"
       self."pytz"
       self."requests"
       self."typing"
