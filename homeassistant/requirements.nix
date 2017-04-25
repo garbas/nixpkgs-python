@@ -193,8 +193,8 @@ let
 
 
     "homeassistant" = python.mkDerivation {
-      name = "homeassistant-0.43.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b9/08/0b43b17b146de768e094628fb45091811a53a014c6f21722ea2e996a4b79/homeassistant-0.43.0.tar.gz"; sha256 = "08afa3e784fedef1d49f520b80b459c1c1c280877a2b5fe1f3cce45957161aa6"; };
+      name = "homeassistant-0.43.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3a/55/a8d64e8aa2edd79805c5747523c6f78f7c0e50bce6f9cc3ce1efc575e10c/homeassistant-0.43.1.tar.gz"; sha256 = "fd96ec9acbaba1a97c1c45b647b3ee6b5880dd3f794c71b58500f1a2204030cb"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
