@@ -132,21 +132,6 @@ let
 
 
 
-    "appdirs" = python.mkDerivation {
-      name = "appdirs-1.4.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/48/69/d87c60746b393309ca30761f8e2b49473d43450b150cb08f3c6df5c11be5/appdirs-1.4.3.tar.gz"; sha256 = "9e5896d1372858f8dd3344faf4e5014d21849c756c8d5701f78f8a103b372d92"; };
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "http://github.com/ActiveState/appdirs";
-        license = licenses.mit;
-        description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\".";
-      };
-    };
-
-
-
     "async-timeout" = python.mkDerivation {
       name = "async-timeout-1.2.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/55/67/3870ef0811ee3e40b67d776b3144743f34a2a2d094690af83a1c5390806e/async-timeout-1.2.0.tar.gz"; sha256 = "0652d108c0156ae5ac94d99f53a6bdd039b0c076346ff8f58c9a1551fac17a19"; };
@@ -193,8 +178,8 @@ let
 
 
     "homeassistant" = python.mkDerivation {
-      name = "homeassistant-0.43.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3e/55/fc3477d5080fd744f5a2fcd78336b75e70d84c7ab73f5a8535007e2f85ea/homeassistant-0.43.2.tar.gz"; sha256 = "e74d38016188ce8a49e4d3eea2707a7ae76027041ee76eaaf1cfa3e2ed12832c"; };
+      name = "homeassistant-0.44.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/54/6f/113399beddba7b6834a1623a61d7f203916fa3448d7ab7e558117fc6b057/homeassistant-0.44.0.tar.gz"; sha256 = "9b55590816f1f5f6dd62b9f0385c465e990c02257eb17b2903504d2c3b918bba"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -266,39 +251,6 @@ let
 
 
 
-    "packaging" = python.mkDerivation {
-      name = "packaging-16.8";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c6/70/bb32913de251017e266c5114d0a645f262fb10ebc9bf6de894966d124e35/packaging-16.8.tar.gz"; sha256 = "5d50835fdf0a7edf0b55e311b7c887786504efea1177abd7e69329a8e5ea619e"; };
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."pyparsing"
-      self."six"
-    ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/pypa/packaging";
-        license = licenses.bsdOriginal;
-        description = "Core utilities for Python packages";
-      };
-    };
-
-
-
-    "pyparsing" = python.mkDerivation {
-      name = "pyparsing-2.2.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3c/ec/a94f8cf7274ea60b5413df054f82a8980523efd712ec55a59e7c3357cf7c/pyparsing-2.2.0.tar.gz"; sha256 = "0832bcf47acd283788593e7a0f542407bd9550a55a8a8435214a1960e04bcb04"; };
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "http://pyparsing.wikispaces.com/";
-        license = licenses.mit;
-        description = "Python parsing module";
-      };
-    };
-
-
-
     "pytz" = python.mkDerivation {
       name = "pytz-2017.2";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a4/09/c47e57fc9c7062b4e83b075d418800d322caa87ec0ac21e6308bd3a2d519/pytz-2017.2.zip"; sha256 = "f5c056e8f62d45ba8215e5cb8f50dfccb198b4b9fbea8500674f3443e4689589"; };
@@ -360,8 +312,8 @@ let
 
 
     "voluptuous" = python.mkDerivation {
-      name = "voluptuous-0.9.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e6/5d/2b9ed56f2e69fe54cf00d07b7b3b9b43e8c9763dff3015365bd4c3f6f2a6/voluptuous-0.9.3.tar.gz"; sha256 = "ed5a11fda273754caabb6becd5fe172ee2621cd2c8ff8279433173bb7b0ec568"; };
+      name = "voluptuous-0.10.5";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c3/81/c84f8a3e723b760fdd1c41fc80201cb80cd29c1bce5159d8918c58df7d2a/voluptuous-0.10.5.tar.gz"; sha256 = "7a7466f8dc3666a292d186d1d871a47bf2120836ccb900d5ba904674957a2396"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
