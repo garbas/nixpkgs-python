@@ -111,8 +111,8 @@ let
 
 
     "hupper" = python.mkDerivation {
-      name = "hupper-0.4.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/32/aa/847c6ede6da7b2d9438c4ae5c4ce7c47f7db73572f4ea2566ffd83c23dd6/hupper-0.4.4.tar.gz"; sha256 = "a44971bd58e904864f31058b2e64b5716568d7db67f34d8f83b4d40f268adf7a"; };
+      name = "hupper-0.5";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/68/00/3a5d1cb01e360ffc329dab497b69a94fa95a75a274df7d7430032bc7c1d0/hupper-0.5.tar.gz"; sha256 = "25a84e8b8d5dbe938fdc54c0f6a3b77a3d7c6f08f22ee940256b654e95dde4b8"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
