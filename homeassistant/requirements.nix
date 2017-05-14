@@ -212,8 +212,8 @@ let
 
 
     "multidict" = python.mkDerivation {
-      name = "multidict-2.1.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2a/df/eaea73e46a58fd780c35ecc304ca42364fa3c1f4cd03568ed33b9d2c7547/multidict-2.1.4.tar.gz"; sha256 = "a77aa8c9f68846c3b5db43ff8ed2a7a884dbe845d01f55113a3fba78518c4cd7"; };
+      name = "multidict-2.1.5";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/93/d2/2b7fbc28778b9efb39587fe12d69294f4e166908b760ccf2f788eee9cedf/multidict-2.1.5.tar.gz"; sha256 = "20a30a474882ad174eb64873cfa7bae4604944105adf7f6847141bd7938c5ed1"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
