@@ -120,15 +120,15 @@ let
 
 
     "hupper" = python.mkDerivation {
-      name = "hupper-0.5";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/68/00/3a5d1cb01e360ffc329dab497b69a94fa95a75a274df7d7430032bc7c1d0/hupper-0.5.tar.gz"; sha256 = "25a84e8b8d5dbe938fdc54c0f6a3b77a3d7c6f08f22ee940256b654e95dde4b8"; };
+      name = "hupper-1.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2e/07/df892c564dc09bb3cf6f6deb976c26adf9117db75ba218cb4353dbc9d826/hupper-1.0.tar.gz"; sha256 = "afb9584fc387c962824627bb243d7d92c276df608a771b17c8b727a7de34920a"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/Pylons/hupper";
         license = licenses.mit;
-        description = "Integrated process monitor for developing servers.";
+        description = "Integrated process monitor for developing and reloading daemons.";
       };
     };
 
