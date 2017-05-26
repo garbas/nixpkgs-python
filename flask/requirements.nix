@@ -275,8 +275,8 @@ let
 
 
     "connexion" = python.mkDerivation {
-      name = "connexion-1.1.9";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3b/df/7ecdaa8417c1f68e1fb9abaf9235afb7cf3f2847f679ccf76964f6fddad7/connexion-1.1.9.tar.gz"; sha256 = "4508d6d5bb2db18c8b421dbf6f1a276e2f7e262c8e2846752c0874f1e41065ad"; };
+      name = "connexion-1.1.10";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/07/91/69f9478fd12bf13cc959f5d8e040c024d10259ba0d340ff67080117c4836/connexion-1.1.10.tar.gz"; sha256 = "78f8bf54b95ec302003aa53955e783d14af6f22dd25f86b5e8a7dec05fd99af3"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -288,6 +288,7 @@ let
       self."requests"
       self."six"
       self."swagger-spec-validator"
+      self."typing"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/zalando/connexion";
@@ -386,6 +387,21 @@ let
         homepage = "http://github.com/Yelp/swagger_spec_validator";
         license = licenses.asl20;
         description = "Validation of Swagger specifications";
+      };
+    };
+
+
+
+    "typing" = python.mkDerivation {
+      name = "typing-3.6.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/17/75/3698d7992a828ad6d7be99c0a888b75ed173a9280e53dbae67326029b60e/typing-3.6.1.tar.gz"; sha256 = "c36dec260238e7464213dcd50d4b5ef63a507972f5780652e835d0228d0edace"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://docs.python.org/3/library/typing.html";
+        license = licenses.psfl;
+        description = "Type Hints for Python";
       };
     };
 
