@@ -104,21 +104,6 @@ let
 
 
 
-    "appdirs" = python.mkDerivation {
-      name = "appdirs-1.4.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/48/69/d87c60746b393309ca30761f8e2b49473d43450b150cb08f3c6df5c11be5/appdirs-1.4.3.tar.gz"; sha256 = "9e5896d1372858f8dd3344faf4e5014d21849c756c8d5701f78f8a103b372d92"; };
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "http://github.com/ActiveState/appdirs";
-        license = licenses.mit;
-        description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\".";
-      };
-    };
-
-
-
     "hupper" = python.mkDerivation {
       name = "hupper-1.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2e/07/df892c564dc09bb3cf6f6deb976c26adf9117db75ba218cb4353dbc9d826/hupper-1.0.tar.gz"; sha256 = "afb9584fc387c962824627bb243d7d92c276df608a771b17c8b727a7de34920a"; };
@@ -129,39 +114,6 @@ let
         homepage = "https://github.com/Pylons/hupper";
         license = licenses.mit;
         description = "Integrated process monitor for developing and reloading daemons.";
-      };
-    };
-
-
-
-    "packaging" = python.mkDerivation {
-      name = "packaging-16.8";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c6/70/bb32913de251017e266c5114d0a645f262fb10ebc9bf6de894966d124e35/packaging-16.8.tar.gz"; sha256 = "5d50835fdf0a7edf0b55e311b7c887786504efea1177abd7e69329a8e5ea619e"; };
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."pyparsing"
-      self."six"
-    ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/pypa/packaging";
-        license = licenses.bsdOriginal;
-        description = "Core utilities for Python packages";
-      };
-    };
-
-
-
-    "pyparsing" = python.mkDerivation {
-      name = "pyparsing-2.2.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3c/ec/a94f8cf7274ea60b5413df054f82a8980523efd712ec55a59e7c3357cf7c/pyparsing-2.2.0.tar.gz"; sha256 = "0832bcf47acd283788593e7a0f542407bd9550a55a8a8435214a1960e04bcb04"; };
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "http://pyparsing.wikispaces.com/";
-        license = licenses.mit;
-        description = "Python parsing module";
       };
     };
 
@@ -201,21 +153,6 @@ let
         homepage = "http://www.repoze.org";
         license = "License :: Repoze Public License";
         description = "A tiny LRU cache implementation and decorator";
-      };
-    };
-
-
-
-    "six" = python.mkDerivation {
-      name = "six-1.10.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b3/b2/238e2590826bfdd113244a40d9d3eb26918bd798fc187e2360a8367068db/six-1.10.0.tar.gz"; sha256 = "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a"; };
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "http://pypi.python.org/pypi/six/";
-        license = licenses.mit;
-        description = "Python 2 and 3 compatibility utilities";
       };
     };
 
