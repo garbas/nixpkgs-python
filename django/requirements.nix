@@ -75,8 +75,8 @@ let
   generated = self: {
 
     "Django" = python.mkDerivation {
-      name = "Django-1.11.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/22/68/24fd855343f218e016bbb04b1a5a2dc1be191a4cbd4d3cdabb13d1c2a371/Django-1.11.1.tar.gz"; sha256 = "bbcefdf822eeef2cd04718ebcc24dd2ecf47407258cfcde2b4f95df57ce33a8c"; };
+      name = "Django-1.11.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c0/31/4bffd9183066eea645430114419c30b030b599320da8246701b81c6a78d2/Django-1.11.2.tar.gz"; sha256 = "3c5b070482df4f9e5750539dc1824d353729ee423fd410c579b8cd3dea5b0617"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
