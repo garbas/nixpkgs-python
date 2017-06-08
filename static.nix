@@ -10,7 +10,7 @@ let
       drv = builtins.parseDrvName (pkgs.lib.removePrefix "${set.__old.python.libPrefix}-" pkg.name);
     in
       { inherit (drv) name version;
-        inherit (pkgs.meta) maintainers license homepage description;
+        inherit (pkg.meta) maintainers license homepage description;
       };
 
   self_meta =
