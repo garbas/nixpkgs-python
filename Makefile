@@ -6,6 +6,7 @@ all: \
 	django \
 	flask \
 	homeassistant \
+	openstackclient \
 	pelican \
 	pyramid \
 	science \
@@ -72,6 +73,14 @@ science:
 	nix-build -A science -o result-science
 
 
+openstackclient:
+	cd openstackclient/ && \
+		$(PYPI2NIX) -v \
+			-V 2.7 \
+			-r requirements.txt
+	nix-build -A openstackclient -o result-openstackclient
+
+
 pypi2nix:
 	if [ ! -e pypi2nix ]; then git clone https://github.com/garbas/pypi2nix; fi
 	cd pypi2nix && nix-build release.nix -A build."x86_64-linux" -o $(PWD)/result-pypi2nix && cd ..
@@ -87,6 +96,7 @@ static:
 	homeassistant \
 	pelican \
 	pyramid \
+	openstackclient \
 	science \
 	pypi2nix \
 	static

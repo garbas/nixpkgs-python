@@ -22,6 +22,10 @@ let
       { name = "Rok Garbas";
         url = "https://twitter.com/garbas";
       };
+    lewo =
+      { name = "Antoine Eiche";
+        url = "https://github.com/nlewo";
+      };
   };
 
 in createSets [
@@ -54,6 +58,11 @@ in createSets [
   { name = "science";
     maintainers = [ maintainers.unknown ];
     description = "Science related python packages.";
+  }
+
+  { name = "openstackclient";
+    maintainers = [ maintainers.lewo ];
+    description = "Openstaclient client packages.";
   }
 
 ]
