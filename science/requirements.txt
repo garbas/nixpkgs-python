@@ -1,11 +1,11 @@
 numpy
 scipy
+matplotlib
 #astropy
 #blaze
 #bokeh
 #h5py
 #ipython
-#matplotlib
 #numba
 #pandas
 #scikit-image

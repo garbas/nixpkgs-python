@@ -27,7 +27,6 @@ flask:
 	cd flask/ && \
 		$(PYPI2NIX) -v \
 			-V 3.5 \
-			--setup-requires "six packaging appdirs" \
 			-r requirements.txt \
 			-O ../overrides.nix
 	nix-build -A flask -o result-flask
@@ -37,7 +36,7 @@ homeassistant:
 	cd homeassistant/ && \
 		$(PYPI2NIX) -v \
 			-V 3.5 \
-			--setup-requires "six packaging appdirs" \
+			-s pytz
 			-O ../overrides.nix \
 			-r requirements.txt
 	nix-build -A homeassistant -o result-homeassistant
@@ -56,7 +55,6 @@ pyramid:
 	cd pyramid/ && \
 		$(PYPI2NIX) -v \
 			-V 3.5 \
-			--setup-requires "six packaging appdirs" \
 			-O ../overrides.nix \
 			-r requirements.txt
 	nix-build -A pyramid -o result-pyramid
@@ -69,7 +67,12 @@ science:
 			-s numpy \
 			-r requirements.txt \
 			-O ../overrides.nix \
-			-E gfortran -E blas
+			-E gfortran \
+			-E blas \
+			-E pkgconfig \
+			-E freetype.dev \
+			-E libpng \
+			-E agg
 	nix-build -A science -o result-science
 
 
