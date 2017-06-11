@@ -2,7 +2,7 @@
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -v -V 3.5 --setup-requires six packaging appdirs -O ../overrides.nix -r requirements.txt
+#   pypi2nix -v -V 3.5 -O ../overrides.nix -r requirements.txt
 #
 
 { pkgs ? import <nixpkgs> {}
