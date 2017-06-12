@@ -3,7 +3,7 @@ hupper==1.0
 packaging==16.8
 PasteDeploy==1.5.2
 pyparsing==2.2.0
-pyramid==1.8.3
+pyramid==1.8.4
 repoze.lru==0.6
 six==1.10.0
 translationstring==1.3

@@ -120,8 +120,8 @@ let
 
 
     "pyramid" = python.mkDerivation {
-      name = "pyramid-1.8.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/12/e5/8cffc593b70ee6392ea08e8562843166895b96cf33ace892229bcfca410e/pyramid-1.8.3.tar.gz"; sha256 = "1218140ea016dcb63b962d44e43c6d26e448e6c2a49133dc52d01f01fbb2d5c3"; };
+      name = "pyramid-1.8.4";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/76/68/c09673596871b23a3f24f08988b181c8bd8b31c871560c75eeed5c563449/pyramid-1.8.4.tar.gz"; sha256 = "2f02b800922eedfaff73e17ac15ae5614ff9d3f651dbea4c5d0fd221d72511c8"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
