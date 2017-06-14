@@ -390,8 +390,8 @@ let
 
 
     "requests" = python.mkDerivation {
-      name = "requests-2.17.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/27/c7/a45641c83c6e28f4922ba6af3d4ae4d79b41932c2f3d77fed9e0bf878149/requests-2.17.3.tar.gz"; sha256 = "8d29f97ed1541709b57caddb77bb20592411d7ca10ec4f03275f49ee8456e225"; };
+      name = "requests-2.18.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e0/97/e2f972b6826c9cfe57b6934e3773d2783733bc2d345d810bafd309df3d15/requests-2.18.0.tar.gz"; sha256 = "cd0189f962787284bff715fddaad478eb4d9c15aa167bd64e52ea0f661e7ea5c"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
