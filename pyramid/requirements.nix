@@ -204,8 +204,8 @@ let
 
 
     "zope.interface" = python.mkDerivation {
-      name = "zope.interface-4.4.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/90/1c/942298a4f5ef7db8c885ae687c59d397127f5a8cff7a473b0d7475a2c6e7/zope.interface-4.4.1.tar.gz"; sha256 = "350e3615d70a96678c3170eb5c96d4f72b8e7738861afbf030967d52c05722fe"; };
+      name = "zope.interface-4.4.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c5/88/93373971f893714f0dc15e09696ec4886ee8b4e561ce5ae45612c2c516c4/zope.interface-4.4.2.tar.gz"; sha256 = "4e59e427200201f69ef82956ddf9e527891becf5b7cde8ec3ce39e1d0e262eb0"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
