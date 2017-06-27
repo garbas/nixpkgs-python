@@ -120,15 +120,50 @@ let
 
 
 
+    "plaster" = python.mkDerivation {
+      name = "plaster-0.5";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/99/b3/d7ca1fe31d2b56dba68a238721fda6820770f9c2a3de17a582d4b5b2edcc/plaster-0.5.tar.gz"; sha256 = "2a028938dcbf41033c5d377363781b2528151b0159201587c41e7a4c74bc887c"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://docs.pylonsproject.org/projects/plaster/en/latest/";
+        license = licenses.mit;
+        description = "A loader interface around multiple config file formats.";
+      };
+    };
+
+
+
+    "plaster-pastedeploy" = python.mkDerivation {
+      name = "plaster-pastedeploy-0.3.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c6/60/c6a8d3f81726c7fa29a17be20a71578343aa39af9054ea97a6e8572bbe69/plaster_pastedeploy-0.3.1.tar.gz"; sha256 = "68d3f7074545c6b9823a9a0850b9a78fdf3cdc7bdb1c0519912781dc5e3a8980"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."PasteDeploy"
+      self."plaster"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/Pylons/plaster_pastedeploy";
+        license = licenses.mit;
+        description = "A loader implementing the PasteDeploy syntax to be used by plaster.";
+      };
+    };
+
+
+
     "pyramid" = python.mkDerivation {
-      name = "pyramid-1.8.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/76/68/c09673596871b23a3f24f08988b181c8bd8b31c871560c75eeed5c563449/pyramid-1.8.4.tar.gz"; sha256 = "2f02b800922eedfaff73e17ac15ae5614ff9d3f651dbea4c5d0fd221d72511c8"; };
+      name = "pyramid-1.9";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b0/73/715321e129334f3e41430bede877620175a63ed075fd5d1fd2c25b7cb121/pyramid-1.9.tar.gz"; sha256 = "a1292c80d1cd776552d4a0e7549766829c81fa9e21516b5a4ce176d5d50d7e01"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."PasteDeploy"
       self."WebOb"
       self."hupper"
+      self."plaster"
+      self."plaster-pastedeploy"
       self."repoze.lru"
       self."translationstring"
       self."venusian"
