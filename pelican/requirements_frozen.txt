@@ -16,4 +16,4 @@ six==1.10.0
 smartypants==2.0.0
 tornado==4.5.1
 typogrify==2.0.7
-Unidecode==0.4.20
+Unidecode==0.4.21
