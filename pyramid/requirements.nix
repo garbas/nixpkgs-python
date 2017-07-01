@@ -91,8 +91,8 @@ let
 
 
     "WebOb" = python.mkDerivation {
-      name = "WebOb-1.7.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/1a/2b/322d6e01ba19c1e28349efe46dab1bd480c81a55af0658d63dc48ed62ee6/WebOb-1.7.2.tar.gz"; sha256 = "0dc8b30bdbf15d8fd1a967e30ece3357f2f468206354f69213e57b30a63f0039"; };
+      name = "WebOb-1.7.3";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/46/87/2f96d8d43b2078fae6e1d33fa86b95c228cebed060f4e3c7576cc44ea83b/WebOb-1.7.3.tar.gz"; sha256 = "e65ca14b9f5ae5b031988ffc93f8b7f305ddfcf17a4c774ae0db47bcb3b87283"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -136,8 +136,8 @@ let
 
 
     "plaster-pastedeploy" = python.mkDerivation {
-      name = "plaster-pastedeploy-0.3.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c6/60/c6a8d3f81726c7fa29a17be20a71578343aa39af9054ea97a6e8572bbe69/plaster_pastedeploy-0.3.1.tar.gz"; sha256 = "68d3f7074545c6b9823a9a0850b9a78fdf3cdc7bdb1c0519912781dc5e3a8980"; };
+      name = "plaster-pastedeploy-0.3.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/0c/1e/d6b3377e3c5577d874e2f8b8fc5440d265ae090df21f18c64f4893054b24/plaster_pastedeploy-0.3.2.tar.gz"; sha256 = "d0d445c38253b2fbf720a5171e815206effb2650f49b390fec41a9ecf14be881"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
