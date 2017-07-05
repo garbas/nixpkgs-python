@@ -9,6 +9,7 @@ env:
 - PKGS_SET=homeassistant
 - PKGS_SET=pelican
 - PKGS_SET=pyramid
+- PKGS_SET=pykube
 #- PKGS_SET=science
 
 script:
