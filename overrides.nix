@@ -66,7 +66,7 @@ in skipOverrides {
 
   "jsonschema" = self: old: {
     patchPhase = ''
-      sed -i -e 's|setup_requires=\["vcversioner"\],||' setup.py
+      sed -i -e 's|setup_requires=\["vcversioner[><=0-9\.]*"\],||' setup.py
     '';
   };
 
