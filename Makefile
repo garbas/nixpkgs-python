@@ -8,6 +8,7 @@ all: \
 	homeassistant \
 	openstackclient \
 	pelican \
+	pykube \
 	pyramid \
 	science \
 	pypi2nix \
@@ -49,6 +50,15 @@ pelican:
 			-O ../overrides.nix \
 			-r requirements.txt
 	nix-build -A pelican -o result-pelican
+
+
+pykube:
+	cd pykube/ && \
+		$(PYPI2NIX) -v \
+		-V 3.5 \
+		-r requirements.txt \
+		-O ../overrides.nix
+	nix-build -A pykube -o result-pykube
 
 
 pyramid:
@@ -98,6 +108,7 @@ static:
 	flask \
 	homeassistant \
 	pelican \
+	pykube \
 	pyramid \
 	openstackclient \
 	science \

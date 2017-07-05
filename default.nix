@@ -26,6 +26,10 @@ let
       { name = "Antoine Eiche";
         url = "https://github.com/nlewo";
       };
+    seppeljordan =
+      { name = "Sebastian Jordan";
+        url = "https://github.com/seppeljordan";
+      };
   };
 
 in createSets [
@@ -63,6 +67,11 @@ in createSets [
   { name = "openstackclient";
     maintainers = [ maintainers.lewo ];
     description = "Openstaclient client packages.";
+  }
+
+  { name = "pykube";
+    maintainers = [ maintainers.seppeljordan ];
+    description = "Python client library for Kubernetes";
   }
 
 ]
