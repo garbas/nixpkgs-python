@@ -3,7 +3,7 @@ certifi==2017.4.17
 chardet==3.0.4
 click==6.7
 clickclick==1.2.1
-connexion==1.1.10
+connexion==1.1.11
 Flask==0.12.2
 Flask-Cache==0.13.1
 Flask-Cors==3.0.3
