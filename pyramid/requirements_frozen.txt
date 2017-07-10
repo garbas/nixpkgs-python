@@ -3,7 +3,7 @@ hupper==1.0
 packaging==16.8
 PasteDeploy==1.5.2
 plaster==0.5
-plaster-pastedeploy==0.3.2
+plaster-pastedeploy==0.4
 pyparsing==2.2.0
 pyramid==1.9
 repoze.lru==0.6
