@@ -136,8 +136,8 @@ let
 
 
     "plaster-pastedeploy" = python.mkDerivation {
-      name = "plaster-pastedeploy-0.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ea/3d/0ffee5492f02f4c232cd1270ce0ddda0a2f72a420dfb3429379d29524137/plaster_pastedeploy-0.4.tar.gz"; sha256 = "9ac59883f9cf8c42949fda6e0326a02b47e6b213124014a4ae22db613645f03d"; };
+      name = "plaster-pastedeploy-0.4.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/9d/6e/f8be01ed41c94e6c54ac97cf2eb142a702aae0c8cce31c846f785e525b40/plaster_pastedeploy-0.4.1.tar.gz"; sha256 = "5b92469d4efb26f3581ea32ecc64a513891693d29639fbd2ab2ec755949f2bd3"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
