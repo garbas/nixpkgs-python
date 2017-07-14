@@ -5,7 +5,7 @@ PasteDeploy==1.5.2
 plaster==0.5
 plaster-pastedeploy==0.4.1
 pyparsing==2.2.0
-pyramid==1.9
+pyramid==1.9.1
 repoze.lru==0.6
 six==1.10.0
 translationstring==1.3
