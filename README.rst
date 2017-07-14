@@ -65,6 +65,13 @@ Pyramid
 
 This is a collections of Pyramid_ framework and its extensions.
 
+pykube
+^^^^^^
+
+:maintainers: seppeljordan_
+
+This is pykube_ and its dependencies as a package set.
+
 
 .. _Flask: http://flask.pocoo.org
 .. _HomeAssistant: http://home-assistant.io
@@ -73,3 +80,5 @@ This is a collections of Pyramid_ framework and its extensions.
 .. _Django: https://www.djangoproject.com
 .. _PyPi: https://pypi.python.org
 .. _garbas: https://github.com/garbas
+.. _seppeljordan: https://github.com/seppeljordan
+.. _pykube: https://github.com/kelproject/pykube
