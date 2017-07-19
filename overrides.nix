@@ -6,17 +6,21 @@ let
     let
       overridesNames = builtins.attrNames overrides;
       superNames = builtins.attrNames super;
+      filteredNames =
+        builtins.filter
+        (name: builtins.elem name superNames)
+        overridesNames;
+      addLANG = old: { LANG = "en_US.UTF-8"; };
     in
       builtins.listToAttrs
         (builtins.map
           (name: { inherit name;
-                   value = python.overrideDerivation super."${name}" (overrides."${name}" self);
+                   value = python.overrideDerivation
+                           super."${name}"
+                           (old: (addLANG old // overrides."${name}" self old));
                  }
           )
-          (builtins.filter
-            (name: builtins.elem name superNames)
-            overridesNames
-          )
+          filteredNames
         );
 
 in skipOverrides {
