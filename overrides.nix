@@ -10,8 +10,21 @@ let
         builtins.filter
         (name: builtins.elem name superNames)
         overridesNames;
+      packagesWithoutOverrides =
+        builtins.filter
+        (name: ! builtins.elem name filteredNames)
+        superNames;
       addLANG = old: { LANG = "en_US.UTF-8"; };
     in
+      builtins.listToAttrs
+      (builtins.map
+        (name: { inherit name;
+                 value = python.overrideDerivation super."${name}" addLANG;
+               }
+        )
+        packagesWithoutOverrides
+      )
+      //
       builtins.listToAttrs
         (builtins.map
           (name: { inherit name;
