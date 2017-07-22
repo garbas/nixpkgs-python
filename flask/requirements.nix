@@ -288,8 +288,8 @@ let
 
 
     "clickclick" = python.mkDerivation {
-      name = "clickclick-1.2.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/6f/46/28462eb039bbce3651084d5260c50ab83dc3af0724626e6a81c93d950b2c/clickclick-1.2.1.tar.gz"; sha256 = "22eedfce2499d7a8c5b8c868fc93a495eb74bf7b753a6cb9ed2aa6a32a3ddd05"; };
+      name = "clickclick-1.2.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b8/cf/2d1fb0c967616e7cd3a8e6a3aca38bc50b50137d9bc7f46cdb3e6fe03361/clickclick-1.2.2.tar.gz"; sha256 = "4a890aaa9c3990cfabd446294eb34e3dc89701101ac7b41c1bff85fc210f6d23"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -306,8 +306,8 @@ let
 
 
     "connexion" = python.mkDerivation {
-      name = "connexion-1.1.11";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ad/32/0b74e070048404907319e646a09b3c25712f477d5fe1354e6825178a6935/connexion-1.1.11.tar.gz"; sha256 = "873fab1e556f2be60486cea793de7ddec84fff79181af373c10f233231664c1a"; };
+      name = "connexion-1.1.12";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/71/b3/196c4d0331f9817ddc0272191dd297145595178744221df9f7f0496cebb4/connexion-1.1.12.tar.gz"; sha256 = "9b09578ff6576a48876601ba277873ff40614ea22a6d3012a7e4bde67b660d24"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
