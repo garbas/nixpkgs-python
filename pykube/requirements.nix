@@ -91,14 +91,14 @@ let
 
 
     "certifi" = python.mkDerivation {
-      name = "certifi-2017.4.17";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/dd/0e/1e3b58c861d40a9ca2d7ea4ccf47271d4456ae4294c5998ad817bd1b4396/certifi-2017.4.17.tar.gz"; sha256 = "f7527ebf7461582ce95f7a9e03dd141ce810d40590834f4ec20cddd54234c10a"; };
+      name = "certifi-2017.7.27.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/20/d0/3f7a84b0c5b89e94abbd073a5f00c7176089f526edb056686751d5064cbd/certifi-2017.7.27.1.tar.gz"; sha256 = "40523d2efb60523e113b44602298f0960e900388cf3bb6043f645cf57ea9e3f5"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://certifi.io/";
-        license = "ISC";
+        license = "MPL-2.0";
         description = "Python package for providing Mozilla's CA Bundle.";
       };
     };
@@ -187,8 +187,8 @@ let
 
 
     "pyasn1" = python.mkDerivation {
-      name = "pyasn1-0.2.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/69/17/eec927b7604d2663fef82204578a0056e11e0fc08d485fdb3b6199d9b590/pyasn1-0.2.3.tar.gz"; sha256 = "738c4ebd88a718e700ee35c8d129acce2286542daa80a82823a7073644f706ad"; };
+      name = "pyasn1-0.3.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/13/49/c05159267c63d009dc81e4dbd2fd952feb846152d05c0d9a36e7e3933641/pyasn1-0.3.1.tar.gz"; sha256 = "f6e437000baec5feda6bc4c04acaf7ca25bbca76a6cbce142ebbfada12244fac"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -202,8 +202,8 @@ let
 
 
     "pyasn1-modules" = python.mkDerivation {
-      name = "pyasn1-modules-0.0.9";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/cf/57/d4097cea8caf360ffe0c5d6f25c2cb9317500cdc000fd02a741ba6e64c9e/pyasn1-modules-0.0.9.tar.gz"; sha256 = "be0e4157e4a53551279d6c6e366b080527f5fd068616835b4abf32c14f657f5f"; };
+      name = "pyasn1-modules-0.0.10";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e8/9f/82eccbf8cfeaaba99579db4eb338799647821b345c39c5c5c8d8b9569579/pyasn1-modules-0.0.10.tar.gz"; sha256 = "3d86ab0fa226a60897c8123c505b3d0712e042990f061237799639f6fa742bf3"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
