@@ -85,7 +85,6 @@ in skipOverrides {
   "pypiserver" = self: old: {
     patchPhase = ''
       sed -i -e "s|setup_requires *= \[.*|setup_requires=\[\]|" setup.py
-      cat setup.py
     '';
   };
 
