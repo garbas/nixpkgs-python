@@ -1,0 +1,6 @@
+appdirs==1.4.3
+packaging==16.8
+passlib==1.7.1
+pyparsing==2.2.0
+pypiserver==1.2.0
+six==1.10.0

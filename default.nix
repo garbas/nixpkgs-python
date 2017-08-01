@@ -74,4 +74,9 @@ in createSets [
     description = "Python client library for Kubernetes";
   }
 
+  { name = "pypiserver";
+    maintainers = [ maintainers.seppeljordan ];
+    description = "Python package server compatible with pip";
+  }
+
 ]
