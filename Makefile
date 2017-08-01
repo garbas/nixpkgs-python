@@ -10,6 +10,7 @@ all: \
 	pelican \
 	pykube \
 	pyramid \
+	pypiserver \
 	science \
 	pypi2nix \
 	static
@@ -69,6 +70,14 @@ pyramid:
 			-r requirements.txt
 	nix-build -A pyramid -o result-pyramid
 
+pypiserver:
+	cd pypiserver/ && \
+		$(PYPI2NIX) -v \
+			-V 3.5 \
+			-O ../overrides.nix \
+			-r requirements.txt
+	nix-build -A pypiserver -o result-pypiserver
+
 
 science:
 	cd science/ && \
@@ -110,6 +119,7 @@ static:
 	pelican \
 	pykube \
 	pyramid \
+	pypiserver \
 	openstackclient \
 	science \
 	pypi2nix \
