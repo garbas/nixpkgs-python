@@ -72,6 +72,12 @@ pykube
 
 This is pykube_ and its dependencies as a package set.
 
+pypiserver
+^^^^^^^^^^
+
+:maintainers: seppeljordan_
+
+Package set containing pypiserver_ and its dependencies.
 
 .. _Flask: http://flask.pocoo.org
 .. _HomeAssistant: http://home-assistant.io
@@ -82,3 +88,4 @@ This is pykube_ and its dependencies as a package set.
 .. _garbas: https://github.com/garbas
 .. _seppeljordan: https://github.com/seppeljordan
 .. _pykube: https://github.com/kelproject/pykube
+.. _pypiserver: https://github.com/pypiserver/pypiserver
