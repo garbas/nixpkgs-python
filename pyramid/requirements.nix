@@ -225,13 +225,13 @@ let
 
 
     "zope.deprecation" = python.mkDerivation {
-      name = "zope.deprecation-4.2.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/51/85/b9d2fdcaf38ce3271ad759c7e8f0e9a28f6d900c1ad495085e4ab1de3795/zope.deprecation-4.2.0.tar.gz"; sha256 = "ff32c5bb5388b77b22c83ed1f1aa01cdbb076d9f2cfa2b825450ce9e2ecfd738"; };
+      name = "zope.deprecation-4.3.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a1/18/2dc5e6bfe64fdc3b79411b67464c55bb0b43b127051a20f7f492ab767758/zope.deprecation-4.3.0.tar.gz"; sha256 = "7d52e134bbaaa0d72e1e2bc90f0587f1adc116c4bdf15912afaf2f1e8856b224"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://pypi.python.org/pypi/zope.deprecation";
+        homepage = "http://github.com/zopefoundation/zope.deprecation";
         license = licenses.zpt21;
         description = "Zope Deprecation Infrastructure";
       };
