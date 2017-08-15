@@ -9,7 +9,7 @@ Flask-Cache==0.13.1
 Flask-Cors==3.0.3
 Flask-Login==0.4.0
 Flask-SQLAlchemy==2.2
-idna==2.5
+idna==2.6
 inflection==0.3.1
 itsdangerous==0.24
 Jinja2==2.9.6
@@ -18,7 +18,7 @@ MarkupSafe==1.0
 packaging==16.8
 pyparsing==2.2.0
 PyYAML==3.12
-requests==2.18.3
+requests==2.18.4
 six==1.10.0
 SQLAlchemy==1.1.13
 swagger-spec-validator==2.1.0
