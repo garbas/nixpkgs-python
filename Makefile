@@ -4,6 +4,7 @@ PYPI2NIX=./../result-pypi2nix/bin/pypi2nix
 
 all: \
 	django \
+	flake8 \
 	flask \
 	homeassistant \
 	openstackclient \
@@ -23,6 +24,15 @@ django:
 			-O ../overrides.nix \
 			-r requirements.txt
 	nix-build -A django -o result-django
+
+
+flake8:
+	cd flake8/ && \
+		$(PYPI2NIX) -v \
+			-V 3.5 \
+			-r requirements.txt \
+			-O ../overrides.nix
+	nix-build -A flake8 -o result-flake8
 
 
 flask:
@@ -114,6 +124,7 @@ static:
 
 .PHONY: \
 	django \
+	flake8 \
 	flask \
 	homeassistant \
 	pelican \

@@ -16,6 +16,12 @@ TODO: once flask collection is finished add how to use collection with existing
 Current collections
 -------------------
 
+Flake8
+^^^^^^
+
+:maintainers: `seppeljordan`_
+
+This is a collection of Flake8_ and its plugins.
 
 Flask
 ^^^^^
@@ -79,6 +85,7 @@ pypiserver
 
 Package set containing pypiserver_ and its dependencies.
 
+.. _Flak8: https://gitlab.com/pycqa/flake8
 .. _Flask: http://flask.pocoo.org
 .. _HomeAssistant: http://home-assistant.io
 .. _Pelican: http://blog.getpelican.com

@@ -65,6 +65,18 @@ in skipOverrides {
     '';
   };
 
+  "flake8-logging-format" = self: old: {
+    patchPhase = ''
+      sed -i -e "s|\"nose>=[0-9\.]*\"|\"\"|" setup.py
+    '';
+  };
+
+  "flake8-mutable" = self: old: {
+    patchPhase = ''
+      sed -i -e "s|'pytest-runner'|'''|" setup.py
+    '';
+  };
+
   "jsonschema" = self: old: {
     patchPhase = ''
       sed -i -e 's|setup_requires=\["vcversioner[><=0-9\.]*"\],||' setup.py
@@ -81,6 +93,12 @@ in skipOverrides {
     # TODO: add this to every package
     LANG = "en_US.UTF-8";
     buildInputs = old.buildInputs ++ [ pkgs.glibcLocales ];
+  };
+
+  "pygal" = self: old: {
+    patchPhase = ''
+      sed -i -e "s|setup_requires=\['pytest-runner'\],||" setup.py
+    '';
   };
 
   "pypiserver" = self: old: {

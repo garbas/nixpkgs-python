@@ -39,6 +39,11 @@ in createSets [
     description = "Django framework and its extensions.";
   }
 
+  { name = "flake8";
+    maintainers = [ maintainers.seppeljordan ];
+    description = "the modular source code checker: pep8, pyflakes and co";
+  }
+
   { name = "flask";
     maintainers = [ maintainers.garbas ];
     description = "Flask framework and its extensions.";

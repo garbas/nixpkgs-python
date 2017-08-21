@@ -5,6 +5,7 @@ addons:
 
 env:
 - PKGS_SET=django
+- PKGS_SET=flake8
 - PKGS_SET=flask
 - PKGS_SET=homeassistant
 - PKGS_SET=pelican
