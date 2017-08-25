@@ -1150,8 +1150,8 @@ let
 
 
     "flake8-rst-docstrings" = python.mkDerivation {
-      name = "flake8-rst-docstrings-0.0.6";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/51/a2/42f16167b0a5744163d667f8fd46f4c1f5b5571c58a771fa76849bbeeddf/flake8-rst-docstrings-0.0.6.tar.gz"; sha256 = "2534f7e4696fb08c03713c7a5fc95085140437a68ba4c854bc0a607814bf8892"; };
+      name = "flake8-rst-docstrings-0.0.7";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/92/70/4843f49c8b04e93a6676bca8af70bed8f566e9b4ed1ae82bbcfe90906da0/flake8-rst-docstrings-0.0.7.tar.gz"; sha256 = "4a13adfa53d70039cad1a602c4ba7e0a8b2fcd6794096103696d8f6b457ff3be"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
