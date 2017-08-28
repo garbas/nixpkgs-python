@@ -187,8 +187,8 @@ let
 
 
     "pyasn1" = python.mkDerivation {
-      name = "pyasn1-0.3.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/17/a2/266818077dbd002d53ebe5aaaa05a04786256cea8dba1899ac0b832ef028/pyasn1-0.3.2.tar.gz"; sha256 = "90bd82e0db59d4319eaf01c2549b34c817d645275fce9ad41bac7429aa380690"; };
+      name = "pyasn1-0.3.3";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/33/4b/b3838af9a0bd1d17463031cf28cb1c196618900ccf80b62979f48c42768b/pyasn1-0.3.3.tar.gz"; sha256 = "01c20ade412088b42dcd5f0fef6149f6b7377297c5c5f222bb5ef0331ee3517c"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -202,8 +202,8 @@ let
 
 
     "pyasn1-modules" = python.mkDerivation {
-      name = "pyasn1-modules-0.0.11";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/de/5f/0c6a1a096bfc2831ee8e2e951f79e6ec23c853c17ab5ba655322bfcde20a/pyasn1-modules-0.0.11.tar.gz"; sha256 = "60d5c80bfee9b79b492d5d8a934b3ecfc523f2f83aaab4ffafa2bbb651d3c67a"; };
+      name = "pyasn1-modules-0.1.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/1f/e5/dd41092cc5128419e1442f7dd98210e07fd3584e3e8973775924903efe0d/pyasn1-modules-0.1.1.tar.gz"; sha256 = "017b6a20725c79f1329e9f446d90ebbeab9d9b322bde0c26d46840b367fb915d"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
