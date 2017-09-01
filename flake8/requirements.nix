@@ -335,8 +335,8 @@ let
 
 
     "flake8-codeclimate" = python.mkDerivation {
-      name = "flake8-codeclimate-0.1.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/9b/4e/41a085d1ab953d7d7cd0990eee6831b7563e5c9a5968eabdc3bd7badd118/flake8_codeclimate-0.1.2.tar.gz"; sha256 = "30c1be44815622504a046162830d828f343dd5c6293335a37bd1659cf12ebcc6"; };
+      name = "flake8-codeclimate-0.1.3";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f6/83/fbe2cd6f33fc2f9e5512002c93b214bd4a69fec225ae0dcaa7677863f9d3/flake8_codeclimate-0.1.3.tar.gz"; sha256 = "fd4edbfbebd307547517d9b76362a2fef7fdd20f8b86e7f9853ba537cdd4f203"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -894,8 +894,8 @@ let
 
 
     "flake8-mypy" = python.mkDerivation {
-      name = "flake8-mypy-17.3.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ca/d7/9b04cd39177f2a748e0a0343f6cb3a21931162952c6c03dc728d60626d81/flake8-mypy-17.3.3.tar.gz"; sha256 = "91fd35d31821b6e792fcd3112d2af3ec63e9934d04de163d07b078821aaea63f"; };
+      name = "flake8-mypy-17.8.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/97/9a/cddd1363d7314bb4eb452089c6fb3092ed9fda9f3350683d1978522a30ec/flake8-mypy-17.8.0.tar.gz"; sha256 = "47120db63aff631ee1f84bac6fe8e64731dc66da3efc1c51f85e15ade4a3ba18"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
