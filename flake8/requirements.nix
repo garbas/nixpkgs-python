@@ -1614,8 +1614,8 @@ let
 
 
     "testfixtures" = python.mkDerivation {
-      name = "testfixtures-5.1.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c0/c4/67f7f4cf954b7c99a466f576050673cf88e855bda8576b9eb8f6f4194b1e/testfixtures-5.1.1.tar.gz"; sha256 = "0c44ac70cfbcc5093f4e98fd4b0babe1be768d97e47da2634cea5339ae62178c"; };
+      name = "testfixtures-5.2.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/96/81/51634a9b58ce8fc31992a492b0dcc281cc33853123afce1c24f69b956427/testfixtures-5.2.0.tar.gz"; sha256 = "7427d4b63861c1896865ea7be078fa1e2b219ce9b1a9a0895f823475a5f76c85"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
