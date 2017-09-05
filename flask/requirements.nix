@@ -213,8 +213,8 @@ let
 
 
     "SQLAlchemy" = python.mkDerivation {
-      name = "SQLAlchemy-1.1.13";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a2/43/e90732a93d512c1c8b27f38990a8531b208c34fae0de661ef81668131095/SQLAlchemy-1.1.13.tar.gz"; sha256 = "2a98ac87b30eaa2bee1f1044848b9590e476e7f93d033c6542e60b993a5cf898"; };
+      name = "SQLAlchemy-1.1.14";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a3/d1/eacdedd964ad43fbc4cc7110dac33fbf1dbd7bf50dedb4dc1799c42972c1/SQLAlchemy-1.1.14.tar.gz"; sha256 = "f1191e29e35b6fe1aef7175a09b1707ebb7bd08d0b17cb0feada76c49e5a2d1e"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
