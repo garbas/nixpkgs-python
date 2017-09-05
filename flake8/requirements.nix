@@ -930,8 +930,8 @@ let
 
 
     "flake8-ownership" = python.mkDerivation {
-      name = "flake8-ownership-1.0.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b8/19/689ff1ea51756a79cfda5827f2410c864ffcc5f67137edf9641ba65fcb1f/flake8-ownership-1.0.1.tar.gz"; sha256 = "78d38059c9ba062bcc0ab92ee05ad47f50b371a049c218db6214a57c65b20a64"; };
+      name = "flake8-ownership-1.0.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/0d/1d/7b77c907b3e5976f16f747dd0d757ad86f3984e0624a1b35c39ce73814e9/flake8-ownership-1.0.2.tar.gz"; sha256 = "51027f6f92499fb768a25ebb89da890f2cfa356575850dca6a859b222aa598b5"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
