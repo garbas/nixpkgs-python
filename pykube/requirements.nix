@@ -172,8 +172,8 @@ let
 
 
     "oauthlib" = python.mkDerivation {
-      name = "oauthlib-2.0.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/fa/2e/25f25e6c69d97cf921f0a8f7d520e0ef336dd3deca0142c0b634b0236a90/oauthlib-2.0.2.tar.gz"; sha256 = "b3b9b47f2a263fe249b5b48c4e25a5bce882ff20a0ac34d553ce43cff55b53ac"; };
+      name = "oauthlib-2.0.3";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/8d/f6/73febc3edf774239b18231d8b17cf2c3319dd128f7fe2f55f3fdf96477b4/oauthlib-2.0.3.tar.gz"; sha256 = "f36c6631d072a2acb8b3b99f94e5e314f1fb4ed996696b18b2723769391c071b"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -187,8 +187,8 @@ let
 
 
     "pyasn1" = python.mkDerivation {
-      name = "pyasn1-0.3.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/33/4b/b3838af9a0bd1d17463031cf28cb1c196618900ccf80b62979f48c42768b/pyasn1-0.3.3.tar.gz"; sha256 = "01c20ade412088b42dcd5f0fef6149f6b7377297c5c5f222bb5ef0331ee3517c"; };
+      name = "pyasn1-0.3.4";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/1a/37/7ac6910d872fdac778ad58c82018dce4af59279a79b17403bbabbe2a866e/pyasn1-0.3.4.tar.gz"; sha256 = "3946ff0ab406652240697013a89d76e388344866033864ef2b097228d1f0101a"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -202,8 +202,8 @@ let
 
 
     "pyasn1-modules" = python.mkDerivation {
-      name = "pyasn1-modules-0.1.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/1f/e5/dd41092cc5128419e1442f7dd98210e07fd3584e3e8973775924903efe0d/pyasn1-modules-0.1.1.tar.gz"; sha256 = "017b6a20725c79f1329e9f446d90ebbeab9d9b322bde0c26d46840b367fb915d"; };
+      name = "pyasn1-modules-0.1.4";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/66/6b/f5582cbf3b920896ce1b97bde3894599b3dec31301ef79ae7ea0022f5577/pyasn1-modules-0.1.4.tar.gz"; sha256 = "b07c17bdb34d6f64aafea6269f2e8fb306a57473f0f38d9a6ca389d6ab30ac4a"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
