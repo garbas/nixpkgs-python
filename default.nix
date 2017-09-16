@@ -83,5 +83,9 @@ in createSets [
     maintainers = [ maintainers.seppeljordan ];
     description = "Python package server compatible with pip";
   }
+  { name = "pytest";
+    maintainers = [ maintainers.seppeljordan ];
+    description = "A python test engine";
+  }
 
 ]

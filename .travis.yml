@@ -11,6 +11,8 @@ env:
 - PKGS_SET=pelican
 - PKGS_SET=pyramid
 - PKGS_SET=pykube
+- PKGS_SET=pypiserver
+- PKGS_SET=pytest
 #- PKGS_SET=science
 
 script:

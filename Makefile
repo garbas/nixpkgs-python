@@ -12,6 +12,7 @@ all: \
 	pykube \
 	pyramid \
 	pypiserver \
+	pytest \
 	science \
 	pypi2nix \
 	static
@@ -89,6 +90,15 @@ pypiserver:
 	nix-build -A pypiserver -o result-pypiserver
 
 
+pytest:
+	cd pytest/ && \
+		$(PYPI2NIX) -v \
+			-V 3.5 \
+			-O ../overrides.nix \
+			-r requirements.txt
+	nix-build -A pytest -o result-pytest
+
+
 science:
 	cd science/ && \
 		$(PYPI2NIX) -v \
@@ -131,7 +141,11 @@ static:
 	pykube \
 	pyramid \
 	pypiserver \
+	pytest \
 	openstackclient \
 	science \
 	pypi2nix \
 	static
+
+list_pkgs:
+	cd pytest && ./manage-package-list.py

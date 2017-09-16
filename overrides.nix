@@ -59,6 +59,17 @@ in skipOverrides {
     '';
   };
 
+  "execnet" = self: old:
+  let
+    version = with builtins; (parseDrvName old.name).version;
+  in
+  {
+    patchPhase = ''
+      sed -i -e "s|.*setup_requires=.*,.*||" setup.py
+      sed -i -e "s|setup(|setup(version=\"${version}\",|" setup.py
+    '';
+  };
+
   "flake8" = self: old: {
     patchPhase = ''
       sed -i -e "s|setup_requires=\['pytest-runner'\],||" setup.py
@@ -104,6 +115,17 @@ in skipOverrides {
   "pypiserver" = self: old: {
     patchPhase = ''
       sed -i -e "s|setup_requires *= \[.*|setup_requires=\[\]|" setup.py
+    '';
+  };
+
+  "pytest" = self: old:
+  let
+    version = with builtins; (parseDrvName old.name).version;
+  in
+  {
+    patchPhase = ''
+      sed -i -e "s|.*setup_requires.*=.*,||" setup.py
+      sed -i -e "s|setup(|setup(version=\"${version}\",|" setup.py
     '';
   };
 
