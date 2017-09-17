@@ -172,8 +172,8 @@ let
 
 
     "oauthlib" = python.mkDerivation {
-      name = "oauthlib-2.0.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/8d/f6/73febc3edf774239b18231d8b17cf2c3319dd128f7fe2f55f3fdf96477b4/oauthlib-2.0.3.tar.gz"; sha256 = "f36c6631d072a2acb8b3b99f94e5e314f1fb4ed996696b18b2723769391c071b"; };
+      name = "oauthlib-2.0.4";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/78/46/c19c2d374a37d218c551717d873670216af7242bc92958df1701dcc5e76d/oauthlib-2.0.4.tar.gz"; sha256 = "514e293cb356dd53d596692207d48d9231b997995c9a4167eefa868583d74d13"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -187,8 +187,8 @@ let
 
 
     "pyasn1" = python.mkDerivation {
-      name = "pyasn1-0.3.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/1a/37/7ac6910d872fdac778ad58c82018dce4af59279a79b17403bbabbe2a866e/pyasn1-0.3.4.tar.gz"; sha256 = "3946ff0ab406652240697013a89d76e388344866033864ef2b097228d1f0101a"; };
+      name = "pyasn1-0.3.5";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/bc/85/029f5f4d4fa8a487538ce597932cf3601bba3392c85d74eae148fe6ac5d3/pyasn1-0.3.5.tar.gz"; sha256 = "c7a1186416bcdaf19b56f5b2506200306d7d4cf222d3d7c2d4cb600ccacdaf1b"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
