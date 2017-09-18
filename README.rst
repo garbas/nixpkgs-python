@@ -85,6 +85,13 @@ pypiserver
 
 Package set containing pypiserver_ and its dependencies.
 
+pytest
+^^^^^^
+
+:maintainers: seppeljordan_
+
+Package set containing pytest and some of its plugins.
+
 .. _Flak8: https://gitlab.com/pycqa/flake8
 .. _Flask: http://flask.pocoo.org
 .. _HomeAssistant: http://home-assistant.io
