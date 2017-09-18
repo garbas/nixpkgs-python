@@ -44,7 +44,7 @@ let
           for dep in ${builtins.concatStringsSep " "               (builtins.attrValues pkgs)}; do
             if [ -d "$dep/bin" ]; then
               for prog in "$dep/bin/"*; do
-                if [ -f $prog ]; then
+                if [ -x "$prog" ] && [ -f "$prog" ]; then
                   ln -s $prog $out/bin/`basename $prog`
                 fi
               done
@@ -200,6 +200,23 @@ let
         homepage = "https://github.com/pytest-dev/pytest-cov";
         license = licenses.bsdOriginal;
         description = "Pytest plugin for measuring coverage.";
+      };
+    };
+
+
+
+    "pytest-django" = python.mkDerivation {
+      name = "pytest-django-3.1.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/78/8b/aeab19b727411f3ec5f68dc8c05b2dba949b27ed592d68217e72e7d4ce65/pytest-django-3.1.2.tar.gz"; sha256 = "038ccc5a9daa1b1b0eb739ab7dce54e495811eca5ea3af4815a2a3ac45152309"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."pytest"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://pytest-django.readthedocs.io/";
+        license = licenses.bsdOriginal;
+        description = "A Django plugin for pytest.";
       };
     };
 

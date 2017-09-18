@@ -129,4 +129,11 @@ in skipOverrides {
     '';
   };
 
+  "pytest-django" = self: old:
+  {
+    patchPhase = ''
+      sed -i -e "s|.*setup_requires.*=.*,||" setup.py
+    '';
+  };
+
 }
