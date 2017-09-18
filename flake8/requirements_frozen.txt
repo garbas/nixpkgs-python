@@ -89,7 +89,7 @@ pygal==2.4.0
 Pygments==2.2.0
 pyparsing==2.2.0
 restructuredtext-lint==1.1.1
-six==1.10.0
+six==1.11.0
 snowballstemmer==1.2.1
 sqlparse==0.2.3
 testfixtures==5.2.0
