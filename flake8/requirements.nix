@@ -930,17 +930,17 @@ let
 
 
     "flake8-ownership" = python.mkDerivation {
-      name = "flake8-ownership-1.0.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/0d/1d/7b77c907b3e5976f16f747dd0d757ad86f3984e0624a1b35c39ce73814e9/flake8-ownership-1.0.2.tar.gz"; sha256 = "51027f6f92499fb768a25ebb89da890f2cfa356575850dca6a859b222aa598b5"; };
+      name = "flake8-ownership-1.1.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/bf/28/dfa5aeffd57856e81f59169eb36d426b41322ae4e4d5e40b34a3cdc50423/flake8-ownership-1.1.1.tar.gz"; sha256 = "608db36fb4395afed91ddb5d358b5a1fabcb0fe55ac9214c30808374aece1d88"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."flake8"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "https://bitbucket.org/decafjoe/flake8-ownership";
+        homepage = "http://flake8-ownership.readthedocs.io";
         license = licenses.bsdOriginal;
-        description = "Checks for author, copyright, and license info.";
+        description = "A flake8 checker for assuring that author, copyright, and license are specified in source files.";
       };
     };
 
