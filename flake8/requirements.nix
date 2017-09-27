@@ -1186,8 +1186,8 @@ let
 
 
     "flake8-sorted-keys" = python.mkDerivation {
-      name = "flake8-sorted-keys-0.1.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e7/bc/eea64535b566c5ce73c7b32e4c6d3088205fbd2250e0f06a3d547c237588/flake8_sorted_keys-0.1.0.tar.gz"; sha256 = "4e087bec8cd36fbc77990e93729b29f43ba8e4ba9577a3e70114d5c0750872cb"; };
+      name = "flake8-sorted-keys-0.2.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/54/a3/f1c5b92be4c41be1d2edd445b47e8ed94c4619cf20519fdff7b8b76618d7/flake8_sorted_keys-0.2.0.tar.gz"; sha256 = "ea61bbd84acca2d86c344eec7700e58e3057a4ccdbb5fab670fbecae2386c3a2"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -1599,8 +1599,8 @@ let
 
 
     "sqlparse" = python.mkDerivation {
-      name = "sqlparse-0.2.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/45/67/14bdaeff492e6d03a055fe80502bae10b679891c25a0dc59be2fe51002f8/sqlparse-0.2.3.tar.gz"; sha256 = "becd7cc7cebbdf311de8ceedfcf2bd2403297024418801947f8c953025beeff8"; };
+      name = "sqlparse-0.2.4";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/79/3c/2ad76ba49f9e3d88d2b58e135b7821d93741856d1fe49970171f73529303/sqlparse-0.2.4.tar.gz"; sha256 = "ce028444cfab83be538752a2ffdb56bc417b7784ff35bb9a3062413717807dec"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];

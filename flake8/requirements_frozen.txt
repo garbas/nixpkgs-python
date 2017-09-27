@@ -60,7 +60,7 @@ flake8-regex==0.3
 flake8-respect-noqa==0.3
 flake8-rst-docstrings==0.0.7
 flake8-snippets==0.2
-flake8-sorted-keys==0.1.0
+flake8-sorted-keys==0.2.0
 flake8-SQL==0.2.0
 flake8-strict==0.1.5
 flake8-string-format==0.2.3
@@ -91,7 +91,7 @@ pyparsing==2.2.0
 restructuredtext-lint==1.1.1
 six==1.11.0
 snowballstemmer==1.2.1
-sqlparse==0.2.3
+sqlparse==0.2.4
 testfixtures==5.2.0
 typed-ast==1.0.4
 typing==3.6.2
