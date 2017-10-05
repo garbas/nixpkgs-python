@@ -148,8 +148,8 @@ let
 
 
     "Flask-SQLAlchemy" = python.mkDerivation {
-      name = "Flask-SQLAlchemy-2.3.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/31/50/f4bfe4c1bad62e5efa2ec8987d7b290975713a15c50a332b6993cc994ea4/Flask-SQLAlchemy-2.3.0.tar.gz"; sha256 = "da19ff62e31f82825b5467811c76e2a1c60bba927e175fe091a6f739063dd829"; };
+      name = "Flask-SQLAlchemy-2.3.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d0/24/fb7c9d97f0f2ac2f484b867796f6fde1b5064ec753eaa68ce49ac8584b5e/Flask-SQLAlchemy-2.3.1.tar.gz"; sha256 = "ab879cf88d30f2961dd9b4d709dcd31a25e0306855324c7d9a74fca6ad6ef8c3"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
