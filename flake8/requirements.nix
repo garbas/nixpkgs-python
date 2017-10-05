@@ -591,8 +591,8 @@ let
 
 
     "flake8-formatter-abspath" = python.mkDerivation {
-      name = "flake8-formatter-abspath-1.0.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2b/5b/174b97a7a72fbcd7a431d2ce94bad38b433bf0ab25be6bb8e541d2581826/flake8_formatter_abspath-1.0.0.tar.gz"; sha256 = "563922f72e11fbccdbfcf7e1dbca25ec67a2e84335202aa80a92ce471ec93cf3"; };
+      name = "flake8-formatter-abspath-1.0.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f1/8a/5e8820f3f7c7dc93a81e384538e42a6a6ec2a2248548ba37e2ea3169fd01/flake8_formatter_abspath-1.0.1.tar.gz"; sha256 = "694d0874d5d047ed57c82a10213f75604475e4525ee8bbaad53417a7d6f8442c"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [

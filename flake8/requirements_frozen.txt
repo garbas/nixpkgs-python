@@ -25,7 +25,7 @@ flake8-double-quotes==0.0.1
 flake8-doubles==0.3
 flake8-exact-pin==0.0.1
 flake8-format-ansi==0.1.0
-flake8-formatter-abspath==1.0.0
+flake8-formatter-abspath==1.0.1
 flake8-future==0.2
 flake8-future-import==0.4.3
 flake8-graphql==0.2.5
