@@ -187,8 +187,8 @@ let
 
 
     "pyasn1" = python.mkDerivation {
-      name = "pyasn1-0.3.6";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/95/08/80895c3bffb2da55c9de25e8292cfffb4768058eae4465a8bd1459d1cd6b/pyasn1-0.3.6.tar.gz"; sha256 = "f0380ea97db0ede095a0dd87ce3003d46c197191f924206e43f776fc77e51f09"; };
+      name = "pyasn1-0.3.7";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3c/a6/4d6c88aa1694a06f6671362cb3d0350f0d856edea4685c300785200d1cd9/pyasn1-0.3.7.tar.gz"; sha256 = "187f2a66d617683f8e82d5c00033b7c8a0287e1da88a9d577aebec321cad4965"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
