@@ -1423,8 +1423,8 @@ let
 
 
     "mypy" = python.mkDerivation {
-      name = "mypy-0.521";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/18/11/733e33decfdbd76cce7158c92618b9317d4132b41affd04db00216d17f76/mypy-0.521.tar.gz"; sha256 = "9d30df20cd937b80cfc6007d75426f27a232789cfa288c63bf9370f2542c9658"; };
+      name = "mypy-0.530";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/5a/ff/a5efedf50f5d70eff399c306e5e0d3daf2dc1512ae99e3f9e4db46ddf2ff/mypy-0.530.tar.gz"; sha256 = "f94b4600b3ed3daa8da17648f08d29d6336b9da0bb1709d260bb4d14f20a9343"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -1629,8 +1629,8 @@ let
 
 
     "typed-ast" = python.mkDerivation {
-      name = "typed-ast-1.0.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/6c/8c/308968906916c5523c3a0e5ecb8ba8d79b8baf67f05faf1dffcb2a78ae7e/typed-ast-1.0.4.tar.gz"; sha256 = "73f09aac0119f6664a3f471a1ec1c9b719f572bc9212913cea96a78b22c2e96e"; };
+      name = "typed-ast-1.1.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/52/cf/2ebc7d282f026e21eed4987e42e10964a077c13cfc168b42f3573a7f178c/typed-ast-1.1.0.tar.gz"; sha256 = "57fe287f0cdd9ceaf69e7b71a2e94a24b5d268b35df251a88fef5cc241bf73aa"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
