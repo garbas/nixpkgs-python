@@ -1504,8 +1504,8 @@ let
 
 
     "pydocstyle" = python.mkDerivation {
-      name = "pydocstyle-2.1.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/32/6a/b500937a4098be1e890f34590219ee6998f02a0256ab228969494b64fbca/pydocstyle-2.1.0.tar.gz"; sha256 = "57446e356544898376237651d6e34c348f6518bff072aca7bc8b14f35709b67d"; };
+      name = "pydocstyle-2.1.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ca/af/dbd99adec5704de451ae56d08024d7416dead997dedbd6be72cbc86efb08/pydocstyle-2.1.1.tar.gz"; sha256 = "4d5bcde961107873bae621f3d580c3e35a426d3687ffc6f8fb356f6628da5a97"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
