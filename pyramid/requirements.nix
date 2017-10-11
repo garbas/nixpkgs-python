@@ -121,13 +121,13 @@ let
 
 
     "plaster" = python.mkDerivation {
-      name = "plaster-0.5";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/99/b3/d7ca1fe31d2b56dba68a238721fda6820770f9c2a3de17a582d4b5b2edcc/plaster-0.5.tar.gz"; sha256 = "2a028938dcbf41033c5d377363781b2528151b0159201587c41e7a4c74bc887c"; };
+      name = "plaster-1.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/37/e1/56d04382d718d32751017d32f351214384e529b794084eee20bb52405563/plaster-1.0.tar.gz"; sha256 = "8351c7c7efdf33084c1de88dd0f422cbe7342534537b553c49b857b12d98c8c3"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://docs.pylonsproject.org/projects/plaster/en/latest/";
+        homepage = "https://docs.pylonsproject.org/projects/plaster/en/latest/";
         license = licenses.mit;
         description = "A loader interface around multiple config file formats.";
       };
