@@ -202,8 +202,8 @@ let
 
 
     "pyasn1-modules" = python.mkDerivation {
-      name = "pyasn1-modules-0.1.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/66/6b/f5582cbf3b920896ce1b97bde3894599b3dec31301ef79ae7ea0022f5577/pyasn1-modules-0.1.4.tar.gz"; sha256 = "b07c17bdb34d6f64aafea6269f2e8fb306a57473f0f38d9a6ca389d6ab30ac4a"; };
+      name = "pyasn1-modules-0.1.5";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/7e/2c/351c0c0ef88b904de50d8144eb4c365c13660c297c051b72255b4e1ad34a/pyasn1-modules-0.1.5.tar.gz"; sha256 = "1d303eed5aa54cafeca209d16b8c7ea2c6064735fb61f1bee2e0ed63a0816988"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
