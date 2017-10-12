@@ -119,7 +119,10 @@ openstackclient:
 	cd openstackclient/ && \
 		$(PYPI2NIX) -v \
 			-V 2.7 \
-			-r requirements.txt
+			-r requirements.txt \
+			-E which \
+			-E libffi \
+			-E openssl.dev
 	nix-build -A openstackclient -o result-openstackclient
 
 
