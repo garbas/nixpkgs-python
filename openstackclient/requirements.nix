@@ -2,7 +2,7 @@
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -v -V 2.7 -r requirements.txt
+#   pypi2nix -v -V 2.7 -r requirements.txt -E which -E libffi -E openssl.dev
 #
 
 { pkgs ? import <nixpkgs> {}
@@ -29,7 +29,7 @@ let
       };
   };
 
-  commonBuildInputs = [];
+  commonBuildInputs = with pkgs; [ which libffi openssl.dev ];
   commonDoCheck = false;
 
   withPackages = pkgs':
@@ -65,7 +65,7 @@ let
       mkDerivation = pythonPackages.buildPythonPackage;
       packages = pkgs;
       overrideDerivation = drv: f:
-        pythonPackages.buildPythonPackage (drv.drvAttrs // f drv.drvAttrs //                                            { meta = drv.meta; });
+        pythonPackages.buildPythonPackage (drv.drvAttrs // f drv.drvAttrs);
       withPackages = pkgs'':
         withPackages (pkgs // pkgs'');
     };
@@ -75,8 +75,8 @@ let
   generated = self: {
 
     "Babel" = python.mkDerivation {
-      name = "Babel-2.3.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/6e/96/ba2a2462ed25ca0e651fb7b66e7080f5315f91425a07ea5b34d7c870c114/Babel-2.3.4.tar.gz"; sha256 = "c535c4403802f6eb38173cd4863e419e2274921a01a8aad8a5b497c131c62875"; };
+      name = "Babel-2.5.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/5a/22/63f1dbb8514bb7e0d0c8a85cc9b14506599a075e231985f98afd70430e1f/Babel-2.5.1.tar.gz"; sha256 = "6007daf714d0cd5524bbe436e2d42b3c20e68da66289559341e48d2cd6d25811"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -121,16 +121,48 @@ let
 
 
 
+    "asn1crypto" = python.mkDerivation {
+      name = "asn1crypto-0.23.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/31/53/8bca924b30cb79d6d70dbab6a99e8731d1e4dd3b090b7f3d8412a8d8ffbc/asn1crypto-0.23.0.tar.gz"; sha256 = "0874981329cfebb366d6584c3d16e913f2a0eb026c9463efcc4aaf42a9d94d70"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/wbond/asn1crypto";
+        license = licenses.mit;
+        description = "Fast ASN.1 parser and serializer with definitions for private keys, public keys, certificates, CRL, OCSP, CMS, PKCS#3, PKCS#7, PKCS#8, PKCS#12, PKCS#5, X.509 and TSP";
+      };
+    };
+
+
+
     "certifi" = python.mkDerivation {
-      name = "certifi-2017.4.17";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/dd/0e/1e3b58c861d40a9ca2d7ea4ccf47271d4456ae4294c5998ad817bd1b4396/certifi-2017.4.17.tar.gz"; sha256 = "f7527ebf7461582ce95f7a9e03dd141ce810d40590834f4ec20cddd54234c10a"; };
+      name = "certifi-2017.7.27.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/20/d0/3f7a84b0c5b89e94abbd073a5f00c7176089f526edb056686751d5064cbd/certifi-2017.7.27.1.tar.gz"; sha256 = "40523d2efb60523e113b44602298f0960e900388cf3bb6043f645cf57ea9e3f5"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://certifi.io/";
-        license = "ISC";
+        license = "MPL-2.0";
         description = "Python package for providing Mozilla's CA Bundle.";
+      };
+    };
+
+
+
+    "cffi" = python.mkDerivation {
+      name = "cffi-1.11.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c9/70/89b68b6600d479034276fed316e14b9107d50a62f5627da37fafe083fde3/cffi-1.11.2.tar.gz"; sha256 = "ab87dd91c0c4073758d07334c1e5f712ce8fe48f007b86f8238773963ee700a6"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."pycparser"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://cffi.readthedocs.org";
+        license = licenses.mit;
+        description = "Foreign Function Interface for Python calling C code.";
       };
     };
 
@@ -152,8 +184,8 @@ let
 
 
     "cliff" = python.mkDerivation {
-      name = "cliff-2.7.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/20/2f/33128bd8522c7cabe15da58f18384985b1627a48d56a22454e78eff16388/cliff-2.7.0.tar.gz"; sha256 = "5006d8dbb95136f0cbf5e4f3e518767b3c71d6819de935646e012c3e6fca77a7"; };
+      name = "cliff-2.9.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/01/28/a5d2141c4a8f908eeb5dd11b96e3d97d9be12832016c96059f089303fa61/cliff-2.9.1.tar.gz"; sha256 = "ab50fbb4717c74e32915123f4150805b463e81de1d58e43996fd813b26c5b447"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -167,7 +199,7 @@ let
       self."unicodecsv"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://docs.openstack.org/developer/cliff";
+        homepage = "https://docs.openstack.org/cliff/latest/";
         license = "License :: OSI Approved :: Apache Software License";
         description = "Command Line Interface Formulation Framework";
       };
@@ -176,26 +208,51 @@ let
 
 
     "cmd2" = python.mkDerivation {
-      name = "cmd2-0.7.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3c/68/509a329d2d9d0104d3c2806cd534ce534f5e1e7c552f443b11d02c77d3cc/cmd2-0.7.2.tar.gz"; sha256 = "d06301cc578a83531261121c0b11d79d29d0a80aca01ed6752c20c4cfcda2dd9"; };
+      name = "cmd2-0.7.7";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/be/79/eb0adb48d8193656a64d679824b9a6a4985faf62875f2f2efe3006695419/cmd2-0.7.7.tar.gz"; sha256 = "b4e2fb9fc656adccc4d01dfd55ab5a9b05890e961950543f692e7885725c2d72"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."pyparsing"
+      self."pyperclip"
       self."six"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/python-cmd2/cmd2";
         license = licenses.mit;
-        description = "Extra features for standard library's cmd module";
+        description = "cmd2 - a tool for building interactive command line applications in Python";
+      };
+    };
+
+
+
+    "cryptography" = python.mkDerivation {
+      name = "cryptography-2.1.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/bf/da/6a9f49cc7a970380c8235b3adab0c08c7c3d4814876f7383b33e3882a577/cryptography-2.1.1.tar.gz"; sha256 = "2699ed21e1f73dd1bdb7b0b22a517295de07809d535b23e200dd22166037fe6f"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."asn1crypto"
+      self."cffi"
+      self."enum34"
+      self."idna"
+      self."ipaddress"
+      self."iso8601"
+      self."pytz"
+      self."six"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/pyca/cryptography";
+        license = licenses.bsdOriginal;
+        description = "cryptography is a package which provides cryptographic recipes and primitives to Python developers.";
       };
     };
 
 
 
     "debtcollector" = python.mkDerivation {
-      name = "debtcollector-1.14.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/73/39/ea793276d82deb30329824c1183ecb0a6d353b458a8104d8707bbe2611d7/debtcollector-1.14.0.tar.gz"; sha256 = "e15495e92db575bbb1bf1e84f4eae9fe231cea7067e0f278bc4ae1ad48fd14e0"; };
+      name = "debtcollector-1.18.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/29/52/a3fa968b13bb6010679caca40cf2805dfd973f5715fc43384618342d44c9/debtcollector-1.18.0.tar.gz"; sha256 = "0aa0cd345165e3c831dd9506f20eac5e7c673b210be676594153a3c9905a5fd4"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -205,7 +262,7 @@ let
       self."wrapt"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://docs.openstack.org/developer/debtcollector";
+        homepage = "https://docs.openstack.org/debtcollector/latest";
         license = "License :: OSI Approved :: Apache Software License";
         description = "A collection of Python deprecation patterns and strategies that help you collect your technical debt in a non-destructive manner.";
       };
@@ -223,6 +280,21 @@ let
         homepage = "http://deprecation.readthedocs.io/";
         license = licenses.asl20;
         description = "A library to handle automated deprecations";
+      };
+    };
+
+
+
+    "enum34" = python.mkDerivation {
+      name = "enum34-1.1.6";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/bf/3e/31d502c25302814a7c2f1d3959d2a3b3f78e509002ba91aea64993936876/enum34-1.1.6.tar.gz"; sha256 = "8ad8c4783bf61ded74527bffb48ed9b54166685e4230386a9ed9b1279e2df5b1"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://bitbucket.org/stoneleaf/enum34";
+        license = licenses.bsdOriginal;
+        description = "Python 3.4 Enum backported to 3.3, 3.2, 3.1, 2.7, 2.6, 2.5, and 2.4";
       };
     };
 
@@ -259,8 +331,8 @@ let
 
 
     "idna" = python.mkDerivation {
-      name = "idna-2.5";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d8/82/28a51052215014efc07feac7330ed758702fc0581347098a81699b5281cb/idna-2.5.tar.gz"; sha256 = "3cb5ce08046c4e3a560fc02f138d0ac63e00f8ce5901a56b32ec8b7994082aab"; };
+      name = "idna-2.6";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f4/bd/0467d62790828c23c47fc1dfa1b1f052b24efdf5290f071c7a91d0d82fd3/idna-2.6.tar.gz"; sha256 = "2c6a5de3089009e3da7c5dde64a141dbc8551d5b7f6cf4ed7c2568d0cc520a8f"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -273,9 +345,24 @@ let
 
 
 
+    "ipaddress" = python.mkDerivation {
+      name = "ipaddress-1.0.18";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4e/13/774faf38b445d0b3a844b65747175b2e0500164b7c28d78e34987a5bfe06/ipaddress-1.0.18.tar.gz"; sha256 = "5d8534c8e185f2d8a1fda1ef73f2c8f4b23264e8e30063feeb9511d492a413e1"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/phihag/ipaddress";
+        license = licenses.psfl;
+        description = "IPv4/IPv6 manipulation library";
+      };
+    };
+
+
+
     "iso8601" = python.mkDerivation {
-      name = "iso8601-0.1.11";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c0/75/c9209ee4d1b5975eb8c2cba4428bde6b61bd55664a98290dd015cdb18e98/iso8601-0.1.11.tar.gz"; sha256 = "e8fb52f78880ae063336c94eb5b87b181e6a0cc33a6c008511bac9a6e980ef30"; };
+      name = "iso8601-0.1.12";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/45/13/3db24895497345fb44c4248c08b16da34a9eb02643cea2754b21b5ed08b0/iso8601-0.1.12.tar.gz"; sha256 = "49c4b20e1f38aa5cf109ddcd39647ac419f928512c869dc01d5c7098eddede82"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -289,8 +376,8 @@ let
 
 
     "jsonpatch" = python.mkDerivation {
-      name = "jsonpatch-1.15";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/be/c1/947048a839120acefc13a614280be3289db404901d1a2d49b6310c6d5757/jsonpatch-1.15.tar.gz"; sha256 = "ae23cd08b2f7246f8f2475363501e740c4ef93f08f2a3b7b9bcfac0cc37fceb1"; };
+      name = "jsonpatch-1.16";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/36/de/499bea7aac917f86eb5be148f631c3ddced4e60c8d119d63939c53a5ab5b/jsonpatch-1.16.tar.gz"; sha256 = "f025c28a08ce747429ee746bb21796c3b6417ec82288f8fe6514db7398f2af8a"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -306,8 +393,8 @@ let
 
 
     "jsonpointer" = python.mkDerivation {
-      name = "jsonpointer-1.10";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f6/36/6bdd302303e8bc7c25102dbc1eabb3e3d97f57b0f8f414f4da7ea7ab9dd8/jsonpointer-1.10.tar.gz"; sha256 = "9fa5dcac35eefd53e25d6cd4c310d963c9f0b897641772cd6e5e7b89df7ee0b1"; };
+      name = "jsonpointer-1.12";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/7b/4f/0c67e6f15c0607c86a4984a922e158933fbfd9a4163ca7fbf44140556b43/jsonpointer-1.12.tar.gz"; sha256 = "819b6dd4fd0a18ac219e02a0117f24b2d31296b0c475c33862cfa9a1616d62c3"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -338,20 +425,19 @@ let
 
 
     "keystoneauth1" = python.mkDerivation {
-      name = "keystoneauth1-2.21.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/bf/29/1aeae80c7198642a59e1e56b335bdcc1c952cec5f46edcc64cce8b32cb23/keystoneauth1-2.21.0.tar.gz"; sha256 = "1955971f51e713a89e0789a1ff3d30a3a717a7af4ad4e97b36cefb9046f4f5f8"; };
+      name = "keystoneauth1-3.2.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/19/05/00048afb5697ac54c0aad757ec8679f471040683e772039ef2977ab00a32/keystoneauth1-3.2.0.tar.gz"; sha256 = "768036ee66372df2ad56716b8be4965cef9a59a01647992919516defb282e365"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."iso8601"
       self."pbr"
-      self."positional"
       self."requests"
       self."six"
       self."stevedore"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "https://docs.openstack.org/developer/keystoneauth/";
+        homepage = "https://docs.openstack.org/keystoneauth/latest/";
         license = "License :: OSI Approved :: Apache Software License";
         description = "Authentication Library for OpenStack Identity";
       };
@@ -420,12 +506,13 @@ let
 
 
     "openstacksdk" = python.mkDerivation {
-      name = "openstacksdk-0.9.16";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/31/36/64feff485c6b02feb99a3bec0ee3af06806670308b4cc459d84578f858e2/openstacksdk-0.9.16.tar.gz"; sha256 = "d22aa764fbc65231f3247085a85036942c72d34470459d1bdbbb726a02b7adde"; };
+      name = "openstacksdk-0.9.18";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4b/d6/9ef58cbb5ad600133f935e80ec5bc656e804164283c036e13928716dea8b/openstacksdk-0.9.18.tar.gz"; sha256 = "6d60336a8a01ea0272e5ccf33f50f4179c6cee56c1b0f6723dd40a3bdae31d00"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."deprecation"
+      self."jsonpatch"
       self."keystoneauth1"
       self."os-client-config"
       self."pbr"
@@ -442,8 +529,8 @@ let
 
 
     "os-client-config" = python.mkDerivation {
-      name = "os-client-config-1.27.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2e/f7/0c10b3fb0c90c16f65996cd201178a936114f58def5d9709b761987d34e3/os-client-config-1.27.0.tar.gz"; sha256 = "582bb742b9106865d9ce0808a74d3ab5cc6546dc099cbadb3e63a25770445c59"; };
+      name = "os-client-config-1.28.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/84/18/7a950c23631fccd09aa33832df52b7bfce2cf2ea104959a14c04512b19db/os-client-config-1.28.0.tar.gz"; sha256 = "e5be9cfa7a57fe838255236fe4956a91ccb461548883c7b01b37b7b4081af8b8"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -462,8 +549,8 @@ let
 
 
     "osc-lib" = python.mkDerivation {
-      name = "osc-lib-1.6.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d7/c6/9edd96de19086b3e83ae27d315c426f0beaaf94619c3d780901d42cd5a3f/osc-lib-1.6.0.tar.gz"; sha256 = "aba7faca983af4bea85fb4977bb94ea136d0ff04ebcdddcffeabad9ad6cce599"; };
+      name = "osc-lib-1.7.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a1/2b/12e065299d6d4dc5279476e9df056cc218715bf9e5261c3c24716f3190d5/osc-lib-1.7.0.tar.gz"; sha256 = "7dee72f13e5478f8d3d836267fa019b99ed4d5e478fc08bbcc9e23029d11ec78"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -488,11 +575,12 @@ let
 
 
     "oslo.config" = python.mkDerivation {
-      name = "oslo.config-4.3.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/46/33/25eba0f3b3d5f922e1fa867831f524b8357401593e15c702b1250f677758/oslo.config-4.3.0.tar.gz"; sha256 = "bfb2dfea3ea00bfbf3bf242041db20b2f71607162ca75269bbac9a7aa8b18f6f"; };
+      name = "oslo.config-4.13.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3c/b9/b59a2ee3684fbb992c9d215125a1f4f23af51644d1611aa6caddc4b8fcf9/oslo.config-4.13.1.tar.gz"; sha256 = "3381d055a4f2b751e595c7da25308fd46b3e25a8a5a6ccb8f1b53516736d7773"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
+      self."PyYAML"
       self."debtcollector"
       self."netaddr"
       self."oslo.i18n"
@@ -501,7 +589,7 @@ let
       self."stevedore"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://docs.openstack.org/developer/oslo.config/";
+        homepage = "https://docs.openstack.org/oslo.config/latest/";
         license = "License :: OSI Approved :: Apache Software License";
         description = "Oslo Configuration API";
       };
@@ -510,8 +598,8 @@ let
 
 
     "oslo.i18n" = python.mkDerivation {
-      name = "oslo.i18n-3.15.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/5e/0e/435759e8cc8e052b240710628a0d1403d4e02fd31641cd3f2212eb4daa45/oslo.i18n-3.15.3.tar.gz"; sha256 = "7decfef2def4d844559f610819c709a543f1a715a6bd043b34c741cbb3daa370"; };
+      name = "oslo.i18n-3.18.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/51/71/94296fdd2ef9b81ae31f4ae42321c675a3ebcef81dc5cc5e8115bddb06e5/oslo.i18n-3.18.0.tar.gz"; sha256 = "3624459ae0635188645c7f6b61ae0ac8032df3c44e9076d8bdcf215468e486a7"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -520,7 +608,7 @@ let
       self."six"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://docs.openstack.org/developer/oslo.i18n";
+        homepage = "https://docs.openstack.org/oslo.i18n/latest";
         license = "License :: OSI Approved :: Apache Software License";
         description = "Oslo i18n library";
       };
@@ -529,8 +617,8 @@ let
 
 
     "oslo.serialization" = python.mkDerivation {
-      name = "oslo.serialization-2.18.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/37/16/f1441bd08d68043a839f745f354446c82d0fb5fcc9031a26f17907c59552/oslo.serialization-2.18.0.tar.gz"; sha256 = "0947922f41691f77593d0574382d4bacdb471eeed28108903567415471f276be"; };
+      name = "oslo.serialization-2.21.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/0c/e2/1e4d8fa3b9901b08c9b0bf0d866bc541aef46db8062da6ca6c1b326f7138/oslo.serialization-2.21.1.tar.gz"; sha256 = "c2a8acb203198a718ad3eeb3353ef4dde55d65f0d80921e27823ea7b4c93ec4d"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -550,8 +638,8 @@ let
 
 
     "oslo.utils" = python.mkDerivation {
-      name = "oslo.utils-3.26.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4d/d4/18713b3b1a83d88fdcdd930e368871431f95d95fda526f1d09ca2ccb03a9/oslo.utils-3.26.0.tar.gz"; sha256 = "6f42fb3c980a2bc5836c4e6f8c03f5d415c711b654fce564d40daf50c618180f"; };
+      name = "oslo.utils-3.30.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b4/41/b4e5b584da74bdb9ff3999d60f3566f6919679c10c6c3cb66f44d6ff6361/oslo.utils-3.30.0.tar.gz"; sha256 = "1fe825eb74b45e028a3e4d584b43c0971c1d37f635ceaf12b061f8bb848d8fd0"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -568,7 +656,7 @@ let
       self."six"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://docs.openstack.org/developer/oslo.utils/";
+        homepage = "https://docs.openstack.org/oslo.utils/latest/";
         license = "License :: OSI Approved :: Apache Software License";
         description = "Oslo Utility library";
       };
@@ -577,8 +665,8 @@ let
 
 
     "pbr" = python.mkDerivation {
-      name = "pbr-3.0.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/18/2e/28a7d361a568b1a6c86946674e8ac35a609573c3a3d12bb20f6aaf1c39bf/pbr-3.0.1.tar.gz"; sha256 = "d7e8917458094002b9a2e0030ba60ba4c834c456071f2d0c1ccb5265992ada91"; };
+      name = "pbr-3.1.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d5/d6/f2bf137d71e4f213b575faa9eb426a8775732432edb67588a8ee836ecb80/pbr-3.1.1.tar.gz"; sha256 = "05f61c71aaefc02d8e37c0a3eeb9815ff526ea28b3b76324769e6158d7f95be1"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -592,8 +680,8 @@ let
 
 
     "positional" = python.mkDerivation {
-      name = "positional-1.1.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/83/73/1e2c630d868b73ecdea381ad7b081bc53888c07f1f9829699d277a2859a8/positional-1.1.1.tar.gz"; sha256 = "ef845fa46ee5a11564750aaa09dd7db059aaf39c44c901b37181e5ffa67034b0"; };
+      name = "positional-1.2.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/24/7e/3b1450db76eb48a54ea661a43ae00950275e11840042c5217bd3b47b478e/positional-1.2.1.tar.gz"; sha256 = "cf48ea169f6c39486d5efa0ce7126a97bed979a52af6261cf255a41f9a74453a"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -601,9 +689,9 @@ let
       self."wrapt"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/morganfainberg/positional";
+        homepage = "";
         license = "License :: OSI Approved :: Apache Software License";
-        description = "Library to enforce positional or key-word arguments";
+        description = "Library to enforce positional or key-word arguments (deprecated/unmaintained)";
       };
     };
 
@@ -624,6 +712,39 @@ let
 
 
 
+    "pyOpenSSL" = python.mkDerivation {
+      name = "pyOpenSSL-17.3.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ee/6a/cd78737dd990297205943cc4dcad3d3c502807fd2c5b18c5f33dc90ca214/pyOpenSSL-17.3.0.tar.gz"; sha256 = "29630b9064a82e04d8242ea01d7c93d70ec320f5e3ed48e95fcabc6b1d0f6c76"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."cryptography"
+      self."six"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://pyopenssl.org/";
+        license = licenses.asl20;
+        description = "Python wrapper module around the OpenSSL library";
+      };
+    };
+
+
+
+    "pycparser" = python.mkDerivation {
+      name = "pycparser-2.18";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/8c/2d/aad7f16146f4197a11f8e91fb81df177adcc2073d36a17b1491fd09df6ed/pycparser-2.18.tar.gz"; sha256 = "99a8ca03e29851d96616ad0404b4aad7d9ee16f25c9f9708a11faf2810f7b226"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/eliben/pycparser";
+        license = licenses.bsdOriginal;
+        description = "C parser in Python";
+      };
+    };
+
+
+
     "pyparsing" = python.mkDerivation {
       name = "pyparsing-2.2.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3c/ec/a94f8cf7274ea60b5413df054f82a8980523efd712ec55a59e7c3357cf7c/pyparsing-2.2.0.tar.gz"; sha256 = "0832bcf47acd283788593e7a0f542407bd9550a55a8a8435214a1960e04bcb04"; };
@@ -639,9 +760,24 @@ let
 
 
 
+    "pyperclip" = python.mkDerivation {
+      name = "pyperclip-1.5.27";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/7b/a5/48eaa1f2d77f900679e9759d2c9ab44895e66e9612f7f6b5333273b68f29/pyperclip-1.5.27.zip"; sha256 = "a3cb6df5d8f1557ca8fc514d94fabf50dc5a97042c90e5ba4f3611864fed3fc5"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/asweigart/pyperclip";
+        license = licenses.bsdOriginal;
+        description = "A cross-platform clipboard module for Python. (only handles plain text for now)";
+      };
+    };
+
+
+
     "python-cinderclient" = python.mkDerivation {
-      name = "python-cinderclient-2.2.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/37/ea/1e3d43a52ceb82deea17b7ec47339a476ced08818ca1cb5c2ba96e1c48d6/python-cinderclient-2.2.0.tar.gz"; sha256 = "281b826bcc66b15951a7858433c25dfe89933c8bb7a4172cedf8bf297b6af042"; };
+      name = "python-cinderclient-3.2.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d9/04/a62863d814966a2d265a6731a34f64d70182b032ef99d2eac9fde27cb91f/python-cinderclient-3.2.0.tar.gz"; sha256 = "57bd7225a01b5575135e3c602dfda047f0459edb7ce233b9ac2d7565719a8b5c"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -655,7 +791,7 @@ let
       self."six"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "https://docs.openstack.org/developer/python-cinderclient";
+        homepage = "https://docs.openstack.org/python-cinderclient/latest/";
         license = "License :: OSI Approved :: Apache Software License";
         description = "OpenStack Block Storage API Client Library";
       };
@@ -664,8 +800,8 @@ let
 
 
     "python-glanceclient" = python.mkDerivation {
-      name = "python-glanceclient-2.7.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/cb/28/37e82ee67420ac3e0de9180447fcc5d475a160da00beb7cec6b9f47f9f9a/python-glanceclient-2.7.0.tar.gz"; sha256 = "593d1b34aaa5d22b8cad1d5aefc2a1f4b395bea14eeed35cab136811487efe00"; };
+      name = "python-glanceclient-2.8.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3f/eb/77366b3c5a568b1a205fb3916488219ab6f44d129c455b349642ac5ecf11/python-glanceclient-2.8.0.tar.gz"; sha256 = "26795c19d9b5a2ec54dfc023f5ea869f8b8ae772669606b4af9125a2db51a813"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -675,13 +811,14 @@ let
       self."oslo.utils"
       self."pbr"
       self."prettytable"
+      self."pyOpenSSL"
       self."requests"
       self."six"
       self."warlock"
       self."wrapt"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://docs.openstack.org/developer/python-glanceclient";
+        homepage = "https://docs.openstack.org/python-glanceclient/latest/";
         license = licenses.asl20;
         description = "OpenStack Image API Client Library";
       };
@@ -690,8 +827,8 @@ let
 
 
     "python-keystoneclient" = python.mkDerivation {
-      name = "python-keystoneclient-3.10.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/56/c3/e808e30c7a0b5be8702f24e8c740b50cafe105ef6973624c9a5b258bd85f/python-keystoneclient-3.10.0.tar.gz"; sha256 = "c65fa56791ec02dc942ad08e5c3634b8dca98eda76ee3c2549018b6767e67918"; };
+      name = "python-keystoneclient-3.13.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a4/a8/b8a83375ee028a0bd28acfcbb9bba20ab27ae2e7e513553e0bc1b901a4e4/python-keystoneclient-3.13.0.tar.gz"; sha256 = "f897eaa6b251a12e5d23130e8435fb5d2ead6f7ea1d1d20faf2ccc1c76c51c90"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -708,7 +845,7 @@ let
       self."stevedore"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://docs.openstack.org/developer/python-keystoneclient";
+        homepage = "https://docs.openstack.org/python-keystoneclient/latest/";
         license = "License :: OSI Approved :: Apache Software License";
         description = "Client Library for OpenStack Identity";
       };
@@ -717,8 +854,8 @@ let
 
 
     "python-novaclient" = python.mkDerivation {
-      name = "python-novaclient-9.0.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/12/45/87c95566e5fd92bf1b52cf3437ac2d7ad9370353ed10312f1e88e1863ce9/python-novaclient-9.0.0.tar.gz"; sha256 = "dc82a2983356a4e56938d59448e08c2f965268aeab8ba31736bdf08dbcab0061"; };
+      name = "python-novaclient-9.1.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/07/5a/d74e41953191ab9ea161589b5f0d827ea0ed42e91879bbe5c288f1d6224a/python-novaclient-9.1.1.tar.gz"; sha256 = "ee65c0b429f4b2654416a8a1472729160523c4545315b8fded1652dfb799e428"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -743,8 +880,8 @@ let
 
 
     "python-openstackclient" = python.mkDerivation {
-      name = "python-openstackclient-3.11.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/cb/b8/f014b565e7c9280616338e476955129fb8cd02bc13ffff5858814eb71afe/python-openstackclient-3.11.0.tar.gz"; sha256 = "79fc71a0234f212fc4cccb53b64763be7753e02c1666957a6210b16e8c68c2f6"; };
+      name = "python-openstackclient-3.12.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e1/a6/25eb5bbb1064bd4203771fd504a717341fcd7d5c7fb9d91beab966d41191/python-openstackclient-3.12.0.tar.gz"; sha256 = "e74e1561dc0ca9aa2193d3e4968f13fba1726deff3ec026eba319fe706d11950"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -787,14 +924,16 @@ let
 
 
     "requests" = python.mkDerivation {
-      name = "requests-2.17.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/27/c7/a45641c83c6e28f4922ba6af3d4ae4d79b41932c2f3d77fed9e0bf878149/requests-2.17.3.tar.gz"; sha256 = "8d29f97ed1541709b57caddb77bb20592411d7ca10ec4f03275f49ee8456e225"; };
+      name = "requests-2.18.4";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b0/e1/eab4fc3752e3d240468a8c0b284607899d2fbfb236a56b7377a329aa8d09/requests-2.18.4.tar.gz"; sha256 = "9c443e7324ba5b85070c4a818ade28bfabedf16ea10206da1132edaa6dda237e"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."certifi"
       self."chardet"
+      self."cryptography"
       self."idna"
+      self."pyOpenSSL"
       self."urllib3"
     ];
       meta = with pkgs.stdenv.lib; {
@@ -807,13 +946,11 @@ let
 
 
     "requestsexceptions" = python.mkDerivation {
-      name = "requestsexceptions-1.2.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/64/61/61907e515f08cd550bac200696d66ee518fac0d7d7aa7fcfe855fe5de546/requestsexceptions-1.2.0.tar.gz"; sha256 = "8b762ba6ec5f4f5af50bdd3ab07184a0e63803d70e8b1bbbd429a8f5216fe13d"; };
+      name = "requestsexceptions-1.3.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/86/36/e8e639fc915ac199f98adfe2bcb8f1bf438681d9020660824b373de0c141/requestsexceptions-1.3.0.tar.gz"; sha256 = "8f141ba636d6748cd29208c1955bde38bf00fcdda1a685bc09d8ed133700353e"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."pbr"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://www.openstack.org/";
         license = "License :: OSI Approved :: Apache Software License";
@@ -824,8 +961,8 @@ let
 
 
     "rfc3986" = python.mkDerivation {
-      name = "rfc3986-1.0.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/52/ee/d5136880f56124317fb4d9ce5cb39286802585ea908d2b6d7cba48d9c5d1/rfc3986-1.0.0.tar.gz"; sha256 = "2faacfabcc13ed89b061b5f21cbbf330f82400654b317b5907d311c3478ec4c4"; };
+      name = "rfc3986-1.1.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4b/f6/8f0a24e50454494b0736fe02e6617e7436f2b30148b8f062462177e2ca2d/rfc3986-1.1.0.tar.gz"; sha256 = "8458571c4c57e1cf23593ad860bb601b6a604df6217f829c2bc70dc4b5af941b"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -839,8 +976,8 @@ let
 
 
     "simplejson" = python.mkDerivation {
-      name = "simplejson-3.10.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/40/ad/52c1f3a562df3b210e8f165e1aa243a178c454ead65476a39fa3ce1847b6/simplejson-3.10.0.tar.gz"; sha256 = "953be622e88323c6f43fad61ffd05bebe73b9fd9863a46d68b052d2aa7d71ce2"; };
+      name = "simplejson-3.11.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/08/48/c97b668d6da7d7bebe7ea1817a6f76394b0ec959cb04214ca833c34359df/simplejson-3.11.1.tar.gz"; sha256 = "01a22d49ddd9a168b136f26cac87d9a335660ce07aa5c630b8e3607d6f4325e7"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -854,8 +991,8 @@ let
 
 
     "six" = python.mkDerivation {
-      name = "six-1.10.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b3/b2/238e2590826bfdd113244a40d9d3eb26918bd798fc187e2360a8367068db/six-1.10.0.tar.gz"; sha256 = "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a"; };
+      name = "six-1.11.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/16/d8/bc6316cf98419719bd59c91742194c111b6f2e85abac88e496adefaf7afe/six-1.11.0.tar.gz"; sha256 = "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -869,8 +1006,8 @@ let
 
 
     "stevedore" = python.mkDerivation {
-      name = "stevedore-1.23.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/1f/9a/e7cdd830cadc3d234720da990ea1bae7cc2e1221bdbfaf2233de3c2181c3/stevedore-1.23.0.tar.gz"; sha256 = "658c17b3b655cc6b6270e7b2d9015dac7ad62d9a3e52c721af7caeed483c9599"; };
+      name = "stevedore-1.27.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/74/d4/5e2f93795f587154f27a389817de0e066620eb3f5034979b1dfa782014ce/stevedore-1.27.1.tar.gz"; sha256 = "236468dae36707069e8b3bdb455e9f1be090b1e6b937f4ac0c56a538d6f50be0"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -878,7 +1015,7 @@ let
       self."six"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://docs.openstack.org/developer/stevedore/";
+        homepage = "https://docs.openstack.org/stevedore/latest/";
         license = "License :: OSI Approved :: Apache Software License";
         description = "Manage dynamic plugins for Python applications";
       };
@@ -902,13 +1039,16 @@ let
 
 
     "urllib3" = python.mkDerivation {
-      name = "urllib3-1.21.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/96/d9/40e4e515d3e17ed0adbbde1078e8518f8c4e3628496b56eb8f026a02b9e4/urllib3-1.21.1.tar.gz"; sha256 = "b14486978518ca0901a76ba973d7821047409d7f726f22156b24e83fd71382a5"; };
+      name = "urllib3-1.22";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ee/11/7c59620aceedcc1ef65e156cc5ce5a24ef87be4107c2b74458464e437a5d/urllib3-1.22.tar.gz"; sha256 = "cc44da8e1145637334317feebd728bd869a35285b93cbb4cca2577da7e62db4f"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."certifi"
+      self."cryptography"
       self."idna"
+      self."ipaddress"
+      self."pyOpenSSL"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://urllib3.readthedocs.io/";
@@ -939,8 +1079,8 @@ let
 
 
     "wrapt" = python.mkDerivation {
-      name = "wrapt-1.10.10";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a3/bb/525e9de0a220060394f4aa34fdf6200853581803d92714ae41fc3556e7d7/wrapt-1.10.10.tar.gz"; sha256 = "42160c91b77f1bc64a955890038e02f2f72986c01d462d53cb6cb039b995cdd9"; };
+      name = "wrapt-1.10.11";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a0/47/66897906448185fcb77fc3c2b1bc20ed0ecca81a0f2f88eda3fc5a34fc3d/wrapt-1.10.11.tar.gz"; sha256 = "d4d560d479f2c21e1b5443bbd15fe7ec4b37fe7e53d335d3b9b0a7b1226fe3c6"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
