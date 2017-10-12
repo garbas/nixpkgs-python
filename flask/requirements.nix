@@ -306,8 +306,8 @@ let
 
 
     "connexion" = python.mkDerivation {
-      name = "connexion-1.1.15";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/6b/bd/c89a35b80744ccc0c77836fe0418a7f8ed2f85a1930e23157088c1560cec/connexion-1.1.15.tar.gz"; sha256 = "5dd022488438f4b75d8fa0435cd95b402f1bce1a6bb3599a0d568ba2c3e70afe"; };
+      name = "connexion-1.1.16";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/5e/22/f381b312696ac408153e2479ec9dedad2b37c6a2b14b9e722214c738d5ca/connexion-1.1.16.tar.gz"; sha256 = "59ce1475cc9df88c6e392d08d32e7cb48b926a5c0b1eb98ec724dde7d1ba82e5"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
