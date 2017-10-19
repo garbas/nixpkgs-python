@@ -172,8 +172,8 @@ let
 
 
     "oauthlib" = python.mkDerivation {
-      name = "oauthlib-2.0.5";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/27/36/518009a4be21dc618d7f4f3e2590496e9057c4d79f63cb5389c6d61971f1/oauthlib-2.0.5.tar.gz"; sha256 = "6b12ab356047664e5554c01ff2d4d5d5bbb33cb6ab94076f6fdafa783b257537"; };
+      name = "oauthlib-2.0.6";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a5/8a/212e9b47fb54be109f3ff0684165bb38c51117f34e175c379fce5c7df754/oauthlib-2.0.6.tar.gz"; sha256 = "ce57b501e906ff4f614e71c36a3ab9eacbb96d35c24d1970d2539bbc3ec70ce1"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
