@@ -1423,8 +1423,8 @@ let
 
 
     "mypy" = python.mkDerivation {
-      name = "mypy-0.530";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/5a/ff/a5efedf50f5d70eff399c306e5e0d3daf2dc1512ae99e3f9e4db46ddf2ff/mypy-0.530.tar.gz"; sha256 = "f94b4600b3ed3daa8da17648f08d29d6336b9da0bb1709d260bb4d14f20a9343"; };
+      name = "mypy-0.540";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c4/a0/588ea70e8748d24efe80a2a92d48b97cc01d85fd12dd53cb4c72607e5c85/mypy-0.540.tar.gz"; sha256 = "5d82f51e228a88e5de6ac1d6699dd09e250ce7de217a5ff1256e317266e738ec"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
