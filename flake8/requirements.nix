@@ -1203,8 +1203,8 @@ let
 
 
     "flake8-strict" = python.mkDerivation {
-      name = "flake8-strict-0.1.5";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/64/61/1d8077ba449c28f241671f23b38b7fd8d2624001753d9777662df127c1b4/flake8_strict-0.1.5.tar.gz"; sha256 = "c0d9446ee8394f26acfb0d833636445c358c0f97b663e67e204dc9b71615e826"; };
+      name = "flake8-strict-0.1.6";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/57/59/36793702782998b743ddce42c0494979a8a678ddd6eb56c88c77a4e2098b/flake8_strict-0.1.6.tar.gz"; sha256 = "a087ce651967e7790330530c61a862e8ee4d0a6e7c9f42ada717f5b7877fd536"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
