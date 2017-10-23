@@ -79,6 +79,11 @@ in createSets [
     description = "Python client library for Kubernetes";
   }
 
+  { name = "pypi2nix";
+    maintainers = [ maintainers.seppeljordan ];
+    description = "Tool to generate nix expressions from python packages";
+  }
+
   { name = "pypiserver";
     maintainers = [ maintainers.seppeljordan ];
     description = "Python package server compatible with pip";

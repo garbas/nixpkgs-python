@@ -92,6 +92,14 @@ pytest
 
 Package set containing pytest and some of its plugins.
 
+pypi2nix
+^^^^^^^^
+
+:maintainers: seppeljordan_
+
+Package set containing pypi2nix_ and its dependencies
+
+
 .. _Flak8: https://gitlab.com/pycqa/flake8
 .. _Flask: http://flask.pocoo.org
 .. _HomeAssistant: http://home-assistant.io
@@ -103,3 +111,4 @@ Package set containing pytest and some of its plugins.
 .. _seppeljordan: https://github.com/seppeljordan
 .. _pykube: https://github.com/kelproject/pykube
 .. _pypiserver: https://github.com/pypiserver/pypiserver
+.. _pypi2nix: https://github.com/garbas/pypi2nix

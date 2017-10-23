@@ -1,5 +1,5 @@
 NIX_PATH=nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
-PYPI2NIX=./../result-pypi2nix/bin/pypi2nix
+PYPI2NIX=./../result-pypi2nix-bin/bin/pypi2nix
 
 
 all: \
@@ -11,10 +11,11 @@ all: \
 	pelican \
 	pykube \
 	pyramid \
+	pypi2nix \
 	pypiserver \
 	pytest \
 	science \
-	pypi2nix \
+	pypi2nix-bin \
 	static
 
 
@@ -81,6 +82,14 @@ pyramid:
 			-r requirements.txt
 	nix-build -A pyramid -o result-pyramid
 
+pypi2nix:
+	cd pypi2nix/ && \
+		$(PYPI2NIX) -v \
+			-V 3.5 \
+			-O ../overrides.nix \
+			-r requirements.txt
+	nix-build -A pypi2nix -o result-pypi2nix
+
 pypiserver:
 	cd pypiserver/ && \
 		$(PYPI2NIX) -v \
@@ -126,9 +135,9 @@ openstackclient:
 	nix-build -A openstackclient -o result-openstackclient
 
 
-pypi2nix:
-	if [ ! -e pypi2nix ]; then git clone https://github.com/garbas/pypi2nix; fi
-	cd pypi2nix && nix-build release.nix -A build."x86_64-linux" -o $(PWD)/result-pypi2nix && cd ..
+pypi2nix-bin:
+	if [ ! -e pypi2nix-src ]; then git clone https://github.com/garbas/pypi2nix pypi2nix-src; fi
+	cd pypi2nix-src && nix-build release.nix -A build."x86_64-linux" -o $(PWD)/result-pypi2nix-bin && cd ..
 
 
 static:
@@ -143,11 +152,12 @@ static:
 	pelican \
 	pykube \
 	pyramid \
+	pypi2nix \
 	pypiserver \
 	pytest \
 	openstackclient \
 	science \
-	pypi2nix \
+	pypi2nix-bin \
 	static
 
 list_pkgs:

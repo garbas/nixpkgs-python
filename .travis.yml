@@ -11,12 +11,13 @@ env:
 - PKGS_SET=pelican
 - PKGS_SET=pyramid
 - PKGS_SET=pykube
+- PKGS_SET=pypi2nix
 - PKGS_SET=pypiserver
 - PKGS_SET=pytest
 #- PKGS_SET=science
 
 script:
-- make pypi2nix $PKGS_SET;
+- make pypi2nix-bin $PKGS_SET;
 - mkdir nars/;
 - nix-push --dest "$PWD/nars/" --force ./result-$PKGS_SET;
 
