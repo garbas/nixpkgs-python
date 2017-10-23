@@ -159,6 +159,3 @@ static:
 	science \
 	pypi2nix-bin \
 	static
-
-list_pkgs:
-	cd pytest && ./manage-package-list.py
