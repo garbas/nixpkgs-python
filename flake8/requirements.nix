@@ -1086,8 +1086,8 @@ let
 
 
     "flake8-quotes" = python.mkDerivation {
-      name = "flake8-quotes-0.11.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d5/9b/20adf6a3c718a4ad48c1968e2851aa27b9cb9c907b96519fe7797bebef7f/flake8-quotes-0.11.0.tar.gz"; sha256 = "0b8e5ea5407e8308ff237ab814414a1dcd4c309c5c47363b6ad07a35068684e1"; };
+      name = "flake8-quotes-0.12.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a0/4f/60ff2549d4b4abb3665f7019184652f5bd9a421ad7312cc1aef644317441/flake8-quotes-0.12.0.zip"; sha256 = "1469fe554777f81b3a0be0b828663e400b028fde36d86a03c7c8a036c8ecaca4"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -1456,8 +1456,8 @@ let
 
 
     "pep8" = python.mkDerivation {
-      name = "pep8-1.7.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3e/b5/1f717b85fbf5d43d81e3c603a7a2f64c9f1dabc69a1e7745bd394cc06404/pep8-1.7.0.tar.gz"; sha256 = "a113d5f5ad7a7abacef9df5ec3f2af23a20a28005921577b15dd584d099d5900"; };
+      name = "pep8-1.7.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/01/a0/64ba19519db49e4094d82599412a9660dee8c26a7addbbb1bf17927ceefe/pep8-1.7.1.tar.gz"; sha256 = "fe249b52e20498e59e0b5c5256aa52ee99fc295b26ec9eaa85776ffdb9fe6374"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];

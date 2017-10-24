@@ -54,7 +54,7 @@ flake8-polyfill==1.0.1
 flake8-print==2.0.2
 flake8-pyi==17.3.0
 flake8-pytest==1.3
-flake8-quotes==0.11.0
+flake8-quotes==0.12.0
 flake8-quotes2==0.0.1
 flake8-regex==0.3
 flake8-respect-noqa==0.3
@@ -80,7 +80,7 @@ mccabe==0.6.1
 mypy==0.540
 packaging==16.8
 pep257==0.7.0
-pep8==1.7.0
+pep8==1.7.1
 promise==2.0.2
 pycodestyle==2.3.1
 pydocstyle==2.1.1
