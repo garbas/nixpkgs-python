@@ -83,7 +83,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://certifi.io/";
-        license = "MPL-2.0";
+        license = licenses.mpl20;
         description = "Python package for providing Mozilla's CA Bundle.";
       };
     };
@@ -137,7 +137,7 @@ let
 
     "pypi2nix" = python.mkDerivation {
       name = "pypi2nix-1.8.0";
-      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "0n5kx6pvdv2szy8x5pk9gj0hf8wxkpf8m4l2lp31ayk0bblbbq0n"; rev = "aa31ad1fc36580137de7b06210ea2174ea425b84"; };
+      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "1k6xb1rpw7srkg9bz2mmpnhyrxic1p8n3nf03rmyd4zw5npym7mh"; rev = "3167baa8c9bfe823d48dbe8c65d33c1a7c8d8ac2"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
