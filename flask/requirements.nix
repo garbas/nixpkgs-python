@@ -250,7 +250,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://certifi.io/";
-        license = "MPL-2.0";
+        license = licenses.mpl20;
         description = "Python package for providing Mozilla's CA Bundle.";
       };
     };
