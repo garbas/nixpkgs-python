@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 1.8.0)
+# generated using pypi2nix tool (version: 1.8.1)
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
@@ -136,8 +136,8 @@ let
 
 
     "pypi2nix" = python.mkDerivation {
-      name = "pypi2nix-1.8.0";
-      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "1k6xb1rpw7srkg9bz2mmpnhyrxic1p8n3nf03rmyd4zw5npym7mh"; rev = "3167baa8c9bfe823d48dbe8c65d33c1a7c8d8ac2"; };
+      name = "pypi2nix-1.8.1";
+      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "039a2ys7ijzi2sa2haa6a8lbhncvd1wfsi6gcy9vm02gi31ghzyb"; rev = "4cfd1a537411c138c1b2bfe6168132eb1dad5f20"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
