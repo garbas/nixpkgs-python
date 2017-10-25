@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 1.8.0)
+# generated using pypi2nix tool (version: 1.8.1)
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
@@ -692,8 +692,8 @@ let
 
 
     "flake8-import-order" = python.mkDerivation {
-      name = "flake8-import-order-0.13";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/01/6f/4265c435c35312f8dc824510f22198f2e3ead81e37fb3e1b93c3d9a11575/flake8-import-order-0.13.tar.gz"; sha256 = "9107afe312ed9084a52505de0b90a85a3403f9f82c4c69db97df70666851b85a"; };
+      name = "flake8-import-order-0.14";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b1/cd/74466d7d777b01c083072eec2692e1bbfa2345ad9a69cf96657908c3c8b0/flake8-import-order-0.14.tar.gz"; sha256 = "77271feabb17d7cc286e9156531bb94781fdf2bbc1690e2fd6fa2776580b2209"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -1178,7 +1178,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/bitmazk/flake8-snippets";
-        license = "The MIT License";
+        license = licenses.mit;
         description = "A flake8 extension to find any code snippets you don't like";
       };
     };
@@ -1471,8 +1471,8 @@ let
 
 
     "promise" = python.mkDerivation {
-      name = "promise-2.0.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/62/a4/d979b8cbfef42b695a9c3851d3d918884fb0d2f84f6c43451311a2acb5bf/promise-2.0.2.tar.gz"; sha256 = "f6ac7ec189bfb14ab8987f211db85fa8147fe13ca5d2a8c15926307d8948c082"; };
+      name = "promise-2.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e2/23/ff9e53fb9a00f89573646729e04a2c0933e845dcca758113f0281c396cdf/promise-2.1.tar.gz"; sha256 = "95506bac89df7a495e0b8c813fd782dd1ae590decb52f95248e316c6659ca49b"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
