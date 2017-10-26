@@ -122,6 +122,21 @@ let
 
 
 
+    "Rx" = python.mkDerivation {
+      name = "Rx-1.6.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4c/04/c2e960b121d40994dd6cd87fd710968f3cbfc0c85d65f47ca2af11c2d011/Rx-1.6.0.tar.gz"; sha256 = "84ac6e140f2129266fd4c77a3d0903bbff0a761386079ea0cb99c8524695cac1"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://reactivex.io";
+        license = "License :: OSI Approved :: Apache Software License";
+        description = "Reactive Extensions (Rx) for Python";
+      };
+    };
+
+
+
     "argparse" = python.mkDerivation {
       name = "argparse-1.4.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/18/dd/e617cfc3f6210ae183374cd9f6a26b20514bbb5a792af97949c5aacddf0f/argparse-1.4.0.tar.gz"; sha256 = "62b089a55be1d8949cd2bc7e0df0bddb9e028faefc8c32038cc84862aefdd6e4"; };
@@ -1375,11 +1390,12 @@ let
 
 
     "graphql-core" = python.mkDerivation {
-      name = "graphql-core-1.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b0/89/00ad5e07524d8c523b14d70c685e0299a8b0de6d0727e368c41b89b7ed0b/graphql-core-1.1.tar.gz"; sha256 = "63bb8593aeeadb0a53e14207b910027fe51158d017927fad87326dac806185ee"; };
+      name = "graphql-core-2.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/fb/0a/f4a542c11802a309ad70481d260d3610d1af35b97349a138897c6a27dce0/graphql-core-2.0.tar.gz"; sha256 = "4830699be53f9154273fa15726fc8b0c90bc22bbb8fc7c932586503b3cb9330e"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
+      self."Rx"
       self."promise"
       self."six"
     ];

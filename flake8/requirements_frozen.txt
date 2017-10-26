@@ -72,7 +72,7 @@ flake8-truveris==0.3.4
 flake8-tuple==0.2.13
 flake8-ugettext-alias==1.1
 flake8-user-model==1.1
-graphql-core==1.1
+graphql-core==2.0
 isort==4.2.15
 Jinja2==2.9.6
 MarkupSafe==1.0
@@ -89,6 +89,7 @@ pygal==2.4.0
 Pygments==2.2.0
 pyparsing==2.2.0
 restructuredtext-lint==1.1.1
+Rx==1.6.0
 six==1.11.0
 snowballstemmer==1.2.1
 sqlparse==0.2.4
