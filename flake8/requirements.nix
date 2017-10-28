@@ -152,6 +152,23 @@ let
 
 
 
+    "asttokens" = python.mkDerivation {
+      name = "asttokens-1.1.6";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/04/e4/760448c4f1cdbb78f74efde30c4f18ce51814124708b665aeed8379d1d85/asttokens-1.1.6.tar.gz"; sha256 = "97f568e6eaf9a133850bd5370193ef10a459fc9fff0c8954e986a30b44415a88"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."six"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/gristlabs/asttokens";
+        license = licenses.asl20;
+        description = "Annotate AST trees with source code positions";
+      };
+    };
+
+
+
     "attrs" = python.mkDerivation {
       name = "attrs-17.2.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/be/41/e909cb6d901e9689da947419505cc7fb7d242a08a62ee221fce6a009a523/attrs-17.2.0.tar.gz"; sha256 = "5d4d1b99f94d69338f485984127e4473b3ab9e20f43821b0e546cc3b2302fd11"; };
@@ -707,11 +724,12 @@ let
 
 
     "flake8-import-order" = python.mkDerivation {
-      name = "flake8-import-order-0.14";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b1/cd/74466d7d777b01c083072eec2692e1bbfa2345ad9a69cf96657908c3c8b0/flake8-import-order-0.14.tar.gz"; sha256 = "77271feabb17d7cc286e9156531bb94781fdf2bbc1690e2fd6fa2776580b2209"; };
+      name = "flake8-import-order-0.14.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2a/e2/ff7dba2927207e9d377e8e270c2d1515dfdc23186217ca51301ab6822577/flake8-import-order-0.14.1.tar.gz"; sha256 = "2499dca0d7fc0c05f072979139d47b3b3bf1339dc266d5208a4aee51be196d42"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
+      self."asttokens"
       self."pycodestyle"
     ];
       meta = with pkgs.stdenv.lib; {
@@ -1630,8 +1648,8 @@ let
 
 
     "testfixtures" = python.mkDerivation {
-      name = "testfixtures-5.2.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/96/81/51634a9b58ce8fc31992a492b0dcc281cc33853123afce1c24f69b956427/testfixtures-5.2.0.tar.gz"; sha256 = "7427d4b63861c1896865ea7be078fa1e2b219ce9b1a9a0895f823475a5f76c85"; };
+      name = "testfixtures-5.3.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/8e/41/f3737ea2bcb357846d931750bc4ac8ad4eaa4cb81b1b5aacb480205db888/testfixtures-5.3.0.tar.gz"; sha256 = "dddaa900e518357144e837762d3ba50236745d076ec84ed2e233563c8ac9caf5"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
