@@ -135,5 +135,17 @@ in skipOverrides {
       sed -i -e "s|.*setup_requires.*=.*,||" setup.py
     '';
   };
+  "pytest-forked" = self: old:
+  {
+    patchPhase = ''
+      sed -i -e "s|setup_requires=\['setuptools_scm'\],||" setup.py
+    '';
+  };
+  "pytest-xdist" = self: old:
+  {
+    patchPhase = ''
+      sed -i -e "s|setup_requires=\['setuptools_scm'\],||" setup.py
+    '';
+  };
 
 }

@@ -1,4 +1,12 @@
 pytest
+pytest-bdd
+pytest-catchlog
 pytest-cov
 pytest-django
+pytest-instafail
 pytest-pep8
+pytest-timeout
+pytest-twisted
+pytest-xdist
+pytest-flakes
+oejskit

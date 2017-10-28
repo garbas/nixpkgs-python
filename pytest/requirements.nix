@@ -75,6 +75,38 @@ let
 
   generated = self: {
 
+    "Mako" = python.mkDerivation {
+      name = "Mako-1.0.7";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/eb/f3/67579bb486517c0d49547f9697e36582cd19dafb5df9e687ed8e22de57fa/Mako-1.0.7.tar.gz"; sha256 = "4e02fde57bd4abb5ec400181e4c314f56ac3e49ba4fb8b0d50bba18cb27d25ae"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."MarkupSafe"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://www.makotemplates.org/";
+        license = licenses.mit;
+        description = "A super-fast templating language that borrows the  best ideas from the existing templating languages.";
+      };
+    };
+
+
+
+    "MarkupSafe" = python.mkDerivation {
+      name = "MarkupSafe-1.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4d/de/32d741db316d8fdb7680822dd37001ef7a448255de9699ab4bfcbdf4172b/MarkupSafe-1.0.tar.gz"; sha256 = "a6be69091dac236ea9c6bc7d012beab42010fa914c459791d627dad4910eb665"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://github.com/pallets/markupsafe";
+        license = licenses.bsdOriginal;
+        description = "Implements a XML/HTML/XHTML Markup safe string for Python";
+      };
+    };
+
+
+
     "apipkg" = python.mkDerivation {
       name = "apipkg-1.4";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/32/37/6ce6dbaa8035730efa95e60b09498ec17000d137742391ff46974d9ef859/apipkg-1.4.tar.gz"; sha256 = "2e38399dbe842891fe85392601aab8f40a8f4cc5a9053c326de35a1cc0297ac6"; };
@@ -105,6 +137,21 @@ let
 
 
 
+    "decorator" = python.mkDerivation {
+      name = "decorator-4.1.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/bb/e0/f6e41e9091e130bf16d4437dabbac3993908e4d6485ecbc985ef1352db94/decorator-4.1.2.tar.gz"; sha256 = "7cb64d38cb8002971710c8899fbdfb859a23a364b7c99dab19d1f719c2ba16b5"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/micheles/decorator";
+        license = licenses.bsdOriginal;
+        description = "Better living through Python with decorators";
+      };
+    };
+
+
+
     "execnet" = python.mkDerivation {
       name = "execnet-1.5.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ab/c0/9496c35092eac2523ee8993ca3690b2d0aa95ef56623035b9c890745ac55/execnet-1.5.0.tar.gz"; sha256 = "a7a84d5fa07a089186a329528f127c9d73b9de57f1a1131b82bb5320ee651f6a"; };
@@ -117,6 +164,87 @@ let
         homepage = "http://codespeak.net/execnet";
         license = licenses.mit;
         description = "execnet: rapid multi-Python deployment";
+      };
+    };
+
+
+
+    "glob2" = python.mkDerivation {
+      name = "glob2-0.6";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f0/e8/970c7a031b2d7f9a21fefaa8c9d5c38001f8f25055f4ffcb32b3dbecd1ea/glob2-0.6.tar.gz"; sha256 = "f5b0a686ff21f820c4d3f0c4edd216704cea59d79d00fa337e244a2f2ff83ed6"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://github.com/miracle2k/python-glob2/";
+        license = licenses.bsdOriginal;
+        description = "Version of the glob module that can capture patterns and supports recursive wildcards";
+      };
+    };
+
+
+
+    "greenlet" = python.mkDerivation {
+      name = "greenlet-0.4.12";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/be/76/82af375d98724054b7e273b5d9369346937324f9bcc20980b45b068ef0b0/greenlet-0.4.12.tar.gz"; sha256 = "e4c99c6010a5d153d481fdaf63b8a0782825c0721506d880403a3b9b82ae347e"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/python-greenlet/greenlet";
+        license = licenses.mit;
+        description = "Lightweight in-process concurrent programming";
+      };
+    };
+
+
+
+    "oejskit" = python.mkDerivation {
+      name = "oejskit-0.9.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/16/10/f9d24c1f5ff7a8236e48d3c8fbd12e76eb4741e6f4e76e5c25c51d7ed7a9/oejskit-0.9.0.tar.gz"; sha256 = "06d645e2506acd85b8a858b550907c5c8440d4f1315fc2c4e6b86b091c29846e"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://bitbucket.org/pedronis/js-infrastructure/";
+        license = licenses.mit;
+        description = "Open End JavaScript testing and utility kit";
+      };
+    };
+
+
+
+    "parse" = python.mkDerivation {
+      name = "parse-1.8.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/13/71/e0b5c968c552f75a938db18e88a4e64d97dc212907b4aca0ff71293b4c80/parse-1.8.2.tar.gz"; sha256 = "8048dde3f5ca07ad7ac7350460952d83b63eaacecdac1b37f45fd74870d849d2"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/r1chardj0n3s/parse";
+        license = licenses.bsdOriginal;
+        description = "parse() is the opposite of format()";
+      };
+    };
+
+
+
+    "parse-type" = python.mkDerivation {
+      name = "parse-type-0.4.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2b/e5/312ce9f1bd209afcf4fc68235c8776a36270d24ad05bdfd2aaaf06647ea9/parse_type-0.4.2.tar.gz"; sha256 = "f596bdc75d3dd93036fbfe3d04127da9f6df0c26c36e01e76da85adef4336b3c"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."coverage"
+      self."parse"
+      self."pytest"
+      self."pytest-cov"
+      self."six"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/jenisys/parse_type";
+        license = licenses.bsdOriginal;
+        description = "Simplifies to build parse types based on the parse module";
       };
     };
 
@@ -152,6 +280,21 @@ let
 
 
 
+    "pyflakes" = python.mkDerivation {
+      name = "pyflakes-1.6.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/26/85/f6a315cd3c1aa597fb3a04cc7d7dbea5b3cc66ea6bd13dfa0478bf4876e6/pyflakes-1.6.0.tar.gz"; sha256 = "8d616a382f243dbf19b54743f280b80198be0bca3a5396f1d2e1fca6223e8805"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/PyCQA/pyflakes";
+        license = licenses.mit;
+        description = "passive checker of Python programs";
+      };
+    };
+
+
+
     "pytest" = python.mkDerivation {
       name = "pytest-3.2.3";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/53/d0/208853c09be8377e6d4de7c0df875ef7ef37189373d76a74b65b44e50528/pytest-3.2.3.tar.gz"; sha256 = "27fa6617efc2869d3e969a3e75ec060375bfb28831ade8b5cdd68da3a741dc3c"; };
@@ -164,6 +307,28 @@ let
         homepage = "http://pytest.org";
         license = licenses.mit;
         description = "pytest: simple powerful testing with Python";
+      };
+    };
+
+
+
+    "pytest-bdd" = python.mkDerivation {
+      name = "pytest-bdd-2.18.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/71/8a/a410b846e6ab10b10607c9c0beef657162df76adf34b75040e609a6e4058/pytest-bdd-2.18.2.tar.gz"; sha256 = "b63ca3d214d62099e9e13cbbfee91f6d283a3a2e1d6c5730ea083c3caae6a326"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."Mako"
+      self."glob2"
+      self."parse"
+      self."parse-type"
+      self."pytest"
+      self."six"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/pytest-dev/pytest-bdd";
+        license = licenses.mit;
+        description = "BDD for pytest";
       };
     };
 
@@ -182,6 +347,24 @@ let
         homepage = "http://bitbucket.org/hpk42/pytest-cache/";
         license = licenses.gpl1;
         description = "pytest plugin with mechanisms for caching across test runs";
+      };
+    };
+
+
+
+    "pytest-catchlog" = python.mkDerivation {
+      name = "pytest-catchlog-1.2.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f2/2b/2faccdb1a978fab9dd0bf31cca9f6847fbe9184a0bdcc3011ac41dd44191/pytest-catchlog-1.2.2.zip"; sha256 = "4be15dc5ac1750f83960897f591453040dff044b5966fe24a91c2f7d04ecfcf0"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."py"
+      self."pytest"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/eisensheng/pytest-catchlog";
+        license = licenses.mit;
+        description = "py.test plugin to catch log messages. This is a fork of pytest-capturelog.";
       };
     };
 
@@ -222,6 +405,59 @@ let
 
 
 
+    "pytest-flakes" = python.mkDerivation {
+      name = "pytest-flakes-2.0.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4f/02/0450e82e3d1a8e973fd695fff99122491a977c06357e32006ac9e281a5a2/pytest-flakes-2.0.0.tar.gz"; sha256 = "3e880927fd2a77d31715eaab3876196e76d779726c9c24fe32ee5bab23281f82"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."pyflakes"
+      self."pytest"
+      self."pytest-cache"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/fschulze/pytest-flakes";
+        license = licenses.mit;
+        description = "pytest plugin to check source code with pyflakes";
+      };
+    };
+
+
+
+    "pytest-forked" = python.mkDerivation {
+      name = "pytest-forked-0.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b3/b2/1ec910b0f798cc86f2531631d7a2da030b16c165e07545537332fd4eb505/pytest-forked-0.2.tar.gz"; sha256 = "e4500cd0509ec4a26535f7d4112a8cc0f17d3a41c29ffd4eab479d2a55b30805"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."pytest"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/pytest-dev/pytest-forked";
+        license = licenses.mit;
+        description = "run tests in isolated forked subprocesses";
+      };
+    };
+
+
+
+    "pytest-instafail" = python.mkDerivation {
+      name = "pytest-instafail-0.3.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/11/d0/371d9e86e823c775e9f23ad797d7738b1afa94223ac82c20b5bdc735ea1d/pytest-instafail-0.3.0.tar.gz"; sha256 = "b4d5fc3ca81e530a8d0e15a7771dc14b06fc9a0930c4b3909a7f4527040572c3"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."pytest"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/jpvanhal/pytest-instafail";
+        license = licenses.bsdOriginal;
+        description = "py.test plugin to show failures instantly";
+      };
+    };
+
+
+
     "pytest-pep8" = python.mkDerivation {
       name = "pytest-pep8-1.0.6";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/1f/1c/c834344ef39381558b047bea1e3005197fa8457c199d58219996ca07defb/pytest-pep8-1.0.6.tar.gz"; sha256 = "032ef7e5fa3ac30f4458c73e05bb67b0f036a8a5cb418a534b3170f89f120318"; };
@@ -236,6 +472,76 @@ let
         homepage = "http://bitbucket.org/hpk42/pytest-pep8/";
         license = "MIT license";
         description = "pytest plugin to check PEP8 requirements";
+      };
+    };
+
+
+
+    "pytest-timeout" = python.mkDerivation {
+      name = "pytest-timeout-1.2.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/cc/b7/b2a61365ea6b6d2e8881360ae7ed8dad0327ad2df89f2f0be4a02304deb2/pytest-timeout-1.2.0.tar.gz"; sha256 = "c29e3168f10897728059bd6b8ca20b28733d7fe6b8f6c09bb9d89f6146f27cb8"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."pytest"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://bitbucket.org/pytest-dev/pytest-timeout/";
+        license = licenses.mit;
+        description = "py.test plugin to abort hanging tests";
+      };
+    };
+
+
+
+    "pytest-twisted" = python.mkDerivation {
+      name = "pytest-twisted-1.5";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/74/66/0c64463ed9501c09e4c79bc924743e2e4cd02eb4498d492b5e3c81911198/pytest-twisted-1.5.zip"; sha256 = "d0dc887f15f4d0ade882e56590a3cce95b70fd0687ba8d2428a6364f3288d87e"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."decorator"
+      self."greenlet"
+      self."pytest"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/schmir/pytest-twisted";
+        license = licenses.bsdOriginal;
+        description = "A twisted plugin for py.test.";
+      };
+    };
+
+
+
+    "pytest-xdist" = python.mkDerivation {
+      name = "pytest-xdist-1.20.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/03/1c/65feceecd80ae33bd08d20c0662af96227a972c2995ed1c5c19dbac70abd/pytest-xdist-1.20.1.tar.gz"; sha256 = "433e82f9b34986a4e4b2be38c60e82cca3ac64b7e1b38f4d8e3e118292939712"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."execnet"
+      self."pytest"
+      self."pytest-forked"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/pytest-dev/pytest-xdist";
+        license = licenses.mit;
+        description = "py.test xdist plugin for distributed testing and loop-on-failing modes";
+      };
+    };
+
+
+
+    "six" = python.mkDerivation {
+      name = "six-1.11.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/16/d8/bc6316cf98419719bd59c91742194c111b6f2e85abac88e496adefaf7afe/six-1.11.0.tar.gz"; sha256 = "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://pypi.python.org/pypi/six/";
+        license = licenses.mit;
+        description = "Python 2 and 3 compatibility utilities";
       };
     };
 
