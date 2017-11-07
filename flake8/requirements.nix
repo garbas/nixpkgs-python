@@ -44,7 +44,7 @@ let
           for dep in ${builtins.concatStringsSep " "               (builtins.attrValues pkgs)}; do
             if [ -d "$dep/bin" ]; then
               for prog in "$dep/bin/"*; do
-                if [ -f $prog ]; then
+                if [ -x "$prog" ] && [ -f "$prog" ]; then
                   ln -s $prog $out/bin/`basename $prog`
                 fi
               done
@@ -487,12 +487,13 @@ let
 
 
     "flake8-debugger" = python.mkDerivation {
-      name = "flake8-debugger-1.4.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d1/3f/0dd096c996c9c34acc5bc66c6b60895accc635e832e4e696446f12424348/flake8-debugger-1.4.0.tar.gz"; sha256 = "5918490f710f1cbbcabd11748558063274b93984ea63744eb712dbcd8d721232"; };
+      name = "flake8-debugger-3.0.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2c/a7/45823a26ef0c5fa7a0c099b772a5b6aa2d8e686284490ef738fc8691ffc0/flake8-debugger-3.0.0.tar.gz"; sha256 = "e5c8ac980d819db2f3fbb89fe0e43a2fe6c127edd6ce4984a3f7e0bbdac3d2d4"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."flake8"
+      self."pycodestyle"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/jbkahn/flake8-debugger";
@@ -504,8 +505,8 @@ let
 
 
     "flake8-deprecated" = python.mkDerivation {
-      name = "flake8-deprecated-1.2.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/37/2d/3424a5202288dae7485c49f15b25d5508c01dae0039869346a611158fee2/flake8-deprecated-1.2.1.tar.gz"; sha256 = "5b47ec924423bf443b6751d8b0152366542475c441a908dbd469d1600361a1ec"; };
+      name = "flake8-deprecated-1.3";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/28/28/d39539c84cfb432d7431255ed16f93125342ced4a137d653b50b621fae36/flake8-deprecated-1.3.tar.gz"; sha256 = "9fa5a0c5c81fb3b34c53a0e4f16cd3f0a3395078cfd4988011cbab5fb0afa7f7"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -724,8 +725,8 @@ let
 
 
     "flake8-import-order" = python.mkDerivation {
-      name = "flake8-import-order-0.14.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2a/e2/ff7dba2927207e9d377e8e270c2d1515dfdc23186217ca51301ab6822577/flake8-import-order-0.14.1.tar.gz"; sha256 = "2499dca0d7fc0c05f072979139d47b3b3bf1339dc266d5208a4aee51be196d42"; };
+      name = "flake8-import-order-0.15";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/6f/a5/51162d23b1cfe235a44927521124daf95afe5cb5384a41b0e53e54a2a2f5/flake8-import-order-0.15.tar.gz"; sha256 = "fd8608a29df93589ecbe5281981222929261c915068f2aedfb51f243f05f5466"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -759,8 +760,8 @@ let
 
 
     "flake8-import-order-spoqa" = python.mkDerivation {
-      name = "flake8-import-order-spoqa-1.0.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/07/ed/6d2c3cdf25d2c8f8b77cf457dfb98e91c99ede6100177a87e27c591b7bd1/flake8-import-order-spoqa-1.0.1.tar.gz"; sha256 = "b8e690839d064c74a412c7be0b4ea338b1cd2029941fb0622beec5ae5d398b0d"; };
+      name = "flake8-import-order-spoqa-1.1.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/96/3b/78bc400ea22adbb5fcf12f975cb4f636c755a28fe11024a7f05784a457dc/flake8-import-order-spoqa-1.1.0.tar.gz"; sha256 = "1aa5d865533353541be8aced144a2c187f188fddcfb4904078b79d0c0ac9cd1d"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -1067,12 +1068,14 @@ let
 
 
     "flake8-print" = python.mkDerivation {
-      name = "flake8-print-2.0.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b8/ce/b253acf4da0ea69bedbeec0e62c066be7962057a27ab552638d757201ea7/flake8-print-2.0.2.tar.gz"; sha256 = "19a0db71b37d985732c247032f84c111d191ed5977d7f852a654c6a8ac137595"; };
+      name = "flake8-print-3.0.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e6/78/2fe5d8aec4feed46957a043fe7eb9b08af39db597674494c80ed164720bf/flake8-print-3.0.1.tar.gz"; sha256 = "255b01f0932f65fb8ce70a65f0f2abb4a05faf25f9fe53275cd13cacdc0179f5"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."flake8"
+      self."pycodestyle"
+      self."six"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/jbkahn/flake8-print";
@@ -1236,8 +1239,8 @@ let
 
 
     "flake8-strict" = python.mkDerivation {
-      name = "flake8-strict-0.1.6";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/57/59/36793702782998b743ddce42c0494979a8a678ddd6eb56c88c77a4e2098b/flake8_strict-0.1.6.tar.gz"; sha256 = "a087ce651967e7790330530c61a862e8ee4d0a6e7c9f42ada717f5b7877fd536"; };
+      name = "flake8-strict-0.1.8";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/fe/e2/1f71a4c4fc971c758393b9f83f43b96ccdb72953d18bb615011bb45da214/flake8_strict-0.1.8.tar.gz"; sha256 = "e921447054d43f48e33dbcb7ab101cc2a8e078943e0e264f0225ee92241a2ee6"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
