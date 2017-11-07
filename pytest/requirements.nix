@@ -44,7 +44,7 @@ let
           for dep in ${builtins.concatStringsSep " "               (builtins.attrValues pkgs)}; do
             if [ -d "$dep/bin" ]; then
               for prog in "$dep/bin/"*; do
-                if [ -f $prog ]; then
+                if [ -x "$prog" ] && [ -f "$prog" ]; then
                   ln -s $prog $out/bin/`basename $prog`
                 fi
               done
@@ -123,13 +123,13 @@ let
 
 
     "coverage" = python.mkDerivation {
-      name = "coverage-4.4.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/36/db/690ee79312bb60f121c0da1c973856ddb751afe09cc10caec1452208eaf4/coverage-4.4.1.tar.gz"; sha256 = "7a9c44400ee0f3b4546066e0710e1250fd75831adc02ab99dda176ad8726f424"; };
+      name = "coverage-4.4.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/0b/e1/190ef1a264144c9b073b7353c259ca5431b5ddc8861b452e858fcbd0e9de/coverage-4.4.2.tar.gz"; sha256 = "309d91bd7a35063ec7a0e4d75645488bfab3f0b66373e7722f23da7f5b0f34cc"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "https://coverage.readthedocs.io";
+        homepage = "https://bitbucket.org/ned/coveragepy";
         license = licenses.asl20;
         description = "Code coverage measurement for Python";
       };
@@ -313,8 +313,8 @@ let
 
 
     "pytest-bdd" = python.mkDerivation {
-      name = "pytest-bdd-2.18.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/71/8a/a410b846e6ab10b10607c9c0beef657162df76adf34b75040e609a6e4058/pytest-bdd-2.18.2.tar.gz"; sha256 = "b63ca3d214d62099e9e13cbbfee91f6d283a3a2e1d6c5730ea083c3caae6a326"; };
+      name = "pytest-bdd-2.19.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f7/9c/a71a6f8b4641552add19e71ec24df2b1b88ff147ff8c0ca9949433e557c5/pytest-bdd-2.19.0.tar.gz"; sha256 = "d1e5a629b996555c020c076e503b596437ba8536165acc9c7c95fb5de4c19c93"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
