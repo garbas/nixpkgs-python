@@ -44,7 +44,7 @@ let
           for dep in ${builtins.concatStringsSep " "               (builtins.attrValues pkgs)}; do
             if [ -d "$dep/bin" ]; then
               for prog in "$dep/bin/"*; do
-                if [ -f $prog ]; then
+                if [ -x "$prog" ] && [ -f "$prog" ]; then
                   ln -s $prog $out/bin/`basename $prog`
                 fi
               done
@@ -76,8 +76,8 @@ let
   generated = self: {
 
     "Django" = python.mkDerivation {
-      name = "Django-1.11.6";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/13/26/f3841e00663027ba7cf7ce7ba2cabb682a83cf0629bef013d70bebefa69d/Django-1.11.6.tar.gz"; sha256 = "c3b42ca1efa1c0a129a9e863134cc3fe705c651dea3a04a7998019e522af0c60"; };
+      name = "Django-1.11.7";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c3/a8/58bf5ce8f54b8fd9aa0de10288600cf71c6b779d519e301f4b0de8c06259/Django-1.11.7.tar.gz"; sha256 = "8918e392530d8fc6965a56af6504229e7924c27265893f3949aa0529cd1d4b99"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
