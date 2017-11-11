@@ -153,8 +153,8 @@ let
 
 
     "asttokens" = python.mkDerivation {
-      name = "asttokens-1.1.6";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/04/e4/760448c4f1cdbb78f74efde30c4f18ce51814124708b665aeed8379d1d85/asttokens-1.1.6.tar.gz"; sha256 = "97f568e6eaf9a133850bd5370193ef10a459fc9fff0c8954e986a30b44415a88"; };
+      name = "asttokens-1.1.7";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/cb/60/d8aa1488d53c2d9258cbfc37406bb8352e5e3376d6277fdaedbaf806846f/asttokens-1.1.7.tar.gz"; sha256 = "3d630eb1532e6877bc01c0a933570693783b7c97ece3260bd3ad964aaf7d566b"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -1460,11 +1460,12 @@ let
 
 
     "mypy" = python.mkDerivation {
-      name = "mypy-0.540";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c4/a0/588ea70e8748d24efe80a2a92d48b97cc01d85fd12dd53cb4c72607e5c85/mypy-0.540.tar.gz"; sha256 = "5d82f51e228a88e5de6ac1d6699dd09e250ce7de217a5ff1256e317266e738ec"; };
+      name = "mypy-0.550";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/1d/91/7cf50540048d3ef30cd5c335f7447bedc850ecced60de4ad7c7411ab5e52/mypy-0.550.tar.gz"; sha256 = "58302374890b9803b19a5547e2229f8bab46900624a2f31f398b231e5f461929"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
+      self."psutil"
       self."typed-ast"
       self."typing"
     ];
@@ -1520,6 +1521,21 @@ let
         homepage = "https://github.com/syrusakbary/promise";
         license = licenses.mit;
         description = "Promises/A+ implementation for Python";
+      };
+    };
+
+
+
+    "psutil" = python.mkDerivation {
+      name = "psutil-5.4.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/fe/17/0f0bf5792b2dfe6003efc5175c76225f7d3426f88e2bf8d360cfab870cd8/psutil-5.4.1.tar.gz"; sha256 = "42e2de159e3c987435cb3b47d6f37035db190a1499f3af714ba7af5c379b6ba2"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/giampaolo/psutil";
+        license = licenses.bsdOriginal;
+        description = "Cross-platform lib for process and system monitoring in Python.";
       };
     };
 
