@@ -1605,8 +1605,8 @@ let
 
 
     "restructuredtext-lint" = python.mkDerivation {
-      name = "restructuredtext-lint-1.1.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/92/84/de4fadee001cad2d5de3286e5ee8bc40d80afb187bbed4c5e92361e1d0b6/restructuredtext_lint-1.1.1.tar.gz"; sha256 = "167e8adaa5bdc30531ee91760d6c216b306a8a3372aad34b1f72d8adcc5e011e"; };
+      name = "restructuredtext-lint-1.1.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/8e/1e/e7825a6fb88807ccc4fffda3a1805100ae372951af88fd40e3027f0eb1c9/restructuredtext_lint-1.1.2.tar.gz"; sha256 = "9201d354e22c27be61cf6d8212da6e10c875eec7ec8d1bdb1067b2a5ba931637"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [

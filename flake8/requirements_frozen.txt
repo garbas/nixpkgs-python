@@ -87,7 +87,7 @@ pydocstyle==2.1.1
 pyflakes==1.6.0
 pygal==2.4.0
 Pygments==2.2.0
-restructuredtext-lint==1.1.1
+restructuredtext-lint==1.1.2
 Rx==1.6.0
 six==1.11.0
 snowballstemmer==1.2.1
