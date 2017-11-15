@@ -266,8 +266,8 @@ let
 
 
     "py" = python.mkDerivation {
-      name = "py-1.4.34";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/68/35/58572278f1c097b403879c1e9369069633d1cbad5239b9057944bb764782/py-1.4.34.tar.gz"; sha256 = "0f2d585d22050e90c7d293b6451c83db097df77871974d90efd5a30dc12fcde3"; };
+      name = "py-1.5.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/56/d7/a20e836f5489f5d9d9ac7a6326ca9a1c36762dd182be5507da03a09785a9/py-1.5.1.tar.gz"; sha256 = "e85aaa3c2e837413c6387eb2a4efbe7ff93658813d13986da004984ffe84b3a3"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -296,8 +296,8 @@ let
 
 
     "pytest" = python.mkDerivation {
-      name = "pytest-3.2.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/53/d0/208853c09be8377e6d4de7c0df875ef7ef37189373d76a74b65b44e50528/pytest-3.2.3.tar.gz"; sha256 = "27fa6617efc2869d3e969a3e75ec060375bfb28831ade8b5cdd68da3a741dc3c"; };
+      name = "pytest-3.2.5";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/1f/f8/8cd74c16952163ce0db0bd95fdd8810cbf093c08be00e6e665ebf0dc3138/pytest-3.2.5.tar.gz"; sha256 = "6d5bd4f7113b444c55a3bbb5c738a3dd80d43563d063fc42dcb0aaefbdd78b81"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
