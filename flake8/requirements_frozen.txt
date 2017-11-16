@@ -1,3 +1,4 @@
+appdirs==1.4.3
 asttokens==1.1.7
 attrs==17.3.0
 blessings==1.6
@@ -78,6 +79,7 @@ Jinja2==2.10
 MarkupSafe==1.0
 mccabe==0.6.1
 mypy==0.550
+packaging==16.8
 pep257==0.7.0
 pep8==1.7.1
 promise==2.1
@@ -87,6 +89,7 @@ pydocstyle==2.1.1
 pyflakes==1.6.0
 pygal==2.4.0
 Pygments==2.2.0
+pyparsing==2.2.0
 restructuredtext-lint==1.1.2
 Rx==1.6.0
 six==1.11.0
