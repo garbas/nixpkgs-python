@@ -44,7 +44,7 @@ let
           for dep in ${builtins.concatStringsSep " "               (builtins.attrValues pkgs)}; do
             if [ -d "$dep/bin" ]; then
               for prog in "$dep/bin/"*; do
-                if [ -x "$prog" ] && [ -f "$prog" ]; then
+                if [ -f $prog ]; then
                   ln -s $prog $out/bin/`basename $prog`
                 fi
               done
@@ -137,7 +137,7 @@ let
 
     "pypi2nix" = python.mkDerivation {
       name = "pypi2nix-1.8.1";
-      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "1b9wnkpvgrdmgjpx4fpslnd9y2zk1czp7jkbqm1d6a7sd0pmmjaw"; rev = "82d291d72ffa1bfb7118cadf869f521afda62db0"; };
+      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "0qw88lbk54cgvpfhdl87nq82wyydkjnmv3sk9d1krfjzl507wrv8"; rev = "f88a9a3fcdfad269263b95ecce8c52c0a52008c7"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
