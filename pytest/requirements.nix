@@ -44,7 +44,7 @@ let
           for dep in ${builtins.concatStringsSep " "               (builtins.attrValues pkgs)}; do
             if [ -d "$dep/bin" ]; then
               for prog in "$dep/bin/"*; do
-                if [ -x "$prog" ] && [ -f "$prog" ]; then
+                if [ -f $prog ]; then
                   ln -s $prog $out/bin/`basename $prog`
                 fi
               done
@@ -266,8 +266,8 @@ let
 
 
     "py" = python.mkDerivation {
-      name = "py-1.5.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/56/d7/a20e836f5489f5d9d9ac7a6326ca9a1c36762dd182be5507da03a09785a9/py-1.5.1.tar.gz"; sha256 = "e85aaa3c2e837413c6387eb2a4efbe7ff93658813d13986da004984ffe84b3a3"; };
+      name = "py-1.5.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/90/e3/e075127d39d35f09a500ebb4a90afd10f9ef0a1d28a6d09abeec0e444fdd/py-1.5.2.tar.gz"; sha256 = "ca18943e28235417756316bfada6cd96b23ce60dd532642690dcfdaba988a76d"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
