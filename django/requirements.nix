@@ -23,7 +23,10 @@ let
       self: super: {
         bootstrapped-pip = super.bootstrapped-pip.overrideDerivation (old: {
           patchPhase = old.patchPhase + ''
-            sed -i               -e "s|paths_to_remove.remove(auto_confirm)|#paths_to_remove.remove(auto_confirm)|"                -e "s|self.uninstalled = paths_to_remove|#self.uninstalled = paths_to_remove|"                  $out/${pkgs.python35.sitePackages}/pip/req/req_install.py
+            sed -i \
+              -e "s|paths_to_remove.remove(auto_confirm)|#paths_to_remove.remove(auto_confirm)|"  \
+              -e "s|self.uninstalled = paths_to_remove|#self.uninstalled = paths_to_remove|"  \
+                $out/${pkgs.python35.sitePackages}/pip/req/req_install.py
           '';
         });
       };
@@ -40,11 +43,13 @@ let
         buildInputs = [ makeWrapper ] ++ (builtins.attrValues pkgs);
         buildCommand = ''
           mkdir -p $out/bin
-          ln -s ${pythonPackages.python.interpreter}               $out/bin/${pythonPackages.python.executable}
-          for dep in ${builtins.concatStringsSep " "               (builtins.attrValues pkgs)}; do
+          ln -s ${pythonPackages.python.interpreter} \
+              $out/bin/${pythonPackages.python.executable}
+          for dep in ${builtins.concatStringsSep " "
+              (builtins.attrValues pkgs)}; do
             if [ -d "$dep/bin" ]; then
               for prog in "$dep/bin/"*; do
-                if [ -f $prog ]; then
+                if [ -x "$prog" ] && [ -f "$prog" ]; then
                   ln -s $prog $out/bin/`basename $prog`
                 fi
               done
@@ -55,7 +60,8 @@ let
           done
           pushd $out/bin
           ln -s ${pythonPackages.python.executable} python
-          ln -s ${pythonPackages.python.executable}               python3
+          ln -s ${pythonPackages.python.executable} \
+              python3
           popd
         '';
         passthru.interpreter = pythonPackages.python;
@@ -66,7 +72,9 @@ let
       mkDerivation = pythonPackages.buildPythonPackage;
       packages = pkgs;
       overrideDerivation = drv: f:
-        pythonPackages.buildPythonPackage (drv.drvAttrs // f drv.drvAttrs //                                            { meta = drv.meta; });
+        pythonPackages.buildPythonPackage (
+          drv.drvAttrs // f drv.drvAttrs // { meta = drv.meta; }
+        );
       withPackages = pkgs'':
         withPackages (pkgs // pkgs'');
     };
@@ -74,7 +82,6 @@ let
   python = withPackages {};
 
   generated = self: {
-
     "Django" = python.mkDerivation {
       name = "Django-1.11.7";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c3/a8/58bf5ce8f54b8fd9aa0de10288600cf71c6b779d519e301f4b0de8c06259/Django-1.11.7.tar.gz"; sha256 = "8918e392530d8fc6965a56af6504229e7924c27265893f3949aa0529cd1d4b99"; };
@@ -90,8 +97,6 @@ let
       };
     };
 
-
-
     "pytz" = python.mkDerivation {
       name = "pytz-2017.3";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/60/88/d3152c234da4b2a1f7a989f89609ea488225eaea015bc16fbde2b3fdfefa/pytz-2017.3.zip"; sha256 = "fae4cffc040921b8a2d60c6cf0b5d662c1190fe54d718271db4eb17d44a185b7"; };
@@ -104,12 +109,11 @@ let
         description = "World timezone definitions, modern and historical";
       };
     };
-
   };
   localOverridesFile = ./requirements_override.nix;
   overrides = import localOverridesFile { inherit pkgs python; };
   commonOverrides = [
-    (import ../overrides.nix { inherit pkgs python ; })
+        (import ../overrides.nix { inherit pkgs python ; })
   ];
   allOverrides =
     (if (builtins.pathExists localOverridesFile)
