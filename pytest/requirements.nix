@@ -23,7 +23,10 @@ let
       self: super: {
         bootstrapped-pip = super.bootstrapped-pip.overrideDerivation (old: {
           patchPhase = old.patchPhase + ''
-            sed -i               -e "s|paths_to_remove.remove(auto_confirm)|#paths_to_remove.remove(auto_confirm)|"                -e "s|self.uninstalled = paths_to_remove|#self.uninstalled = paths_to_remove|"                  $out/${pkgs.python35.sitePackages}/pip/req/req_install.py
+            sed -i \
+              -e "s|paths_to_remove.remove(auto_confirm)|#paths_to_remove.remove(auto_confirm)|"  \
+              -e "s|self.uninstalled = paths_to_remove|#self.uninstalled = paths_to_remove|"  \
+                $out/${pkgs.python35.sitePackages}/pip/req/req_install.py
           '';
         });
       };
@@ -40,11 +43,13 @@ let
         buildInputs = [ makeWrapper ] ++ (builtins.attrValues pkgs);
         buildCommand = ''
           mkdir -p $out/bin
-          ln -s ${pythonPackages.python.interpreter}               $out/bin/${pythonPackages.python.executable}
-          for dep in ${builtins.concatStringsSep " "               (builtins.attrValues pkgs)}; do
+          ln -s ${pythonPackages.python.interpreter} \
+              $out/bin/${pythonPackages.python.executable}
+          for dep in ${builtins.concatStringsSep " "
+              (builtins.attrValues pkgs)}; do
             if [ -d "$dep/bin" ]; then
               for prog in "$dep/bin/"*; do
-                if [ -f $prog ]; then
+                if [ -x "$prog" ] && [ -f "$prog" ]; then
                   ln -s $prog $out/bin/`basename $prog`
                 fi
               done
@@ -55,7 +60,8 @@ let
           done
           pushd $out/bin
           ln -s ${pythonPackages.python.executable} python
-          ln -s ${pythonPackages.python.executable}               python3
+          ln -s ${pythonPackages.python.executable} \
+              python3
           popd
         '';
         passthru.interpreter = pythonPackages.python;
@@ -66,7 +72,9 @@ let
       mkDerivation = pythonPackages.buildPythonPackage;
       packages = pkgs;
       overrideDerivation = drv: f:
-        pythonPackages.buildPythonPackage (drv.drvAttrs // f drv.drvAttrs //                                            { meta = drv.meta; });
+        pythonPackages.buildPythonPackage (
+          drv.drvAttrs // f drv.drvAttrs // { meta = drv.meta; }
+        );
       withPackages = pkgs'':
         withPackages (pkgs // pkgs'');
     };
@@ -74,7 +82,6 @@ let
   python = withPackages {};
 
   generated = self: {
-
     "Mako" = python.mkDerivation {
       name = "Mako-1.0.7";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/eb/f3/67579bb486517c0d49547f9697e36582cd19dafb5df9e687ed8e22de57fa/Mako-1.0.7.tar.gz"; sha256 = "4e02fde57bd4abb5ec400181e4c314f56ac3e49ba4fb8b0d50bba18cb27d25ae"; };
@@ -90,8 +97,6 @@ let
       };
     };
 
-
-
     "MarkupSafe" = python.mkDerivation {
       name = "MarkupSafe-1.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4d/de/32d741db316d8fdb7680822dd37001ef7a448255de9699ab4bfcbdf4172b/MarkupSafe-1.0.tar.gz"; sha256 = "a6be69091dac236ea9c6bc7d012beab42010fa914c459791d627dad4910eb665"; };
@@ -104,8 +109,6 @@ let
         description = "Implements a XML/HTML/XHTML Markup safe string for Python";
       };
     };
-
-
 
     "apipkg" = python.mkDerivation {
       name = "apipkg-1.4";
@@ -120,8 +123,6 @@ let
       };
     };
 
-
-
     "coverage" = python.mkDerivation {
       name = "coverage-4.4.2";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/0b/e1/190ef1a264144c9b073b7353c259ca5431b5ddc8861b452e858fcbd0e9de/coverage-4.4.2.tar.gz"; sha256 = "309d91bd7a35063ec7a0e4d75645488bfab3f0b66373e7722f23da7f5b0f34cc"; };
@@ -135,8 +136,6 @@ let
       };
     };
 
-
-
     "decorator" = python.mkDerivation {
       name = "decorator-4.1.2";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/bb/e0/f6e41e9091e130bf16d4437dabbac3993908e4d6485ecbc985ef1352db94/decorator-4.1.2.tar.gz"; sha256 = "7cb64d38cb8002971710c8899fbdfb859a23a364b7c99dab19d1f719c2ba16b5"; };
@@ -149,8 +148,6 @@ let
         description = "Better living through Python with decorators";
       };
     };
-
-
 
     "execnet" = python.mkDerivation {
       name = "execnet-1.5.0";
@@ -167,8 +164,6 @@ let
       };
     };
 
-
-
     "glob2" = python.mkDerivation {
       name = "glob2-0.6";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f0/e8/970c7a031b2d7f9a21fefaa8c9d5c38001f8f25055f4ffcb32b3dbecd1ea/glob2-0.6.tar.gz"; sha256 = "f5b0a686ff21f820c4d3f0c4edd216704cea59d79d00fa337e244a2f2ff83ed6"; };
@@ -181,8 +176,6 @@ let
         description = "Version of the glob module that can capture patterns and supports recursive wildcards";
       };
     };
-
-
 
     "greenlet" = python.mkDerivation {
       name = "greenlet-0.4.12";
@@ -197,8 +190,6 @@ let
       };
     };
 
-
-
     "oejskit" = python.mkDerivation {
       name = "oejskit-0.9.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/16/10/f9d24c1f5ff7a8236e48d3c8fbd12e76eb4741e6f4e76e5c25c51d7ed7a9/oejskit-0.9.0.tar.gz"; sha256 = "06d645e2506acd85b8a858b550907c5c8440d4f1315fc2c4e6b86b091c29846e"; };
@@ -212,8 +203,6 @@ let
       };
     };
 
-
-
     "parse" = python.mkDerivation {
       name = "parse-1.8.2";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/13/71/e0b5c968c552f75a938db18e88a4e64d97dc212907b4aca0ff71293b4c80/parse-1.8.2.tar.gz"; sha256 = "8048dde3f5ca07ad7ac7350460952d83b63eaacecdac1b37f45fd74870d849d2"; };
@@ -226,8 +215,6 @@ let
         description = "parse() is the opposite of format()";
       };
     };
-
-
 
     "parse-type" = python.mkDerivation {
       name = "parse-type-0.4.2";
@@ -248,8 +235,6 @@ let
       };
     };
 
-
-
     "pep8" = python.mkDerivation {
       name = "pep8-1.7.1";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/01/a0/64ba19519db49e4094d82599412a9660dee8c26a7addbbb1bf17927ceefe/pep8-1.7.1.tar.gz"; sha256 = "fe249b52e20498e59e0b5c5256aa52ee99fc295b26ec9eaa85776ffdb9fe6374"; };
@@ -262,8 +247,6 @@ let
         description = "Python style guide checker";
       };
     };
-
-
 
     "py" = python.mkDerivation {
       name = "py-1.5.2";
@@ -278,8 +261,6 @@ let
       };
     };
 
-
-
     "pyflakes" = python.mkDerivation {
       name = "pyflakes-1.6.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/26/85/f6a315cd3c1aa597fb3a04cc7d7dbea5b3cc66ea6bd13dfa0478bf4876e6/pyflakes-1.6.0.tar.gz"; sha256 = "8d616a382f243dbf19b54743f280b80198be0bca3a5396f1d2e1fca6223e8805"; };
@@ -292,8 +273,6 @@ let
         description = "passive checker of Python programs";
       };
     };
-
-
 
     "pytest" = python.mkDerivation {
       name = "pytest-3.2.5";
@@ -309,8 +288,6 @@ let
         description = "pytest: simple powerful testing with Python";
       };
     };
-
-
 
     "pytest-bdd" = python.mkDerivation {
       name = "pytest-bdd-2.19.0";
@@ -332,8 +309,6 @@ let
       };
     };
 
-
-
     "pytest-cache" = python.mkDerivation {
       name = "pytest-cache-1.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d1/15/082fd0428aab33d2bafa014f3beb241830427ba803a8912a5aaeaf3a5663/pytest-cache-1.0.tar.gz"; sha256 = "be7468edd4d3d83f1e844959fd6e3fd28e77a481440a7118d430130ea31b07a9"; };
@@ -349,8 +324,6 @@ let
         description = "pytest plugin with mechanisms for caching across test runs";
       };
     };
-
-
 
     "pytest-catchlog" = python.mkDerivation {
       name = "pytest-catchlog-1.2.2";
@@ -368,8 +341,6 @@ let
       };
     };
 
-
-
     "pytest-cov" = python.mkDerivation {
       name = "pytest-cov-2.5.1";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/24/b4/7290d65b2f3633db51393bdf8ae66309b37620bc3ec116c5e357e3e37238/pytest-cov-2.5.1.tar.gz"; sha256 = "03aa752cf11db41d281ea1d807d954c4eda35cfa1b21d6971966cc041bbf6e2d"; };
@@ -386,8 +357,6 @@ let
       };
     };
 
-
-
     "pytest-django" = python.mkDerivation {
       name = "pytest-django-3.1.2";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/78/8b/aeab19b727411f3ec5f68dc8c05b2dba949b27ed592d68217e72e7d4ce65/pytest-django-3.1.2.tar.gz"; sha256 = "038ccc5a9daa1b1b0eb739ab7dce54e495811eca5ea3af4815a2a3ac45152309"; };
@@ -402,8 +371,6 @@ let
         description = "A Django plugin for pytest.";
       };
     };
-
-
 
     "pytest-flakes" = python.mkDerivation {
       name = "pytest-flakes-2.0.0";
@@ -422,8 +389,6 @@ let
       };
     };
 
-
-
     "pytest-forked" = python.mkDerivation {
       name = "pytest-forked-0.2";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b3/b2/1ec910b0f798cc86f2531631d7a2da030b16c165e07545537332fd4eb505/pytest-forked-0.2.tar.gz"; sha256 = "e4500cd0509ec4a26535f7d4112a8cc0f17d3a41c29ffd4eab479d2a55b30805"; };
@@ -439,8 +404,6 @@ let
       };
     };
 
-
-
     "pytest-instafail" = python.mkDerivation {
       name = "pytest-instafail-0.3.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/11/d0/371d9e86e823c775e9f23ad797d7738b1afa94223ac82c20b5bdc735ea1d/pytest-instafail-0.3.0.tar.gz"; sha256 = "b4d5fc3ca81e530a8d0e15a7771dc14b06fc9a0930c4b3909a7f4527040572c3"; };
@@ -455,8 +418,6 @@ let
         description = "py.test plugin to show failures instantly";
       };
     };
-
-
 
     "pytest-pep8" = python.mkDerivation {
       name = "pytest-pep8-1.0.6";
@@ -475,8 +436,6 @@ let
       };
     };
 
-
-
     "pytest-timeout" = python.mkDerivation {
       name = "pytest-timeout-1.2.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/cc/b7/b2a61365ea6b6d2e8881360ae7ed8dad0327ad2df89f2f0be4a02304deb2/pytest-timeout-1.2.0.tar.gz"; sha256 = "c29e3168f10897728059bd6b8ca20b28733d7fe6b8f6c09bb9d89f6146f27cb8"; };
@@ -491,8 +450,6 @@ let
         description = "py.test plugin to abort hanging tests";
       };
     };
-
-
 
     "pytest-twisted" = python.mkDerivation {
       name = "pytest-twisted-1.5";
@@ -511,8 +468,6 @@ let
       };
     };
 
-
-
     "pytest-xdist" = python.mkDerivation {
       name = "pytest-xdist-1.20.1";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/03/1c/65feceecd80ae33bd08d20c0662af96227a972c2995ed1c5c19dbac70abd/pytest-xdist-1.20.1.tar.gz"; sha256 = "433e82f9b34986a4e4b2be38c60e82cca3ac64b7e1b38f4d8e3e118292939712"; };
@@ -530,8 +485,6 @@ let
       };
     };
 
-
-
     "six" = python.mkDerivation {
       name = "six-1.11.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/16/d8/bc6316cf98419719bd59c91742194c111b6f2e85abac88e496adefaf7afe/six-1.11.0.tar.gz"; sha256 = "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"; };
@@ -544,12 +497,11 @@ let
         description = "Python 2 and 3 compatibility utilities";
       };
     };
-
   };
   localOverridesFile = ./requirements_override.nix;
   overrides = import localOverridesFile { inherit pkgs python; };
   commonOverrides = [
-    (import ../overrides.nix { inherit pkgs python ; })
+        (import ../overrides.nix { inherit pkgs python ; })
   ];
   allOverrides =
     (if (builtins.pathExists localOverridesFile)
