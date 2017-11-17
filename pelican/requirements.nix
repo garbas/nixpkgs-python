@@ -23,7 +23,10 @@ let
       self: super: {
         bootstrapped-pip = super.bootstrapped-pip.overrideDerivation (old: {
           patchPhase = old.patchPhase + ''
-            sed -i               -e "s|paths_to_remove.remove(auto_confirm)|#paths_to_remove.remove(auto_confirm)|"                -e "s|self.uninstalled = paths_to_remove|#self.uninstalled = paths_to_remove|"                  $out/${pkgs.python35.sitePackages}/pip/req/req_install.py
+            sed -i \
+              -e "s|paths_to_remove.remove(auto_confirm)|#paths_to_remove.remove(auto_confirm)|"  \
+              -e "s|self.uninstalled = paths_to_remove|#self.uninstalled = paths_to_remove|"  \
+                $out/${pkgs.python35.sitePackages}/pip/req/req_install.py
           '';
         });
       };
@@ -40,11 +43,13 @@ let
         buildInputs = [ makeWrapper ] ++ (builtins.attrValues pkgs);
         buildCommand = ''
           mkdir -p $out/bin
-          ln -s ${pythonPackages.python.interpreter}               $out/bin/${pythonPackages.python.executable}
-          for dep in ${builtins.concatStringsSep " "               (builtins.attrValues pkgs)}; do
+          ln -s ${pythonPackages.python.interpreter} \
+              $out/bin/${pythonPackages.python.executable}
+          for dep in ${builtins.concatStringsSep " "
+              (builtins.attrValues pkgs)}; do
             if [ -d "$dep/bin" ]; then
               for prog in "$dep/bin/"*; do
-                if [ -f $prog ]; then
+                if [ -x "$prog" ] && [ -f "$prog" ]; then
                   ln -s $prog $out/bin/`basename $prog`
                 fi
               done
@@ -55,7 +60,8 @@ let
           done
           pushd $out/bin
           ln -s ${pythonPackages.python.executable} python
-          ln -s ${pythonPackages.python.executable}               python3
+          ln -s ${pythonPackages.python.executable} \
+              python3
           popd
         '';
         passthru.interpreter = pythonPackages.python;
@@ -66,7 +72,9 @@ let
       mkDerivation = pythonPackages.buildPythonPackage;
       packages = pkgs;
       overrideDerivation = drv: f:
-        pythonPackages.buildPythonPackage (drv.drvAttrs // f drv.drvAttrs //                                            { meta = drv.meta; });
+        pythonPackages.buildPythonPackage (
+          drv.drvAttrs // f drv.drvAttrs // { meta = drv.meta; }
+        );
       withPackages = pkgs'':
         withPackages (pkgs // pkgs'');
     };
@@ -74,7 +82,6 @@ let
   python = withPackages {};
 
   generated = self: {
-
     "Jinja2" = python.mkDerivation {
       name = "Jinja2-2.10";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/56/e6/332789f295cf22308386cf5bbd1f4e00ed11484299c5d7383378cf48ba47/Jinja2-2.10.tar.gz"; sha256 = "f84be1bb0040caca4cea721fcbbbbd61f9be9464ca236387158b0feea01914a4"; };
@@ -90,8 +97,6 @@ let
       };
     };
 
-
-
     "MarkupSafe" = python.mkDerivation {
       name = "MarkupSafe-1.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4d/de/32d741db316d8fdb7680822dd37001ef7a448255de9699ab4bfcbdf4172b/MarkupSafe-1.0.tar.gz"; sha256 = "a6be69091dac236ea9c6bc7d012beab42010fa914c459791d627dad4910eb665"; };
@@ -104,8 +109,6 @@ let
         description = "Implements a XML/HTML/XHTML Markup safe string for Python";
       };
     };
-
-
 
     "Pygments" = python.mkDerivation {
       name = "Pygments-2.2.0";
@@ -120,8 +123,6 @@ let
       };
     };
 
-
-
     "Unidecode" = python.mkDerivation {
       name = "Unidecode-0.4.21";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/0e/26/6a4295c494e381d56bba986893382b5dd5e82e2643fc72e4e49b6c99ce15/Unidecode-0.04.21.tar.gz"; sha256 = "280a6ab88e1f2eb5af79edff450021a0d3f0448952847cd79677e55e58bad051"; };
@@ -134,8 +135,6 @@ let
         description = "ASCII transliterations of Unicode text";
       };
     };
-
-
 
     "blinker" = python.mkDerivation {
       name = "blinker-1.4";
@@ -150,8 +149,6 @@ let
       };
     };
 
-
-
     "docutils" = python.mkDerivation {
       name = "docutils-0.14";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/84/f4/5771e41fdf52aabebbadecc9381d11dea0fa34e4759b4071244fa094804c/docutils-0.14.tar.gz"; sha256 = "51e64ef2ebfb29cae1faa133b3710143496eca21c530f3f71424d77687764274"; };
@@ -164,8 +161,6 @@ let
         description = "Docutils -- Python Documentation Utilities";
       };
     };
-
-
 
     "feedgenerator" = python.mkDerivation {
       name = "feedgenerator-1.9";
@@ -183,8 +178,6 @@ let
       };
     };
 
-
-
     "ghp-import" = python.mkDerivation {
       name = "ghp-import-0.5.5";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/bd/95/27cb11b5d09643c2756f04a1412b0d62aadeb0b909564f85122270c4097c/ghp-import-0.5.5.tar.gz"; sha256 = "3e924ea720e4e1f82d56753db2154bfb86067472c5830732159c3a4c4fbc75d7"; };
@@ -197,8 +190,6 @@ let
         description = "Copy your docs directly to the gh-pages branch.";
       };
     };
-
-
 
     "livereload" = python.mkDerivation {
       name = "livereload-2.5.1";
@@ -215,8 +206,6 @@ let
         description = "Python LiveReload is an awesome tool for web developers";
       };
     };
-
-
 
     "pelican" = python.mkDerivation {
       name = "pelican-3.7.1";
@@ -241,8 +230,6 @@ let
       };
     };
 
-
-
     "python-dateutil" = python.mkDerivation {
       name = "python-dateutil-2.6.1";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/54/bb/f1db86504f7a49e1d9b9301531181b00a1c7325dc85a29160ee3eaa73a54/python-dateutil-2.6.1.tar.gz"; sha256 = "891c38b2a02f5bb1be3e4793866c8df49c7d19baabf9c1bad62547e0b4866aca"; };
@@ -258,8 +245,6 @@ let
       };
     };
 
-
-
     "pytz" = python.mkDerivation {
       name = "pytz-2017.3";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/60/88/d3152c234da4b2a1f7a989f89609ea488225eaea015bc16fbde2b3fdfefa/pytz-2017.3.zip"; sha256 = "fae4cffc040921b8a2d60c6cf0b5d662c1190fe54d718271db4eb17d44a185b7"; };
@@ -272,8 +257,6 @@ let
         description = "World timezone definitions, modern and historical";
       };
     };
-
-
 
     "six" = python.mkDerivation {
       name = "six-1.11.0";
@@ -288,8 +271,6 @@ let
       };
     };
 
-
-
     "smartypants" = python.mkDerivation {
       name = "smartypants-2.0.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/09/dd/08848ea21422a585ecd2dd32c032fd8f75f0f8345225b455f3bf9e5a0feb/smartypants-2.0.0.tar.gz"; sha256 = "7812353a32022699a1aa8cd5626e01c94a946dcaeedaee2d0b382bae4c4cbf36"; };
@@ -303,8 +284,6 @@ let
       };
     };
 
-
-
     "tornado" = python.mkDerivation {
       name = "tornado-4.5.2";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/fa/14/52e2072197dd0e63589e875ebf5984c91a027121262aa08f71a49b958359/tornado-4.5.2.tar.gz"; sha256 = "1fb8e494cd46c674d86fac5885a3ff87b0e283937a47d74eb3c02a48c9e89ad0"; };
@@ -317,8 +296,6 @@ let
         description = "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed.";
       };
     };
-
-
 
     "typogrify" = python.mkDerivation {
       name = "typogrify-2.0.7";
@@ -334,12 +311,11 @@ let
         description = "Filters to enhance web typography, including support for Django & Jinja templates";
       };
     };
-
   };
   localOverridesFile = ./requirements_override.nix;
   overrides = import localOverridesFile { inherit pkgs python; };
   commonOverrides = [
-    (import ../overrides.nix { inherit pkgs python ; })
+        (import ../overrides.nix { inherit pkgs python ; })
   ];
   allOverrides =
     (if (builtins.pathExists localOverridesFile)
