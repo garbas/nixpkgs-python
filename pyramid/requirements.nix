@@ -23,7 +23,10 @@ let
       self: super: {
         bootstrapped-pip = super.bootstrapped-pip.overrideDerivation (old: {
           patchPhase = old.patchPhase + ''
-            sed -i               -e "s|paths_to_remove.remove(auto_confirm)|#paths_to_remove.remove(auto_confirm)|"                -e "s|self.uninstalled = paths_to_remove|#self.uninstalled = paths_to_remove|"                  $out/${pkgs.python35.sitePackages}/pip/req/req_install.py
+            sed -i \
+              -e "s|paths_to_remove.remove(auto_confirm)|#paths_to_remove.remove(auto_confirm)|"  \
+              -e "s|self.uninstalled = paths_to_remove|#self.uninstalled = paths_to_remove|"  \
+                $out/${pkgs.python35.sitePackages}/pip/req/req_install.py
           '';
         });
       };
@@ -40,11 +43,13 @@ let
         buildInputs = [ makeWrapper ] ++ (builtins.attrValues pkgs);
         buildCommand = ''
           mkdir -p $out/bin
-          ln -s ${pythonPackages.python.interpreter}               $out/bin/${pythonPackages.python.executable}
-          for dep in ${builtins.concatStringsSep " "               (builtins.attrValues pkgs)}; do
+          ln -s ${pythonPackages.python.interpreter} \
+              $out/bin/${pythonPackages.python.executable}
+          for dep in ${builtins.concatStringsSep " "
+              (builtins.attrValues pkgs)}; do
             if [ -d "$dep/bin" ]; then
               for prog in "$dep/bin/"*; do
-                if [ -f $prog ]; then
+                if [ -x "$prog" ] && [ -f "$prog" ]; then
                   ln -s $prog $out/bin/`basename $prog`
                 fi
               done
@@ -55,7 +60,8 @@ let
           done
           pushd $out/bin
           ln -s ${pythonPackages.python.executable} python
-          ln -s ${pythonPackages.python.executable}               python3
+          ln -s ${pythonPackages.python.executable} \
+              python3
           popd
         '';
         passthru.interpreter = pythonPackages.python;
@@ -66,7 +72,9 @@ let
       mkDerivation = pythonPackages.buildPythonPackage;
       packages = pkgs;
       overrideDerivation = drv: f:
-        pythonPackages.buildPythonPackage (drv.drvAttrs // f drv.drvAttrs //                                            { meta = drv.meta; });
+        pythonPackages.buildPythonPackage (
+          drv.drvAttrs // f drv.drvAttrs // { meta = drv.meta; }
+        );
       withPackages = pkgs'':
         withPackages (pkgs // pkgs'');
     };
@@ -74,7 +82,6 @@ let
   python = withPackages {};
 
   generated = self: {
-
     "PasteDeploy" = python.mkDerivation {
       name = "PasteDeploy-1.5.2";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/0f/90/8e20cdae206c543ea10793cbf4136eb9a8b3f417e04e40a29d72d9922cbd/PasteDeploy-1.5.2.tar.gz"; sha256 = "d5858f89a255e6294e63ed46b73613c56e3b9a2d82a42f1df4d06c8421a9e3cb"; };
@@ -87,8 +94,6 @@ let
         description = "Load, configure, and compose WSGI applications and servers";
       };
     };
-
-
 
     "WebOb" = python.mkDerivation {
       name = "WebOb-1.7.3";
@@ -103,8 +108,6 @@ let
       };
     };
 
-
-
     "hupper" = python.mkDerivation {
       name = "hupper-1.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2e/07/df892c564dc09bb3cf6f6deb976c26adf9117db75ba218cb4353dbc9d826/hupper-1.0.tar.gz"; sha256 = "afb9584fc387c962824627bb243d7d92c276df608a771b17c8b727a7de34920a"; };
@@ -118,8 +121,6 @@ let
       };
     };
 
-
-
     "plaster" = python.mkDerivation {
       name = "plaster-1.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/37/e1/56d04382d718d32751017d32f351214384e529b794084eee20bb52405563/plaster-1.0.tar.gz"; sha256 = "8351c7c7efdf33084c1de88dd0f422cbe7342534537b553c49b857b12d98c8c3"; };
@@ -132,8 +133,6 @@ let
         description = "A loader interface around multiple config file formats.";
       };
     };
-
-
 
     "plaster-pastedeploy" = python.mkDerivation {
       name = "plaster-pastedeploy-0.4.1";
@@ -150,8 +149,6 @@ let
         description = "A loader implementing the PasteDeploy syntax to be used by plaster.";
       };
     };
-
-
 
     "pyramid" = python.mkDerivation {
       name = "pyramid-1.9.1";
@@ -177,8 +174,6 @@ let
       };
     };
 
-
-
     "repoze.lru" = python.mkDerivation {
       name = "repoze.lru-0.7";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/12/bc/595a77c4b5e204847fdf19268314ef59c85193a9dc9f83630fc459c0fee5/repoze.lru-0.7.tar.gz"; sha256 = "0429a75e19380e4ed50c0694e26ac8819b4ea7851ee1fc7583c8572db80aff77"; };
@@ -191,8 +186,6 @@ let
         description = "A tiny LRU cache implementation and decorator";
       };
     };
-
-
 
     "translationstring" = python.mkDerivation {
       name = "translationstring-1.3";
@@ -207,8 +200,6 @@ let
       };
     };
 
-
-
     "venusian" = python.mkDerivation {
       name = "venusian-1.1.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/38/24/b4b470ab9e0a2e2e9b9030c7735828c8934b4c6b45befd1bb713ec2aeb2d/venusian-1.1.0.tar.gz"; sha256 = "9902e492c71a89a241a18b2f9950bea7e41d025cc8f3af1ea8d8201346f8577d"; };
@@ -221,8 +212,6 @@ let
         description = "A library for deferring decorator actions";
       };
     };
-
-
 
     "zope.deprecation" = python.mkDerivation {
       name = "zope.deprecation-4.3.0";
@@ -237,8 +226,6 @@ let
       };
     };
 
-
-
     "zope.interface" = python.mkDerivation {
       name = "zope.interface-4.4.3";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/bd/d2/25349ed41f9dcff7b3baf87bd88a4c82396cf6e02f1f42bb68657a3132af/zope.interface-4.4.3.tar.gz"; sha256 = "d6d26d5dfbfd60c65152938fcb82f949e8dada37c041f72916fef6621ba5c5ce"; };
@@ -251,12 +238,11 @@ let
         description = "Interfaces for Python";
       };
     };
-
   };
   localOverridesFile = ./requirements_override.nix;
   overrides = import localOverridesFile { inherit pkgs python; };
   commonOverrides = [
-    (import ../overrides.nix { inherit pkgs python ; })
+        (import ../overrides.nix { inherit pkgs python ; })
   ];
   allOverrides =
     (if (builtins.pathExists localOverridesFile)
