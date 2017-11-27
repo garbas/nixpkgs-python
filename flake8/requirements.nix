@@ -149,21 +149,6 @@ let
       };
     };
 
-    "asttokens" = python.mkDerivation {
-      name = "asttokens-1.1.7";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/cb/60/d8aa1488d53c2d9258cbfc37406bb8352e5e3376d6277fdaedbaf806846f/asttokens-1.1.7.tar.gz"; sha256 = "3d630eb1532e6877bc01c0a933570693783b7c97ece3260bd3ad964aaf7d566b"; };
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."six"
-    ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/gristlabs/asttokens";
-        license = licenses.asl20;
-        description = "Annotate AST trees with source code positions";
-      };
-    };
-
     "attrs" = python.mkDerivation {
       name = "attrs-17.3.0";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3f/a4/d0db68156abbdee228ce69a786ecb512da40b36b1289aadb9e3f9fd45121/attrs-17.3.0.tar.gz"; sha256 = "c78f53e32d7cf36d8597c8a2c7e3c0ad210f97b9509e152e4c37fa80869f823c"; };
@@ -654,12 +639,11 @@ let
     };
 
     "flake8-import-order" = python.mkDerivation {
-      name = "flake8-import-order-0.15";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/6f/a5/51162d23b1cfe235a44927521124daf95afe5cb5384a41b0e53e54a2a2f5/flake8-import-order-0.15.tar.gz"; sha256 = "fd8608a29df93589ecbe5281981222929261c915068f2aedfb51f243f05f5466"; };
+      name = "flake8-import-order-0.16";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/48/6b/9ba22d22571c7115f263db97b4bcc07ffd147013678b63c35e16236a0c58/flake8-import-order-0.16.tar.gz"; sha256 = "9699e8cf71a0e082a08bc2b08782575abf08292220f1f5ddb4a8bf25674135a7"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
-      self."asttokens"
       self."pycodestyle"
     ];
       meta = with pkgs.stdenv.lib; {
@@ -685,8 +669,8 @@ let
     };
 
     "flake8-import-order-spoqa" = python.mkDerivation {
-      name = "flake8-import-order-spoqa-1.1.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/96/3b/78bc400ea22adbb5fcf12f975cb4f636c755a28fe11024a7f05784a457dc/flake8-import-order-spoqa-1.1.0.tar.gz"; sha256 = "1aa5d865533353541be8aced144a2c187f188fddcfb4904078b79d0c0ac9cd1d"; };
+      name = "flake8-import-order-spoqa-1.2.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/14/72/1252b9f9cfb8517b680664eb61e2bbad928065c614176f93b625cb35221e/flake8-import-order-spoqa-1.2.0.tar.gz"; sha256 = "fc6d0d721c08281d76cb08759c78feb7dc0602fbf740badf71dcd77381443c8c"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [

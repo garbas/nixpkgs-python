@@ -1,5 +1,4 @@
 appdirs==1.4.3
-asttokens==1.1.7
 attrs==17.3.0
 blessings==1.6
 click==6.7
@@ -32,9 +31,9 @@ flake8-future-import==0.4.3
 flake8-graphql==0.2.5
 flake8-html==0.4.0
 flake8-immediate==0.2
-flake8-import-order==0.15
+flake8-import-order==0.16
 flake8-import-order-fuzeman==1.6.0
-flake8-import-order-spoqa==1.1.0
+flake8-import-order-spoqa==1.2.0
 flake8-imports==0.1.1
 flake8-isort==2.2.2
 flake8-junit-report==2.1.0
