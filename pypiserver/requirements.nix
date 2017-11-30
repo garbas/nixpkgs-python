@@ -96,8 +96,8 @@ let
     };
 
     "pypiserver" = python.mkDerivation {
-      name = "pypiserver-1.2.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/43/a0/24babe6047ffb55e096beb27807059e5653ebd20e9827b3a8ff2c4344177/pypiserver-1.2.0.zip"; sha256 = "4c503017b6e4298d9a7cc4ee9afe8951d326e7bb28b0b1e65235235c87d486d4"; };
+      name = "pypiserver-1.2.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/97/71/a5001b7000e8325b6bb9d0f928f68a953818c601668189867addfcd17cae/pypiserver-1.2.1.zip"; sha256 = "3282fb7aba6fec16f68106426fb696e37f8f83086edaf9ca17c12afc5493c15b"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
