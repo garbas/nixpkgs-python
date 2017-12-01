@@ -303,8 +303,8 @@ let
     };
 
     "tzlocal" = python.mkDerivation {
-      name = "tzlocal-1.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/db/53/1334a66eef27703f3bd14c9592f6468bc46ad4371b23bd9b7c25cece8f28/tzlocal-1.4.tar.gz"; sha256 = "05a2908f7fb1ba8843f03b2360d6ad314dbf2bce4644feb702ccd38527e13059"; };
+      name = "tzlocal-1.5.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/cb/89/e3687d3ed99bc882793f82634e9824e62499fdfdc4b1ae39e211c5b05017/tzlocal-1.5.1.tar.gz"; sha256 = "4ebeb848845ac898da6519b9b31879cf13b6626f7184c496037b818e238f2c4e"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
