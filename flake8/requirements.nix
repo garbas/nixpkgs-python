@@ -989,8 +989,8 @@ let
     };
 
     "flake8-quotes" = python.mkDerivation {
-      name = "flake8-quotes-0.12.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a0/4f/60ff2549d4b4abb3665f7019184652f5bd9a421ad7312cc1aef644317441/flake8-quotes-0.12.0.zip"; sha256 = "1469fe554777f81b3a0be0b828663e400b028fde36d86a03c7c8a036c8ecaca4"; };
+      name = "flake8-quotes-0.12.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/5f/cc/0864951d5925020d83871a7db61117d4696d644bfc8cf0c5b7732a84b325/flake8-quotes-0.12.1.tar.gz"; sha256 = "cfe697f8223d4f39e01f3ce6612d6345be0673ad67fc8c9e049826000f74958e"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
