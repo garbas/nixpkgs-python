@@ -759,8 +759,8 @@ let
     };
 
     "flake8-meiqia" = python.mkDerivation {
-      name = "flake8-meiqia-0.1.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c0/20/f950fc74566ca96ad6258a15895643f83a34e318e7bd0eba35357252f998/flake8-meiqia-0.1.0.tar.gz"; sha256 = "21772f86910cdc5a15678e31426c48c63e79940da16d281697226ae34e03ddc6"; };
+      name = "flake8-meiqia-0.2.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/6c/37/e4d1047f1c607e98fa3c355fbb72e0806725e07396d1f5d969341ce3ff4c/flake8-meiqia-0.2.0.tar.gz"; sha256 = "9b344acb50f04f22a87ebaa0e54b18361056effaf2fc87f6bd9dfb6de84b65f8"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [

@@ -39,7 +39,7 @@ flake8-isort==2.2.2
 flake8-junit-report==2.1.0
 flake8-libfaketime==1.1
 flake8-logging-format==0.3.0
-flake8-meiqia==0.1.0
+flake8-meiqia==0.2.0
 flake8-mock==0.3
 flake8-module-imports==1.1
 flake8-mutable==1.2.0
