@@ -24,4 +24,4 @@ SQLAlchemy==1.1.15
 swagger-spec-validator==2.1.0
 typing==3.6.2
 urllib3==1.22
-Werkzeug==0.12.2
+Werkzeug==0.13

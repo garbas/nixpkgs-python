@@ -217,15 +217,15 @@ let
     };
 
     "Werkzeug" = python.mkDerivation {
-      name = "Werkzeug-0.12.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/56/41/c095a77eb2dd69bf278dd664a97d3416af04e9ba1a00b8c138f772741d31/Werkzeug-0.12.2.tar.gz"; sha256 = "903a7b87b74635244548b30d30db4c8947fe64c5198f58899ddcd3a13c23bb26"; };
+      name = "Werkzeug-0.13";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/88/71/669c831c5611e3dbdcd46acdca42a3d29866f010c1d1ae70232b15473ba8/Werkzeug-0.13.tar.gz"; sha256 = "6246e5fc98a505824113fb6aca993d45ea284a2bcffdc2c65d0c538e53e4abd3"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://werkzeug.pocoo.org/";
+        homepage = "https://www.palletsprojects.org/p/werkzeug/";
         license = licenses.bsdOriginal;
-        description = "The Swiss Army knife of Python web development";
+        description = "The comprehensive WSGI web application library.";
       };
     };
 
