@@ -1346,8 +1346,8 @@ let
     };
 
     "psutil" = python.mkDerivation {
-      name = "psutil-5.4.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/fe/17/0f0bf5792b2dfe6003efc5175c76225f7d3426f88e2bf8d360cfab870cd8/psutil-5.4.1.tar.gz"; sha256 = "42e2de159e3c987435cb3b47d6f37035db190a1499f3af714ba7af5c379b6ba2"; };
+      name = "psutil-5.4.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/54/24/aa854703715fa161110daa001afce75d21d1840e9ab5eb28708d6a5058b0/psutil-5.4.2.tar.gz"; sha256 = "00a1f9ff8d1e035fba7bfdd6977fa8ea7937afdb4477339e5df3dba78194fe11"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
