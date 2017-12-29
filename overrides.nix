@@ -76,6 +76,12 @@ in skipOverrides {
     '';
   };
 
+  "flake8-debugger" = self: old: {
+    patchPhase = ''
+      sed -i -e "s|'pytest-runner'|'''|" setup.py
+    '';
+  };
+
   "flake8-logging-format" = self: old: {
     patchPhase = ''
       sed -i -e "s|\"nose>=[0-9\.]*\"|\"\"|" setup.py
@@ -83,6 +89,12 @@ in skipOverrides {
   };
 
   "flake8-mutable" = self: old: {
+    patchPhase = ''
+      sed -i -e "s|'pytest-runner'|'''|" setup.py
+    '';
+  };
+
+  "flake8-print" = self: old: {
     patchPhase = ''
       sed -i -e "s|'pytest-runner'|'''|" setup.py
     '';

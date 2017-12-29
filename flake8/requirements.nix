@@ -276,8 +276,8 @@ let
     };
 
     "flake8-bugbear" = python.mkDerivation {
-      name = "flake8-bugbear-17.4.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f2/00/aa7acb3e2d20ffae986d35dad9d4d403cc1e1f68ad1ee5b45034ce2dbc76/flake8-bugbear-17.4.0.tar.gz"; sha256 = "f459d93951b187aee9e584c7fa24684a9b8485f46c53cfbce2b7be7313a6d733"; };
+      name = "flake8-bugbear-17.12.0";
+      src = pkgs.fetchurl { url = "https://github.com/garbas/flake8-bugbear/archive/ebeb142d225ba9476dd22b7c4a6b9b186b5a5fa9.zip"; sha256 = "9a3188dfc9831e54645dd715e0d94eb763e33ba2c38de8fc355e3b88861b6097"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -700,8 +700,8 @@ let
     };
 
     "flake8-isort" = python.mkDerivation {
-      name = "flake8-isort-2.2.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/07/2b/196a65996ae39cf8d9c5edc7116b41ac06a605c7e8a2ca039cca8c050e5d/flake8-isort-2.2.2.tar.gz"; sha256 = "4b9ee1d9f790826fb576830f75635fb6a9092484939be67869953df027b42110"; };
+      name = "flake8-isort-2.3";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/6e/30/b00b68f34c9b9b22b89e2c1a82f8aab75e0f16f12ae2770912f52ab71624/flake8-isort-2.3.tar.gz"; sha256 = "6a5716ddf5575b5623f3e124f5662982d33fc9f4f5abda97d490cbcc8936ce33"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -880,8 +880,8 @@ let
     };
 
     "flake8-pep3101" = python.mkDerivation {
-      name = "flake8-pep3101-1.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/9b/79/86fc94b5580618a90494f974edfa063d4fcc72f01c0b7ee2904e5d7d952f/flake8-pep3101-1.1.tar.gz"; sha256 = "b57b42133b14dc4ac09169520cb8ebf4802db30babab98e1ebaf9f3a9da2c832"; };
+      name = "flake8-pep3101-1.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e0/33/81b41107d839745df4e10576e1273d8f112f2990dccaebd2ea5e88e43561/flake8-pep3101-1.2.tar.gz"; sha256 = "1ba98a8a6d89ce54645d967fa831503f4b020558736563178a2ea48b72e000d8"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -1287,8 +1287,8 @@ let
     };
 
     "mypy" = python.mkDerivation {
-      name = "mypy-0.550";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/1d/91/7cf50540048d3ef30cd5c335f7447bedc850ecced60de4ad7c7411ab5e52/mypy-0.550.tar.gz"; sha256 = "58302374890b9803b19a5547e2229f8bab46900624a2f31f398b231e5f461929"; };
+      name = "mypy-0.560";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/57/0f/fae85c5463af67bb6384af2747f2441090b1ff886cd29b68080f60e7a8ea/mypy-0.560.tar.gz"; sha256 = "bd0c9a2fcf0c4f7a54a2b625f466fcc000d415f371298d96fa5d2acc69074aca"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [

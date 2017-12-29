@@ -1,7 +1,9 @@
 flake8
 flake8-author
 flake8-blind-except
-flake8-bugbear
+#flake8-bugbear
+#https://github.com/PyCQA/flake8-bugbear/pull/30
+https://github.com/garbas/flake8-bugbear/archive/ebeb142d225ba9476dd22b7c4a6b9b186b5a5fa9.zip#egg=flake8-bugbear
 flake8-builtins
 flake8-chart
 flake8-codeclimate
