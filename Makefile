@@ -25,7 +25,7 @@ django:
 			-V 3.5 \
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -A django -o result-django
+	nix-build -Q -A django -o result-django
 
 
 flake8:
@@ -34,7 +34,7 @@ flake8:
 			-V 3.5 \
 			-r requirements.txt \
 			-O ../overrides.nix
-	nix-build -A flake8 -o result-flake8
+	nix-build -Q -A flake8 -o result-flake8
 
 
 flask:
@@ -43,7 +43,7 @@ flask:
 			-V 3.5 \
 			-r requirements.txt \
 			-O ../overrides.nix
-	nix-build -A flask -o result-flask
+	nix-build -Q -A flask -o result-flask
 
 
 homeassistant:
@@ -53,7 +53,7 @@ homeassistant:
 			-s pytz
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -A homeassistant -o result-homeassistant
+	nix-build -Q -A homeassistant -o result-homeassistant
 
 
 pelican:
@@ -62,7 +62,7 @@ pelican:
 			-V 3.5 \
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -A pelican -o result-pelican
+	nix-build -Q -A pelican -o result-pelican
 
 
 pykube:
@@ -71,7 +71,7 @@ pykube:
 		-V 3.5 \
 		-r requirements.txt \
 		-O ../overrides.nix
-	nix-build -A pykube -o result-pykube
+	nix-build -Q -A pykube -o result-pykube
 
 
 pyramid:
@@ -80,7 +80,7 @@ pyramid:
 			-V 3.5 \
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -A pyramid -o result-pyramid
+	nix-build -Q -A pyramid -o result-pyramid
 
 pypi2nix:
 	cd pypi2nix/ && \
@@ -96,7 +96,7 @@ pypiserver:
 			-V 3.5 \
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -A pypiserver -o result-pypiserver
+	nix-build -Q -A pypiserver -o result-pypiserver
 
 
 pytest:
@@ -105,7 +105,7 @@ pytest:
 			-V 3.5 \
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -A pytest -o result-pytest
+	nix-build -Q -A pytest -o result-pytest
 
 
 science:
@@ -121,7 +121,7 @@ science:
 			-E freetype.dev \
 			-E libpng \
 			-E agg
-	nix-build -A science -o result-science
+	nix-build -Q -A science -o result-science
 
 
 openstackclient:
@@ -137,11 +137,11 @@ openstackclient:
 
 pypi2nix-bin:
 	if [ ! -e pypi2nix-src ]; then git clone https://github.com/garbas/pypi2nix pypi2nix-src; fi
-	cd pypi2nix-src && nix-build release.nix -A build."x86_64-linux" -o $(PWD)/result-pypi2nix-bin && cd ..
+	cd pypi2nix-src && nix-build release.nix -Q -A build."x86_64-linux" -o $(PWD)/result-pypi2nix-bin && cd ..
 
 
 static:
-	nix-build static.nix -o result-static
+	nix-build -Q static.nix -o result-static
 
 
 .PHONY: \
