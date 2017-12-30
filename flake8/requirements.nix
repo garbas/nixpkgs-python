@@ -150,11 +150,13 @@ let
     };
 
     "attrs" = python.mkDerivation {
-      name = "attrs-17.3.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3f/a4/d0db68156abbdee228ce69a786ecb512da40b36b1289aadb9e3f9fd45121/attrs-17.3.0.tar.gz"; sha256 = "c78f53e32d7cf36d8597c8a2c7e3c0ad210f97b9509e152e4c37fa80869f823c"; };
+      name = "attrs-17.4.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/8b/0b/a06cfcb69d0cb004fde8bc6f0fd192d96d565d1b8aa2829f0f20adb796e5/attrs-17.4.0.tar.gz"; sha256 = "1c7960ccfd6a005cd9f7ba884e6316b5e430a3f1a6c37c5f87d8b43f83b54ec9"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [ ];
+      propagatedBuildInputs = [
+      self."six"
+    ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://www.attrs.org/";
         license = licenses.mit;
@@ -926,15 +928,15 @@ let
     };
 
     "flake8-polyfill" = python.mkDerivation {
-      name = "flake8-polyfill-1.0.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/71/6e/dd7e0f0ddf146213d0cc0b963b3d4c6434823ebe3992c29b523182bbf785/flake8-polyfill-1.0.1.tar.gz"; sha256 = "c77056b1e2cfce7b39d7634370062baf02438962a7d176ea717627b83b17f609"; };
+      name = "flake8-polyfill-1.0.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e6/67/1c26634a770db5c442e361311bee73cb3a177adb2eb3f7af8953cfd9f553/flake8-polyfill-1.0.2.tar.gz"; sha256 = "e44b087597f6da52ec6393a709e7108b2905317d0c0b744cdca6208e670d8eda"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."flake8"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "https://gitlab.com/pycqa/flake8";
+        homepage = "https://gitlab.com/pycqa/flake8-polyfill";
         license = licenses.mit;
         description = "Polyfill package for Flake8 plugins";
       };

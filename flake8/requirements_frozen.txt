@@ -1,5 +1,5 @@
 appdirs==1.4.3
-attrs==17.3.0
+attrs==17.4.0
 blessings==1.6
 click==6.7
 docutils==0.14
@@ -50,7 +50,7 @@ flake8-pep257==1.0.5
 flake8-pep3101==1.2
 flake8-plone-api==1.4
 flake8-plone-hasattr==0.2.post0
-flake8-polyfill==1.0.1
+flake8-polyfill==1.0.2
 flake8-print==3.0.1
 flake8-pyi==17.3.0
 flake8-pytest==1.3
