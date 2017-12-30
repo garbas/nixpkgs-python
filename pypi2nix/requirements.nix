@@ -164,7 +164,7 @@ let
 
     "pypi2nix" = python.mkDerivation {
       name = "pypi2nix-1.8.1";
-      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "0qr0v1dwjzv5i5gmj0hdyb58936kgvnwa58wcmnqrp0hmcp4wqh4"; rev = "95fb9972224ebdf2cb3c8cc2387625effb15c08d"; };
+      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "0zb28591pz4dw55kqw37qsms89nsa5vv4k5zl6f5nx4348c0kfik"; rev = "f1eea45753fda9e910b17c73d7e556bdcb256a4a"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
