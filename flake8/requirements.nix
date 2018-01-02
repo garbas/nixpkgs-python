@@ -370,8 +370,8 @@ let
     };
 
     "flake8-commas" = python.mkDerivation {
-      name = "flake8-commas-0.4.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e9/42/da0539ad51149bb684ddc40690b6ffa0834761669693d62dae5d099bb084/flake8-commas-0.4.3.tar.gz"; sha256 = "8381cb25cd608323d01624d29b28e474342e7e53a2588610705c5316ef45a7a2"; };
+      name = "flake8-commas-0.5.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/fc/40/50665dd3af75afaa338c3febd3d9acc09f7d3e59996109169e333834a437/flake8-commas-0.5.0.tar.gz"; sha256 = "69b178a59a75fdbe1ee06ed3b0c251fda14a5ee6822bb1bca12ba4be68384504"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -1348,8 +1348,8 @@ let
     };
 
     "psutil" = python.mkDerivation {
-      name = "psutil-5.4.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/54/24/aa854703715fa161110daa001afce75d21d1840e9ab5eb28708d6a5058b0/psutil-5.4.2.tar.gz"; sha256 = "00a1f9ff8d1e035fba7bfdd6977fa8ea7937afdb4477339e5df3dba78194fe11"; };
+      name = "psutil-5.4.3";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e2/e1/600326635f97fee89bf8426fef14c5c29f4849c79f68fd79f433d8c1bd96/psutil-5.4.3.tar.gz"; sha256 = "e2467e9312c2fa191687b89ff4bc2ad8843be4af6fb4dc95a7cc5f7d7a327b18"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
