@@ -160,4 +160,10 @@ in skipOverrides {
     '';
   };
 
+  "python-magic" = self: old: {
+    patchPhase = ''
+      substituteInPlace magic.py --replace "ctypes.util.find_library('magic')" "'${pkgs.file}/lib/libmagic${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}'"
+    '';
+  };
+
 }

@@ -18,6 +18,18 @@ all: \
 	pypi2nix-bin \
 	static
 
+ckan:
+	cd ckan/ && \
+		$(PYPI2NIX) -v \
+			-V 2.7 \
+			-O ../overrides.nix \
+			-r requirements.txt \
+			-E postgresql \
+			-E gcc \
+			-E openssl \
+			-E libffi
+	nix-build -A ckan -o result-ckan
+
 
 django:
 	cd django/ && \
@@ -145,6 +157,7 @@ static:
 
 
 .PHONY: \
+	ckan \
 	django \
 	flake8 \
 	flask \
