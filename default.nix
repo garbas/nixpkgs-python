@@ -30,12 +30,20 @@ let
       { name = "Sebastian Jordan";
         url = "https://github.com/seppeljordan";
       };
+    sorki =
+      { name = "Richard Marko";
+        url = "https://github.com/sorki";
+      };
   };
 
 in createSets [
+  { name = "ckan";
+    maintainers = [ maintainers.sorki ];
+    description = "CKAN";
+  }
 
   { name = "django";
-    maintainers = [ maintainers.unknown];
+    maintainers = [ maintainers.unknown ];
     description = "Django framework and its extensions.";
   }
 
