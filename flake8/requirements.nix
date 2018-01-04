@@ -165,8 +165,8 @@ let
     };
 
     "blessings" = python.mkDerivation {
-      name = "blessings-1.6";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/af/4a/61acd1c6c29662d3fcbcaee5ba95c20b1d315c5a33534732b6d81e0dc8e8/blessings-1.6.tar.gz"; sha256 = "edc5713061f10966048bf6b40d9a514b381e0ba849c64e034c4ef6c1847d3007"; };
+      name = "blessings-1.6.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4e/a7/b4937f0843a5c034408265551127993b3b67a8450ecce259da16bb9c5c7d/blessings-1.6.1.tar.gz"; sha256 = "74919575885552e14bc24a68f8b539690bd1b5629180faa830b1a25b8c7fb6ea"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -370,8 +370,8 @@ let
     };
 
     "flake8-commas" = python.mkDerivation {
-      name = "flake8-commas-0.5.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/fc/40/50665dd3af75afaa338c3febd3d9acc09f7d3e59996109169e333834a437/flake8-commas-0.5.0.tar.gz"; sha256 = "69b178a59a75fdbe1ee06ed3b0c251fda14a5ee6822bb1bca12ba4be68384504"; };
+      name = "flake8-commas-1.0.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/38/e5/b6857cef9ad8eef19143c944bec6262ba182b0325d23c81dd02ee434624a/flake8-commas-1.0.0.tar.gz"; sha256 = "d7665140e18fd0325e7f22e6e0c909c7420efca53600b6c579dbddd329a7ff72"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -480,8 +480,8 @@ let
     };
 
     "flake8-docstrings" = python.mkDerivation {
-      name = "flake8-docstrings-1.1.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/1c/a1/30e64396db26d21e269a21a5547cbcd23c0f60fd17c224767ad69d4edd23/flake8-docstrings-1.1.0.tar.gz"; sha256 = "0d2a7c12e57db7bef56f820d0294bed7a577a18609246f70d223bc1bdccc185c"; };
+      name = "flake8-docstrings-1.3.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a5/8c/93d397e26d732ff4978b0c1568bd9ef02f0ef7aac5763ec5c9b25ed252f5/flake8-docstrings-1.3.0.tar.gz"; sha256 = "4e0ce1476b64e6291520e5570cf12b05016dd4e8ae454b8a8a9a48bc5f84e1cd"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -1094,8 +1094,8 @@ let
     };
 
     "flake8-strict" = python.mkDerivation {
-      name = "flake8-strict-0.1.8";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/fe/e2/1f71a4c4fc971c758393b9f83f43b96ccdb72953d18bb615011bb45da214/flake8_strict-0.1.8.tar.gz"; sha256 = "e921447054d43f48e33dbcb7ab101cc2a8e078943e0e264f0225ee92241a2ee6"; };
+      name = "flake8-strict-0.1.9";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/88/fd/070c73bec6eb9a58579e932974a6dacc68e613aedeae46c954d4419c1edd/flake8_strict-0.1.9.tar.gz"; sha256 = "b9a87603e9e5afaee5ceb4d53638f74c87a46e581377dd49552c1666abe78fda"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
