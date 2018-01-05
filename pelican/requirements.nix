@@ -124,8 +124,8 @@ let
     };
 
     "Unidecode" = python.mkDerivation {
-      name = "Unidecode-0.4.21";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/0e/26/6a4295c494e381d56bba986893382b5dd5e82e2643fc72e4e49b6c99ce15/Unidecode-0.04.21.tar.gz"; sha256 = "280a6ab88e1f2eb5af79edff450021a0d3f0448952847cd79677e55e58bad051"; };
+      name = "Unidecode-1.0.22";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/9d/36/49d0ee152b6a1631f03a541532c6201942430060aa97fe011cf01a2cce64/Unidecode-1.0.22.tar.gz"; sha256 = "8c33dd588e0c9bc22a76eaa0c715a5434851f726131bd44a6c26471746efabf5"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
