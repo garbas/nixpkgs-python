@@ -1,13 +1,9 @@
-appdirs==1.4.3
 certifi==2017.11.5
 chardet==3.0.4
 click==6.7
 idna==2.6
 Jinja2==2.10
 MarkupSafe==1.0
-packaging==16.8
-pyparsing==2.2.0
 pypi2nix==1.8.1
 requests==2.18.4
-six==1.10.0
 urllib3==1.22
