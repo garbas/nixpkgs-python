@@ -580,8 +580,8 @@ let
     };
 
     "flake8-future-import" = python.mkDerivation {
-      name = "flake8-future-import-0.4.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/08/53/48d40982c17f0b97013c2525f99f68844969d57322d3693b113e720daf98/flake8-future-import-0.4.3.tar.gz"; sha256 = "a477335324172a0de9c4f91a00d2fcba2fe4063ef65fea2101025a878b3ff404"; };
+      name = "flake8-future-import-0.4.4";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a3/9d/46d84e24053db24a368947903e0ed12c02c54c7b4cd34c569780d1c7dba3/flake8-future-import-0.4.4.tar.gz"; sha256 = "7257b50c4d688b01761220942a11623e6854df60a7f16aa9bc0f0d1dd47e2f03"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
