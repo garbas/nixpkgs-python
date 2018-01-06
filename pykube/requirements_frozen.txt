@@ -1,15 +1,12 @@
-appdirs==1.4.3
 certifi==2017.11.5
 chardet==3.0.4
 httplib2==0.10.3
 idna==2.6
 oauth2client==4.1.2
 oauthlib==2.0.6
-packaging==16.8
 pyasn1==0.4.2
 pyasn1-modules==0.2.1
 pykube==0.15.0
-pyparsing==2.2.0
 pytz==2017.3
 PyYAML==3.12
 requests==2.18.4
