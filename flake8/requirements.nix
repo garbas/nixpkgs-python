@@ -656,8 +656,8 @@ let
     };
 
     "flake8-import-order-fuzeman" = python.mkDerivation {
-      name = "flake8-import-order-fuzeman-1.6.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/35/9c/295dfe77a24f6bf92cce0975760dfaf098944f696891c483e2c0dc848adb/flake8-import-order-fuzeman-1.6.0.tar.gz"; sha256 = "cab84e72b66bfd27f6419cedd3c7a953891b68cae59bd21fecf118409c44d23a"; };
+      name = "flake8-import-order-fuzeman-1.7.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/db/76/905dcfdc1d411418f2764ecf2c12a773336c9ea7e74c7eb82d1b3286c4c9/flake8-import-order-fuzeman-1.7.0.tar.gz"; sha256 = "069305fa593090850be1fd4e38fba7a544ee9da8aa601d2c20a7752eefc81363"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [

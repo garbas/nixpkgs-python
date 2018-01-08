@@ -31,7 +31,7 @@ flake8-graphql==0.2.5
 flake8-html==0.4.0
 flake8-immediate==0.2
 flake8-import-order==0.16
-flake8-import-order-fuzeman==1.6.0
+flake8-import-order-fuzeman==1.7.0
 flake8-import-order-spoqa==1.2.0
 flake8-imports==0.1.1
 flake8-isort==2.3
