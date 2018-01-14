@@ -28,7 +28,7 @@ ckan:
 			-E gcc \
 			-E openssl \
 			-E libffi
-	nix-build -A ckan -o result-ckan
+	nix-build -Q -A ckan -o result-ckan
 
 
 django:
