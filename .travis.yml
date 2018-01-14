@@ -44,6 +44,6 @@ after_success:
     git pull;
     git stash apply;
     git add $PKGS_SET;
-    git commit -m "Travis update for $PKGS_SET";
+    git commit -m "Travis update for $PKGS_SET [ci skip]";
     git push git@github.com:garbas/nixpkgs-python.git HEAD:$TRAVIS_BRANCH;
   fi
