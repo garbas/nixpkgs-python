@@ -116,6 +116,7 @@ pytest:
 		$(PYPI2NIX) -v \
 			-V 3.5 \
 			-O ../overrides.nix \
+			-O overrides.nix \
 			-r requirements.txt
 	nix-build -Q -A pytest -o result-pytest
 
