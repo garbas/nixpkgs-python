@@ -2,7 +2,7 @@
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -v -V 3.5 -O ../overrides.nix -r requirements.txt
+#   pypi2nix -v -V 3.5 -O ../overrides.nix -O ./overrides.nix -r requirements.txt
 #
 
 { pkgs ? import <nixpkgs> {}
@@ -154,8 +154,8 @@ let
     };
 
     "decorator" = python.mkDerivation {
-      name = "decorator-4.1.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/bb/e0/f6e41e9091e130bf16d4437dabbac3993908e4d6485ecbc985ef1352db94/decorator-4.1.2.tar.gz"; sha256 = "7cb64d38cb8002971710c8899fbdfb859a23a364b7c99dab19d1f719c2ba16b5"; };
+      name = "decorator-4.2.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/70/f1/cb9373195639db13063f55eb06116310ad691e1fd125e6af057734dc44ea/decorator-4.2.1.tar.gz"; sha256 = "7d46dd9f3ea1cf5f06ee0e4e1277ae618cf48dfb10ada7c8427cd46c42702a0e"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -485,8 +485,8 @@ let
     };
 
     "pytest-twisted" = python.mkDerivation {
-      name = "pytest-twisted-1.5";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/74/66/0c64463ed9501c09e4c79bc924743e2e4cd02eb4498d492b5e3c81911198/pytest-twisted-1.5.zip"; sha256 = "d0dc887f15f4d0ade882e56590a3cce95b70fd0687ba8d2428a6364f3288d87e"; };
+      name = "pytest-twisted-1.6";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/da/e8/920a822033ceca7d59cd0f4d73bbc45608404e6f0736de663ae022543146/pytest-twisted-1.6.zip"; sha256 = "0492946bd7c6d0afaa884a3b618a2a62d9d769ff41441d0f520c916195c21bc6"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -495,15 +495,15 @@ let
       self."pytest"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/schmir/pytest-twisted";
+        homepage = "https://github.com/pytest-dev/pytest-twisted";
         license = licenses.bsdOriginal;
         description = "A twisted plugin for py.test.";
       };
     };
 
     "pytest-xdist" = python.mkDerivation {
-      name = "pytest-xdist-1.21.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/57/26/4cde9e52098487da0330dfbe49ccc107108b4c86a22aee6a7640d6cdf51a/pytest-xdist-1.21.0.tar.gz"; sha256 = "0b8622435e3c0650a8d5a07b73a7f9c4f79b52d7ed060536a6041f0da423ba8e"; };
+      name = "pytest-xdist-1.22.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/df/e1/11b3bcfa8d09e652031d6b5059e124121efbd9a230b764d61f9ea81f0c1c/pytest-xdist-1.22.0.tar.gz"; sha256 = "65228a859191f2c74ee68c127317eefe35eedd3d43fc1431f19240663b0cafcd"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -535,7 +535,7 @@ let
   overrides = import localOverridesFile { inherit pkgs python; };
   commonOverrides = [
         (import ../overrides.nix { inherit pkgs python ; })
-        (import ./overrides.nix { inherit pkgs python ; })
+    (import ./overrides.nix { inherit pkgs python ; })
   ];
   allOverrides =
     (if (builtins.pathExists localOverridesFile)
