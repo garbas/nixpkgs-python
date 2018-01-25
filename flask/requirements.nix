@@ -204,8 +204,8 @@ let
     };
 
     "SQLAlchemy" = python.mkDerivation {
-      name = "SQLAlchemy-1.2.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b1/94/311326207d43dd0bcc7c98b9abef223a38841d2baf1a3bb53b09b7f5f625/SQLAlchemy-1.2.1.tar.gz"; sha256 = "9ede7070d6fd18f28058be88296ed67893e2637465516d6a596cd9afea97b154"; };
+      name = "SQLAlchemy-1.2.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b9/fb/a56d2fc0ce3571328fa872734ad124cae25a4cea422088987f865fb71787/SQLAlchemy-1.2.2.tar.gz"; sha256 = "64b4720f0a8e033db0154d3824f5bf677cf2797e11d44743cf0aebd2a0499d9d"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -407,8 +407,8 @@ let
     };
 
     "typing" = python.mkDerivation {
-      name = "typing-3.6.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ca/38/16ba8d542e609997fdcd0214628421c971f8c395084085354b11ff4ac9c3/typing-3.6.2.tar.gz"; sha256 = "d514bd84b284dd3e844f0305ac07511f097e325171f6cc4a20878d11ad771849"; };
+      name = "typing-3.6.4";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ec/cc/28444132a25c113149cec54618abc909596f0b272a74c55bab9593f8876c/typing-3.6.4.tar.gz"; sha256 = "d400a9344254803a2368533e4533a4200d21eb7b6b729c173bc38201a74db3f2"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];

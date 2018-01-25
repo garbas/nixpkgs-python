@@ -17,8 +17,8 @@ MarkupSafe==1.0
 PyYAML==3.12
 requests==2.18.4
 six==1.11.0
-SQLAlchemy==1.2.1
+SQLAlchemy==1.2.2
 swagger-spec-validator==2.1.0
-typing==3.6.2
+typing==3.6.4
 urllib3==1.22
 Werkzeug==0.14.1
