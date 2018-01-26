@@ -1470,8 +1470,8 @@ let
     };
 
     "testfixtures" = python.mkDerivation {
-      name = "testfixtures-5.3.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/0b/15/6042f84f278fceab333bf97cc93c3c5bcb01fb3776e4268ec4c97d6dd0c3/testfixtures-5.3.1.tar.gz"; sha256 = "670ade9410b7132278209e6a2e893caf098b040c4ba4d5ea848367a9c5588728"; };
+      name = "testfixtures-5.4.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e0/dc/16e99f214c38267862266cee87574ec841b7c946b3ba3474761614f041fe/testfixtures-5.4.0.tar.gz"; sha256 = "338aed9695c432b7c9b8a271dabb521e3e7e2c96b11f7b4e60552f1c8408a8f0"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
