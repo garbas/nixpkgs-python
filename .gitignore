@@ -1,5 +1,6 @@
-/result*
-/pypi2nix-src
+/*/src
 /deploy_rsa
 /deploy_rsa.pub
+/pypi2nix-src
+/result*
 requirements_override.nix
