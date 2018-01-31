@@ -4,7 +4,7 @@ coverage==4.4.2
 decorator==4.2.1
 execnet==1.5.0
 glob2==0.6
-greenlet==0.4.12
+greenlet==0.4.13
 Mako==1.0.7
 MarkupSafe==1.0
 oejskit==0.9.0
