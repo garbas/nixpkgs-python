@@ -1263,8 +1263,8 @@ let
     };
 
     "isort" = python.mkDerivation {
-      name = "isort-4.2.15";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4d/d5/7c8657126a43bcd3b0173e880407f48be4ac91b4957b51303eab744824cf/isort-4.2.15.tar.gz"; sha256 = "79f46172d3a4e2e53e7016e663cc7a8b538bec525c36675fcfd2767df30b3983"; };
+      name = "isort-4.3.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d0/fa/251113165747809c5d515836897962cb6d725f4284bdc010200bbf271575/isort-4.3.0.tar.gz"; sha256 = "beff82862fc587bef031c8b60485e41e1362d1f1cf1904be2aefb9f0027884c7"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
