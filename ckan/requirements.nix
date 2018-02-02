@@ -473,7 +473,7 @@ let
 
     "ckan" = python.mkDerivation {
       name = "ckan-2.8.0a0";
-      src = pkgs.fetchgit { url = "https://github.com/ckan/ckan.git"; sha256 = "153hkcb60lsgz7ihsxp857c9112nzvsnsy3rmiif2zalnvgqkksl"; rev = "8b0bccdd971304c5bf7edb8b727f70f9a7467a00"; };
+      src = pkgs.fetchgit { url = "https://github.com/ckan/ckan.git"; sha256 = "0a5a55d00ccnadabl0lgda31lhhbjjwq5csib0f8lqb7ags8zz8k"; rev = "7333332e4515f0d2c4a06ceb377e16c9d51eda8f"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -636,15 +636,15 @@ let
     };
 
     "psycopg2" = python.mkDerivation {
-      name = "psycopg2-2.4.5";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/36/77/894a5dd9f3f55cfc85682d3e6473ee5103d8d418b95baf4019fad3ffa026/psycopg2-2.4.5.tar.gz"; sha256 = "48b702a7ca479e1bc2c1a7b81875a07d474298132605993e2cb979f5e08277d7"; };
+      name = "psycopg2-2.7.3.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/dd/47/000b405d73ca22980684fd7bd3318690cc03cfa3b2ae1c5b7fff8050b28a/psycopg2-2.7.3.2.tar.gz"; sha256 = "5c3213be557d0468f9df8fe2487eaf2990d9799202c5ff5cb8d394d09fad9b2a"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://initd.org/psycopg/";
         license = licenses.lgpl2;
-        description = "Python-PostgreSQL Database Adapter";
+        description = "psycopg2 - Python-PostgreSQL Database Adapter";
       };
     };
 
