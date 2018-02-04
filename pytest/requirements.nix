@@ -141,8 +141,8 @@ let
     };
 
     "coverage" = python.mkDerivation {
-      name = "coverage-4.4.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/0b/e1/190ef1a264144c9b073b7353c259ca5431b5ddc8861b452e858fcbd0e9de/coverage-4.4.2.tar.gz"; sha256 = "309d91bd7a35063ec7a0e4d75645488bfab3f0b66373e7722f23da7f5b0f34cc"; };
+      name = "coverage-4.5";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/11/24/6c0503ffe54c639d9b56f037daf723f7f09853d8efa668a836ee54ae0b2a/coverage-4.5.tar.gz"; sha256 = "b7a06a523dfeaf417da630d46ad4f4e11ca1bae6202c9312c4cb987dde5792fc"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
