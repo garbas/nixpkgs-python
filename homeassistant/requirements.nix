@@ -2,7 +2,7 @@
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -v -V 3.5 -s pytz
+#   pypi2nix -W https://travis.garbas.si/wheels_cache/ -v -V 3.5 -s pytz
 #
 
 { pkgs ? import <nixpkgs> {}
@@ -82,7 +82,18 @@ let
   python = withPackages {};
 
   generated = self: {
-
+    "pytz" = python.mkDerivation {
+      name = "pytz-2018.3";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/1b/50/4cdc62fc0753595fc16c8f722a89740f487c6e5670c644eb8983946777be/pytz-2018.3.tar.gz"; sha256 = "410bcd1d6409026fbaa65d9ed33bf6dd8b1e94a499e32168acfc7b332e4095c0"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://pythonhosted.org/pytz";
+        license = licenses.mit;
+        description = "World timezone definitions, modern and historical";
+      };
+    };
   };
   localOverridesFile = ./requirements_override.nix;
   overrides = import localOverridesFile { inherit pkgs python; };
