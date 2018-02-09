@@ -1,5 +1,5 @@
 NIX_PATH=nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
-PYPI2NIX=./../result-pypi2nix-bin/bin/pypi2nix
+PYPI2NIX=./../result-pypi2nix-bin/bin/pypi2nix -W https://travis.garbas.si/wheels_cache/
 
 
 all: \
@@ -149,7 +149,7 @@ openstackclient:
 
 
 pypi2nix-bin:
-	if [ ! -e pypi2nix-src ]; then git clone https://github.com/garbas/pypi2nix pypi2nix-src; fi
+	if [ ! -e pypi2nix-src ]; then git clone https://github.com/garbas/pypi2nix -b pip-wheel-cache pypi2nix-src; fi
 	cd pypi2nix-src && nix-build release.nix -Q -A build."x86_64-linux" -o $(PWD)/result-pypi2nix-bin && cd ..
 
 
