@@ -431,8 +431,8 @@ let
     };
 
     "flake8-debugger" = python.mkDerivation {
-      name = "flake8-debugger-3.0.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2c/a7/45823a26ef0c5fa7a0c099b772a5b6aa2d8e686284490ef738fc8691ffc0/flake8-debugger-3.0.0.tar.gz"; sha256 = "e5c8ac980d819db2f3fbb89fe0e43a2fe6c127edd6ce4984a3f7e0bbdac3d2d4"; };
+      name = "flake8-debugger-3.1.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/39/4b/90548607282483dd15f9ce1f4434d735ae756e16e1faf60621b0f8877fcc/flake8-debugger-3.1.0.tar.gz"; sha256 = "be4fb88de3ee8f6dd5053a2d347e2c0a2b54bab6733a2280bb20ebd3c4ca1d97"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -641,8 +641,8 @@ let
     };
 
     "flake8-import-order" = python.mkDerivation {
-      name = "flake8-import-order-0.16";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/48/6b/9ba22d22571c7115f263db97b4bcc07ffd147013678b63c35e16236a0c58/flake8-import-order-0.16.tar.gz"; sha256 = "9699e8cf71a0e082a08bc2b08782575abf08292220f1f5ddb4a8bf25674135a7"; };
+      name = "flake8-import-order-0.17";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b3/3d/9572a8ba83d2f2b99af91db3b4a2b585304039e74b76a9355d0e4d40c0c9/flake8-import-order-0.17.tar.gz"; sha256 = "60ea6674c77e4d916071beabf2b31b9b45e2f5b3bbda48a34db65766a5b25678"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -943,8 +943,8 @@ let
     };
 
     "flake8-print" = python.mkDerivation {
-      name = "flake8-print-3.0.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e6/78/2fe5d8aec4feed46957a043fe7eb9b08af39db597674494c80ed164720bf/flake8-print-3.0.1.tar.gz"; sha256 = "255b01f0932f65fb8ce70a65f0f2abb4a05faf25f9fe53275cd13cacdc0179f5"; };
+      name = "flake8-print-3.1.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f2/06/c6a4916f14e8ae526b27f921d953b1e64adecf63ab479322edba2d361263/flake8-print-3.1.0.tar.gz"; sha256 = "5010e6c138b63b62400da4b06afa33becc5e08bd1fcce9af3752445cf3342f54"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
