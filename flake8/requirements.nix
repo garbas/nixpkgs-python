@@ -671,8 +671,8 @@ let
     };
 
     "flake8-import-order-spoqa" = python.mkDerivation {
-      name = "flake8-import-order-spoqa-1.2.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/14/72/1252b9f9cfb8517b680664eb61e2bbad928065c614176f93b625cb35221e/flake8-import-order-spoqa-1.2.0.tar.gz"; sha256 = "fc6d0d721c08281d76cb08759c78feb7dc0602fbf740badf71dcd77381443c8c"; };
+      name = "flake8-import-order-spoqa-1.3.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4e/78/d33e89d847985bfe27caa1b7437bf2d379fb86e829f72987178cea04ee08/flake8-import-order-spoqa-1.3.0.tar.gz"; sha256 = "bee910371352aca1a28b078b29ba7f1610d10fbccec98a8c3cc98003e133439c"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -1263,8 +1263,8 @@ let
     };
 
     "isort" = python.mkDerivation {
-      name = "isort-4.3.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a2/13/f9da1234eba3d254093e70de31be9bebade75806b07602c83654246a7286/isort-4.3.3.tar.gz"; sha256 = "34929af733faadf884da29d83e7df1884363b3cc647a48e000b3c5cc13d17549"; };
+      name = "isort-4.3.4";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b1/de/a628d16fdba0d38cafb3d7e34d4830f2c9cb3881384ce5c08c44762e1846/isort-4.3.4.tar.gz"; sha256 = "b9c40e9750f3d77e6e4d441d8b0266cf555e7cdabdcff33c4fd06366ca761ef8"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];

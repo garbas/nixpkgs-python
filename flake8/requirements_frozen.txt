@@ -32,7 +32,7 @@ flake8-html==0.4.0
 flake8-immediate==0.2
 flake8-import-order==0.17
 flake8-import-order-fuzeman==1.7.0
-flake8-import-order-spoqa==1.2.0
+flake8-import-order-spoqa==1.3.0
 flake8-imports==0.1.1
 flake8-isort==2.3
 flake8-junit-report==2.1.0
@@ -72,7 +72,7 @@ flake8-tuple==0.2.13
 flake8-ugettext-alias==1.1
 flake8-user-model==1.1
 graphql-core==2.0
-isort==4.3.3
+isort==4.3.4
 Jinja2==2.10
 MarkupSafe==1.0
 mccabe==0.6.1
