@@ -473,7 +473,7 @@ let
 
     "ckan" = python.mkDerivation {
       name = "ckan-2.8.0a0";
-      src = pkgs.fetchgit { url = "https://github.com/ckan/ckan.git"; sha256 = "0b5jjva6xwj34bl0br3r1n2phb6ahxx6za8v6pmp3s0dq62zm7q6"; rev = "89d52c1dfc7880f7dd020d87b862870c07005dd2"; };
+      src = pkgs.fetchgit { url = "https://github.com/ckan/ckan.git"; sha256 = "08mndavfni1zwnv2a0yfag3qaqbr726sa27f2s5f792dzkd0nvwh"; rev = "555efa5a095d916e3d0a247fe6091c49375fd434"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
