@@ -1,5 +1,5 @@
 Babel==2.3.4
-Beaker==1.8.1
+Beaker==1.9.0
 bleach==2.1.2
 ckan==2.8.0a0
 click==6.7

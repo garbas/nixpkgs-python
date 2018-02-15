@@ -98,8 +98,8 @@ let
     };
 
     "Beaker" = python.mkDerivation {
-      name = "Beaker-1.8.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/fe/41/b778351220614d743ffbfac01939db1c172181907e9b42b7c07bfb2002da/Beaker-1.8.1.tar.gz"; sha256 = "6735aa2fff7ea0915fc7f97a11830abcad19e4d1b02433caf4238a2b54ae1ec0"; };
+      name = "Beaker-1.9.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/93/b2/12de6937b06e9615dbb3cb3a1c9af17f133f435bdef59f4ad42032b6eb49/Beaker-1.9.0.tar.gz"; sha256 = "317d0f9a3618364a4ce447d227b698bd7cdcad57301326ce8013d200abd695bf"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -107,6 +107,7 @@ let
       self."WebTest"
       self."funcsigs"
       self."nose"
+      self."redis"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://beaker.readthedocs.io/";
@@ -473,7 +474,7 @@ let
 
     "ckan" = python.mkDerivation {
       name = "ckan-2.8.0a0";
-      src = pkgs.fetchgit { url = "https://github.com/ckan/ckan.git"; sha256 = "08mndavfni1zwnv2a0yfag3qaqbr726sa27f2s5f792dzkd0nvwh"; rev = "555efa5a095d916e3d0a247fe6091c49375fd434"; };
+      src = pkgs.fetchgit { url = "https://github.com/ckan/ckan.git"; sha256 = "1ya3r6aqckr25bc1rkmyzb1bxh41z0l39nczyg1c6pf8qpqdldpf"; rev = "eda0b4929b5bbd246ea19d10a81fa873b13560d4"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
