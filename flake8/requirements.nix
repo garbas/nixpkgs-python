@@ -124,8 +124,8 @@ let
     };
 
     "Rx" = python.mkDerivation {
-      name = "Rx-1.6.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4c/04/c2e960b121d40994dd6cd87fd710968f3cbfc0c85d65f47ca2af11c2d011/Rx-1.6.0.tar.gz"; sha256 = "84ac6e140f2129266fd4c77a3d0903bbff0a761386079ea0cb99c8524695cac1"; };
+      name = "Rx-1.6.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/25/d7/9bc30242d9af6a9e9bf65b007c56e17b7dc9c13f86e440b885969b3bbdcf/Rx-1.6.1.tar.gz"; sha256 = "13a1d8d9e252625c173dc795471e614eadfe1cf40ffc684e08b8fff0d9748c23"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
