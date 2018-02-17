@@ -20,6 +20,7 @@ env:
 script:
 - make pypi2nix-bin $PKGS_SET;
 - mkdir nars/;
+- nix-push --dest "$PWD/nars/" --force ./result-pypi2nix-bin
 - nix-push --dest "$PWD/nars/" --force ./result-$PKGS_SET;
 
 before_install:
@@ -33,6 +34,7 @@ before_install:
 - ssh-add $TRAVIS_BUILD_DIR/deploy_rsa
 
 after_success:
+- rsync -avh --ignore-existing /tmp/pypi2nix/cache/wheel/*.whl travis@garbas.si:/var/travis/wheels_cache/
 - rsync -avh --ignore-existing $TRAVIS_BUILD_DIR/nars/ travis@garbas.si:/var/travis/nixpkgs-python/
 - if [[ -n `git diff --exit-code` ]]; then
     git config user.name 'travis';

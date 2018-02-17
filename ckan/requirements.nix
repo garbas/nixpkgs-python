@@ -2,7 +2,7 @@
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -v -V 2.7 -O ../overrides.nix -r requirements.txt -E postgresql -E gcc -E openssl -E libffi
+#   pypi2nix -W https://travis.garbas.si/wheels_cache/ -v -V 2.7 -O ../overrides.nix -r requirements.txt -E postgresql -E gcc -E openssl -E libffi
 #
 
 { pkgs ? import <nixpkgs> {}
@@ -474,7 +474,7 @@ let
 
     "ckan" = python.mkDerivation {
       name = "ckan-2.8.0a0";
-      src = pkgs.fetchgit { url = "https://github.com/ckan/ckan.git"; sha256 = "0sk654a74vmdripggbxckyar3v46g4cx6bg3gwrqhd2m74zfsfxr"; rev = "aa5c4aeb34702d4d1fe7cd4bb8efa692b1923712"; };
+      src = pkgs.fetchurl { url = "https://github.com/ckan/ckan/archive/master.zip"; sha256 = "e6cd156ad61cc95c4c6e29252b89dc34d8f1a8c1e6e90c93ffb8619ee5a57671"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
