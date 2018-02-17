@@ -149,7 +149,7 @@ openstackclient:
 
 
 pypi2nix-bin:
-	if [ ! -e pypi2nix-src ]; then git clone https://github.com/garbas/pypi2nix -b pip-wheel-cache pypi2nix-src; fi
+	if [ ! -e pypi2nix-src ]; then git clone https://github.com/garbas/pypi2nix pypi2nix-src; fi
 	cd pypi2nix-src && nix-build release.nix -Q -A build."x86_64-linux" -o $(PWD)/result-pypi2nix-bin && cd ..
 
 
