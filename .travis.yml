@@ -15,7 +15,8 @@ env:
 - PKGS_SET=pypiserver
 - PKGS_SET=pyramid
 - PKGS_SET=pytest
-#- PKGS_SET=science
+- PKGS_SET=science
+- PKGS_SET=httpie
 
 script:
 - make pypi2nix-bin $PKGS_SET;

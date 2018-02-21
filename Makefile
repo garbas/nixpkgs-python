@@ -121,6 +121,19 @@ pytest:
 	nix-build -Q -A pytest -o result-pytest
 
 
+httpie:
+	cd httpie/ && \
+		$(PYPI2NIX) -v \
+			-V 3.5 \
+			-O ../overrides.nix \
+			-E gcc \
+			-E openssl \
+			-E libffi \
+			-E kerberos \
+			-r requirements.txt
+	nix-build -Q -A httpie -o result-httpie
+
+
 science:
 	cd science/ && \
 		$(PYPI2NIX) -v \
@@ -163,13 +176,14 @@ static:
 	flake8 \
 	flask \
 	homeassistant \
+	httpie \
+	openstackclient \
 	pelican \
 	pykube \
-	pyramid \
 	pypi2nix \
-	pypiserver \
-	pytest \
-	openstackclient \
-	science \
 	pypi2nix-bin \
+	pypiserver \
+	pyramid \
+	pytest \
+	science \
 	static

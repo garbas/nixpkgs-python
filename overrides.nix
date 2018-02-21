@@ -100,6 +100,14 @@ in skipOverrides {
     '';
   };
 
+  "hpack" = self: old: {
+    patchPhase = ''
+      rm -f README.rst HISTORY.rst
+      touch README.rst
+      touch HISTORY.rst
+    '';
+  };
+
   "jsonschema" = self: old: {
     patchPhase = ''
       sed -i -e 's|setup_requires=\["vcversioner[><=0-9\.]*"\],||' setup.py
@@ -111,6 +119,26 @@ in skipOverrides {
       sed -i -e "s|setup_requires=\['pytest-runner'\],||" setup.py
     '';
   };
+
+   "numpy" = self: old: {
+      preConfigure = ''
+        sed -i 's/-faltivec//' numpy/distutils/system_info.py
+      '';
+      preBuild = ''
+        echo "Creating site.cfg file..."
+        cat << EOF > site.cfg
+        [openblas]
+        include_dirs = ${pkgs.openblasCompat}/include
+        library_dirs = ${pkgs.openblasCompat}/lib
+        EOF
+      '';
+      postInstall = ''
+        ln -s $out/bin/f2py* $out/bin/f2py
+      '';
+      passthru = {
+        blas = pkgs.openblasCompat;
+      };
+   };
 
   "pelican" = self: old: {
     # TODO: add this to every package
@@ -164,6 +192,28 @@ in skipOverrides {
     patchPhase = ''
       substituteInPlace magic.py --replace "ctypes.util.find_library('magic')" "'${pkgs.file}/lib/libmagic${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}'"
     '';
+  };
+
+  "scipy" = self: old: {
+     prePatch = ''
+       rm scipy/linalg/tests/test_lapack.py
+     '';
+     preConfigure = ''
+       sed -i '0,/from numpy.distutils.core/s//import setuptools;from numpy.distutils.core/' setup.py
+     '';
+     preBuild = ''
+       echo "Creating site.cfg file..."
+       cat << EOF > site.cfg
+       [openblas]
+       include_dirs = ${pkgs.openblasCompat}/include
+       library_dirs = ${pkgs.openblasCompat}/lib
+       EOF
+     '';
+     setupPyBuildFlags = [ "--fcompiler='gnu95'" ];
+     passthru = {
+       blas = pkgs.openblasCompat;
+     };
+
   };
 
 }

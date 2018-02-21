@@ -92,6 +92,14 @@ pytest
 
 Package set containing pytest and some of its plugins.
 
+HTTPie
+^^^^^^
+
+:maintainers: garbas_ 
+
+Package set containing httpie and some of its plugins.
+
+
 pypi2nix
 ^^^^^^^^
 
