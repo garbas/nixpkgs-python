@@ -14,7 +14,7 @@ pep8==1.7.1
 pluggy==0.6.0
 py==1.5.2
 pyflakes==1.6.0
-pytest==3.4.0
+pytest==3.4.1
 pytest-bdd==2.20.0
 pytest-cache==1.0
 pytest-catchlog==1.2.2
