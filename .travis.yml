@@ -4,6 +4,7 @@ addons:
   ssh_known_hosts: garbas.si
 
 env:
+- PKGS_SET=attrs
 - PKGS_SET=ckan
 - PKGS_SET=django
 - PKGS_SET=flake8

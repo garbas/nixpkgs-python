@@ -3,6 +3,7 @@ PYPI2NIX=./../result-pypi2nix-bin/bin/pypi2nix -W https://travis.garbas.si/wheel
 
 
 all: \
+	attrs \
 	django \
 	flake8 \
 	flask \
@@ -17,6 +18,14 @@ all: \
 	science \
 	pypi2nix-bin \
 	static
+
+attrs:
+	cd attrs/ && \
+		$(PYPI2NIX) -v \
+			-V 3 \
+			-O ../overrides.nix \
+			-r requirements.txt
+	nix-build -Q -A attrs -o result-attrs
 
 ckan:
 	cd ckan/ && \
@@ -171,6 +180,7 @@ static:
 
 
 .PHONY: \
+	attrs \
 	ckan \
 	django \
 	flake8 \

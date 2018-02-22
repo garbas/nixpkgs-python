@@ -1,0 +1,2 @@
+attrs
+pytest # This is here to check for infinite recursion

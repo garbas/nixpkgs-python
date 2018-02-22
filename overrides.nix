@@ -35,8 +35,19 @@ let
           )
           filteredNames
         );
+  removeDependency = name: deps: {
+
+  };
 
 in skipOverrides {
+
+  "attrs" = self: old: {
+    propagatedBuildInputs = with builtins;
+      filter
+      (drv: ! pkgs.lib.hasSuffix "-pytest"
+        (parseDrvName drv.name).name)
+      old.propagatedBuildInputs;
+  };
 
   "async-timeout" = self: old: {
     patchPhase = ''

@@ -37,6 +37,11 @@ let
   };
 
 in createSets [
+  { name = "attrs";
+    maintainers = [ maintainers.seppeljordan ];
+    description = "python-attrs";
+  }
+
   { name = "ckan";
     maintainers = [ maintainers.sorki ];
     description = "CKAN";

@@ -16,6 +16,14 @@ TODO: once flask collection is finished add how to use collection with existing
 Current collections
 -------------------
 
+attrs
+^^^^^
+
+:maintainers: `seppeljordan`_
+
+This is a small collection of attrs_ and its test dependencies.  It is
+its own collection to check for circular dependencies with pytest.
+
 Flake8
 ^^^^^^
 
