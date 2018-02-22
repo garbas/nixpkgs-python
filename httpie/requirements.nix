@@ -2,7 +2,7 @@
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -v -V 3.5 -O ../overrides.nix -E gcc -E openssl -E libffi -E kerberos -r requirements.txt
+#   pypi2nix -W https://travis.garbas.si/wheels_cache/ -v -V 3.5 -O ../overrides.nix -E gcc -E openssl -E libffi -E kerberos -r requirements.txt
 #
 
 { pkgs ? import <nixpkgs> {}
