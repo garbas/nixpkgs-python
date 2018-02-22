@@ -19,7 +19,7 @@ env:
 - PKGS_SET=httpie
 
 script:
-- make pypi2nix-bin $PKGS_SET;
+- travis_wait 60 make pypi2nix-bin $PKGS_SET;
 - mkdir nars/;
 - nix-push --dest "$PWD/nars/" --force ./result-pypi2nix-bin
 - nix-push --dest "$PWD/nars/" --force ./result-$PKGS_SET;
