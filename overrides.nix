@@ -100,6 +100,12 @@ in skipOverrides {
     '';
   };
 
+  "gevent-socketio" = self: old: {
+    patchPhase = ''
+      sed -i -e "s|setup_requires=('versiontools >= 1.7'),||" setup.py
+    '';
+  };
+
   "hpack" = self: old: {
     patchPhase = ''
       rm -f README.rst HISTORY.rst
@@ -155,6 +161,13 @@ in skipOverrides {
   "pypiserver" = self: old: {
     patchPhase = ''
       sed -i -e "s|setup_requires *= \[.*|setup_requires=\[\]|" setup.py
+    '';
+  };
+
+  "pyramid-who" = self: old: {
+    patchPhase = ''
+      rm -f CHANGES.txt
+      touch CHANGES.txt
     '';
   };
 
