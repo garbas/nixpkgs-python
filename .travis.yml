@@ -22,8 +22,8 @@ env:
 script:
 - travis_wait 60 make pypi2nix-bin $PKGS_SET;
 - mkdir nars/;
-- nix-push --dest "$PWD/nars/" --force ./result-pypi2nix-bin
-- nix-push --dest "$PWD/nars/" --force ./result-$PKGS_SET;
+- nix copy --to file://./nars/ ./result-pypi2nix-bin
+- nix copy --to file://./nars/ ./result-$PKGS_SET;
 
 before_install:
 - git branch
