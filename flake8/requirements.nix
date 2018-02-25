@@ -702,13 +702,12 @@ let
     };
 
     "flake8-isort" = python.mkDerivation {
-      name = "flake8-isort-2.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/6e/30/b00b68f34c9b9b22b89e2c1a82f8aab75e0f16f12ae2770912f52ab71624/flake8-isort-2.3.tar.gz"; sha256 = "6a5716ddf5575b5623f3e124f5662982d33fc9f4f5abda97d490cbcc8936ce33"; };
+      name = "flake8-isort-2.4";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/53/f9/ecd42542c0ca1b242e2982742ef08e73d6f8a393e49658dec32653428250/flake8-isort-2.4.tar.gz"; sha256 = "822964db6aaf5828939d1c3779f8af67f060216b5daf97d3b379e208e26d04a6"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."flake8"
-      self."flake8-polyfill"
       self."isort"
       self."testfixtures"
     ];
