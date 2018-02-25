@@ -139,8 +139,8 @@ let
     };
 
     "boto3" = python.mkDerivation {
-      name = "boto3-1.5.34";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/89/32/245aee3173ed7c8d3a3bbf37e8e093bc8cef4b1578d5af65a8e085bc3b7d/boto3-1.5.34.tar.gz"; sha256 = "a598dfcc92468ca883072569111e6900c146b5f691f735cc528c7c3bd6394e63"; };
+      name = "boto3-1.5.36";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/32/08/42eae36fc58bb0b2da92c6fe2a274efec6c8bfe4f964bcdd1dddb9b6477a/boto3-1.5.36.tar.gz"; sha256 = "5d7c47dbd14e6bbf1bee26da878091f31320bbb58aa72c5b08a8bf13c644d66e"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -156,8 +156,8 @@ let
     };
 
     "botocore" = python.mkDerivation {
-      name = "botocore-1.8.48";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/0f/83/8f7928fe44ef4a2b969643052b2735fc5ee00630cdd408fc06cefd8c7052/botocore-1.8.48.tar.gz"; sha256 = "ebefb24be37ef8e972c8fcd6be8d219a740559942f8e23dd12f09348b7556be9"; };
+      name = "botocore-1.8.50";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/bc/5d/854ca6542487a0e5596f9024b291f002bb5dda084e3ef9e8ebfa63e42372/botocore-1.8.50.tar.gz"; sha256 = "a80a23e080f4a93d11a1c067a69304dd407d18c358cba1e0df8c96f56c9e98b4"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -824,8 +824,8 @@ let
     };
 
     "msgpack-python" = python.mkDerivation {
-      name = "msgpack-python-0.5.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/8b/b8/3ab1585ec7ac02afff2427d5727b922d2907466edd932d98002f0a18c29a/msgpack-python-0.5.4.tar.gz"; sha256 = "c1f3f8d02206f84258a3b4f99fbc0a4e3c849721c9361196c3bfd5243e4304cd"; };
+      name = "msgpack-python-0.5.5";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/7c/ce/8ed474ab7ce0ef9c67d18e816e921cade83fecd59cd2cd52d825cec8166e/msgpack-python-0.5.5.tar.gz"; sha256 = "7f5d6e59228b65c47cfdae76a4aea71f6902525f18256862cda69888a686b5f9"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
