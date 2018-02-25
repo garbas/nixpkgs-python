@@ -991,8 +991,8 @@ let
     };
 
     "flake8-quotes" = python.mkDerivation {
-      name = "flake8-quotes-0.13.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/c2/16/218e91fc0278783e51c1228860f44c97721347d1d0e60884921f7960ce57/flake8-quotes-0.13.1.tar.gz"; sha256 = "fb76af22ed5d8227834edeb41d8c8e801c33b70da8351df295ae34db9f1143e6"; };
+      name = "flake8-quotes-0.14.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/7b/0b/58547b56c67af98f22ab6a057047d1ebdda19215eeb3cd3dff12568922fc/flake8-quotes-0.14.0.tar.gz"; sha256 = "83efcb4d4dc3ebcc74e2f20330d1f3460393cf8fb1ec045888ce169e0f998e70"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -1416,8 +1416,8 @@ let
     };
 
     "restructuredtext-lint" = python.mkDerivation {
-      name = "restructuredtext-lint-1.1.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/8e/1e/e7825a6fb88807ccc4fffda3a1805100ae372951af88fd40e3027f0eb1c9/restructuredtext_lint-1.1.2.tar.gz"; sha256 = "9201d354e22c27be61cf6d8212da6e10c875eec7ec8d1bdb1067b2a5ba931637"; };
+      name = "restructuredtext-lint-1.1.3";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/7e/b5/d28da439210e7f35e4f58f743e2d1fa9c7f34fb5ab9a0532e0bb3a77274a/restructuredtext_lint-1.1.3.tar.gz"; sha256 = "c48ca9a84c312b262809f041fe47dcfaedc9ee4879b3e1f9532f745c182b4037"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
