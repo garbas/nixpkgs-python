@@ -502,8 +502,8 @@ let
     };
 
     "pytest-xdist" = python.mkDerivation {
-      name = "pytest-xdist-1.22.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/31/6b/094b02810bca158c4917ba87305b2ab327860cc3835e0bc09104a5929d7a/pytest-xdist-1.22.1.tar.gz"; sha256 = "fcd6f36bab93b0b24ec45ca12f798b9b3af71da826db0b0794b358d2f5c038de"; };
+      name = "pytest-xdist-1.22.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/5d/be/f3c5a5edf6161d17d90fe458281249bebb7aba1af076621a19b007d632fa/pytest-xdist-1.22.2.tar.gz"; sha256 = "e8f5744acc270b3e7d915bdb4d5f471670f049b6fbd163d4cbd52203b075d30f"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
