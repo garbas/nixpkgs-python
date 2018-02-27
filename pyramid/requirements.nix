@@ -594,8 +594,8 @@ let
     };
 
     "transaction" = python.mkDerivation {
-      name = "transaction-2.1.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/27/c5/27f1953db67de21832fd977684e639e41c7738dc449886419bb2aa235094/transaction-2.1.2.tar.gz"; sha256 = "b9bc365e7dba3877e0f6fdee32aa029b8c0c1eb4fe227f524bffd5fc46064bd5"; };
+      name = "transaction-2.2.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ba/58/7c938343ee52cae4c1d3b857ad7546b839a4dc507b3b6363f2a774a1f71d/transaction-2.2.0.tar.gz"; sha256 = "714d6883dfd5f41f454afce716c58bb59ba10af3d23562b5be781cbbd6fb5100"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
