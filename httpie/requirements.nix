@@ -139,8 +139,8 @@ let
     };
 
     "boto3" = python.mkDerivation {
-      name = "boto3-1.5.36";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/32/08/42eae36fc58bb0b2da92c6fe2a274efec6c8bfe4f964bcdd1dddb9b6477a/boto3-1.5.36.tar.gz"; sha256 = "5d7c47dbd14e6bbf1bee26da878091f31320bbb58aa72c5b08a8bf13c644d66e"; };
+      name = "boto3-1.6.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/62/1b/689ec6cb778beade8c93a8e3d9cd06cb8716cf473eb74a62a8f3c9d36404/boto3-1.6.0.tar.gz"; sha256 = "8c4af1567fe5023c38871fe115fedfd27e958c7064cac3c5fd1fbd466a23662c"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -156,8 +156,8 @@ let
     };
 
     "botocore" = python.mkDerivation {
-      name = "botocore-1.8.50";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/bc/5d/854ca6542487a0e5596f9024b291f002bb5dda084e3ef9e8ebfa63e42372/botocore-1.8.50.tar.gz"; sha256 = "a80a23e080f4a93d11a1c067a69304dd407d18c358cba1e0df8c96f56c9e98b4"; };
+      name = "botocore-1.9.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/35/65/1f3b4b2aff281a5ffe76d6c27c08f41f0e9c76097698d8fbfcca74f0256c/botocore-1.9.0.tar.gz"; sha256 = "f70f7f5682a2e7593079ec813f774044ef464b0ebe680dab47930f40e230d6d5"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -186,8 +186,8 @@ let
     };
 
     "cffi" = python.mkDerivation {
-      name = "cffi-1.11.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/10/f7/3b302ff34045f25065091d40e074479d6893882faef135c96f181a57ed06/cffi-1.11.4.tar.gz"; sha256 = "df9083a992b17a28cd4251a3f5c879e0198bb26c9e808c4647e0a18739f1d11d"; };
+      name = "cffi-1.11.5";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e7/a7/4cd50e57cc6f436f1cc3a7e8fa700ff9b8b4d471620629074913e3735fb2/cffi-1.11.5.tar.gz"; sha256 = "e90f17980e6ab0f3c2f3730e56d1fe9bcba1891eeea58966e89d352492cc74f4"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
