@@ -22,6 +22,7 @@ env:
 - PKGS_SET=pyramid
 - PKGS_SET=pytest
 - PKGS_SET=science
+- PKGS_SET=sphinx
 - PKGS_SET=httpie
 
 script:

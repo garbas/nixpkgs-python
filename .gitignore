@@ -4,3 +4,4 @@
 /pypi2nix-src
 /result*
 requirements_override.nix
+*~

@@ -105,6 +105,10 @@ in createSets [
     maintainers = [ maintainers.seppeljordan ];
     description = "A python test engine";
   }
+  { name = "sphinx";
+    maintainers = [ maintainers.seppeljordan ];
+    description = "Python documentation generator";
+  }
   { name = "httpie";
     maintainers = [ maintainers.garbas ];
     description = "HTTPie - a CLI, cURL-like tool for humans.";

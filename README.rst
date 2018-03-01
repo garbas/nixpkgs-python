@@ -100,10 +100,17 @@ pytest
 
 Package set containing pytest and some of its plugins.
 
+Sphinx
+^^^^^^
+
+:maintainers: seppeljordan_
+
+Package set containing Sphinx and some of its extension.
+
 HTTPie
 ^^^^^^
 
-:maintainers: garbas_ 
+:maintainers: garbas_
 
 Package set containing httpie and some of its plugins.
 

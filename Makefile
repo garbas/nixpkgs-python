@@ -16,6 +16,7 @@ all: \
 	pypiserver \
 	pytest \
 	science \
+	sphinx \
 	pypi2nix-bin \
 	static
 
@@ -125,7 +126,6 @@ pytest:
 		$(PYPI2NIX) -v \
 			-V 3.5 \
 			-O ../overrides.nix \
-			-O ./overrides.nix \
 			-r requirements.txt
 	nix-build -Q -A pytest -o result-pytest
 
@@ -157,6 +157,17 @@ science:
 			-E libpng \
 			-E agg
 	nix-build -Q -A science -o result-science
+
+
+sphinx:
+	cd sphinx/ && \
+		$(PYPI2NIX) -v \
+			-V 3 \
+			-E libffi \
+			-O ../overrides.nix \
+			-E openssl.dev \
+			-r requirements.txt
+	nix-build -Q -A sphinx -o result-sphinx
 
 
 openstackclient:
@@ -196,4 +207,5 @@ static:
 	pyramid \
 	pytest \
 	science \
+	sphinx \
 	static

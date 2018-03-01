@@ -35,23 +35,28 @@ let
           )
           filteredNames
         );
-  removeDependency = name: deps: {
-
-  };
+  removeDependencies = names: deps:
+    with builtins; with pkgs.lib;
+      filter
+      (drv: all
+        (suf:
+          ! hasSuffix ("-" + suf)
+          (parseDrvName drv.name).name
+        )
+        names
+      )
+      deps;
 
 in skipOverrides {
 
   "attrs" = self: old: {
-    propagatedBuildInputs = with builtins; with pkgs.lib;
-      filter
-      (drv: all
-        (suf:
-          ! hasSuffix suf
-          (parseDrvName drv.name).name
-        )
-        [ "-pytest" "-Sphinx" ]
-      )
-      old.propagatedBuildInputs;
+    propagatedBuildInputs =
+      removeDependencies [ "pytest" "Sphinx" ] old.propagatedBuildInputs;
+  };
+
+  "cryptography" = self: old: {
+    propagatedBuildInputs =
+      removeDependencies [ "Sphinx" ] old.propagatedBuildInputs;
   };
 
   "async-timeout" = self: old: {
