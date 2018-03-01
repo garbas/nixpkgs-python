@@ -42,10 +42,15 @@ let
 in skipOverrides {
 
   "attrs" = self: old: {
-    propagatedBuildInputs = with builtins;
+    propagatedBuildInputs = with builtins; with pkgs.lib;
       filter
-      (drv: ! pkgs.lib.hasSuffix "-pytest"
-        (parseDrvName drv.name).name)
+      (drv: all
+        (suf:
+          ! hasSuffix suf
+          (parseDrvName drv.name).name
+        )
+        [ "-pytest" "-Sphinx" ]
+      )
       old.propagatedBuildInputs;
   };
 
