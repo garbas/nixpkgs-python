@@ -1288,12 +1288,11 @@ let
     };
 
     "mypy" = python.mkDerivation {
-      name = "mypy-0.560";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/57/0f/fae85c5463af67bb6384af2747f2441090b1ff886cd29b68080f60e7a8ea/mypy-0.560.tar.gz"; sha256 = "bd0c9a2fcf0c4f7a54a2b625f466fcc000d415f371298d96fa5d2acc69074aca"; };
+      name = "mypy-0.570";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/69/0a/9a0a992663e10bbd7cb6275f6eae9dd8072fa498b529956253f2eb34935a/mypy-0.570.tar.gz"; sha256 = "83d798f66323f2de6191d66d9ae5ab234e4ee5b400010e19c58d75d308049f25"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
-      self."psutil"
       self."typed-ast"
       self."typing"
     ];
@@ -1343,19 +1342,6 @@ let
         homepage = "https://github.com/syrusakbary/promise";
         license = licenses.mit;
         description = "Promises/A+ implementation for Python";
-      };
-    };
-
-    "psutil" = python.mkDerivation {
-      name = "psutil-5.4.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e2/e1/600326635f97fee89bf8426fef14c5c29f4849c79f68fd79f433d8c1bd96/psutil-5.4.3.tar.gz"; sha256 = "e2467e9312c2fa191687b89ff4bc2ad8843be4af6fb4dc95a7cc5f7d7a327b18"; };
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/giampaolo/psutil";
-        license = licenses.bsdOriginal;
-        description = "Cross-platform lib for process and system monitoring in Python.";
       };
     };
 
