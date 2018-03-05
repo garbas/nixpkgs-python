@@ -285,8 +285,8 @@ let
     };
 
     "tornado" = python.mkDerivation {
-      name = "tornado-4.5.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e3/7b/e29ab3d51c8df66922fea216e2bddfcb6430fb29620e5165b16a216e0d3c/tornado-4.5.3.tar.gz"; sha256 = "6d14e47eab0e15799cf3cdcc86b0b98279da68522caace2bd7ce644287685f0a"; };
+      name = "tornado-5.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/59/4b/2c992ec4feb904471125702ed1dd3c912de1630c03bd555c3b05a41da93e/tornado-5.0.tar.gz"; sha256 = "62f754562c61ea94b00d61727202105068bc2760f076cc34d2da1a57041731aa"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
