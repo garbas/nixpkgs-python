@@ -305,8 +305,8 @@ let
     };
 
     "pytest" = python.mkDerivation {
-      name = "pytest-3.4.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/84/11/a6fe751118861b4d6587e07633f2e055733fc3678f7e5d7ae30303d90b7e/pytest-3.4.1.tar.gz"; sha256 = "9ddcb879c8cc859d2540204b5399011f842e5e8823674bf429f70ada281b3cc6"; };
+      name = "pytest-3.4.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/dd/05/4579d3028ba1740467690c3427d3991eff91f95cbaa6bb0280f40708721a/pytest-3.4.2.tar.gz"; sha256 = "117bad36c1a787e1a8a659df35de53ba05f9f3398fb9e4ac17e80ad5903eb8c5"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
