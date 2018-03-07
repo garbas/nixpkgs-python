@@ -1,7 +1,7 @@
 asn1crypto==0.24.0
 aws-requests-auth==0.4.1
-boto3==1.6.3
-botocore==1.9.3
+boto3==1.6.4
+botocore==1.9.4
 certifi==2018.1.18
 cffi==1.11.5
 chardet==3.0.4
@@ -46,7 +46,7 @@ jmespath==0.9.3
 mohawk==0.3.4
 msgpack-python==0.5.5
 ndg-httpsclient==0.4.4
-ntlm-auth==1.0.6
+ntlm-auth==1.1.0
 oauthlib==2.0.6
 pyasn1==0.4.2
 pycparser==2.18

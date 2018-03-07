@@ -139,8 +139,8 @@ let
     };
 
     "boto3" = python.mkDerivation {
-      name = "boto3-1.6.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/83/64/092a8618e14e0187ac9a3986c3be09018c1544986fb6f261aa4e2151f64b/boto3-1.6.3.tar.gz"; sha256 = "cf5768f1b9f26d5f82369ef97e11eee0010d10f8723b081c61ff17a1cd199bea"; };
+      name = "boto3-1.6.4";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/76/01/6c92df8c2c5041b36a655b74d30f351cfb54824ab8c7f89939b8cdfc1733/boto3-1.6.4.tar.gz"; sha256 = "c38d9c074c33f73367e1ed7798519be4c2748dad3c05c7bea424a59ae7f16249"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -156,8 +156,8 @@ let
     };
 
     "botocore" = python.mkDerivation {
-      name = "botocore-1.9.3";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/60/b6/748e806b2157400e494f8c7e651087ffa2f1b55a964b0b5bcf5429e8d5c4/botocore-1.9.3.tar.gz"; sha256 = "d5b892ab86cd3e8d6cb570dd5275bf1c600cbbf9f07a40a22bcdd9023c0e844f"; };
+      name = "botocore-1.9.4";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ec/0e/8e8ebac402579f779c490cb3a350b039d5b4df67f21f1d3699341f02d054/botocore-1.9.4.tar.gz"; sha256 = "53b5efe4d4cf53885eee0ce583f05777e25599a17d890230880ef55c85f7f98e"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -853,16 +853,14 @@ let
     };
 
     "ntlm-auth" = python.mkDerivation {
-      name = "ntlm-auth-1.0.6";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4e/46/e93bed510b7b22f2c3fd3e1555ddc4b0c41e8ed120e9f2472df97bf231ae/ntlm-auth-1.0.6.tar.gz"; sha256 = "86d1d55562bfc57c539dba6c81c4e22f1db9860a0f778dd11fa72e7ae99a0c14"; };
+      name = "ntlm-auth-1.1.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/f4/e5/72bcd01db360de8af903e303ba5ed4a26b95aec6799e4cd36dd7ccf367eb/ntlm-auth-1.1.0.tar.gz"; sha256 = "d4b21b85cbbf53ec1f16e435898eb9ab80f1e8f1571f0b7e2eb038c0517dd47a"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."six"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/jborean93/ntlm-auth";
-        license = licenses.lgpl3Plus;
+        license = licenses.mit;
         description = "Creates NTLM authentication structures";
       };
     };
