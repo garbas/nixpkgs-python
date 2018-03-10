@@ -824,8 +824,8 @@ let
     };
 
     "msgpack-python" = python.mkDerivation {
-      name = "msgpack-python-0.5.5";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/7c/ce/8ed474ab7ce0ef9c67d18e816e921cade83fecd59cd2cd52d825cec8166e/msgpack-python-0.5.5.tar.gz"; sha256 = "7f5d6e59228b65c47cfdae76a4aea71f6902525f18256862cda69888a686b5f9"; };
+      name = "msgpack-python-0.5.6";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/8a/20/6eca772d1a5830336f84aca1d8198e5a3f4715cd1c7fc36d3cc7f7185091/msgpack-python-0.5.6.tar.gz"; sha256 = "378cc8a6d3545b532dfd149da715abae4fda2a3adb6d74e525d0d5e51f46909b"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
