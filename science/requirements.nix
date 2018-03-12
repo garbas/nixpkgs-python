@@ -97,13 +97,27 @@ let
       };
     };
 
+    "kiwisolver" = python.mkDerivation {
+      name = "kiwisolver-1.0.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/31/60/494fcce70d60a598c32ee00e71542e52e27c978e5f8219fae0d4ac6e2864/kiwisolver-1.0.1.tar.gz"; sha256 = "ce3be5d520b4d2c3e5eeb4cd2ef62b9b9ab8ac6b6fedbaa0e39cdb6f50644278"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/nucleic/kiwi";
+        license = "";
+        description = "A fast implementation of the Cassowary constraint solver";
+      };
+    };
+
     "matplotlib" = python.mkDerivation {
-      name = "matplotlib-2.1.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/6d/bd/3e8cec37bcf71cfd81fe798cf733c046b1ceb123e7dddf6d3435cf03b506/matplotlib-2.1.2.tar.gz"; sha256 = "725a3f12739d133adfa381e1b33bd70c6f64db453bfc536e148824816e568894"; };
+      name = "matplotlib-2.2.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/51/15/a397b941318d7d7f9cf2acbb4a35ce53681ec9799068f5ea57d91a6eea7e/matplotlib-2.2.0.tar.gz"; sha256 = "d744e56eb6742a4a3a9dbbb22c71bd0d6262543a2817fb35c9ed21ff4d06e4ce"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."cycler"
+      self."kiwisolver"
       self."numpy"
       self."pyparsing"
       self."python-dateutil"
@@ -118,8 +132,8 @@ let
     };
 
     "numpy" = python.mkDerivation {
-      name = "numpy-1.14.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a3/99/74aa456fc740a7e8f733af4e8302d8e61e123367ec660cd89c53a3cd4d70/numpy-1.14.1.zip"; sha256 = "fa0944650d5d3fb95869eaacd8eedbd2d83610c85e271bd9d3495ffa9bc4dc9c"; };
+      name = "numpy-1.14.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/0b/66/86185402ee2d55865c675c06a5cfef742e39f4635a4ce1b1aefd20711c13/numpy-1.14.2.zip"; sha256 = "facc6f925c3099ac01a1f03758100772560a0b020fb9d70f210404be08006bcb"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -144,8 +158,8 @@ let
     };
 
     "python-dateutil" = python.mkDerivation {
-      name = "python-dateutil-2.6.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/54/bb/f1db86504f7a49e1d9b9301531181b00a1c7325dc85a29160ee3eaa73a54/python-dateutil-2.6.1.tar.gz"; sha256 = "891c38b2a02f5bb1be3e4793866c8df49c7d19baabf9c1bad62547e0b4866aca"; };
+      name = "python-dateutil-2.7.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e5/1d/64a3b1c30842ecf0518af93ed123e5064559e588aebdcae0a59831dee642/python-dateutil-2.7.0.tar.gz"; sha256 = "8f95bb7e6edbb2456a51a1fb58c8dca942024b4f5844cae62c90aa88afe6e300"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
