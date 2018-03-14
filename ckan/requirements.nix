@@ -474,7 +474,7 @@ let
 
     "ckan" = python.mkDerivation {
       name = "ckan-2.8.0a0";
-      src = pkgs.fetchurl { url = "https://github.com/ckan/ckan/archive/master.zip"; sha256 = "64bb876a084307b1fcbacced585be1ce6d57de345d6f045b259a97eeaab572a8"; };
+      src = pkgs.fetchurl { url = "https://github.com/ckan/ckan/archive/master.zip"; sha256 = "b2797acdcac5723cc18abafc59366ababd538a00695591b2bb28c06df2801255"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -678,8 +678,8 @@ let
     };
 
     "python-magic" = python.mkDerivation {
-      name = "python-magic-0.4.12";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d8/94/4b2930f2146c1318e6250c85d884c87720f3089085e4d4ba53fa0f8c620c/python-magic-0.4.12.tar.gz"; sha256 = "a04b20900100884d4fce40a767182a16fcb9d10756c67cdc21f5fa610b7c9d3c"; };
+      name = "python-magic-0.4.15";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/84/30/80932401906eaf787f2e9bd86dc458f1d2e75b064b4c187341f29516945c/python-magic-0.4.15.tar.gz"; sha256 = "f3765c0f582d2dfc72c15f3b5a82aecfae9498bd29ca840d72f37d7bd38bfcd5"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
