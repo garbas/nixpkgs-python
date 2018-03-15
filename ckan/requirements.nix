@@ -457,8 +457,8 @@ let
     };
 
     "bleach" = python.mkDerivation {
-      name = "bleach-2.1.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b3/5f/0da670d30d3ffbc57cc97fa82947f81bbe3eab8d441e2d42e661f215baf2/bleach-2.1.2.tar.gz"; sha256 = "38fc8cbebea4e787d8db55d6f324820c7f74362b70db9142c1ac7920452d1a19"; };
+      name = "bleach-2.1.3";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/eb/ea/58428609442130dc31d3a59010bf6cbd263a16c589d01d23b7c1e6997e3b/bleach-2.1.3.tar.gz"; sha256 = "eb7386f632349d10d9ce9d4a838b134d4731571851149f9cc2c05a9a837a9a44"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -474,7 +474,7 @@ let
 
     "ckan" = python.mkDerivation {
       name = "ckan-2.8.0a0";
-      src = pkgs.fetchurl { url = "https://github.com/ckan/ckan/archive/master.zip"; sha256 = "b2797acdcac5723cc18abafc59366ababd538a00695591b2bb28c06df2801255"; };
+      src = pkgs.fetchurl { url = "https://github.com/ckan/ckan/archive/master.zip"; sha256 = "d0577a5c2ae3924c4039da485ade9253ec60485e3a8aac7d71b1117e9e03b025"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
