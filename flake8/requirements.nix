@@ -702,8 +702,8 @@ let
     };
 
     "flake8-isort" = python.mkDerivation {
-      name = "flake8-isort-2.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/53/f9/ecd42542c0ca1b242e2982742ef08e73d6f8a393e49658dec32653428250/flake8-isort-2.4.tar.gz"; sha256 = "822964db6aaf5828939d1c3779f8af67f060216b5daf97d3b379e208e26d04a6"; };
+      name = "flake8-isort-2.5";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/07/ad/d8d87f1dc4f2ab398ba9e9ad603367d14ba7d614dad7dece66ae0148541b/flake8-isort-2.5.tar.gz"; sha256 = "298d7904ac3a46274edf4ce66fd7e272c2a60c34c3cc999dea000608d64e5e6e"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [

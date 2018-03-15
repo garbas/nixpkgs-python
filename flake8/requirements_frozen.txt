@@ -34,7 +34,7 @@ flake8-import-order==0.17.1
 flake8-import-order-fuzeman==1.7.0
 flake8-import-order-spoqa==1.3.0
 flake8-imports==0.1.1
-flake8-isort==2.4
+flake8-isort==2.5
 flake8-junit-report==2.1.0
 flake8-libfaketime==1.1
 flake8-logging-format==0.3.0
