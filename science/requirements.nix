@@ -111,8 +111,8 @@ let
     };
 
     "matplotlib" = python.mkDerivation {
-      name = "matplotlib-2.2.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/51/15/a397b941318d7d7f9cf2acbb4a35ce53681ec9799068f5ea57d91a6eea7e/matplotlib-2.2.0.tar.gz"; sha256 = "d744e56eb6742a4a3a9dbbb22c71bd0d6262543a2817fb35c9ed21ff4d06e4ce"; };
+      name = "matplotlib-2.2.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ec/ed/46b835da53b7ed05bd4c6cae293f13ec26e877d2e490a53a709915a9dcb7/matplotlib-2.2.2.tar.gz"; sha256 = "4dc7ef528aad21f22be85e95725234c5178c0f938e2228ca76640e5e84d8cde8"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
