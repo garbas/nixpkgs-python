@@ -83,8 +83,8 @@ let
 
   generated = self: {
     "PyJWT" = python.mkDerivation {
-      name = "PyJWT-1.6.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/0e/01/021a7cd3f898e8fcba2cda40b3cc07c0f957ae1ede394559643e20656468/PyJWT-1.6.0.tar.gz"; sha256 = "9c3016e4a292151c5396e25cc0c28c4e1cdf13fa19118eb84f500f9670e3f628"; };
+      name = "PyJWT-1.6.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ee/af/7f500e3e587c927c88422099ce7ed9247f89f3217cabf00d3f48fe3ad5fe/PyJWT-1.6.1.tar.gz"; sha256 = "dacba5786fe3bf1a0ae8673874e29f9ac497860955c501289c63b15d3daae63a"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [

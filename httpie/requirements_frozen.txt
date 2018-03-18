@@ -51,7 +51,7 @@ oauthlib==2.0.6
 pyasn1==0.4.2
 pycparser==2.18
 Pygments==2.2.0
-PyJWT==1.6.0
+PyJWT==1.6.1
 pyOpenSSL==17.5.0
 python-dateutil==2.6.1
 requests==2.18.4
