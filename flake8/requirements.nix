@@ -294,8 +294,8 @@ let
     };
 
     "flake8-builtins" = python.mkDerivation {
-      name = "flake8-builtins-1.0.post0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/42/7b/432102cff8ad6601a9f66d9a4529262a2d892c7a95d53dcddf318a5d6231/flake8-builtins-1.0.post0.tar.gz"; sha256 = "a48ac06ae46ddd4a8b510c862c263f923f250866e06ff235a8c72603170914d3"; };
+      name = "flake8-builtins-1.1.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/cf/15/1c44a20962e48d58db1cf4c6ffb5a230753b06cc607c43ee23f7d1880eba/flake8-builtins-1.1.0.tar.gz"; sha256 = "e1273cf338a51a93ab6771e927ed364914e91aef0bd922f52f0e59d8d31bd12f"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
