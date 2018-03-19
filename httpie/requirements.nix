@@ -214,8 +214,8 @@ let
     };
 
     "cryptography" = python.mkDerivation {
-      name = "cryptography-2.1.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/78/c5/7188f15a92413096c93053d5304718e1f6ba88b818357d05d19250ebff85/cryptography-2.1.4.tar.gz"; sha256 = "e4d967371c5b6b2e67855066471d844c5d52d210c36c28d49a8507b96e2c5291"; };
+      name = "cryptography-2.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b1/b8/f42fd854ed5b6f29a1b9c3778993753ff6ef138e4d892fdd61355d40508d/cryptography-2.2.tar.gz"; sha256 = "f5a0279e362c37e2150a32fe35ec20226e9237b6c9927fce8d53ef8e49e64f48"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -866,8 +866,8 @@ let
     };
 
     "oauthlib" = python.mkDerivation {
-      name = "oauthlib-2.0.6";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a5/8a/212e9b47fb54be109f3ff0684165bb38c51117f34e175c379fce5c7df754/oauthlib-2.0.6.tar.gz"; sha256 = "ce57b501e906ff4f614e71c36a3ab9eacbb96d35c24d1970d2539bbc3ec70ce1"; };
+      name = "oauthlib-2.0.7";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/47/b9/66278631430fe688b2e6c84df16619f1d1e27c9c6ebca28371f7c6fbb346/oauthlib-2.0.7.tar.gz"; sha256 = "909665297635fa11fe9914c146d875f2ed41c8c2d78e21a529dd71c0ba756508"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -875,7 +875,7 @@ let
       self."cryptography"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/idan/oauthlib";
+        homepage = "https://github.com/oauthlib/oauthlib";
         license = licenses.bsdOriginal;
         description = "A generic, spec-compliant, thorough implementation of the OAuth request-signing logic";
       };
