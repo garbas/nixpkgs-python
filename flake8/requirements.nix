@@ -370,15 +370,15 @@ let
     };
 
     "flake8-commas" = python.mkDerivation {
-      name = "flake8-commas-1.0.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/38/e5/b6857cef9ad8eef19143c944bec6262ba182b0325d23c81dd02ee434624a/flake8-commas-1.0.0.tar.gz"; sha256 = "d7665140e18fd0325e7f22e6e0c909c7420efca53600b6c579dbddd329a7ff72"; };
+      name = "flake8-commas-2.0.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/85/6b/a64cb3469543ec48f55287c4736c5430801e49ca4810c3e2124755bd9e5c/flake8-commas-2.0.0.tar.gz"; sha256 = "d3005899466f51380387df7151fb59afec666a0f4f4a2c6a8995b975de0f44b7"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."flake8"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/flake8-commas/flake8-commas/";
+        homepage = "https://github.com/PyCQA/flake8-commas/";
         license = licenses.mit;
         description = "Flake8 lint for trailing commas.";
       };
