@@ -167,13 +167,13 @@ let
     };
 
     "oauthlib" = python.mkDerivation {
-      name = "oauthlib-2.0.6";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/a5/8a/212e9b47fb54be109f3ff0684165bb38c51117f34e175c379fce5c7df754/oauthlib-2.0.6.tar.gz"; sha256 = "ce57b501e906ff4f614e71c36a3ab9eacbb96d35c24d1970d2539bbc3ec70ce1"; };
+      name = "oauthlib-2.0.7";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/47/b9/66278631430fe688b2e6c84df16619f1d1e27c9c6ebca28371f7c6fbb346/oauthlib-2.0.7.tar.gz"; sha256 = "909665297635fa11fe9914c146d875f2ed41c8c2d78e21a529dd71c0ba756508"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/idan/oauthlib";
+        homepage = "https://github.com/oauthlib/oauthlib";
         license = licenses.bsdOriginal;
         description = "A generic, spec-compliant, thorough implementation of the OAuth request-signing logic";
       };
