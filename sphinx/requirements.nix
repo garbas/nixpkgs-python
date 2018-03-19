@@ -248,8 +248,8 @@ let
     };
 
     "cryptography" = python.mkDerivation {
-      name = "cryptography-2.1.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/78/c5/7188f15a92413096c93053d5304718e1f6ba88b818357d05d19250ebff85/cryptography-2.1.4.tar.gz"; sha256 = "e4d967371c5b6b2e67855066471d844c5d52d210c36c28d49a8507b96e2c5291"; };
+      name = "cryptography-2.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/b1/b8/f42fd854ed5b6f29a1b9c3778993753ff6ef138e4d892fdd61355d40508d/cryptography-2.2.tar.gz"; sha256 = "f5a0279e362c37e2150a32fe35ec20226e9237b6c9927fce8d53ef8e49e64f48"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
