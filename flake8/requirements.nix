@@ -1288,8 +1288,8 @@ let
     };
 
     "mypy" = python.mkDerivation {
-      name = "mypy-0.570";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/69/0a/9a0a992663e10bbd7cb6275f6eae9dd8072fa498b529956253f2eb34935a/mypy-0.570.tar.gz"; sha256 = "83d798f66323f2de6191d66d9ae5ab234e4ee5b400010e19c58d75d308049f25"; };
+      name = "mypy-0.580";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3d/5f/86f955690ba3962d6158cd5b720bc53a0713f3e65ac2d14d106bbcb0a88e/mypy-0.580.tar.gz"; sha256 = "3bd95a1369810f7693366911d85be9f0a0bd994f6cb7162b7a994e5ded90e3d9"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [

@@ -76,7 +76,7 @@ isort==4.3.4
 Jinja2==2.10
 MarkupSafe==1.0
 mccabe==0.6.1
-mypy==0.570
+mypy==0.580
 pep257==0.7.0
 pep8==1.7.1
 promise==2.1
