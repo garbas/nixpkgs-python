@@ -231,8 +231,8 @@ let
     };
 
     "python-dateutil" = python.mkDerivation {
-      name = "python-dateutil-2.7.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e5/1d/64a3b1c30842ecf0518af93ed123e5064559e588aebdcae0a59831dee642/python-dateutil-2.7.0.tar.gz"; sha256 = "8f95bb7e6edbb2456a51a1fb58c8dca942024b4f5844cae62c90aa88afe6e300"; };
+      name = "python-dateutil-2.7.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ee/f5/d81ec46577350dcd96a26885d418969cd2b07c7d8c78e24e25c10bfc5c6f/python-dateutil-2.7.1.tar.gz"; sha256 = "14eb44faa298942c6385636bfd76bd5c21361632cf8ebc9c20d63fd00f6a069f"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
