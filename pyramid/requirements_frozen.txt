@@ -13,7 +13,7 @@ MarkupSafe==1.0
 PasteDeploy==1.5.2
 peppercorn==0.5
 plaster==1.0
-plaster-pastedeploy==0.4.2
+plaster-pastedeploy==0.5
 Pygments==2.2.0
 pyramid==1.9.1
 pyramid-chameleon==0.3
