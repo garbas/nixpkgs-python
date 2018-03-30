@@ -122,8 +122,8 @@ let
     };
 
     "httplib2" = python.mkDerivation {
-      name = "httplib2-0.11.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/6d/6e/e286c14521000d62bd5aeafe0a27cb1c84f1701c78975693ae21f6222f0e/httplib2-0.11.1.tar.gz"; sha256 = "f2176149e1e1c59e0520db62c925715018b787b2ae901358803bae5d816fda0b"; };
+      name = "httplib2-0.11.3";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/fd/ce/aa4a385e3e9fd351737fd2b07edaa56e7a730448465aceda6b35086a0d9b/httplib2-0.11.3.tar.gz"; sha256 = "e71daed9a0e6373642db61166fa70beecc9bf04383477f84671348c02a04cbdf"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
