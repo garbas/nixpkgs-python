@@ -204,8 +204,8 @@ let
     };
 
     "SQLAlchemy" = python.mkDerivation {
-      name = "SQLAlchemy-1.2.5";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/7e/57/435347429f4ff5016b72c9b179c70a6cc67e5f9b4d3f3e9b51362c40b356/SQLAlchemy-1.2.5.tar.gz"; sha256 = "249000654107a420a40200f1e0b555a79dfd4eff235b2ff60bc77714bd045f2d"; };
+      name = "SQLAlchemy-1.2.6";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/da/ef/f10a6892f8ff3c1fec1c25699a7379d1f72f291c8fa40b71c31cab3f779e/SQLAlchemy-1.2.6.tar.gz"; sha256 = "7cb00cc9b9f92ef8b4391c8a2051f81eeafefe32d63c6b395fd51401e9a39edb"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
