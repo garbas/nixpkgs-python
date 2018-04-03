@@ -53,7 +53,7 @@ django:
 flake8:
 	cd flake8/ && \
 		$(PYPI2NIX) -v \
-			-V 3.5 \
+			-V 3 \
 			-r requirements.txt \
 			-O ../overrides.nix
 	nix-build -Q -A flake8 -o result-flake8

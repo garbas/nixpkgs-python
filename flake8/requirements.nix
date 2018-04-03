@@ -2,7 +2,7 @@
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -W https://travis.garbas.si/wheels_cache/ -v -V 3.5 -r requirements.txt -O ../overrides.nix
+#   pypi2nix -W https://travis.garbas.si/wheels_cache/ -v -V 3 -r requirements.txt -O ../overrides.nix
 #
 
 { pkgs ? import <nixpkgs> {}
@@ -17,7 +17,7 @@ let
   import "${toString pkgs.path}/pkgs/top-level/python-packages.nix" {
     inherit pkgs;
     inherit (pkgs) stdenv;
-    python = pkgs.python35;
+    python = pkgs.python3;
     # patching pip so it does not try to remove files when running nix-shell
     overrides =
       self: super: {
@@ -39,7 +39,7 @@ let
     let
       pkgs = builtins.removeAttrs pkgs' ["__unfix__"];
       interpreter = pythonPackages.buildPythonPackage {
-        name = "python35-interpreter";
+        name = "python3-interpreter";
         buildInputs = [ makeWrapper ] ++ (builtins.attrValues pkgs);
         buildCommand = ''
           mkdir -p $out/bin
@@ -294,8 +294,8 @@ let
     };
 
     "flake8-builtins" = python.mkDerivation {
-      name = "flake8-builtins-1.1.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e6/d4/32f4f69fd3156489162a076747674a25c81c6f0a4b984b7e380c2fbc66a1/flake8-builtins-1.1.1.tar.gz"; sha256 = "74f172b15737bdee0c756021b0e2a28228da3a4d2d86975e925b66eb8dfbe037"; };
+      name = "flake8-builtins-1.2.2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/34/dc/299acc98ff3ea907f33f052474a72d1df784ed2f59b78fda3fbbec4349f2/flake8-builtins-1.2.2.tar.gz"; sha256 = "ad59b8bf6c9595c485003e6ccbf6da3b90c8e0e94279ab250f2113e698272b71"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -959,8 +959,8 @@ let
     };
 
     "flake8-pyi" = python.mkDerivation {
-      name = "flake8-pyi-17.3.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/6e/a6/fef6c08c62c90438a92b2ec64669d72d19f55414518c12f6b5936c011cd7/flake8-pyi-17.3.0.tar.gz"; sha256 = "cf00cb3168711c61f7cbaddd9ec03e4f51a9bf206edcb5cb4e45bb0105237890"; };
+      name = "flake8-pyi-18.3.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/03/22/0fa6fd83033faf8010e9cd40c6fcd50f5b729ec49f0b7eca65b3b0551ef5/flake8-pyi-18.3.1.tar.gz"; sha256 = "3e67e2441118a3b889bcec1a6bce5f0594de2abe1f502ec18201c777bd7d9a54"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -990,8 +990,8 @@ let
     };
 
     "flake8-quotes" = python.mkDerivation {
-      name = "flake8-quotes-0.14.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/7b/0b/58547b56c67af98f22ab6a057047d1ebdda19215eeb3cd3dff12568922fc/flake8-quotes-0.14.0.tar.gz"; sha256 = "83efcb4d4dc3ebcc74e2f20330d1f3460393cf8fb1ec045888ce169e0f998e70"; };
+      name = "flake8-quotes-0.14.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/1c/6e/33b5f1add3fa2e0ecdcda6267d6154bdeb51d39586a058b698002da1ccab/flake8-quotes-0.14.1.tar.gz"; sha256 = "00c53e41be1cf6d04c4e5974a36320b081ee7e13fc394457a104836cbfc1399e"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
