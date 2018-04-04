@@ -164,6 +164,22 @@ let
       };
     };
 
+    "black" = python.mkDerivation {
+      name = "black-18.4a0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/26/fc/fe16644348a849e4171d311dd4a9a6f0f4e1ff62d5525091e0965b547d8b/black-18.4a0.tar.gz"; sha256 = "390b3b3ec035dc2ca5e9df6303e6049d800d07b89d01d985db44ffca4976ae11"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."attrs"
+      self."click"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/ambv/black";
+        license = licenses.mit;
+        description = "The uncompromising code formatter.";
+      };
+    };
+
     "blessings" = python.mkDerivation {
       name = "blessings-1.6.1";
       src = pkgs.fetchurl { url = "https://pypi.python.org/packages/4e/a7/b4937f0843a5c034408265551127993b3b67a8450ecce259da16bb9c5c7d/blessings-1.6.1.tar.gz"; sha256 = "74919575885552e14bc24a68f8b539690bd1b5629180faa830b1a25b8c7fb6ea"; };
@@ -1093,11 +1109,12 @@ let
     };
 
     "flake8-strict" = python.mkDerivation {
-      name = "flake8-strict-0.1.9";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/88/fd/070c73bec6eb9a58579e932974a6dacc68e613aedeae46c954d4419c1edd/flake8_strict-0.1.9.tar.gz"; sha256 = "b9a87603e9e5afaee5ceb4d53638f74c87a46e581377dd49552c1666abe78fda"; };
+      name = "flake8-strict-0.2.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/2e/10/12352911afc2e99996861343a98a9345460cc619f276648b4fcb64a24f42/flake8_strict-0.2.0.tar.gz"; sha256 = "bc4b7b26fd72286f2eefb28bb7db2175abc9372a1a4ed2e666ddcf74f3ef2877"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
+      self."black"
       self."enum-compat"
       self."flake8"
     ];

@@ -1,4 +1,5 @@
 attrs==17.4.0
+black==18.4a0
 blessings==1.6.1
 click==6.7
 docutils==0.14
@@ -61,7 +62,7 @@ flake8-rst-docstrings==0.0.8
 flake8-snippets==0.2
 flake8-sorted-keys==0.2.0
 flake8-SQL==0.2.0
-flake8-strict==0.1.9
+flake8-strict==0.2.0
 flake8-string-format==0.2.3
 flake8-tidy-imports==1.1.0
 flake8-todo==0.7
