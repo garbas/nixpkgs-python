@@ -339,8 +339,8 @@ let
     };
 
     "pytest-bdd" = python.mkDerivation {
-      name = "pytest-bdd-2.20.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/24/20/db693d2253918cc3f524c07da9865bc30a1d2b7d048245cd4aa5e77fdc2c/pytest-bdd-2.20.0.tar.gz"; sha256 = "9231ab6b97b0766e66dc6d703976581bbdbb3de38dc1bcd78af25e0a9ade4456"; };
+      name = "pytest-bdd-2.21.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/10/38/8a72f701123ab474431366ee027f6c1517741ef09299b44720b49dc40e51/pytest-bdd-2.21.0.tar.gz"; sha256 = "1420bafbba5a3fe3182b553beb28bc5ab68f0e438fa4369b4f0f590a7f18177f"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
