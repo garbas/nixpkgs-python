@@ -897,8 +897,8 @@ let
     };
 
     "flake8-pep3101" = python.mkDerivation {
-      name = "flake8-pep3101-1.2";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e0/33/81b41107d839745df4e10576e1273d8f112f2990dccaebd2ea5e88e43561/flake8-pep3101-1.2.tar.gz"; sha256 = "1ba98a8a6d89ce54645d967fa831503f4b020558736563178a2ea48b72e000d8"; };
+      name = "flake8-pep3101-1.2.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e1/ac/72ff428f624278e5f12119a624a85bc82de9a5b5fdd056e2e955bb67c24a/flake8-pep3101-1.2.1.tar.gz"; sha256 = "493821d6bdd083794eb0691ebe5b68e5c520b622b269d60e54308fb97440e21a"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
