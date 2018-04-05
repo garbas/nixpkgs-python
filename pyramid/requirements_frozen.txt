@@ -33,7 +33,7 @@ SQLAlchemy==1.2.6
 transaction==2.2.1
 translationstring==1.3
 venusian==1.1.0
-WebOb==1.8.0rc1
+WebOb==1.8.0
 zope.configuration==4.1.0
 zope.deprecation==4.3.0
 zope.event==4.3.0
