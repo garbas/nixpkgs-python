@@ -178,8 +178,8 @@ let
     };
 
     "WebOb" = python.mkDerivation {
-      name = "WebOb-1.8.0";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3c/0a/17a65fbd85ea7cec43b500b982e9bced125669d50dd343a703fe4b9d3a51/WebOb-1.8.0.tar.gz"; sha256 = "6fca7aa39bd2f6d2ff71f15a22223ff256c91f60b1ab52dac0ab38dc6ea9142f"; };
+      name = "WebOb-1.8.1";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/ea/93/675ec37b631c823877718164b74fc057203c8979fd771bf60f711d64550b/WebOb-1.8.1.tar.gz"; sha256 = "54f35073d2fdcddd7a98c2a1dedeede49739150737164a787220f30283139ba6"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
