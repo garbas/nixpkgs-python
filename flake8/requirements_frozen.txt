@@ -1,5 +1,5 @@
 attrs==17.4.0
-black==18.4a0
+black==18.4a1
 blessings==1.6.1
 click==6.7
 docutils==0.14
