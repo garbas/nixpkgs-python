@@ -165,8 +165,8 @@ let
     };
 
     "black" = python.mkDerivation {
-      name = "black-18.4a1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/6b/2a/908a33ca35eb6fb5d8a57351fba24727ba3ed30191035557f57fa6d9cb83/black-18.4a1.tar.gz"; sha256 = "e9823469b247ed5e186c21f7e94c02aafd8d0905729a5b3748b555bcc2637e5b"; };
+      name = "black-18.4a2";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e5/3d/a2204bc1f2feaf5db0105db0f7956a591552ca9ee36f91dff37b08962866/black-18.4a2.tar.gz"; sha256 = "cecee6dc0250661cf86dced28adddf3b65bb669636638745e488e7c1d718e8be"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -1305,8 +1305,8 @@ let
     };
 
     "mypy" = python.mkDerivation {
-      name = "mypy-0.580";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/3d/5f/86f955690ba3962d6158cd5b720bc53a0713f3e65ac2d14d106bbcb0a88e/mypy-0.580.tar.gz"; sha256 = "3bd95a1369810f7693366911d85be9f0a0bd994f6cb7162b7a994e5ded90e3d9"; };
+      name = "mypy-0.590";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/e3/8d/df82ddb3589b579483ce52d4221279a9c8e99f9c5741aae88755aaab9074/mypy-0.590.tar.gz"; sha256 = "04bffef22377b3f56f96da2d032e5d0b2e8a9062a127afc008dc4b0e64cede7a"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [

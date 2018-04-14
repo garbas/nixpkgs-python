@@ -1,5 +1,5 @@
 attrs==17.4.0
-black==18.4a1
+black==18.4a2
 blessings==1.6.1
 click==6.7
 docutils==0.14
@@ -77,7 +77,7 @@ isort==4.3.4
 Jinja2==2.10
 MarkupSafe==1.0
 mccabe==0.6.1
-mypy==0.580
+mypy==0.590
 pep257==0.7.0
 pep8==1.7.1
 promise==2.1
