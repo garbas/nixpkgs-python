@@ -1,7 +1,7 @@
 apipkg==1.4
 attrs==17.4.0
 coverage==4.5.1
-decorator==4.2.1
+decorator==4.3.0
 execnet==1.5.0
 glob2==0.6
 greenlet==0.4.13
