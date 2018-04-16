@@ -84,7 +84,7 @@ let
   generated = self: {
     "Django" = python.mkDerivation {
       name = "Django-2.0.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/d4/73/227f6efdb7dd3b74b9785795dffc0f28c4db9c59e2a05e3547fcf003635b/Django-2.0.4.tar.gz"; sha256 = "d81a1652963c81488e709729a80b510394050e312f386037f26b54912a3a10d0"; };
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d4/73/227f6efdb7dd3b74b9785795dffc0f28c4db9c59e2a05e3547fcf003635b/Django-2.0.4.tar.gz"; sha256 = "d81a1652963c81488e709729a80b510394050e312f386037f26b54912a3a10d0"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -99,7 +99,7 @@ let
 
     "pytz" = python.mkDerivation {
       name = "pytz-2018.4";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/10/76/52efda4ef98e7544321fd8d5d512e11739c1df18b0649551aeccfb1c8376/pytz-2018.4.tar.gz"; sha256 = "c06425302f2cf668f1bba7a0a03f3c1d34d4ebeef2c72003da308b3947c7f749"; };
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/10/76/52efda4ef98e7544321fd8d5d512e11739c1df18b0649551aeccfb1c8376/pytz-2018.4.tar.gz"; sha256 = "c06425302f2cf668f1bba7a0a03f3c1d34d4ebeef2c72003da308b3947c7f749"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
