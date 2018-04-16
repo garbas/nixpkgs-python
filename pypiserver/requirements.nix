@@ -84,7 +84,7 @@ let
   generated = self: {
     "passlib" = python.mkDerivation {
       name = "passlib-1.7.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/25/4b/6fbfc66aabb3017cd8c3bd97b37f769d7503ead2899bf76e570eb91270de/passlib-1.7.1.tar.gz"; sha256 = "3d948f64138c25633613f303bcc471126eae67c04d5e3f6b7b8ce6242f8653e0"; };
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/25/4b/6fbfc66aabb3017cd8c3bd97b37f769d7503ead2899bf76e570eb91270de/passlib-1.7.1.tar.gz"; sha256 = "3d948f64138c25633613f303bcc471126eae67c04d5e3f6b7b8ce6242f8653e0"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -97,7 +97,7 @@ let
 
     "pypiserver" = python.mkDerivation {
       name = "pypiserver-1.2.1";
-      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/97/71/a5001b7000e8325b6bb9d0f928f68a953818c601668189867addfcd17cae/pypiserver-1.2.1.zip"; sha256 = "3282fb7aba6fec16f68106426fb696e37f8f83086edaf9ca17c12afc5493c15b"; };
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/97/71/a5001b7000e8325b6bb9d0f928f68a953818c601668189867addfcd17cae/pypiserver-1.2.1.zip"; sha256 = "3282fb7aba6fec16f68106426fb696e37f8f83086edaf9ca17c12afc5493c15b"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
