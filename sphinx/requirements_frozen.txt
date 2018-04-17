@@ -2,7 +2,7 @@ alabaster==0.7.10
 asn1crypto==0.24.0
 attrs==17.4.0
 Babel==2.5.3
-certifi==2018.1.18
+certifi==2018.4.16
 cffi==1.11.5
 chardet==3.0.4
 cryptography==2.2.2
