@@ -341,8 +341,8 @@ let
     };
 
     "flake8-codeclimate" = python.mkDerivation {
-      name = "flake8-codeclimate-0.1.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f6/83/fbe2cd6f33fc2f9e5512002c93b214bd4a69fec225ae0dcaa7677863f9d3/flake8_codeclimate-0.1.3.tar.gz"; sha256 = "fd4edbfbebd307547517d9b76362a2fef7fdd20f8b86e7f9853ba537cdd4f203"; };
+      name = "flake8-codeclimate-0.2.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/76/3f/801b948f66467a4525d18f841736847eacc5f559891403bd56e932ed3aad/flake8_codeclimate-0.2.0.tar.gz"; sha256 = "72150e87da241201c70a159341945d3e937b17bed526ce92186031e310f54bf3"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
