@@ -139,8 +139,8 @@ let
     };
 
     "boto3" = python.mkDerivation {
-      name = "boto3-1.7.6";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/40/61/010c6dc844d9f76cd83572fc5f9e2b20d4d85b65a568296b2b4d2d2d5086/boto3-1.7.6.tar.gz"; sha256 = "069189ce54e1f22e8ffcd9d638f4f36b15d89d0ea31bd11ff0b87a6f5aaee9b6"; };
+      name = "boto3-1.7.7";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b6/77/26f1d98ac349aac8f9583f12bf494d85fbab14336541bfacac592cf5e15b/boto3-1.7.7.tar.gz"; sha256 = "4968a63b790ed18bed93f8a43129bc5480fa12d6b1df8a36eecb02540289bfe7"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -156,8 +156,8 @@ let
     };
 
     "botocore" = python.mkDerivation {
-      name = "botocore-1.10.6";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/83/d4/236990dbd22d40a7ad837d98963082fa0980642a81810e3498a22319c15d/botocore-1.10.6.tar.gz"; sha256 = "db90e17685c53867b2a11b2b562d692257fd7388833ff38df5efa43b5d3065f5"; };
+      name = "botocore-1.10.7";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/5a/2e/24f5be19b87e3934f7e3f38d79b29bb670e904d89ab0340da673e5ac1a49/botocore-1.10.7.tar.gz"; sha256 = "0e9f027af2a634648a4aae138112de81521bfbc9fb01845a112c8b02c7058196"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -837,8 +837,8 @@ let
     };
 
     "ndg-httpsclient" = python.mkDerivation {
-      name = "ndg-httpsclient-0.4.4";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/6c/dd/4d4f1ad1158830b364beee70cb59f651018f36de24da80e52e47f80bc19f/ndg_httpsclient-0.4.4.tar.gz"; sha256 = "fba4d4798dcac2965874f24afb6631b4326baa4bd02505744d34f690c354856a"; };
+      name = "ndg-httpsclient-0.5.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/30/52/332f10939d263ea5047a1bbe8418cb5dc3dab1d1e99df35c93b2a852061c/ndg_httpsclient-0.5.0.tar.gz"; sha256 = "c009f5430790936b3a97eaf9f968516664d97e146ab2bda991f0caadb7cc088b"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
