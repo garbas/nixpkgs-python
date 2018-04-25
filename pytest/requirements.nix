@@ -320,8 +320,8 @@ let
     };
 
     "pytest" = python.mkDerivation {
-      name = "pytest-3.5.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/2d/56/6019153cdd743300c5688ab3b07702355283e53c83fbf922242c053ffb7b/pytest-3.5.0.tar.gz"; sha256 = "fae491d1874f199537fd5872b5e1f0e74a009b979df9d53d1553fd03da1703e1"; };
+      name = "pytest-3.5.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b2/85/24954df0ea8156599563b753de54383a5d702081093b7953334e4701b8d8/pytest-3.5.1.tar.gz"; sha256 = "54713b26c97538db6ff0703a12b19aeaeb60b5e599de542e7fca0ec83b9038e8"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
