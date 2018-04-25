@@ -62,11 +62,6 @@ in createSets [
     description = "Flask framework and its extensions.";
   }
 
-  { name = "homeassistant";
-    maintainers = [ maintainers.unknown ];
-    description = "Homeassistant framework and its components.";
-  }
-
   { name = "pelican";
     maintainers = [ maintainers.garbas ];
     description = "Pelican static blog generator and its extensions.";
