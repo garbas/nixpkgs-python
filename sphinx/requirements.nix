@@ -140,8 +140,8 @@ let
     };
 
     "Sphinx" = python.mkDerivation {
-      name = "Sphinx-1.7.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ff/bd/a709626705bb1f13b86904f6caaf53e3d088cbf2919b678296ce11fd646c/Sphinx-1.7.3.tar.gz"; sha256 = "9495a1f78c13d0a725ab8104e923e9663519ecc04552aa4a8f684c2da355443d"; };
+      name = "Sphinx-1.7.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/40/45/d4a68a1f8dc669714f48d251afb4352036f87be5e9873cd27e57b9c141f0/Sphinx-1.7.4.tar.gz"; sha256 = "e9b1a75a3eae05dded19c80eb17325be675e0698975baae976df603b6ed1eb10"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
