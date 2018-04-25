@@ -136,6 +136,19 @@ let
       };
     };
 
+    "appdirs" = python.mkDerivation {
+      name = "appdirs-1.4.3";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/48/69/d87c60746b393309ca30761f8e2b49473d43450b150cb08f3c6df5c11be5/appdirs-1.4.3.tar.gz"; sha256 = "9e5896d1372858f8dd3344faf4e5014d21849c756c8d5701f78f8a103b372d92"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://github.com/ActiveState/appdirs";
+        license = licenses.mit;
+        description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\".";
+      };
+    };
+
     "argparse" = python.mkDerivation {
       name = "argparse-1.4.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/18/dd/e617cfc3f6210ae183374cd9f6a26b20514bbb5a792af97949c5aacddf0f/argparse-1.4.0.tar.gz"; sha256 = "62b089a55be1d8949cd2bc7e0df0bddb9e028faefc8c32038cc84862aefdd6e4"; };
@@ -165,11 +178,12 @@ let
     };
 
     "black" = python.mkDerivation {
-      name = "black-18.4a2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e5/3d/a2204bc1f2feaf5db0105db0f7956a591552ca9ee36f91dff37b08962866/black-18.4a2.tar.gz"; sha256 = "cecee6dc0250661cf86dced28adddf3b65bb669636638745e488e7c1d718e8be"; };
+      name = "black-18.4a3";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d1/b0/9233ecee3573cc6e9c1fc257af3c90e4d80818f141ee16d7da4a397120f7/black-18.4a3.tar.gz"; sha256 = "b45061e041762296b0cbf8f476a3036109571e73ce6f3e2d10e1ccc4d0827d59"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
+      self."appdirs"
       self."attrs"
       self."click"
     ];
