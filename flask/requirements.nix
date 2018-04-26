@@ -116,8 +116,8 @@ let
     };
 
     "Flask-Cors" = python.mkDerivation {
-      name = "Flask-Cors-3.0.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/64/e8/e6bcf79dcad7b7c10f8c8c35d78b5710f2ddcd8ed38e607dd6a4853ab8a8/Flask-Cors-3.0.3.tar.gz"; sha256 = "62ebc5ad80dc21ca0ea9f57466c2c74e24a62274af890b391790c260eb7b754b"; };
+      name = "Flask-Cors-3.0.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/88/94/e529ec65fac24056e0877f39fb229db99ee2ee9018e9602f850655d6b5a0/Flask-Cors-3.0.4.tar.gz"; sha256 = "bec996f0603a0693c0ea63c8126e5f8e966bb679cf82e6104b254e9c7f3a7d08"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
