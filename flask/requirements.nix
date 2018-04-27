@@ -83,8 +83,8 @@ let
 
   generated = self: {
     "Flask" = python.mkDerivation {
-      name = "Flask-0.12.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/eb/12/1c7bd06fcbd08ba544f25bf2c6612e305a70ea51ca0eda8007344ec3f123/Flask-0.12.2.tar.gz"; sha256 = "49f44461237b69ecd901cc7ce66feea0319b9158743dd27a2899962ab214dac1"; };
+      name = "Flask-1.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/99/ab/eedb921f26adf7057ade1291f9c1bfa35a506d64894f58546457ef658772/Flask-1.0.tar.gz"; sha256 = "7fab1062d11dd0038434e790d18c5b9133fd9e6b7257d707c4578ccc1e38b67c"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -94,9 +94,9 @@ let
       self."itsdangerous"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://github.com/pallets/flask/";
+        homepage = "https://www.palletsprojects.com/p/flask/";
         license = licenses.bsdOriginal;
-        description = "A microframework based on Werkzeug, Jinja2 and good intentions";
+        description = "A simple framework for building complex web applications.";
       };
     };
 
