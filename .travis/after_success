@@ -1,17 +1,19 @@
 # -*- mode: sh -*-
 
-rsync -avh --ignore-existing /tmp/pypi2nix/cache/wheel/*.whl travis@garbas.si:/var/travis/wheels_cache/
-rsync -avh --ignore-existing $TRAVIS_BUILD_DIR/nars/ travis@garbas.si:/var/travis/nixpkgs-python/
-if [[ -n `git diff --exit-code` ]]; then
-    git config user.name 'travis';
-    git config user.email 'travis@garbas.si';
-    git status;
-    git --no-pager diff $PKGS_SET;
-    git stash;
-    git checkout -b result-$TRAVIS_BRANCH origin/$TRAVIS_BRANCH;
-    git pull;
-    git stash apply;
-    git add $PKGS_SET;
-    git commit -m "Travis update for $PKGS_SET [ci skip]";
-    git push git@github.com:garbas/nixpkgs-python.git HEAD:$TRAVIS_BRANCH;
+if [ $TARVIS_PULL_REQUEST = "false" ]; then
+    rsync -avh --ignore-existing /tmp/pypi2nix/cache/wheel/*.whl travis@garbas.si:/var/travis/wheels_cache/
+    rsync -avh --ignore-existing $TRAVIS_BUILD_DIR/nars/ travis@garbas.si:/var/travis/nixpkgs-python/
+    if [[ -n `git diff --exit-code` ]]; then
+	git config user.name 'travis';
+	git config user.email 'travis@garbas.si';
+	git status;
+	git --no-pager diff $PKGS_SET;
+	git stash;
+	git checkout -b result-$TRAVIS_BRANCH origin/$TRAVIS_BRANCH;
+	git pull;
+	git stash apply;
+	git add $PKGS_SET;
+	git commit -m "Travis update for $PKGS_SET [ci skip]";
+	git push git@github.com:garbas/nixpkgs-python.git HEAD:$TRAVIS_BRANCH;
+    fi
 fi
