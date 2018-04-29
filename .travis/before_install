@@ -1,11 +1,15 @@
 # -*- mode: sh -*-
 
+set -x
+
 git branch
 echo $TRAVIS_BRANCH
 sudo mkdir -p /etc/nix
 echo 'binary-caches = https://cache.nixos.org/ https://travis.garbas.si/nixpkgs-python/' | sudo tee -a /etc/nix/nix.conf > /dev/null
 echo 'require-sigs = false' | sudo tee -a /etc/nix/nix.conf > /dev/null
-openssl aes-256-cbc -K $encrypted_1ae048d151c2_key -iv $encrypted_1ae048d151c2_iv -in deploy_rsa.enc -out deploy_rsa -d
-eval "$(ssh-agent -s)"
-chmod 600 $TRAVIS_BUILD_DIR/deploy_rsa
-ssh-add $TRAVIS_BUILD_DIR/deploy_rsa
+if [ $TRAVIS_PULL_REQUEST = "false" ]; then
+    openssl aes-256-cbc -K $encrypted_1ae048d151c2_key -iv $encrypted_1ae048d151c2_iv -in deploy_rsa.enc -out deploy_rsa -d
+    eval "$(ssh-agent -s)"
+    chmod 600 $TRAVIS_BUILD_DIR/deploy_rsa
+    ssh-add $TRAVIS_BUILD_DIR/deploy_rsa
+fi
