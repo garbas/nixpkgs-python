@@ -1,8 +1,8 @@
 # -*- mode: sh -*-
 
-if [ $TRAVIS_PULL_REQUEST = "false" -a
-     $TRAVIS_BRANCH = "master" -a
-     $TRAVIS_REPO_SLUG = "garbas/nixpkgs-python"
+if [ $TRAVIS_PULL_REQUEST = "false" -a \
+     $TRAVIS_BRANCH = "master" -a \
+     $TRAVIS_REPO_SLUG = "garbas/nixpkgs-python" \
    ]; then
     rsync -avh --ignore-existing /tmp/pypi2nix/cache/wheel/*.whl travis@garbas.si:/var/travis/wheels_cache/
     rsync -avh --ignore-existing $TRAVIS_BUILD_DIR/nars/ travis@garbas.si:/var/travis/nixpkgs-python/
