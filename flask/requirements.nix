@@ -83,8 +83,8 @@ let
 
   generated = self: {
     "Flask" = python.mkDerivation {
-      name = "Flask-1.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/99/ab/eedb921f26adf7057ade1291f9c1bfa35a506d64894f58546457ef658772/Flask-1.0.tar.gz"; sha256 = "7fab1062d11dd0038434e790d18c5b9133fd9e6b7257d707c4578ccc1e38b67c"; };
+      name = "Flask-1.0.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/6d/2f/95a73db56fa2c2b3187bb69783cb2bea4327d1e7b2e0cf60e15df59502ee/Flask-1.0.1.tar.gz"; sha256 = "cfc15b45622f9cfee6b5803723070fd0f489b3bd662179195e702cb95fd924c8"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
