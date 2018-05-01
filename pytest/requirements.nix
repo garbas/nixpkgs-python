@@ -501,8 +501,8 @@ let
     };
 
     "pytest-twisted" = python.mkDerivation {
-      name = "pytest-twisted-1.7.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/29/d5/5c4f1f02df049871dc8e1c7598d862008dca3be5060ad4072cd6b8d629e3/pytest-twisted-1.7.1.zip"; sha256 = "4ff3d241ece853976ed3cef8de624f4122153b6fa8118d5801a293abd3bb7538"; };
+      name = "pytest-twisted-1.8";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/fd/1e/d5ae0034e20750b6e7f9270af70bfa83e95707c538939511d460f0e4c5fc/pytest-twisted-1.8.zip"; sha256 = "6c3a0db55e0af2320b43b7ac9fe3045147b8148f6f1bfe1ce1b48f72e7d4ee13"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
