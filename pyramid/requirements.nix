@@ -288,8 +288,8 @@ let
     };
 
     "hupper" = python.mkDerivation {
-      name = "hupper-1.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/21/0d/b7832396df00564836b204ac23aadd6ff177d1c0e68ce40e5ccaccc1dd86/hupper-1.1.tar.gz"; sha256 = "e18037fa43fb4af7c00bd262ca6f5d7bcd22debd5d71e43b0fb1437f56e78035"; };
+      name = "hupper-1.2";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/13/f4/6fbd7cf27b228261a8cbe3c87e85aeb2b1f28d4941ac7f137493d6afe586/hupper-1.2.tar.gz"; sha256 = "a85c11e5c8ab1aae00c7a216674030327284fa81a25febe1bd1aef14ae96f9a2"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];

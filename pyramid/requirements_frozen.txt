@@ -5,7 +5,7 @@ gevent==1.2.2
 gevent-socketio==0.3.6
 gevent-websocket==0.10.1
 greenlet==0.4.13
-hupper==1.1
+hupper==1.2
 iso8601==0.1.11
 Jinja2==2.10
 Mako==1.0.7
