@@ -163,8 +163,8 @@ let
     };
 
     "attrs" = python.mkDerivation {
-      name = "attrs-17.4.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/8b/0b/a06cfcb69d0cb004fde8bc6f0fd192d96d565d1b8aa2829f0f20adb796e5/attrs-17.4.0.tar.gz"; sha256 = "1c7960ccfd6a005cd9f7ba884e6316b5e430a3f1a6c37c5f87d8b43f83b54ec9"; };
+      name = "attrs-18.1.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e4/ac/a04671e118b57bee87dabca1e0f2d3bda816b7a551036012d0ca24190e71/attrs-18.1.0.tar.gz"; sha256 = "e0d0eb91441a3b53dab4d9b743eafc1ac44476296a2053b6ca3af0b139faf87b"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -324,8 +324,8 @@ let
     };
 
     "flake8-builtins" = python.mkDerivation {
-      name = "flake8-builtins-1.3.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/76/75/e5d7ede9d850e2d25b4b6dbdd2a6fa8df25421c95549c98277b60b20eecb/flake8-builtins-1.3.1.tar.gz"; sha256 = "01834685fd39d5687a7caf6414393733dcb8d24b861504de33f7fc7f40e56582"; };
+      name = "flake8-builtins-1.4.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a4/d3/e2619aacc52b8225399eec2deabbf11e1455856f9b181b2d44bb820ee2a4/flake8-builtins-1.4.0.tar.gz"; sha256 = "f20c43801db99513ccdeea17741040e3683858200818bdf6d256f7bc5b40e902"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -1319,8 +1319,8 @@ let
     };
 
     "mypy" = python.mkDerivation {
-      name = "mypy-0.590";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e3/8d/df82ddb3589b579483ce52d4221279a9c8e99f9c5741aae88755aaab9074/mypy-0.590.tar.gz"; sha256 = "04bffef22377b3f56f96da2d032e5d0b2e8a9062a127afc008dc4b0e64cede7a"; };
+      name = "mypy-0.600";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/61/e7/9a56ab208992335c3f46f13764e751330b6643209488dbe3f680081cef37/mypy-0.600.tar.gz"; sha256 = "bc251cb31bc236d9fe4bcc442c994c45fff2541f7161ee52dc949741fe9ca3dd"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
