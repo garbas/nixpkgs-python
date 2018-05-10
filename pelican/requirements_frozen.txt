@@ -7,7 +7,7 @@ livereload==2.5.2
 MarkupSafe==1.0
 pelican==3.7.1
 Pygments==2.2.0
-python-dateutil==2.7.2
+python-dateutil==2.7.3
 pytz==2018.4
 six==1.11.0
 smartypants==2.0.0
