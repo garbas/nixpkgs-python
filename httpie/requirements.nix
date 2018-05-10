@@ -139,8 +139,8 @@ let
     };
 
     "boto3" = python.mkDerivation {
-      name = "boto3-1.7.16";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/13/59/5a6a15d702dc2284f4aaee844bd1c6ffe8b8b32b4f40c3bbeafc185fc0e7/boto3-1.7.16.tar.gz"; sha256 = "3dc4d47d2adc5463afd05124d8e612ecb3da8253b8e95b61d7c4f50762ab976a"; };
+      name = "boto3-1.7.17";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/2a/33/6f4a526e13991e6895d2a135bbbc5bdd8cb1846e450fc2c08aba96a59400/boto3-1.7.17.tar.gz"; sha256 = "7381410ec44a8c7833522eab5b03c7ebc1692dedbcb0981a61f3142b5d69b1b7"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -156,8 +156,8 @@ let
     };
 
     "botocore" = python.mkDerivation {
-      name = "botocore-1.10.16";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/2e/a2/6529abb1ad525514f272677feefeff99349d5728ef1798e8be1b2295a27b/botocore-1.10.16.tar.gz"; sha256 = "ddab94a9affd702884a8941ffd413e577e2f2941652c4c20f99a81dcb8548dce"; };
+      name = "botocore-1.10.17";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/3e/57/a9354a0b8eeb8b999006afd55fc354beb8774334e00d99b5945f9fc9cf2d/botocore-1.10.17.tar.gz"; sha256 = "e58ff5fa2d27ba5acf56fd0c3a233f4a320ecbd2a4091bda7a93449406b3ee9d"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -924,8 +924,8 @@ let
     };
 
     "python-dateutil" = python.mkDerivation {
-      name = "python-dateutil-2.7.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/c5/39/4da7c2dbc4f023fba5fb2325febcadf0d0ce0efdc8bd12083a0f65d20653/python-dateutil-2.7.2.tar.gz"; sha256 = "9d8074be4c993fbe4947878ce593052f71dac82932a677d49194d8ce9778002e"; };
+      name = "python-dateutil-2.7.3";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a0/b0/a4e3241d2dee665fea11baec21389aec6886655cd4db7647ddf96c3fad15/python-dateutil-2.7.3.tar.gz"; sha256 = "e27001de32f627c22380a688bcc43ce83504a7bc5da472209b4c70f02829f0b8"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
