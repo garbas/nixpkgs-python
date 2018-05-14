@@ -30,7 +30,7 @@ httpie-httpsig-auth==0.1.1
 httpie-image==1.0.0
 httpie-media-auth==0.0.8
 httpie-msgpack==1.0.0
-httpie-nsof==0.9
+httpie-nsof==0.95
 httpie-ntlm==1.0.2
 httpie-oauth==1.0.2
 httpie-plex==1.0.1

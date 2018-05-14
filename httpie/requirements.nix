@@ -610,8 +610,8 @@ let
     };
 
     "httpie-nsof" = python.mkDerivation {
-      name = "httpie-nsof-0.9";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/25/c5/983e1ab460916326e4d24058700cf5ca68b1071e198dddccde7a6430fae5/httpie-nsof-0.9.tar.gz"; sha256 = "0a87a78bab57c69540618e3ce5ba7211cc8b69f7fb0288a505bbcfcee8a172f4"; };
+      name = "httpie-nsof-0.95";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/6c/9b/b52174cfcffb10d5a0c2ce8eaf5a55b2b4965ce4e16c5972bee35ce7113d/httpie-nsof-0.95.tar.gz"; sha256 = "64efaa300e5628fba65d284b54d34e423b114738ef702163a5604b4de11ed3c1"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
