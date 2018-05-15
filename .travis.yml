@@ -10,7 +10,6 @@ env:
 - PKGS_SET=django
 - PKGS_SET=flake8
 - PKGS_SET=flask
-- PKGS_SET=homeassistant
 - PKGS_SET=pelican
 - PKGS_SET=pykube
 - PKGS_SET=pypi2nix

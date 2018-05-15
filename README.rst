@@ -50,9 +50,8 @@ This is a collections of Pelican_ and Pelican extensions packages.
 HomeAssistant
 ^^^^^^^^^^^^^
 
-:maintainers: ??? (Looking for maintainer)
-
-This is a collections of HomeAssistant_ and its components.
+HomeAssistant is available from https://github.com/NixOS/nixpkgs and has as a
+consequence been removed from this repository.
 
 
 Science

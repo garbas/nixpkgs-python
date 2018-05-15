@@ -7,7 +7,6 @@ all: \
 	django \
 	flake8 \
 	flask \
-	homeassistant \
 	openstackclient \
 	pelican \
 	pykube \
@@ -66,16 +65,6 @@ flask:
 			-r requirements.txt \
 			-O ../overrides.nix
 	nix-build -Q -A flask -o result-flask
-
-
-homeassistant:
-	cd homeassistant/ && \
-		$(PYPI2NIX) -v \
-			-V 3.5 \
-			-s pytz
-			-O ../overrides.nix \
-			-r requirements.txt
-	nix-build -Q -A homeassistant -o result-homeassistant
 
 
 pelican:
@@ -196,7 +185,6 @@ static:
 	django \
 	flake8 \
 	flask \
-	homeassistant \
 	httpie \
 	openstackclient \
 	pelican \
