@@ -285,8 +285,8 @@ let
     };
 
     "connexion" = python.mkDerivation {
-      name = "connexion-1.4.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b7/0a/26799326a07cddf28f916f222705d0d11db3c24af1d77cb96d7dd82c39d6/connexion-1.4.1.tar.gz"; sha256 = "ea0db17aa598b06e1e4e35e3654945d5c7666f864cb5a7f03201bfa046d43cd2"; };
+      name = "connexion-1.4.2";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/86/8b/72989d070c136a5b063575c6d219d7c36af15c0b23dd58a43379375a803e/connexion-1.4.2.tar.gz"; sha256 = "0fff80c9976980a5a4c24c53baca601556bd9b820c6d6d385d9c9ce0727a01b2"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
