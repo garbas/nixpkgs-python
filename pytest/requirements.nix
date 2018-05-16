@@ -422,8 +422,8 @@ let
     };
 
     "pytest-flakes" = python.mkDerivation {
-      name = "pytest-flakes-2.0.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/4f/02/0450e82e3d1a8e973fd695fff99122491a977c06357e32006ac9e281a5a2/pytest-flakes-2.0.0.tar.gz"; sha256 = "3e880927fd2a77d31715eaab3876196e76d779726c9c24fe32ee5bab23281f82"; };
+      name = "pytest-flakes-3.0.2";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/7c/d0/78bb26124f6de980206e941205cc11011a8bd4606c7294a259549af827e2/pytest-flakes-3.0.2.tar.gz"; sha256 = "763ec290b89e2dc8f25f49d71cb9b869b8df843697b730233f61c78f847f2e57"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
