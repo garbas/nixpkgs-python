@@ -23,7 +23,7 @@ pytest-cov==2.5.1
 pytest-django==3.2.1
 pytest-flakes==3.0.2
 pytest-forked==0.2
-pytest-instafail==0.3.0
+pytest-instafail==0.4.0
 pytest-pep8==1.0.6
 pytest-timeout==1.2.1
 pytest-twisted==1.8

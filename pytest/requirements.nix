@@ -454,15 +454,15 @@ let
     };
 
     "pytest-instafail" = python.mkDerivation {
-      name = "pytest-instafail-0.3.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/11/d0/371d9e86e823c775e9f23ad797d7738b1afa94223ac82c20b5bdc735ea1d/pytest-instafail-0.3.0.tar.gz"; sha256 = "b4d5fc3ca81e530a8d0e15a7771dc14b06fc9a0930c4b3909a7f4527040572c3"; };
+      name = "pytest-instafail-0.4.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/7a/c9/5fc6d9a064d527c0dd1f127fbb117b395ec256f42160e9ae0a75aed94594/pytest-instafail-0.4.0.tar.gz"; sha256 = "162bd7c5c196e3b2fe2a5285b69362ee3d9f768d5451413ef914be38df74e3de"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."pytest"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/jpvanhal/pytest-instafail";
+        homepage = "https://github.com/pytest-dev/pytest-instafail";
         license = licenses.bsdOriginal;
         description = "py.test plugin to show failures instantly";
       };
