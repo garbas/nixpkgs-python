@@ -14,7 +14,7 @@ parse-type==0.4.2
 pep8==1.7.1
 pluggy==0.6.0
 py==1.5.3
-pyflakes==1.6.0
+pyflakes==2.0.0
 pytest==3.5.1
 pytest-bdd==2.21.0
 pytest-cache==1.0
