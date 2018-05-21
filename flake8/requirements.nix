@@ -701,8 +701,8 @@ let
     };
 
     "flake8-import-order-spoqa" = python.mkDerivation {
-      name = "flake8-import-order-spoqa-1.3.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/4e/78/d33e89d847985bfe27caa1b7437bf2d379fb86e829f72987178cea04ee08/flake8-import-order-spoqa-1.3.0.tar.gz"; sha256 = "bee910371352aca1a28b078b29ba7f1610d10fbccec98a8c3cc98003e133439c"; };
+      name = "flake8-import-order-spoqa-1.4.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/fb/5d/16ff73e585c1dde569907951232b608d707382c95927d71f0d8870bdde89/flake8-import-order-spoqa-1.4.0.tar.gz"; sha256 = "fe61d282a54945f317294df786b0c79ff1953ca49b185b8e69fd7de6224fe15e"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
