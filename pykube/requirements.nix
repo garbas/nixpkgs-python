@@ -167,8 +167,8 @@ let
     };
 
     "oauthlib" = python.mkDerivation {
-      name = "oauthlib-2.0.7";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/47/b9/66278631430fe688b2e6c84df16619f1d1e27c9c6ebca28371f7c6fbb346/oauthlib-2.0.7.tar.gz"; sha256 = "909665297635fa11fe9914c146d875f2ed41c8c2d78e21a529dd71c0ba756508"; };
+      name = "oauthlib-2.1.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/df/5f/3f4aae7b28db87ddef18afed3b71921e531ca288dc604eb981e9ec9f8853/oauthlib-2.1.0.tar.gz"; sha256 = "ac35665a61c1685c56336bda97d5eefa246f1202618a1d6f34fccb1bdd404162"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
