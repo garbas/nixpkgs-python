@@ -178,6 +178,19 @@ let
       };
     };
 
+    "atomicwrites" = python.mkDerivation {
+      name = "atomicwrites-1.1.5";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a1/e1/2d9bc76838e6e6667fde5814aa25d7feb93d6fa471bf6816daac2596e8b2/atomicwrites-1.1.5.tar.gz"; sha256 = "240831ea22da9ab882b551b31d4225591e5e447a68c5e188db5b89ca1d487585"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/untitaker/python-atomicwrites";
+        license = licenses.mit;
+        description = "Atomic file writes.";
+      };
+    };
+
     "attrs" = python.mkDerivation {
       name = "attrs-18.1.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e4/ac/a04671e118b57bee87dabca1e0f2d3bda816b7a551036012d0ca24190e71/attrs-18.1.0.tar.gz"; sha256 = "e0d0eb91441a3b53dab4d9b743eafc1ac44476296a2053b6ca3af0b139faf87b"; };
@@ -331,11 +344,12 @@ let
     };
 
     "pytest" = python.mkDerivation {
-      name = "pytest-3.5.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b2/85/24954df0ea8156599563b753de54383a5d702081093b7953334e4701b8d8/pytest-3.5.1.tar.gz"; sha256 = "54713b26c97538db6ff0703a12b19aeaeb60b5e599de542e7fca0ec83b9038e8"; };
+      name = "pytest-3.6.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/67/6a/5bcdc22f8dbada1d2910d6e1a3a03f6b14306c78f81122890735b28be4bf/pytest-3.6.0.tar.gz"; sha256 = "39555d023af3200d004d09e51b4dd9fdd828baa863cded3fd6ba2f29f757ae2d"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
+      self."atomicwrites"
       self."attrs"
       self."more-itertools"
       self."pluggy"
