@@ -8,7 +8,7 @@ glob2==0.6
 greenlet==0.4.13
 Mako==1.0.7
 MarkupSafe==1.0
-more-itertools==4.1.0
+more-itertools==4.2.0
 oejskit==0.9.0
 parse==1.8.2
 parse-type==0.4.2
