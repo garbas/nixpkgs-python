@@ -249,8 +249,8 @@ let
     };
 
     "parse" = python.mkDerivation {
-      name = "parse-1.8.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/13/71/e0b5c968c552f75a938db18e88a4e64d97dc212907b4aca0ff71293b4c80/parse-1.8.2.tar.gz"; sha256 = "8048dde3f5ca07ad7ac7350460952d83b63eaacecdac1b37f45fd74870d849d2"; };
+      name = "parse-1.8.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/79/e1/522401e2cb06d09497f2f56baa3b902116c97dec6f448d02b730e63b44a8/parse-1.8.4.tar.gz"; sha256 = "c3cdf6206f22aeebfa00e5b954fcfea13d1b2dc271c75806b6025b94fb490939"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
