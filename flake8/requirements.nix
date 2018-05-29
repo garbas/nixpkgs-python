@@ -178,8 +178,8 @@ let
     };
 
     "black" = python.mkDerivation {
-      name = "black-18.5b0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/50/3d/887dcd61f361167438af8002cde23376c79439954bd37cbb732be8cf2ab3/black-18.5b0.tar.gz"; sha256 = "4fec2566f9fbbd4a58de50a168cbe3ab952713530410d227e82e4c65d1fad946"; };
+      name = "black-18.5b1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e5/0b/2b5abd975559a5e4cb5cf9697ca242878b4894dc731dd133e582ce459869/black-18.5b1.tar.gz"; sha256 = "c956857a831e508e75f0dc754b86982bad98d95c96aae39c20749209b3958ad7"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
