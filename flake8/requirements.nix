@@ -1123,8 +1123,8 @@ let
     };
 
     "flake8-strict" = python.mkDerivation {
-      name = "flake8-strict-0.2.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/2e/10/12352911afc2e99996861343a98a9345460cc619f276648b4fcb64a24f42/flake8_strict-0.2.0.tar.gz"; sha256 = "bc4b7b26fd72286f2eefb28bb7db2175abc9372a1a4ed2e666ddcf74f3ef2877"; };
+      name = "flake8-strict-0.2.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/cb/e7/d1e2fd6d3e1991b0ac7cf7db777847a1ed299c45235d19595c275783d38c/flake8_strict-0.2.1.tar.gz"; sha256 = "75d5c11babe3f3b2bc5349e645112571a1d80d6183bda99afe5ffdfc70192d10"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
