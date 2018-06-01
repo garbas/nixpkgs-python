@@ -23,10 +23,12 @@ let
       self: super: {
         bootstrapped-pip = super.bootstrapped-pip.overrideDerivation (old: {
           patchPhase = old.patchPhase + ''
-            sed -i \
-              -e "s|paths_to_remove.remove(auto_confirm)|#paths_to_remove.remove(auto_confirm)|"  \
-              -e "s|self.uninstalled = paths_to_remove|#self.uninstalled = paths_to_remove|"  \
+            if [ -e $out/${pkgs.python35.sitePackages}/pip/req/req_install.py ]; then
+              sed -i \
+                -e "s|paths_to_remove.remove(auto_confirm)|#paths_to_remove.remove(auto_confirm)|"  \
+                -e "s|self.uninstalled = paths_to_remove|#self.uninstalled = paths_to_remove|"  \
                 $out/${pkgs.python35.sitePackages}/pip/req/req_install.py
+            fi
           '';
         });
       };
@@ -164,7 +166,7 @@ let
 
     "pypi2nix" = python.mkDerivation {
       name = "pypi2nix-1.8.1";
-      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "1ryivm71k3vbic57f7nqxwiw7zd00hd16hnrdqvz5gw869vnkd1d"; rev = "654c36cdb69572837cc242840e71361c156fd08d"; };
+      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "1f2g5pk77vjl6kz98m4d60lc7ifkar1n05ipsxiz0avbzhc7ryk7"; rev = "2c09ac224ea1dff0acde96bd7c68e5b068968f63"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
