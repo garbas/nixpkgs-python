@@ -23,10 +23,12 @@ let
       self: super: {
         bootstrapped-pip = super.bootstrapped-pip.overrideDerivation (old: {
           patchPhase = old.patchPhase + ''
-            sed -i \
-              -e "s|paths_to_remove.remove(auto_confirm)|#paths_to_remove.remove(auto_confirm)|"  \
-              -e "s|self.uninstalled = paths_to_remove|#self.uninstalled = paths_to_remove|"  \
+            if [ -e $out/${pkgs.python35.sitePackages}/pip/req/req_install.py ]; then
+              sed -i \
+                -e "s|paths_to_remove.remove(auto_confirm)|#paths_to_remove.remove(auto_confirm)|"  \
+                -e "s|self.uninstalled = paths_to_remove|#self.uninstalled = paths_to_remove|"  \
                 $out/${pkgs.python35.sitePackages}/pip/req/req_install.py
+            fi
           '';
         });
       };
@@ -83,8 +85,8 @@ let
 
   generated = self: {
     "Django" = python.mkDerivation {
-      name = "Django-2.0.5";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/02/79/e0cf8263d85f15987f34710e325438f8ac6c93961714916ac7ea343e6a08/Django-2.0.5.tar.gz"; sha256 = "71d1a584bb4ad2b4f933d07d02c716755c1394feaac1ce61ce37843ac5401092"; };
+      name = "Django-2.0.6";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/08/2b/a6a12fa67a9d52a8f5ef929337165dcc5842a4461a87fec94eb6345fed57/Django-2.0.6.tar.gz"; sha256 = "3eb25c99df1523446ec2dc1b00e25eb2ecbdf42c9d8b0b8b32a204a8db9011f8"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
