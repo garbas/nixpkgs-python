@@ -612,8 +612,8 @@ let
     };
 
     "httpie-nsof" = python.mkDerivation {
-      name = "httpie-nsof-0.95";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/6c/9b/b52174cfcffb10d5a0c2ce8eaf5a55b2b4965ce4e16c5972bee35ce7113d/httpie-nsof-0.95.tar.gz"; sha256 = "64efaa300e5628fba65d284b54d34e423b114738ef702163a5604b4de11ed3c1"; };
+      name = "httpie-nsof-1.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/15/1d/e15ac09891628e5d8e7674af95a11e4748bb4fe26db6a4370d8c7d451a73/httpie-nsof-1.0.tar.gz"; sha256 = "a7614094db6c9b799674cdf772d18b82f60cfca0d6b2746246d2066a8f7b4fe7"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
@@ -1024,8 +1024,8 @@ let
     };
 
     "requests-oauthlib" = python.mkDerivation {
-      name = "requests-oauthlib-0.8.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/80/14/ad120c720f86c547ba8988010d5186102030591f71f7099f23921ca47fe5/requests-oauthlib-0.8.0.tar.gz"; sha256 = "883ac416757eada6d3d07054ec7092ac21c7f35cb1d2cf82faf205637081f468"; };
+      name = "requests-oauthlib-1.0.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/95/be/072464f05b70e4142cb37151e215a2037b08b1400f8a56f2538b76ca6205/requests-oauthlib-1.0.0.tar.gz"; sha256 = "8886bfec5ad7afb391ed5443b1f697c6f4ae98d0e5620839d8b4499c032ada3f"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
