@@ -393,11 +393,12 @@ let
     };
 
     "swagger-spec-validator" = python.mkDerivation {
-      name = "swagger-spec-validator-2.1.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e3/2f/3767da696617ee72190361805dff4bca68a611d4673de848857654789534/swagger-spec-validator-2.1.0.tar.gz"; sha256 = "dc9219c6572ce0def6e1c160ca253c0e7fcde75812628f0c0199334f85bd138e"; };
+      name = "swagger-spec-validator-2.2.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/54/69/d244f89c62e12ec2fdefe9cb24862194c879143b7784e7ca6c1f7032ed97/swagger-spec-validator-2.2.0.tar.gz"; sha256 = "ed071e625014da961e7cbc1e4f78a6f8d2a2f245671455daa034c16f3c67b2ad"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
+      self."PyYAML"
       self."jsonschema"
       self."six"
     ];
