@@ -18,7 +18,7 @@ PyYAML==3.12
 requests==2.18.4
 six==1.11.0
 SQLAlchemy==1.2.8
-swagger-spec-validator==2.2.0
+swagger-spec-validator==2.3.0
 typing==3.6.4
 urllib3==1.22
 Werkzeug==0.14.1
