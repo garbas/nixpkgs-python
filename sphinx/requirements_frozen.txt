@@ -7,7 +7,7 @@ cffi==1.11.5
 chardet==3.0.4
 cryptography==2.2.2
 docutils==0.14
-idna==2.6
+idna==2.7
 imagesize==1.0.0
 Jinja2==2.10
 MarkupSafe==1.0
@@ -16,9 +16,9 @@ pycparser==2.18
 Pygments==2.2.0
 pyparsing==2.2.0
 pytz==2018.4
-requests==2.18.4
+requests==2.19.0
 six==1.11.0
 snowballstemmer==1.2.1
 Sphinx==1.7.5
 sphinxcontrib-websupport==1.1.0
-urllib3==1.22
+urllib3==1.23
