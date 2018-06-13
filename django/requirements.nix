@@ -88,6 +88,8 @@ let
       name = "Django-2.0.6";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/08/2b/a6a12fa67a9d52a8f5ef929337165dcc5842a4461a87fec94eb6345fed57/Django-2.0.6.tar.gz"; sha256 = "3eb25c99df1523446ec2dc1b00e25eb2ecbdf42c9d8b0b8b32a204a8db9011f8"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."pytz"
@@ -103,6 +105,8 @@ let
       name = "pytz-2018.4";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/10/76/52efda4ef98e7544321fd8d5d512e11739c1df18b0649551aeccfb1c8376/pytz-2018.4.tar.gz"; sha256 = "c06425302f2cf668f1bba7a0a03f3c1d34d4ebeef2c72003da308b3947c7f749"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
