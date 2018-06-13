@@ -14,6 +14,7 @@ PasteDeploy==1.5.2
 peppercorn==0.5
 plaster==1.0
 plaster-pastedeploy==0.5
+psutil==5.4.3
 Pygments==2.2.0
 pyramid==1.9.2
 pyramid-chameleon==0.3
