@@ -88,6 +88,8 @@ let
       name = "passlib-1.7.1";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/25/4b/6fbfc66aabb3017cd8c3bd97b37f769d7503ead2899bf76e570eb91270de/passlib-1.7.1.tar.gz"; sha256 = "3d948f64138c25633613f303bcc471126eae67c04d5e3f6b7b8ce6242f8653e0"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -98,9 +100,11 @@ let
     };
 
     "pypiserver" = python.mkDerivation {
-      name = "pypiserver-1.2.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/97/71/a5001b7000e8325b6bb9d0f928f68a953818c601668189867addfcd17cae/pypiserver-1.2.1.zip"; sha256 = "3282fb7aba6fec16f68106426fb696e37f8f83086edaf9ca17c12afc5493c15b"; };
+      name = "pypiserver-1.2.2";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/9b/45/b7e52d041366573214427e6207a02460cdd0aeccfd2522a489618b7338c8/pypiserver-1.2.2.zip"; sha256 = "1630154e3fcbe211c787f7bef50fc9b07be707a52b4c0a26b9c158a9a605881d"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."passlib"
