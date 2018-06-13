@@ -97,6 +97,12 @@ in skipOverrides {
     '';
   };
 
+  "flake8-codeclimate" = self: old: {
+    patchPhase = ''
+      sed -i -e "s|'setuptools_scm',||" setup.py
+    '';
+  };
+
   "flake8-debugger" = self: old: {
     patchPhase = ''
       sed -i -e "s|'pytest-runner'|'''|" setup.py
@@ -215,6 +221,14 @@ in skipOverrides {
       sed -i -e "s|setup_requires=\['setuptools_scm'\],||" setup.py
     '';
   };
+
+  "python-dateutil" = self: old:
+  {
+    patchPhase = ''
+      sed -i -e "s|setup_requires=\['setuptools_scm'\],||" setup.py
+    '';
+  };
+
   "pytest-xdist" = self: old:
   {
     patchPhase = ''
