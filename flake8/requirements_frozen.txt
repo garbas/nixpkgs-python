@@ -1,6 +1,6 @@
 appdirs==1.4.3
 attrs==18.1.0
-black==18.6b1
+black==18.6b2
 blessings==1.6.1
 click==6.7
 docutils==0.14
@@ -78,7 +78,7 @@ isort==4.3.4
 Jinja2==2.10
 MarkupSafe==1.0
 mccabe==0.6.1
-mypy==0.600
+mypy==0.610
 pep257==0.7.0
 pep8==1.7.1
 promise==2.1
@@ -93,5 +93,6 @@ six==1.11.0
 snowballstemmer==1.2.1
 sqlparse==0.2.4
 testfixtures==6.1.0
+toml==0.9.4
 typed-ast==1.1.0
 typing==3.6.4
