@@ -265,8 +265,8 @@ let
     };
 
     "requests" = python.mkDerivation {
-      name = "requests-2.19.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/75/27/82da3fa4ea7a8c3526c48eaafe427352ff9c931633b917c2251826a43697/requests-2.19.0.tar.gz"; sha256 = "cc408268d0e21589bcc2b2c248e42932b8c4d112f499c12c92e99e2178a6134c"; };
+      name = "requests-2.19.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/54/1f/782a5734931ddf2e1494e4cd615a51ff98e1879cbe9eecbdfeaf09aa75e9/requests-2.19.1.tar.gz"; sha256 = "ec22d826a36ed72a7358ff3fe56cbd4ba69dd7a6718ffd450ff0e9df7a47ce6a"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
