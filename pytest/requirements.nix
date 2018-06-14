@@ -558,8 +558,8 @@ let
     };
 
     "pytest-timeout" = python.mkDerivation {
-      name = "pytest-timeout-1.2.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/be/e9/a9106b8bc87521c6813060f50f7d1fdc15665bc1bbbe71c0ffc1c571aaa2/pytest-timeout-1.2.1.tar.gz"; sha256 = "68b7d264633d5d33ee6b14ce3a7f7d05f8fd9d2f6ae594283221ec021736b7cd"; };
+      name = "pytest-timeout-1.3.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e9/de/ce1ed3e2c787080a66ef40e75ae13b13311a44374b652e9b1a014d4251ba/pytest-timeout-1.3.0.tar.gz"; sha256 = "08b550b498b9251901a3747f02aa2624ed53a9c8285ca482551346c85b47d641"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
