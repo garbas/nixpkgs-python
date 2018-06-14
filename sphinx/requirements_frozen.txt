@@ -16,7 +16,7 @@ pycparser==2.18
 Pygments==2.2.0
 pyparsing==2.2.0
 pytz==2018.4
-requests==2.19.0
+requests==2.19.1
 six==1.11.0
 snowballstemmer==1.2.1
 Sphinx==1.7.5
