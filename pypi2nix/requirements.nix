@@ -40,15 +40,15 @@ let
   withPackages = pkgs':
     let
       pkgs = builtins.removeAttrs pkgs' ["__unfix__"];
-      interpreter = pythonPackages.buildPythonPackage {
+      interpreterWithPackages = selectPkgsFn: pythonPackages.buildPythonPackage {
         name = "python35-interpreter";
-        buildInputs = [ makeWrapper ] ++ (builtins.attrValues pkgs);
+        buildInputs = [ makeWrapper ] ++ (selectPkgsFn pkgs);
         buildCommand = ''
           mkdir -p $out/bin
           ln -s ${pythonPackages.python.interpreter} \
               $out/bin/${pythonPackages.python.executable}
           for dep in ${builtins.concatStringsSep " "
-              (builtins.attrValues pkgs)}; do
+              (selectPkgsFn pkgs)}; do
             if [ -d "$dep/bin" ]; then
               for prog in "$dep/bin/"*; do
                 if [ -x "$prog" ] && [ -f "$prog" ]; then
@@ -68,9 +68,12 @@ let
         '';
         passthru.interpreter = pythonPackages.python;
       };
+
+      interpreter = interpreterWithPackages builtins.attrValues;
     in {
       __old = pythonPackages;
       inherit interpreter;
+      inherit interpreterWithPackages;
       mkDerivation = pythonPackages.buildPythonPackage;
       packages = pkgs;
       overrideDerivation = drv: f:
@@ -234,7 +237,7 @@ let
 
     "pypi2nix" = python.mkDerivation {
       name = "pypi2nix-1.8.1";
-      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "1z27jy4v4h52n5yr93jg0lc7pjggk8y03cc2xc3pp80yjyvipr72"; rev = "b62df34b2d5fcc8d24fa05fc7551febb1e952f5b"; };
+      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "1nbz3050avm8v21fdwaas17fhvcxn0mxn9r4cnp10gbafg7n0qyx"; rev = "1fe02fbad3e3b08496e9c893139efacec58875c5"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -253,8 +256,8 @@ let
     };
 
     "requests" = python.mkDerivation {
-      name = "requests-2.19.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/75/27/82da3fa4ea7a8c3526c48eaafe427352ff9c931633b917c2251826a43697/requests-2.19.0.tar.gz"; sha256 = "cc408268d0e21589bcc2b2c248e42932b8c4d112f499c12c92e99e2178a6134c"; };
+      name = "requests-2.19.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/54/1f/782a5734931ddf2e1494e4cd615a51ff98e1879cbe9eecbdfeaf09aa75e9/requests-2.19.1.tar.gz"; sha256 = "ec22d826a36ed72a7358ff3fe56cbd4ba69dd7a6718ffd450ff0e9df7a47ce6a"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
