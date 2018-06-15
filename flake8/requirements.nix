@@ -40,15 +40,15 @@ let
   withPackages = pkgs':
     let
       pkgs = builtins.removeAttrs pkgs' ["__unfix__"];
-      interpreter = pythonPackages.buildPythonPackage {
+      interpreterWithPackages = selectPkgsFn: pythonPackages.buildPythonPackage {
         name = "python3-interpreter";
-        buildInputs = [ makeWrapper ] ++ (builtins.attrValues pkgs);
+        buildInputs = [ makeWrapper ] ++ (selectPkgsFn pkgs);
         buildCommand = ''
           mkdir -p $out/bin
           ln -s ${pythonPackages.python.interpreter} \
               $out/bin/${pythonPackages.python.executable}
           for dep in ${builtins.concatStringsSep " "
-              (builtins.attrValues pkgs)}; do
+              (selectPkgsFn pkgs)}; do
             if [ -d "$dep/bin" ]; then
               for prog in "$dep/bin/"*; do
                 if [ -x "$prog" ] && [ -f "$prog" ]; then
@@ -68,9 +68,12 @@ let
         '';
         passthru.interpreter = pythonPackages.python;
       };
+
+      interpreter = interpreterWithPackages builtins.attrValues;
     in {
       __old = pythonPackages;
       inherit interpreter;
+      inherit interpreterWithPackages;
       mkDerivation = pythonPackages.buildPythonPackage;
       packages = pkgs;
       overrideDerivation = drv: f:
@@ -1679,8 +1682,8 @@ let
     };
 
     "testfixtures" = python.mkDerivation {
-      name = "testfixtures-6.1.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/eb/51/7f32989b393293e825a7ec4c9175604a9b70acbf3af67ace99b8c683ffdf/testfixtures-6.1.0.tar.gz"; sha256 = "d72c34cb6c21e73b673ee77d071d62c8342d1b444676575f46ddf39be0a62eb7"; };
+      name = "testfixtures-6.2.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/fe/a9/c41ff928e10ee59e26ebc33b9dc375d9faa85d314e146e78abb97d612941/testfixtures-6.2.0.tar.gz"; sha256 = "7e4df89a8bf8b8905464160f08aff131a36f0b33654fe4f9e4387afe546eae25"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
