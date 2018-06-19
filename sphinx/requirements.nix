@@ -180,8 +180,8 @@ let
     };
 
     "alabaster" = python.mkDerivation {
-      name = "alabaster-0.7.10";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d0/a5/e3a9ad3ee86aceeff71908ae562580643b955ea1b1d4f08ed6f7e8396bd7/alabaster-0.7.10.tar.gz"; sha256 = "37cdcb9e9954ed60912ebc1ca12a9d12178c26637abdf124e3cde2341c257fe0"; };
+      name = "alabaster-0.7.11";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/3f/46/9346ea429931d80244ab7f11c4fce83671df0b7ae5a60247a2b588592c46/alabaster-0.7.11.tar.gz"; sha256 = "b63b1f4dc77c074d386752ec4a8a7517600f6c0db8cd42980cae17ab7b3275d7"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
