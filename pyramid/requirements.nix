@@ -254,15 +254,14 @@ let
     };
 
     "gevent" = python.mkDerivation {
-      name = "gevent-1.3.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/48/a3/09d1f3c650ae9ade2965ac71cbb61a7dd6fd0d3bd67ac12aa06bb23d3920/gevent-1.3.3.tar.gz"; sha256 = "59465c7bce7671834f58b44ef62cd8626f1557a0e7e3de44a3b596056f8adc73"; };
+      name = "gevent-1.3.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f8/85/f92a8f43c9f15ffad49d743d929863a042ce3e8de5746c63bb4d6ce51a02/gevent-1.3.4.tar.gz"; sha256 = "53c4dc705886d028f5d81e698b1d1479994a421498cd6529cb9711b5e2a84f74"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."greenlet"
-      self."psutil"
       self."zope.event"
       self."zope.interface"
     ];
@@ -398,21 +397,6 @@ let
         homepage = "https://github.com/Pylons/plaster_pastedeploy";
         license = licenses.mit;
         description = "A loader implementing the PasteDeploy syntax to be used by plaster.";
-      };
-    };
-
-    "psutil" = python.mkDerivation {
-      name = "psutil-5.4.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e2/e1/600326635f97fee89bf8426fef14c5c29f4849c79f68fd79f433d8c1bd96/psutil-5.4.3.tar.gz"; sha256 = "e2467e9312c2fa191687b89ff4bc2ad8843be4af6fb4dc95a7cc5f7d7a327b18"; };
-      doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
-      buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/giampaolo/psutil";
-        license = licenses.bsdOriginal;
-        description = "Cross-platform lib for process and system monitoring in Python.";
       };
     };
 
