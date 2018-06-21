@@ -197,8 +197,8 @@ let
     };
 
     "black" = python.mkDerivation {
-      name = "black-18.6b2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/2c/f1/4e63113f2ee5bd47640c4884ccbed07277d738602ea6d61e0971f527e05a/black-18.6b2.tar.gz"; sha256 = "fc26c4ab28c541fb824f59fa83d5702f75829495d5a1dee603b29bc4fbe79095"; };
+      name = "black-18.6b3";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/28/db/fc2361255cea2010fd814edc44c50d118bfcdd031ae7c47ad15b01d3e38d/black-18.6b3.tar.gz"; sha256 = "fe3b7ac846f2a7c91d926782184826c57d2be283c57f0d6b37b85496eb5469ff"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -217,13 +217,15 @@ let
     };
 
     "blessings" = python.mkDerivation {
-      name = "blessings-1.6.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/4e/a7/b4937f0843a5c034408265551127993b3b67a8450ecce259da16bb9c5c7d/blessings-1.6.1.tar.gz"; sha256 = "74919575885552e14bc24a68f8b539690bd1b5629180faa830b1a25b8c7fb6ea"; };
+      name = "blessings-1.7";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/5c/f8/9f5e69a63a9243448350b44c87fae74588aa634979e6c0c501f26a4f6df7/blessings-1.7.tar.gz"; sha256 = "98e5854d805f50a5b58ac2333411b0482516a8210f23f43308baeb58d77c157d"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [ ];
+      propagatedBuildInputs = [
+      self."six"
+    ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/erikrose/blessings";
         license = licenses.mit;
