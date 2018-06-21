@@ -262,6 +262,7 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."greenlet"
+      self."psutil"
       self."zope.event"
       self."zope.interface"
     ];
@@ -397,6 +398,21 @@ let
         homepage = "https://github.com/Pylons/plaster_pastedeploy";
         license = licenses.mit;
         description = "A loader implementing the PasteDeploy syntax to be used by plaster.";
+      };
+    };
+
+    "psutil" = python.mkDerivation {
+      name = "psutil-5.4.3";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e2/e1/600326635f97fee89bf8426fef14c5c29f4849c79f68fd79f433d8c1bd96/psutil-5.4.3.tar.gz"; sha256 = "e2467e9312c2fa191687b89ff4bc2ad8843be4af6fb4dc95a7cc5f7d7a327b18"; };
+      doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/giampaolo/psutil";
+        license = licenses.bsdOriginal;
+        description = "Cross-platform lib for process and system monitoring in Python.";
       };
     };
 
