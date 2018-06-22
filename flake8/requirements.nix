@@ -197,8 +197,8 @@ let
     };
 
     "black" = python.mkDerivation {
-      name = "black-18.6b3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/28/db/fc2361255cea2010fd814edc44c50d118bfcdd031ae7c47ad15b01d3e38d/black-18.6b3.tar.gz"; sha256 = "fe3b7ac846f2a7c91d926782184826c57d2be283c57f0d6b37b85496eb5469ff"; };
+      name = "black-18.6b4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/2d/43/64205493cfb4c8e1720208d73502a121ace2a195cd4d1d49bd7470e4fd92/black-18.6b4.tar.gz"; sha256 = "22158b89c1a6b4eb333a1e65e791a3f8b998cf3b11ae094adb2570f31f769a44"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";

@@ -1,6 +1,6 @@
 appdirs==1.4.3
 attrs==18.1.0
-black==18.6b3
+black==18.6b4
 blessings==1.7
 click==6.7
 docutils==0.14
