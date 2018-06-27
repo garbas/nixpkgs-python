@@ -210,15 +210,15 @@ let
     };
 
     "PyYAML" = python.mkDerivation {
-      name = "PyYAML-3.12";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/4a/85/db5a2df477072b2902b0eb892feb37d88ac635d36245a72a6a69b23b383a/PyYAML-3.12.tar.gz"; sha256 = "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab"; };
+      name = "PyYAML-4.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/10/7d/6efe0bd69580fecd40adf47ebaf8d807238308ccb851f0549881fa7605aa/PyYAML-4.1.tar.gz"; sha256 = "a9b322285f419429402d5ce15e8f6d5c7a64f659eb87251af8b35c106f00a8e3"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://pyyaml.org/wiki/PyYAML";
+        homepage = "https://github.com/yaml/pyyaml";
         license = licenses.mit;
         description = "YAML parser and emitter for Python";
       };
