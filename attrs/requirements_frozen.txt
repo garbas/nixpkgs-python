@@ -16,7 +16,7 @@ py==1.5.4
 Pygments==2.2.0
 pyparsing==2.2.0
 pytest==3.6.2
-pytz==2018.4
+pytz==2018.5
 requests==2.19.1
 six==1.11.0
 snowballstemmer==1.2.1
