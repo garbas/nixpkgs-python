@@ -88,8 +88,8 @@ let
 
   generated = self: {
     "Django" = python.mkDerivation {
-      name = "Django-2.0.6";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/08/2b/a6a12fa67a9d52a8f5ef929337165dcc5842a4461a87fec94eb6345fed57/Django-2.0.6.tar.gz"; sha256 = "3eb25c99df1523446ec2dc1b00e25eb2ecbdf42c9d8b0b8b32a204a8db9011f8"; };
+      name = "Django-2.0.7";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/58/4a/26f99e2b094a2edefb2cffbcdbaca9207835d4b2765dd8afa553a1714ea6/Django-2.0.7.tar.gz"; sha256 = "97886b8a13bbc33bfeba2ff133035d3eca014e2309dff2b6da0bdfc0b8656613"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
