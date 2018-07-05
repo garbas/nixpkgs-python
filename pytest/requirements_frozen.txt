@@ -1,4 +1,4 @@
-apipkg==1.4
+apipkg==1.5
 atomicwrites==1.1.5
 attrs==18.1.0
 coverage==4.5.1
@@ -16,7 +16,7 @@ pep8==1.7.1
 pluggy==0.6.0
 py==1.5.4
 pyflakes==2.0.0
-pytest==3.6.2
+pytest==3.6.3
 pytest-bdd==2.21.0
 pytest-cache==1.0
 pytest-catchlog==1.2.2
