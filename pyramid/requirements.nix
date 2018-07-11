@@ -384,8 +384,8 @@ let
     };
 
     "plaster-pastedeploy" = python.mkDerivation {
-      name = "plaster-pastedeploy-0.5";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e7/05/cc12d9d3efaa10046b6ec5de91b16486c95de4847dc57599bf58021a3d5c/plaster_pastedeploy-0.5.tar.gz"; sha256 = "70a3185b2a3336996a26e9987968cf35e84cf13390b7e8a0a9a91eb8f6f85ba9"; };
+      name = "plaster-pastedeploy-0.6";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/3f/e7/6a6833158d2038ec40085433308a1e164fd1dac595513f6dd556d5669bb8/plaster_pastedeploy-0.6.tar.gz"; sha256 = "c231130cb86ae414084008fe1d1797db7e61dc5eaafb5e755de21387c27c6fae"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
