@@ -318,8 +318,8 @@ let
     };
 
     "tornado" = python.mkDerivation {
-      name = "tornado-5.0.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/cf/d1/3be271ae5eba9fb59df63c9891fdc7d8044b999e8ac145994cdbfd2ae66a/tornado-5.0.2.tar.gz"; sha256 = "1b83d5c10550f2653380b4c77331d6f8850f287c4f67d7ce1e1c639d9222fbc7"; };
+      name = "tornado-5.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/45/ec/f2a03a0509bcfca336bef23a3dab0d07504893af34fd13064059ba4a0503/tornado-5.1.tar.gz"; sha256 = "4f66a2172cb947387193ca4c2c3e19131f1c70fa8be470ddbbd9317fd0801582"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
