@@ -26,7 +26,7 @@ attrs:
 			-V 3 \
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -Q -A attrs -o result-attrs
+	nix build -f default.nix attrs -o result-attrs
 
 ckan:
 	cd ckan/ && \
@@ -56,7 +56,7 @@ flake8:
 			-V 3 \
 			-r requirements.txt \
 			-O ../overrides.nix
-	nix-build -Q -A flake8 -o result-flake8
+	nix build -f default.nix flake8 -o result-flake8
 
 
 flask:

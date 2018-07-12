@@ -180,9 +180,7 @@ in skipOverrides {
   };
 
   "py" = self: old: {
-    patchPhase = ''
-      sed -i -e 's|setup_requires=\["setuptools-scm"\],||' setup.py
-    '';
+    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
   };
 
   "pygal" = self: old: {
