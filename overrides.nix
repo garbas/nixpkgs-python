@@ -270,8 +270,5 @@ in skipOverrides {
 
   "tox" = self: old: {
     buildInputs = old.buildInputs ++ [self."setuptools-scm"];
-    patchPhase = ''
-      sed -i 's|"py >= 1.4.17, <2",|"py <2",|' setup.py
-    '';
   };
 }
