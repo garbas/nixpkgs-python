@@ -88,8 +88,8 @@ let
 
   generated = self: {
     "Chameleon" = python.mkDerivation {
-      name = "Chameleon-3.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/72/0d/149346fa6994bed004723050713b244891952c97f5036aa31ba043fd94fb/Chameleon-3.3.tar.gz"; sha256 = "77d1ae339caf4f8a0b2c19a4882e5cdf71367997d79c523a196dacfbfa365ec7"; };
+      name = "Chameleon-3.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/96/8c/f8bcdf3563d625f2e6e9c04d02d0fff828777e35484e19035d0e6b0aedda/Chameleon-3.4.tar.gz"; sha256 = "7750865a68b469b34cbc60b9927f7e5c609808b6b966bf75bf8556e6ed48912c"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -182,8 +182,8 @@ let
     };
 
     "SQLAlchemy" = python.mkDerivation {
-      name = "SQLAlchemy-1.2.9";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/28/99/ad4dd8240ff8a98c8786fef6d2b392fb2309b0c2bcf23fdfbf3a4cb1a499/SQLAlchemy-1.2.9.tar.gz"; sha256 = "e21e5561a85dcdf16b8520ae4daec7401c5c24558e0ce004f9b60be75c4b6957"; };
+      name = "SQLAlchemy-1.2.10";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/8a/c2/29491103fd971f3988e90ee3a77bb58bad2ae2acd6e8ea30a6d1432c33a3/SQLAlchemy-1.2.10.tar.gz"; sha256 = "72325e67fb85f6e9ad304c603d83626d1df684fdf0c7ab1f0352e71feeab69d8"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
