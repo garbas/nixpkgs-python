@@ -123,6 +123,14 @@ pypi2nix
 Package set containing pypi2nix_ and its dependencies
 
 
+openstackclient
+^^^^^^^^^^^^^^^
+
+:maintainers: lewo_
+
+Package set containing openstackclient and its dependencies
+
+
 .. _Flak8: https://gitlab.com/pycqa/flake8
 .. _Flask: http://flask.pocoo.org
 .. _HomeAssistant: http://home-assistant.io
@@ -135,3 +143,4 @@ Package set containing pypi2nix_ and its dependencies
 .. _pykube: https://github.com/kelproject/pykube
 .. _pypiserver: https://github.com/pypiserver/pypiserver
 .. _pypi2nix: https://github.com/garbas/pypi2nix
+.. _lewo: https://github.com/nlewo
