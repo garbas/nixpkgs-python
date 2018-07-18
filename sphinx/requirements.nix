@@ -275,8 +275,8 @@ let
     };
 
     "cryptography" = python.mkDerivation {
-      name = "cryptography-2.2.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ec/b2/faa78c1ab928d2b2c634c8b41ff1181f0abdd9adf9193211bd606ffa57e2/cryptography-2.2.2.tar.gz"; sha256 = "9fc295bf69130a342e7a19a39d7bbeb15c0bcaabc7382ec33ef3b2b7d18d2f63"; };
+      name = "cryptography-2.3";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/79/a2/61c8625f96c8582d3053f89368c483ba62e56233d055e58e372f94a393f0/cryptography-2.3.tar.gz"; sha256 = "c132bab45d4bd0fff1d3fe294d92b0a6eb8404e93337b3127bdec9f21de117e6"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
