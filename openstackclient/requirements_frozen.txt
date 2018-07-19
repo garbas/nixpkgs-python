@@ -42,7 +42,7 @@ prettytable==0.7.2
 pycparser==2.18
 pyOpenSSL==18.0.0
 pyparsing==2.2.0
-pyperclip==1.6.2
+pyperclip==1.6.4
 python-cinderclient==3.6.1
 python-glanceclient==2.11.1
 python-keystoneclient==3.17.0

@@ -884,8 +884,8 @@ let
     };
 
     "pyperclip" = python.mkDerivation {
-      name = "pyperclip-1.6.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/33/15/f3c29b381815ae75e27589583655f4a8567721c541b8ba8cd52f76868655/pyperclip-1.6.2.tar.gz"; sha256 = "43496f0a1f363a5ecfc4cda5eba6a2a3d5056fe6c7ffb9a99fbb1c5a3c7dea05"; };
+      name = "pyperclip-1.6.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/2d/9a/23059a00dfd52eb700bd03c4ee3a6954cae60827539c3488026c8742a555/pyperclip-1.6.4.tar.gz"; sha256 = "f70e83d27c445795b6bf98c2bc826bbf2d0d63d4c7f83091c8064439042ba0dc"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
