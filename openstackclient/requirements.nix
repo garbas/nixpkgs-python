@@ -283,8 +283,8 @@ let
     };
 
     "debtcollector" = python.mkDerivation {
-      name = "debtcollector-1.19.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/44/db/6b54be9367110bc40468f3bcc75b115ab655a9fdd993a4ed01862fdb8d80/debtcollector-1.19.0.tar.gz"; sha256 = "4e90683553a6bb68d10a29b42c5df90d0e83d5085ff1ac2970c91314acdf8719"; };
+      name = "debtcollector-1.20.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/56/ea/e8867c97ae9650ecf67edf66ed844c89b3b0a7a54c9ea00b23d889195ec6/debtcollector-1.20.0.tar.gz"; sha256 = "f48639881e0dd492e3576fd714e2a4e422492bb586b9f90affe0f093d7a09ac8"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -519,8 +519,8 @@ let
     };
 
     "keystoneauth1" = python.mkDerivation {
-      name = "keystoneauth1-3.9.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/7b/69/28113a3bc22416c23d4f111984b109aeb09273153abe2d87ccfa0b78a68f/keystoneauth1-3.9.0.tar.gz"; sha256 = "59060ee313e2c57dcab9bfd59ca555bf9dc8e46cb76a5bbfb4be4eef6da6b016"; };
+      name = "keystoneauth1-3.10.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b6/90/0249c5cbe72f486fdb8c8387d5807ea97519237edb1b0f58a7b57a41fb3d/keystoneauth1-3.10.0.tar.gz"; sha256 = "a47e6d2f676ab226dfd5343edb8c76f7c1fc314fc163d305e79bf18afae445d9"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -697,8 +697,8 @@ let
     };
 
     "oslo.config" = python.mkDerivation {
-      name = "oslo.config-6.3.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/de/c2/4b653f3db231643e3ee8a61952aaf3df95e5e591075cd3f3bb62928f5d40/oslo.config-6.3.0.tar.gz"; sha256 = "bffe681bed69882ca8fa12df07b8d5194bbebb54f6ccf73ad096d5f5535ef450"; };
+      name = "oslo.config-6.4.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/64/79/a65267c8a6f734dccd52a46688339e00764703a00aa99da679e837c9c734/oslo.config-6.4.0.tar.gz"; sha256 = "483f43fa7b0e54cb1000d56b4e56fb23169816e65061e7600ca8ccd4cafa45e3"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -709,6 +709,7 @@ let
       self."enum34"
       self."netaddr"
       self."oslo.i18n"
+      self."requests"
       self."rfc3986"
       self."six"
       self."stevedore"
@@ -721,8 +722,8 @@ let
     };
 
     "oslo.i18n" = python.mkDerivation {
-      name = "oslo.i18n-3.20.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/cc/8d/9514c0f979c858fcbf3c8300769f8323d5c69c20cffe3543059e978329cd/oslo.i18n-3.20.0.tar.gz"; sha256 = "c3cf63c01fa3ff1b5ae7d6445d805c6bf5390ac010725cf126b18eb9086f4c4e"; };
+      name = "oslo.i18n-3.21.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/80/e8/4b2dee4783e058837785466dadac0746af26468dee614c65b71e81c556a9/oslo.i18n-3.21.0.tar.gz"; sha256 = "037e3474db4c2bbc28c5ecfd92cc6539e4fa34283bd15978c8c08706eaae556a"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -761,8 +762,8 @@ let
     };
 
     "oslo.utils" = python.mkDerivation {
-      name = "oslo.utils-3.36.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/88/36/638cadf97ac2f29e6b4c452f7aecb1294c38916ed869a6a23ee0ed794d4c/oslo.utils-3.36.3.tar.gz"; sha256 = "90ad73099884c6454b33ec809fde72e943b2a4481682a5f4d8aa6d103fddd73f"; };
+      name = "oslo.utils-3.36.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/5b/28/f249ceed4f7e12a5ccafcac008fb2f7bd96c52d77079407465476bd98c93/oslo.utils-3.36.4.tar.gz"; sha256 = "c9f5afb4055f60c5dc36341ed5ff09e536ca5e584d7278234c319c7cd38b55d9"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -1127,8 +1128,8 @@ let
     };
 
     "stevedore" = python.mkDerivation {
-      name = "stevedore-1.28.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ba/40/92295187c3157c109fde84eb2d4002c2bb3ab5a9c1df09f7fd96e6dfd5c9/stevedore-1.28.0.tar.gz"; sha256 = "f1c7518e7b160336040fee272174f1f7b29a46febb3632502a8f2055f973d60b"; };
+      name = "stevedore-1.29.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/61/c9/1d10fc4ffd9657caea9e3f0428cad6e0eefed9dfea11435f97ab34c1927f/stevedore-1.29.0.tar.gz"; sha256 = "1e153545aca7a6a49d8337acca4f41c212fbfa60bf864ecd056df0cafb9627e8"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
