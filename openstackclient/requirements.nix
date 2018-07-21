@@ -621,8 +621,8 @@ let
     };
 
     "openstacksdk" = python.mkDerivation {
-      name = "openstacksdk-0.16.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/13/b7/ef77e4e2053204a5d82d78634c077198f3003518cfe4a103d09b54918119/openstacksdk-0.16.0.tar.gz"; sha256 = "a3c375ca00365fb359385bde759c8ccbdd63f871199248fab6757e733b7a9b85"; };
+      name = "openstacksdk-0.17.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/13/af/7af49d23686f0f7bac00d4a7ca230d2890422707885e695e79d0d27b6a50/openstacksdk-0.17.0.tar.gz"; sha256 = "8b9f0b271d5a07f781b8a2909c377b705438c9745a003f53e903f70a571f83ac"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -630,6 +630,7 @@ let
       propagatedBuildInputs = [
       self."PyYAML"
       self."appdirs"
+      self."cryptography"
       self."decorator"
       self."deprecation"
       self."dogpile.cache"
@@ -807,8 +808,8 @@ let
     };
 
     "pbr" = python.mkDerivation {
-      name = "pbr-4.1.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/04/69/25fb4c68ae8093cf7698cec37dbbfdd3f6161ccd94a407aea0c6c1d8ce29/pbr-4.1.0.tar.gz"; sha256 = "e0f23b61ec42473723b2fec2f33fb12558ff221ee551962f01dd4de9053c2055"; };
+      name = "pbr-4.1.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/66/cf/6af9d90f2bb553bc8a0a5b5f5233c6fba898f2226b74aea3af65ac4ea8c5/pbr-4.1.1.tar.gz"; sha256 = "754e766b4f4bad3aa68cfd532456298da1aa39375da8748392dbae90860d5f18"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
