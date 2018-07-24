@@ -561,8 +561,8 @@ let
     };
 
     "pytest-timeout" = python.mkDerivation {
-      name = "pytest-timeout-1.3.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e9/de/ce1ed3e2c787080a66ef40e75ae13b13311a44374b652e9b1a014d4251ba/pytest-timeout-1.3.0.tar.gz"; sha256 = "08b550b498b9251901a3747f02aa2624ed53a9c8285ca482551346c85b47d641"; };
+      name = "pytest-timeout-1.3.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/12/71/5dad1e94ad5b96318b76e492682cc7a3a6d0f995d2713962091fd331787a/pytest-timeout-1.3.1.tar.gz"; sha256 = "4b261bec5782b603c98b4bb803484bc96bf1cdcb5480dae0999d21c7e0423a23"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -597,8 +597,8 @@ let
     };
 
     "pytest-xdist" = python.mkDerivation {
-      name = "pytest-xdist-1.22.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/5d/be/f3c5a5edf6161d17d90fe458281249bebb7aba1af076621a19b007d632fa/pytest-xdist-1.22.2.tar.gz"; sha256 = "e8f5744acc270b3e7d915bdb4d5f471670f049b6fbd163d4cbd52203b075d30f"; };
+      name = "pytest-xdist-1.22.3";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/0f/30/f4ea9dbc833797ef8077863f699647a6ddc106f522bfc89d9cb2887b36d8/pytest-xdist-1.22.3.tar.gz"; sha256 = "48868d1f461122ac8c5fb60487b6da03c0d73dcb06a9d79e06c4eab8ef62a5c3"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -611,7 +611,7 @@ let
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pytest-dev/pytest-xdist";
         license = licenses.mit;
-        description = "py.test xdist plugin for distributed testing and loop-on-failing modes";
+        description = "pytest xdist plugin for distributed testing and loop-on-failing modes";
       };
     };
 
