@@ -808,8 +808,8 @@ let
     };
 
     "pbr" = python.mkDerivation {
-      name = "pbr-4.1.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/66/cf/6af9d90f2bb553bc8a0a5b5f5233c6fba898f2226b74aea3af65ac4ea8c5/pbr-4.1.1.tar.gz"; sha256 = "754e766b4f4bad3aa68cfd532456298da1aa39375da8748392dbae90860d5f18"; };
+      name = "pbr-4.2.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/c8/c3/935b102539529ea9e6dcf3e8b899583095a018b09f29855ab754a2012513/pbr-4.2.0.tar.gz"; sha256 = "1b8be50d938c9bb75d0eaf7eda111eec1bf6dc88a62a6412e33bf077457e0f45"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";

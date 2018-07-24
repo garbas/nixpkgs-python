@@ -37,7 +37,7 @@ oslo.i18n==3.21.0
 oslo.serialization==2.27.0
 oslo.utils==3.36.4
 packaging==17.1
-pbr==4.1.1
+pbr==4.2.0
 prettytable==0.7.2
 pycparser==2.18
 pyOpenSSL==18.0.0
