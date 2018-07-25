@@ -529,7 +529,7 @@ let
 
     "ckan" = python.mkDerivation {
       name = "ckan-2.9.0a0";
-      src = pkgs.fetchurl { url = "https://github.com/ckan/ckan/archive/master.zip"; sha256 = "4b3b8a870614487c6d8e0146fbfd64c9571e1fb630c3dbfb94cb021e0dcffb9d"; };
+      src = pkgs.fetchurl { url = "https://github.com/ckan/ckan/archive/master.zip"; sha256 = "230f3961052428c8dfabd1a440eaa239d6046949d9c54628516f4a25a34a4d01"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
