@@ -472,8 +472,8 @@ let
     };
 
     "pytest-django" = python.mkDerivation {
-      name = "pytest-django-3.3.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/be/1a/f26eb7192680671a100a558225b7212548473e0b3a7dd393222e93dace46/pytest-django-3.3.2.tar.gz"; sha256 = "3fea4d0a84bf3af1f1e82448b9a91b3ddb22b659d802e026ae843040da0c3220"; };
+      name = "pytest-django-3.3.3";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/78/4c/fb50e47a3f6eb23cf198b029921be0ad5761f271fbe6ee0256f85d6cd43d/pytest-django-3.3.3.tar.gz"; sha256 = "a73e355138675db8f535777ddf34bde28580b688be17dc21d0efa65e5c16927c"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
