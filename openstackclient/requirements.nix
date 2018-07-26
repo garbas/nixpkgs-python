@@ -925,8 +925,8 @@ let
     };
 
     "python-glanceclient" = python.mkDerivation {
-      name = "python-glanceclient-2.11.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/72/d1/37b59cdefa42de90dba94a2dc42ceb599e89423cc03ab837fe07dba05732/python-glanceclient-2.11.1.tar.gz"; sha256 = "4c06dd38d8c95ef5e0bae72133f067da6ee7b710a10b677855beabd3cc7af50e"; };
+      name = "python-glanceclient-2.12.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/4b/bc/2bd114251b7ac9dcfd178d9698f3f1ab657b9d524751fdf6bed7246e5ee2/python-glanceclient-2.12.0.tar.gz"; sha256 = "f6ea001bd93ad5932c6e037d9bb62b60b51d6e888f82b260479240a5a1496f27"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -1003,8 +1003,8 @@ let
     };
 
     "python-openstackclient" = python.mkDerivation {
-      name = "python-openstackclient-3.15.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/6a/a1/3974a6261ce3eeb52859288934a8d7a8756dc895036fddaddd1d0c23773f/python-openstackclient-3.15.0.tar.gz"; sha256 = "075a8e38551ae24e32f61083d833990654eeaa7b516c5e3c6cc2a537d6d098d3"; };
+      name = "python-openstackclient-3.16.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/3b/f9/d568ae9c5ce1dc43d22c7b94cd5d8937f72e4c6062ee0591a31a17304d2b/python-openstackclient-3.16.0.tar.gz"; sha256 = "2da55c7aa7219ecb723ce10f9c44ec88e6602f4092cceee3c6b6e387f5a30212"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
