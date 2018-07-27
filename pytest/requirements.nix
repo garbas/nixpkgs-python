@@ -597,8 +597,8 @@ let
     };
 
     "pytest-xdist" = python.mkDerivation {
-      name = "pytest-xdist-1.22.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/0f/30/f4ea9dbc833797ef8077863f699647a6ddc106f522bfc89d9cb2887b36d8/pytest-xdist-1.22.3.tar.gz"; sha256 = "48868d1f461122ac8c5fb60487b6da03c0d73dcb06a9d79e06c4eab8ef62a5c3"; };
+      name = "pytest-xdist-1.22.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/59/14/36824b9410eb521b19d2b0b0d21a636130f6bc711ab03aaa495fe427a4f2/pytest-xdist-1.22.4.tar.gz"; sha256 = "fbc08ff421606acfdb93c7f46691b01a807214a9d7b9db2523b442de09cf5c1c"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
