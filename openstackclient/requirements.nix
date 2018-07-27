@@ -335,8 +335,8 @@ let
     };
 
     "dogpile.cache" = python.mkDerivation {
-      name = "dogpile.cache-0.6.6";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/48/ca/604154d835c3668efb8a31bd979b0ea4bf39c2934a40ffecc0662296cb51/dogpile.cache-0.6.6.tar.gz"; sha256 = "044d4ea0a0abc72491044f3d3df8e1fc9e8fa7a436c6e9a0da5850d23a0d16c1"; };
+      name = "dogpile.cache-0.6.7";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ee/bd/440da735a11c6087eed7cc8747fc4b995cbac2464168682f8ee1c8e43844/dogpile.cache-0.6.7.tar.gz"; sha256 = "fca7deb7c276b879b01c15c5d39b3c05701dc43b263ec3fef1e52cb851cf88ab"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -901,8 +901,8 @@ let
     };
 
     "python-cinderclient" = python.mkDerivation {
-      name = "python-cinderclient-3.6.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/dd/91/40d557b0760da0776411fcf7a20734de4a6f30b05681c7abcb17b2f777ea/python-cinderclient-3.6.1.tar.gz"; sha256 = "05085a2692391bb2f000bd64e6ad333783a6fc2e72158fda63375b4d5fc0bf60"; };
+      name = "python-cinderclient-4.0.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/5a/9e/e411b1899b543bb3128860e157915f5b36a37d0811f9e2121791624c7652/python-cinderclient-4.0.0.tar.gz"; sha256 = "49b3c657f696d34463a8cbfc503123d1fb2bbb5222da4e302b166d99a9b6fab7"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -925,8 +925,8 @@ let
     };
 
     "python-glanceclient" = python.mkDerivation {
-      name = "python-glanceclient-2.12.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/4b/bc/2bd114251b7ac9dcfd178d9698f3f1ab657b9d524751fdf6bed7246e5ee2/python-glanceclient-2.12.0.tar.gz"; sha256 = "f6ea001bd93ad5932c6e037d9bb62b60b51d6e888f82b260479240a5a1496f27"; };
+      name = "python-glanceclient-2.12.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b3/3c/aa5ffa334ea3ba8074b7edbc6edddbe49f96658155f2f983e1e816b531d5/python-glanceclient-2.12.1.tar.gz"; sha256 = "bfe1829dd6fc6d980d030d914cbdaf40d8bc736d5371ae5c08748826b0489958"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -977,8 +977,8 @@ let
     };
 
     "python-novaclient" = python.mkDerivation {
-      name = "python-novaclient-10.3.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/62/71/6b6a3e2d351c51fdb3449d0f445a379a30f6538e3abe36356e8a533caaf6/python-novaclient-10.3.0.tar.gz"; sha256 = "221c9a8c406146ebc51f78fe22c0eb0c36780eaef56b05ed0c04ec883bf8f90b"; };
+      name = "python-novaclient-11.0.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b5/cd/38203dd7598cc2f2af0345626eb2e63869949b14d9863ae23f35f04a4b4b/python-novaclient-11.0.0.tar.gz"; sha256 = "61ecc18bb53f4f768022fb67f27ddbdf444467db6a1e61863aaa248555faf8be"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
