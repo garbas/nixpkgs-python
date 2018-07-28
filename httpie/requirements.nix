@@ -5,7 +5,8 @@
 #   pypi2nix -W https://travis.garbas.si/wheels_cache/ -v -V 3.5 -O ../overrides.nix -E gcc -E openssl -E libffi -E kerberos -r requirements.txt
 #
 
-{ pkgs ? import <nixpkgs> {}
+{ pkgs ? import <nixpkgs> {},
+  overrides ? ({ pkgs, python }: self: super: {})
 }:
 
 let
@@ -40,15 +41,15 @@ let
   withPackages = pkgs':
     let
       pkgs = builtins.removeAttrs pkgs' ["__unfix__"];
-      interpreter = pythonPackages.buildPythonPackage {
+      interpreterWithPackages = selectPkgsFn: pythonPackages.buildPythonPackage {
         name = "python35-interpreter";
-        buildInputs = [ makeWrapper ] ++ (builtins.attrValues pkgs);
+        buildInputs = [ makeWrapper ] ++ (selectPkgsFn pkgs);
         buildCommand = ''
           mkdir -p $out/bin
           ln -s ${pythonPackages.python.interpreter} \
               $out/bin/${pythonPackages.python.executable}
           for dep in ${builtins.concatStringsSep " "
-              (builtins.attrValues pkgs)}; do
+              (selectPkgsFn pkgs)}; do
             if [ -d "$dep/bin" ]; then
               for prog in "$dep/bin/"*; do
                 if [ -x "$prog" ] && [ -f "$prog" ]; then
@@ -68,9 +69,12 @@ let
         '';
         passthru.interpreter = pythonPackages.python;
       };
+
+      interpreter = interpreterWithPackages builtins.attrValues;
     in {
       __old = pythonPackages;
       inherit interpreter;
+      inherit interpreterWithPackages;
       mkDerivation = pythonPackages.buildPythonPackage;
       packages = pkgs;
       overrideDerivation = drv: f:
@@ -88,6 +92,8 @@ let
       name = "PyJWT-1.6.4";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/00/5e/b358c9bb24421e6155799d995b4aa3aa3307ffc7ecae4ad9d29fd7e07a73/PyJWT-1.6.4.tar.gz"; sha256 = "4ee413b357d53fd3fb44704577afac88e72e878716116270d722723d65b42176"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."cryptography"
@@ -103,6 +109,8 @@ let
       name = "Pygments-2.2.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/71/2a/2e4e77803a8bd6408a2903340ac498cb0a2181811af7c9ec92cb70b0308a/Pygments-2.2.0.tar.gz"; sha256 = "dbae1046def0efb574852fab9e90209b23f556367b5a320c0bcb871c77c3e8cc"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -116,6 +124,8 @@ let
       name = "asn1crypto-0.24.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/fc/f1/8db7daa71f414ddabfa056c4ef792e1461ff655c2ae2928a2b675bfed6b4/asn1crypto-0.24.0.tar.gz"; sha256 = "9d5c20441baf0cb60a4ac34cc447c6c189024b6b4c6cd7877034f4965c464e49"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -129,6 +139,8 @@ let
       name = "aws-requests-auth-0.4.1";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/bf/29/ba511024967460eb7411100f4143dd39f038e0887f2c1d3fa05d0d1a6048/aws-requests-auth-0.4.1.tar.gz"; sha256 = "3a3157843c6971b638336587d5cc0d09cc46848f953c677470829fc6006b93c3"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."requests"
@@ -141,9 +153,11 @@ let
     };
 
     "boto3" = python.mkDerivation {
-      name = "boto3-1.7.33";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/02/83/1b95e0252b863120622a55534fdaf13577adacde25ffb55366b83c9b19cb/boto3-1.7.33.tar.gz"; sha256 = "407368d7b64ee4c7972d278a1697e9fe8e606e023f83788059d1c5adb40e2e1b"; };
+      name = "boto3-1.7.65";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/15/43/81d8437ca09b7bc3370424582fd984aac44458573e9fdb4bfcdd03466503/boto3-1.7.65.tar.gz"; sha256 = "c8492a53e0bfeca83fa03273dff7ab7d5ac5cf78a0ce1b7e9fc7f241ca6f4dd4"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."botocore"
@@ -158,9 +172,11 @@ let
     };
 
     "botocore" = python.mkDerivation {
-      name = "botocore-1.10.33";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/69/7a/471de1e9e4af76473d515e9c7be74af4e024a28ea7fd8e1125975346d0a7/botocore-1.10.33.tar.gz"; sha256 = "bf57714190281a5319786eb20b0e0c1620db8c77a4dcad08003bcebb5730932e"; };
+      name = "botocore-1.10.65";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/8d/a2/4e9643b248aec2280aa5dcd2cb2e372fa05ab8c317d52abbf8ff87003d9a/botocore-1.10.65.tar.gz"; sha256 = "35f626029a6b17bfd503ce3379b121606e3f965edcab2612bc75ce8603fdf08c"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."docutils"
@@ -178,6 +194,8 @@ let
       name = "certifi-2018.4.16";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/4d/9c/46e950a6f4d6b4be571ddcae21e7bc846fcbb88f1de3eff0f6dd0a6be55d/certifi-2018.4.16.tar.gz"; sha256 = "13e698f54293db9f89122b0581843a782ad0934a4fe0172d2a980ba77fc61bb7"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -191,6 +209,8 @@ let
       name = "cffi-1.11.5";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e7/a7/4cd50e57cc6f436f1cc3a7e8fa700ff9b8b4d471620629074913e3735fb2/cffi-1.11.5.tar.gz"; sha256 = "e90f17980e6ab0f3c2f3730e56d1fe9bcba1891eeea58966e89d352492cc74f4"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."pycparser"
@@ -206,6 +226,8 @@ let
       name = "chardet-3.0.4";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/fc/bb/a5768c230f9ddb03acc9ef3f0d4a3cf93462473795d18e9535498c8f929d/chardet-3.0.4.tar.gz"; sha256 = "84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -216,9 +238,11 @@ let
     };
 
     "cryptography" = python.mkDerivation {
-      name = "cryptography-2.2.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ec/b2/faa78c1ab928d2b2c634c8b41ff1181f0abdd9adf9193211bd606ffa57e2/cryptography-2.2.2.tar.gz"; sha256 = "9fc295bf69130a342e7a19a39d7bbeb15c0bcaabc7382ec33ef3b2b7d18d2f63"; };
+      name = "cryptography-2.3";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/79/a2/61c8625f96c8582d3053f89368c483ba62e56233d055e58e372f94a393f0/cryptography-2.3.tar.gz"; sha256 = "c132bab45d4bd0fff1d3fe294d92b0a6eb8404e93337b3127bdec9f21de117e6"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."asn1crypto"
@@ -237,6 +261,8 @@ let
       name = "docutils-0.14";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/84/f4/5771e41fdf52aabebbadecc9381d11dea0fa34e4759b4071244fa094804c/docutils-0.14.tar.gz"; sha256 = "51e64ef2ebfb29cae1faa133b3710143496eca21c530f3f71424d77687764274"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -247,12 +273,15 @@ let
     };
 
     "edgegrid-python" = python.mkDerivation {
-      name = "edgegrid-python-1.1.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/2f/77/702e98a12a099bd5cd769f1d9c2d6802da409d7fcc8dfdaebea60c49bf19/edgegrid-python-1.1.0.tar.gz"; sha256 = "be87d29d5cd119ef80a44cd1a6203738a6a84713c01d5a4f20eac2d029927e82"; };
+      name = "edgegrid-python-1.1.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a9/57/c96a82d9e14b411bb88c9af2e37ea0590e4e0355c4997225863e2664c936/edgegrid-python-1.1.1.tar.gz"; sha256 = "4825d34fb818d86fbaa3faf3e686b93fa82a1a33b4621d5a8602929c8c9ea5c2"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."ndg-httpsclient"
+      self."pyOpenSSL"
       self."pyasn1"
       self."requests"
       self."urllib3"
@@ -268,6 +297,8 @@ let
       name = "escherauth-0.2.5";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b3/d4/0c7540909c14a5335a6ce01b6d50a2208a93af0ceb2f9fd0b67ccb6fc5b2/escherauth-0.2.5.tar.gz"; sha256 = "7167d27d0cde070dd274d9b4b2daed92ad6d1c765a4b5ec72175695e824a2e0b"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."requests"
@@ -283,6 +314,8 @@ let
       name = "h2-2.6.2";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/c9/ad/73a6c1a40eadbf9eef93fe16285a366c834cbd61783c30e6c23ef4b11e53/h2-2.6.2.tar.gz"; sha256 = "af35878673c83a44afbc12b13ac91a489da2819b5dc1e11768f3c2406f740fe9"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."hpack"
@@ -299,6 +332,8 @@ let
       name = "hpack-3.0.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/44/f1/b4440e46e265a29c0cb7b09b6daec6edf93c79eae713cfed93fbbf8716c5/hpack-3.0.0.tar.gz"; sha256 = "8eec9c1f4bfae3408a3f30500261f7e6a65912dc138526ea054f9ad98892e9d2"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -312,6 +347,8 @@ let
       name = "httpie-0.9.9";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/28/93/4ebf2de4bc74bd517a27a600b2b23a5254a20f28e6e36fc876fd98f7a51b/httpie-0.9.9.tar.gz"; sha256 = "f1202e6fa60367e2265284a53f35bfa5917119592c2ab08277efc7fffd744fcb"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."Pygments"
@@ -328,6 +365,8 @@ let
       name = "httpie-akamai-0.1.5";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/32/39/65a16bc76384626b8548994f9a128e9409b7b538abe4471c0b7d7f339b7c/httpie-akamai-0.1.5.tar.gz"; sha256 = "82388338c732d42023611aa81534e94d0c66afd91832cad9acb10870b3a25bcc"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -344,6 +383,8 @@ let
       name = "httpie-api-auth-0.3.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d5/8a/83684aa4e9d7b326706613a96a205c898c02125e3cca47626975c974cad9/httpie-api-auth-0.3.0.tar.gz"; sha256 = "0f37bdb3f916125b9a19b4ccec0e7524539608e10d54abc8802500a2b8574a26"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -359,6 +400,8 @@ let
       name = "httpie-aws-auth-0.0.3";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e2/ad/141b002f7f962ae37622c4ba675eb7fa2621c29c802da1a46fe85d5f792e/httpie-aws-auth-0.0.3.tar.gz"; sha256 = "1af0b0a7430cc3246a570a8dd0e17dd9251c7e978e6c6b7cab77f566801ba14e"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -375,6 +418,8 @@ let
       name = "httpie-aws-authv4-0.1.2";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a9/bb/390bd36f7b8245e6df0eaff598c002ecb9f1dc5e7123d6374c9b2b05f50d/httpie-aws-authv4-0.1.2.tar.gz"; sha256 = "45dea0c499a3506730fa9346f1b936583ec0c1808a846baae98691e49f74cfcc"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."aws-requests-auth"
@@ -393,6 +438,8 @@ let
       name = "httpie-dag-0.1.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/0a/86/eab17701120c36fceaf0972011f1d99f4be20b9c8f6c9aaaaf3f43a273e4/httpie-dag-0.1.0.tar.gz"; sha256 = "53a5e340b07f94743c9622734b1a8dfdb1908b3b84e95eba38f9079827ddb6fd"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -408,6 +455,8 @@ let
       name = "httpie-django-auth-0.1.1";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/87/e9/46a546fa2a6eb753ff1b504466933a30468df08f45493856d2addf5bbfcc/httpie-django-auth-0.1.1.tar.gz"; sha256 = "216d1dc3925918cb248fdf093ef6def3658a2744aa02ce89a48a06642d4a2add"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -423,6 +472,8 @@ let
       name = "httpie-edgegrid-1.0.6";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/c8/e0/5eac4a04f7fca62dbbf7b302abb2d81676ff132aaf1373ba005b8d5bab80/httpie-edgegrid-1.0.6.tar.gz"; sha256 = "8aa1641591a0f94545907e03ce2f0f1077bd028a82b88ab7933186d42aad6a85"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."edgegrid-python"
@@ -440,6 +491,8 @@ let
       name = "httpie-ems-auth-0.2.2";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b8/52/53fe718352385867f3779880c6f332a3b5e7d00ee60cb4eecd6641e09d11/httpie-ems-auth-0.2.2.tar.gz"; sha256 = "f756a92ddb358241d708b85e6ba57e694a1d31c2c37ed3002dabaff906c1f74f"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."escherauth"
@@ -456,6 +509,8 @@ let
       name = "httpie-ems-auth-p3-0.2.3";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/44/ad/fc5be78495f455b44c9b0ee8a50e8ddbb3ea5bbdf41ffc35b1a8c9da0fea/httpie-ems-auth-p3-0.2.3.tar.gz"; sha256 = "52bd36adeeaf7df11fdfe4f24df4b14e4063a74f544cc2efcf891b8c90ea67e7"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."escherauth"
@@ -472,6 +527,8 @@ let
       name = "httpie-escher-auth-0.1.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/39/ba/b89e1bbafa96bf53269a13bc1a0b1ae5cf3cbca87a4068ef2b50a1a8d34a/httpie-escher-auth-0.1.0.tar.gz"; sha256 = "41565ee2b884bd7043caae6b580e971b1d211cec12ff945da8c877d25dcfde30"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."escherauth"
@@ -488,6 +545,8 @@ let
       name = "httpie-esni-auth-1.0.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a9/6f/f5c73d194cecc859a66a3b347f04380b37eb7987a2f021115db23ac97406/httpie-esni-auth-1.0.0.tar.gz"; sha256 = "6c1f73b875a947f8b9694ce55991e6c0450b32705ad1b0e02cb75e8bcdee0c79"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -503,6 +562,8 @@ let
       name = "httpie-f5-auth-0.0.6";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/7d/05/a79bb2e20d0762872b9b1bf07bb3c6e71ad14e233faf1ebfd5ddf44f39cb/httpie-f5-auth-0.0.6.tar.gz"; sha256 = "b3912566e32b5fc1d8c389c26c8fffad38cfc8eee29799b90fc1e33dc76bd1b4"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -520,6 +581,8 @@ let
       name = "httpie-hmac-auth-0.2.3";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b1/b7/c4877e0c5b565166bc5b9df5dd1552aa2ba43983b1c9176fbbd8d9528b27/httpie-hmac-auth-0.2.3.tar.gz"; sha256 = "c8912ddf803c5d66aa4409d034f592f268f612c7d31451bde54c05edfd82e7b9"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -535,6 +598,8 @@ let
       name = "httpie-http2-0.0.1";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/35/e2/41c672bb014b9e7d4498c1f6c24be1bd2e2d9432cb16218afd94af39858c/httpie-http2-0.0.1.tar.gz"; sha256 = "0d5bb65d40a014368623d3ad48760d0a32951772b2267ab12577d82af51f3de7"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -551,6 +616,8 @@ let
       name = "httpie-httpsig-auth-0.1.1";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b5/83/8ba08654654de4fbb477ec242a77df09c206a95a82e7326184f8f09b8654/httpie-httpsig-auth-0.1.1.tar.gz"; sha256 = "971bc9e9070c32df6ce79b55998c45e6ae9fa6a02746cffca3fc6aec9ef57a8e"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -569,6 +636,8 @@ let
       name = "httpie-image-1.0.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a9/61/806ab5656e9039851140957ff68c638f685231e6c9f65ab28ba00d6d66bd/httpie-image-1.0.0.tar.gz"; sha256 = "1b22894fc42025070b7d45b86337ebb85aeecf0fcd5b237812c626556e9017ca"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -584,6 +653,8 @@ let
       name = "httpie-media-auth-0.0.8";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/45/25/746938326cba333222da8f1d3df77394ec44c613c12963ca35a6de22a970/httpie-media-auth-0.0.8.tar.gz"; sha256 = "ee507860c32390f85cdcbbd825611770d0ace670521f8aeb61ca82b0131d8363"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -599,6 +670,8 @@ let
       name = "httpie-msgpack-1.0.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/34/db/410baa7e9a4195788e50323969a9ef5adb35ee40cf1cd68f279dc797be6e/httpie-msgpack-1.0.0.tar.gz"; sha256 = "ade37e87acb1f530f87c01f50d37bde4c3fa45aed5b77e384e19a00d517160f0"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -615,6 +688,8 @@ let
       name = "httpie-nsof-1.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/15/1d/e15ac09891628e5d8e7674af95a11e4748bb4fe26db6a4370d8c7d451a73/httpie-nsof-1.0.tar.gz"; sha256 = "a7614094db6c9b799674cdf772d18b82f60cfca0d6b2746246d2066a8f7b4fe7"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."PyJWT"
@@ -631,6 +706,8 @@ let
       name = "httpie-ntlm-1.0.2";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/93/ef/7ca80d6b7438aebeca167fdf8b9b4459939d4e06392df08e11380bf9beba/httpie-ntlm-1.0.2.tar.gz"; sha256 = "b1f757180c0bd60741ea16cf91fc53d47df402a5c287c4a61a14b335ea0552b3"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -647,6 +724,8 @@ let
       name = "httpie-oauth-1.0.2";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ed/b5/d309cd50e319fa2d746eb8a5d4cb881d9973a0b1095e31e0fac77761cbd3/httpie-oauth-1.0.2.tar.gz"; sha256 = "b4fd8c6e85a7f84e27ba7bfc910627e7010465f4dc4999f81f6c43513485503f"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -663,6 +742,8 @@ let
       name = "httpie-plex-1.0.1";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/40/5f/744e2d8ddb4b7ec075edb0be77764bbe5d59c18423dc683fc547fd0afb3d/httpie-plex-1.0.1-2.tar.gz"; sha256 = "81640824821f2af157b99c0725eb468a6128a7a15ae7991804f10f129a9d2e16"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -681,6 +762,8 @@ let
       name = "httpie-svb-auth-1.0.4";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/0b/d1/6d999c6c381e277b5114bef6e1ff5eed091d5187c0987288cf3b89c90dec/httpie-svb-auth-1.0.4.tar.gz"; sha256 = "30ba22f3edf9dfe13312589850c039ea0ab1f2ecf05fb0fa711839de6a80326d"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -696,6 +779,8 @@ let
       name = "httpie-token-auth-0.1.8";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/2b/02/43492dce84f66b40af7b50d37012cedc3b1588a5bdae814ae7da9eabd6ce/httpie-token-auth-0.1.8.tar.gz"; sha256 = "f773177a3356e08e190d34064453006cc5be4665a263fc8a0c6bddf0cee294cb"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -711,6 +796,8 @@ let
       name = "httpie-visionect-auth-0.0.1";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/22/05/e77fdead51f0dd32395b8f5e318b98a8c159f81cf0122c7a009bd5aba2dd/httpie-visionect-auth-0.0.1.tar.gz"; sha256 = "3326a137f62a1d4811c85a8f16fbc07579012ba492f962ac2f48b363673d7b8f"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -726,6 +813,8 @@ let
       name = "httpie-wsse-auth-0.1.1";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/9a/c4/f7c4ba0bdfb0696152eef4a1874f8ae9bf01b696dcf2d8ccb381cf191eb7/httpie-wsse-auth-0.1.1.tar.gz"; sha256 = "9a2f4759e59dfffd0a5bba93783eb8173b9292b2f00e8cd5272ef0fd981b64fe"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."httpie"
@@ -741,6 +830,8 @@ let
       name = "httpsig-cffi-15.0.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/2b/26/09b2f9b962e821abb41a7b5d15b60aedeccfe68f7fafd2040617f0b27c29/httpsig_cffi-15.0.0.tar.gz"; sha256 = "12b61008cd21cb18986de743959d63caaf8ac5b3cf3ee1d49fd1c53fe4f5d47a"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."cryptography"
@@ -757,6 +848,8 @@ let
       name = "hyper-0.7.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/af/f7/f60d8032f331994f29ce2d79fb5d7fe1e3c1355cac0078c070cf4feb3b52/hyper-0.7.0.tar.gz"; sha256 = "12c82eacd122a659673484c1ea0d34576430afbe5aa6b8f63fe37fcb06a2458c"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."cryptography"
@@ -775,6 +868,8 @@ let
       name = "hyperframe-3.2.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/50/96/7080c938d2b06105365bae946c77c78a32d9e763eaa05d0e431b02d7bc12/hyperframe-3.2.0.tar.gz"; sha256 = "05f0e063e117c16fcdd13c12c93a4424a2c40668abfac3bb419a10f57698204e"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -785,9 +880,11 @@ let
     };
 
     "idna" = python.mkDerivation {
-      name = "idna-2.6";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f4/bd/0467d62790828c23c47fc1dfa1b1f052b24efdf5290f071c7a91d0d82fd3/idna-2.6.tar.gz"; sha256 = "2c6a5de3089009e3da7c5dde64a141dbc8551d5b7f6cf4ed7c2568d0cc520a8f"; };
+      name = "idna-2.7";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/65/c4/80f97e9c9628f3cac9b98bfca0402ede54e0563b56482e3e6e45c43c4935/idna-2.7.tar.gz"; sha256 = "684a38a6f903c1d71d6d5fac066b58d7768af4de2b832e426ec79c30daa94a16"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -801,6 +898,8 @@ let
       name = "jmespath-0.9.3";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e5/21/795b7549397735e911b032f255cff5fb0de58f96da794274660bca4f58ef/jmespath-0.9.3.tar.gz"; sha256 = "6a81d4c9aa62caf061cb517b4d9ad1dd300374cd4706997aff9cd6aedd61fc64"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -814,6 +913,8 @@ let
       name = "mohawk-0.3.4";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/19/22/10f696548a8d41ad41b92ab6c848c60c669e18c8681c179265ce4d048b03/mohawk-0.3.4.tar.gz"; sha256 = "e98b331d9fa9ece7b8be26094cbe2d57613ae882133cc755167268a984bc0ab3"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."six"
@@ -829,6 +930,8 @@ let
       name = "msgpack-python-0.5.6";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/8a/20/6eca772d1a5830336f84aca1d8198e5a3f4715cd1c7fc36d3cc7f7185091/msgpack-python-0.5.6.tar.gz"; sha256 = "378cc8a6d3545b532dfd149da715abae4fda2a3adb6d74e525d0d5e51f46909b"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -839,9 +942,11 @@ let
     };
 
     "ndg-httpsclient" = python.mkDerivation {
-      name = "ndg-httpsclient-0.5.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/30/52/332f10939d263ea5047a1bbe8418cb5dc3dab1d1e99df35c93b2a852061c/ndg_httpsclient-0.5.0.tar.gz"; sha256 = "c009f5430790936b3a97eaf9f968516664d97e146ab2bda991f0caadb7cc088b"; };
+      name = "ndg-httpsclient-0.5.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b9/f8/8f49278581cb848fb710a362bfc3028262a82044167684fb64ad068dbf92/ndg_httpsclient-0.5.1.tar.gz"; sha256 = "d72faed0376ab039736c2ba12e30695e2788c4aa569c9c3e3d72131de2592210"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."pyOpenSSL"
@@ -855,9 +960,11 @@ let
     };
 
     "ntlm-auth" = python.mkDerivation {
-      name = "ntlm-auth-1.1.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f4/e5/72bcd01db360de8af903e303ba5ed4a26b95aec6799e4cd36dd7ccf367eb/ntlm-auth-1.1.0.tar.gz"; sha256 = "d4b21b85cbbf53ec1f16e435898eb9ab80f1e8f1571f0b7e2eb038c0517dd47a"; };
+      name = "ntlm-auth-1.2.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b5/f4/9df9b6713cf3527453d18b2a4567d49893ca1a1c95a566a88baefcb9796e/ntlm-auth-1.2.0.tar.gz"; sha256 = "7bc02a3fbdfee7275d3dc20fce8028ed8eb6d32364637f28be9e9ae9160c6d5c"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -871,6 +978,8 @@ let
       name = "oauthlib-2.1.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/df/5f/3f4aae7b28db87ddef18afed3b71921e531ca288dc604eb981e9ec9f8853/oauthlib-2.1.0.tar.gz"; sha256 = "ac35665a61c1685c56336bda97d5eefa246f1202618a1d6f34fccb1bdd404162"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."PyJWT"
@@ -887,6 +996,8 @@ let
       name = "pyOpenSSL-18.0.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/9b/7c/ee600b2a9304d260d96044ab5c5e57aa489755b92bbeb4c0803f9504f480/pyOpenSSL-18.0.0.tar.gz"; sha256 = "6488f1423b00f73b7ad5167885312bb0ce410d3312eb212393795b53c8caa580"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."cryptography"
@@ -900,9 +1011,11 @@ let
     };
 
     "pyasn1" = python.mkDerivation {
-      name = "pyasn1-0.4.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/0d/33/3466a3210321a02040e3ab2cd1ffc6f44664301a5d650a7e44be1dc341f2/pyasn1-0.4.3.tar.gz"; sha256 = "fb81622d8f3509f0026b0683fe90fea27be7284d3826a5f2edf97f69151ab0fc"; };
+      name = "pyasn1-0.4.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/10/46/059775dc8e50f722d205452bced4b3cc965d27e8c3389156acd3b1123ae3/pyasn1-0.4.4.tar.gz"; sha256 = "f58f2a3d12fd754aa123e9fa74fb7345333000a035f3921dbdaa08597aa53137"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -916,6 +1029,8 @@ let
       name = "pycparser-2.18";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/8c/2d/aad7f16146f4197a11f8e91fb81df177adcc2073d36a17b1491fd09df6ed/pycparser-2.18.tar.gz"; sha256 = "99a8ca03e29851d96616ad0404b4aad7d9ee16f25c9f9708a11faf2810f7b226"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -929,6 +1044,8 @@ let
       name = "python-dateutil-2.7.3";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a0/b0/a4e3241d2dee665fea11baec21389aec6886655cd4db7647ddf96c3fad15/python-dateutil-2.7.3.tar.gz"; sha256 = "e27001de32f627c22380a688bcc43ce83504a7bc5da472209b4c70f02829f0b8"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."six"
@@ -941,9 +1058,11 @@ let
     };
 
     "requests" = python.mkDerivation {
-      name = "requests-2.18.4";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b0/e1/eab4fc3752e3d240468a8c0b284607899d2fbfb236a56b7377a329aa8d09/requests-2.18.4.tar.gz"; sha256 = "9c443e7324ba5b85070c4a818ade28bfabedf16ea10206da1132edaa6dda237e"; };
+      name = "requests-2.19.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/54/1f/782a5734931ddf2e1494e4cd615a51ff98e1879cbe9eecbdfeaf09aa75e9/requests-2.19.1.tar.gz"; sha256 = "ec22d826a36ed72a7358ff3fe56cbd4ba69dd7a6718ffd450ff0e9df7a47ce6a"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."certifi"
@@ -964,6 +1083,8 @@ let
       name = "requests-aws-0.1.8";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/5e/2f/4da17752036c04cf4c9af7a2da0d41ef2205043f1c61008006475aa24b8b/requests-aws-0.1.8.tar.gz"; sha256 = "bd2e8386f09d94a84b9cad6e966b21f31493734336a8f47b9b535806949a771f"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."requests"
@@ -979,6 +1100,8 @@ let
       name = "requests-f5auth-0.1.2";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d2/0d/242f25e3b80937834346a66098b38d8279ea719188a2c04f36c937ea5e33/requests-f5auth-0.1.2.tar.gz"; sha256 = "b7c86af41ffef4209b3677e0143a1d3f71394f898a2a8489954be395ba231aa6"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."requests"
@@ -994,6 +1117,8 @@ let
       name = "requests-hawk-1.0.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/8a/62/e89d4e23847f74f56c66a0ae76c17e356338a0fe7bd352842647f5877a07/requests-hawk-1.0.0.tar.gz"; sha256 = "aef0dff8053dcae2057774516386bed0a3bc03fabea9e18f3aa98f02672ea5d0"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."mohawk"
@@ -1010,6 +1135,8 @@ let
       name = "requests-ntlm-1.1.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/3e/02/6b31dfc8334caeea446a2ac3aea5b8e197710e0b8ad3c3035f7c79e792a8/requests_ntlm-1.1.0.tar.gz"; sha256 = "9189c92e8c61ae91402a64b972c4802b2457ce6a799d658256ebf084d5c7eb71"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."cryptography"
@@ -1027,6 +1154,8 @@ let
       name = "requests-oauthlib-1.0.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/95/be/072464f05b70e4142cb37151e215a2037b08b1400f8a56f2538b76ca6205/requests-oauthlib-1.0.0.tar.gz"; sha256 = "8886bfec5ad7afb391ed5443b1f697c6f4ae98d0e5620839d8b4499c032ada3f"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."oauthlib"
@@ -1043,6 +1172,8 @@ let
       name = "s3transfer-0.1.13";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/9a/66/c6a5ae4dbbaf253bd662921b805e4972451a6d214d0dc9fb3300cb642320/s3transfer-0.1.13.tar.gz"; sha256 = "90dc18e028989c609146e241ea153250be451e05ecc0c2832565231dacdf59c1"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."botocore"
@@ -1058,6 +1189,8 @@ let
       name = "six-1.11.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/16/d8/bc6316cf98419719bd59c91742194c111b6f2e85abac88e496adefaf7afe/six-1.11.0.tar.gz"; sha256 = "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -1068,9 +1201,11 @@ let
     };
 
     "urllib3" = python.mkDerivation {
-      name = "urllib3-1.22";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ee/11/7c59620aceedcc1ef65e156cc5ce5a24ef87be4107c2b74458464e437a5d/urllib3-1.22.tar.gz"; sha256 = "cc44da8e1145637334317feebd728bd869a35285b93cbb4cca2577da7e62db4f"; };
+      name = "urllib3-1.23";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/3c/d2/dc5471622bd200db1cd9319e02e71bc655e9ea27b8e0ce65fc69de0dac15/urllib3-1.23.tar.gz"; sha256 = "a68ac5e15e76e7e5dd2b8f94007233e01effe3e50e8daddf69acfd81cb686baf"; };
       doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."certifi"
@@ -1086,13 +1221,16 @@ let
     };
   };
   localOverridesFile = ./requirements_override.nix;
-  overrides = import localOverridesFile { inherit pkgs python; };
+  localOverrides = import localOverridesFile { inherit pkgs python; };
   commonOverrides = [
         (import ../overrides.nix { inherit pkgs python ; })
   ];
+  paramOverrides = [
+    (overrides { inherit pkgs python; })
+  ];
   allOverrides =
     (if (builtins.pathExists localOverridesFile)
-     then [overrides] else [] ) ++ commonOverrides;
+     then [localOverrides] else [] ) ++ commonOverrides ++ paramOverrides;
 
 in python.withPackages
    (fix' (pkgs.lib.fold
