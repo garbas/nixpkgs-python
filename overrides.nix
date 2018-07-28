@@ -61,7 +61,7 @@ in skipOverrides {
 
   "botocore" = self: old: {
     patchPhase = ''
-      sed -i -e "s|python-dateutil>=2.1,<3.0.0|pythondateutil|" setup.py
+      sed -i -e "s|python-dateutil>=2.1,<3.0.0|python-dateutil|" setup.py
     '';
   };
 
