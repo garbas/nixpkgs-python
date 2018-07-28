@@ -374,8 +374,8 @@ let
     };
 
     "pytest" = python.mkDerivation {
-      name = "pytest-3.6.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/55/50/399419c03c39bf41faa7cbd5a8976c076037b2d76adf2535610919806d67/pytest-3.6.3.tar.gz"; sha256 = "0453c8676c2bee6feb0434748b068d5510273a916295fd61d306c4f22fbfd752"; };
+      name = "pytest-3.6.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/05/b5/3197f0ae65c0b3037acd64c216a6d67a94693dad957f4e83e777b36688ae/pytest-3.6.4.tar.gz"; sha256 = "341ec10361b64a24accaec3c7ba5f7d5ee1ca4cebea30f76fad3dd12db9f0541"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -597,8 +597,8 @@ let
     };
 
     "pytest-xdist" = python.mkDerivation {
-      name = "pytest-xdist-1.22.4";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/59/14/36824b9410eb521b19d2b0b0d21a636130f6bc711ab03aaa495fe427a4f2/pytest-xdist-1.22.4.tar.gz"; sha256 = "fbc08ff421606acfdb93c7f46691b01a807214a9d7b9db2523b442de09cf5c1c"; };
+      name = "pytest-xdist-1.22.5";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/0b/10/e2037ce5ed623fc32b05e23fa97f4874412f29e60acf34ec5c6bad1b1ec6/pytest-xdist-1.22.5.tar.gz"; sha256 = "3308c4f6221670432d01e0b393b333d77c1fd805532e1d64450e8140855eb51b"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -607,6 +607,7 @@ let
       self."execnet"
       self."pytest"
       self."pytest-forked"
+      self."six"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pytest-dev/pytest-xdist";
