@@ -28,7 +28,8 @@ flake8-html
 flake8-immediate
 flake8-import-order
 flake8-import-order-fuzeman
-flake8-import-order-spoqa
+# requires older flake8-import-order
+# flake8-import-order-spoqa
 flake8-imports
 flake8-isort
 flake8-junit-report
