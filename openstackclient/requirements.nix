@@ -622,8 +622,8 @@ let
     };
 
     "openstacksdk" = python.mkDerivation {
-      name = "openstacksdk-0.17.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/13/af/7af49d23686f0f7bac00d4a7ca230d2890422707885e695e79d0d27b6a50/openstacksdk-0.17.0.tar.gz"; sha256 = "8b9f0b271d5a07f781b8a2909c377b705438c9745a003f53e903f70a571f83ac"; };
+      name = "openstacksdk-0.17.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/3c/22/ed9d648b63653977b93e1f8ee6a2063e50dbd96a8b79781d11709a85acc9/openstacksdk-0.17.1.tar.gz"; sha256 = "8150dd6eda2923d83e40c8527264ce9bdf82f7071dd83ef4c3199b0fc73b18a7"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
