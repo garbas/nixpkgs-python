@@ -902,8 +902,8 @@ let
     };
 
     "python-cinderclient" = python.mkDerivation {
-      name = "python-cinderclient-4.0.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/5a/9e/e411b1899b543bb3128860e157915f5b36a37d0811f9e2121791624c7652/python-cinderclient-4.0.0.tar.gz"; sha256 = "49b3c657f696d34463a8cbfc503123d1fb2bbb5222da4e302b166d99a9b6fab7"; };
+      name = "python-cinderclient-4.0.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/fa/47/e36ddbcab41f114def898f50f07e61e9f0f608e852e143018cabcadaa1f1/python-cinderclient-4.0.1.tar.gz"; sha256 = "b32687558d933ffb07f2791737053f4fde32b8545de13981b7e5ff85d864f74f"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
