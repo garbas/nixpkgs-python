@@ -508,8 +508,8 @@ let
     };
 
     "pytest-flakes" = python.mkDerivation {
-      name = "pytest-flakes-3.0.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/7c/d0/78bb26124f6de980206e941205cc11011a8bd4606c7294a259549af827e2/pytest-flakes-3.0.2.tar.gz"; sha256 = "763ec290b89e2dc8f25f49d71cb9b869b8df843697b730233f61c78f847f2e57"; };
+      name = "pytest-flakes-4.0.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e0/ba/c2615a68dcde242f313c95d39b70d54315891dcd442687c9a56e82312b9b/pytest-flakes-4.0.0.tar.gz"; sha256 = "341964bf5760ebbdde9619f68a17d5632c674c3f6903ef66daa0a4f540b3d143"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -517,7 +517,6 @@ let
       propagatedBuildInputs = [
       self."pyflakes"
       self."pytest"
-      self."pytest-cache"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/fschulze/pytest-flakes";
