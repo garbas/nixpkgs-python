@@ -392,8 +392,8 @@ let
     };
 
     "pytest" = python.mkDerivation {
-      name = "pytest-3.7.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/38/de/250ed9efc73d43b23d849754cb36e8f50cb5535850c1a1c92552986ad409/pytest-3.7.0.tar.gz"; sha256 = "8214ab8446104a1d0c17fbd218ec6aac743236c6ffbe23abc038e40213c60b88"; };
+      name = "pytest-3.7.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/1c/b5/336b6b600eb9d2a9b7c99b16be7913dfd1f68d23c82f5a78d774a239183f/pytest-3.7.1.tar.gz"; sha256 = "86a8dbf407e437351cef4dba46736e9c5a6e3c3ac71b2e942209748e76ff2086"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
