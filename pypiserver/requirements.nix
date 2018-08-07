@@ -104,8 +104,8 @@ let
     };
 
     "pypiserver" = python.mkDerivation {
-      name = "pypiserver-1.2.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/84/15/66eecfb88f8596d9a89208106c4e86cd1abdd3c9354c8b3d7d32ebb16778/pypiserver-1.2.3.zip"; sha256 = "eb431fd226bc97256e4255df0d5940d64623e12c18a0c6283edce3e1546344dc"; };
+      name = "pypiserver-1.2.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b6/14/b480c443f021ac148db0f642f6596daff7f2597999e2284fcac9946a2739/pypiserver-1.2.4.zip"; sha256 = "312a3e1b6c55affb9cf11a646bcf093c2370c902690f5136bd7625fdb1059179"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
