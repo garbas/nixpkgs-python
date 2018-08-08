@@ -656,8 +656,8 @@ let
     };
 
     "os-service-types" = python.mkDerivation {
-      name = "os-service-types-1.2.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b3/22/1d0a1f5fd633fdbdff3ac1191f95773e3277d1138e4cee09a891c9ee51aa/os-service-types-1.2.0.tar.gz"; sha256 = "b08fb4ec1249d313afea2728fa4db916b1907806364126fe46de482671203111"; };
+      name = "os-service-types-1.3.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a2/bc/c8bc9cce8ec064558ae9b8ab2dbea9d5bdfbaf5c50f637a19cb120410b10/os-service-types-1.3.0.tar.gz"; sha256 = "5790117948d1673319a2dcf4c545c2059a1a933705e8ded586add88200ac9d95"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
