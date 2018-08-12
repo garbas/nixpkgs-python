@@ -299,8 +299,8 @@ let
     };
 
     "flake8-SQL" = python.mkDerivation {
-      name = "flake8-SQL-0.2.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/48/da/0ff11f1e3460aa586981316ac388101f2dc979acbba46cf168ceed4852ee/flake8-SQL-0.2.0.tar.gz"; sha256 = "e6e970516b0c07932f291edfc9e8b0e4c66c88258370084c1beb10280b62dd85"; };
+      name = "flake8-SQL-0.3.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/41/7d/1d9cc003f2d9043802ecfb0d5142c260e4e2396cfcc28070f628c935d169/flake8-SQL-0.3.0.tar.gz"; sha256 = "5c2ff2c45333a104ec52a05f64668839be9484c081ea8a9b4abe215b383cad2c"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -308,6 +308,7 @@ let
       propagatedBuildInputs = [
       self."flake8"
       self."sqlparse"
+      self."typing"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pgjones/flake8-sql";

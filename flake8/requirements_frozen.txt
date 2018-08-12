@@ -61,7 +61,7 @@ flake8-respect-noqa==0.3
 flake8-rst-docstrings==0.0.8
 flake8-snippets==0.2
 flake8-sorted-keys==0.2.0
-flake8-SQL==0.2.0
+flake8-SQL==0.3.0
 flake8-strict==0.2.1
 flake8-string-format==0.2.3
 flake8-tidy-imports==1.1.0
