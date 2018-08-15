@@ -673,8 +673,8 @@ let
     };
 
     "osc-lib" = python.mkDerivation {
-      name = "osc-lib-1.11.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d2/4a/85f07a320b6c76b68cc43161bd7bcfa66af8d016e3b37a14108dd7a7ff2e/osc-lib-1.11.0.tar.gz"; sha256 = "2cb8fb0e170bdf9f230911bf81e7cb3b488e469365e8b9495ad7291b90b4cb25"; };
+      name = "osc-lib-1.11.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/8d/a8/b63a53baed828a3e46ff2d1ee5cb63f794e9e071f05e99229642edfc46a5/osc-lib-1.11.1.tar.gz"; sha256 = "4b118f72757b84c8375e8af47bb59151337fbc50305a6c5b5307ad7442422af4"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
