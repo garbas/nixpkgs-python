@@ -491,14 +491,16 @@ let
     };
 
     "pytest-django" = python.mkDerivation {
-      name = "pytest-django-3.3.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/78/4c/fb50e47a3f6eb23cf198b029921be0ad5761f271fbe6ee0256f85d6cd43d/pytest-django-3.3.3.tar.gz"; sha256 = "a73e355138675db8f535777ddf34bde28580b688be17dc21d0efa65e5c16927c"; };
+      name = "pytest-django-3.4.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d5/7f/625742fd1ddba6edb2cb1497e3f9fd9f35d6ff1df43c088ac5389057e1d3/pytest-django-3.4.1.tar.gz"; sha256 = "85f840e319d7b4271d6f1a3d95c0fb900c7183f7a4414e0cceed75f92bf3bc75"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."pytest"
+      self."pytest-xdist"
+      self."six"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://pytest-django.readthedocs.io/";
