@@ -1,5 +1,6 @@
 language: nix
 
+sudo: true
 os:
   - linux
   # - osx
