@@ -1,7 +1,7 @@
 asn1crypto==0.24.0
 aws-requests-auth==0.4.2
-boto3==1.7.78
-botocore==1.10.78
+boto3==1.7.79
+botocore==1.10.79
 certifi==2018.8.13
 cffi==1.11.5
 chardet==3.0.4
