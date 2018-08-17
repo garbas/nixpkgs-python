@@ -26,7 +26,7 @@ attrs:
 			-V 3 \
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -Q -A attrs -o result-attrs
+	nix-build --option sandbox true -Q -A attrs -o result-attrs
 
 ckan:
 	cd ckan/ && \
@@ -38,7 +38,7 @@ ckan:
 			-E gcc \
 			-E openssl \
 			-E libffi
-	nix-build -Q -A ckan -o result-ckan
+	nix-build --option sandbox true -Q -A ckan -o result-ckan
 
 
 django:
@@ -47,7 +47,7 @@ django:
 			-V 3.5 \
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -Q -A django -o result-django
+	nix-build --option sandbox true -Q -A django -o result-django
 
 
 flake8:
@@ -56,7 +56,7 @@ flake8:
 			-V 3 \
 			-r requirements.txt \
 			-O ../overrides.nix
-	nix-build -Q -A flake8 -o result-flake8
+	nix-build --option sandbox true -Q -A flake8 -o result-flake8
 
 
 flask:
@@ -65,7 +65,7 @@ flask:
 			-V 3.5 \
 			-r requirements.txt \
 			-O ../overrides.nix
-	nix-build -Q -A flask -o result-flask
+	nix-build --option sandbox true -Q -A flask -o result-flask
 
 
 homeassistant:
@@ -75,7 +75,7 @@ homeassistant:
 			-s pytz
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -Q -A homeassistant -o result-homeassistant
+	nix-build --option sandbox true -Q -A homeassistant -o result-homeassistant
 
 
 pelican:
@@ -84,7 +84,7 @@ pelican:
 			-V 3.5 \
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -Q -A pelican -o result-pelican
+	nix-build --option sandbox true -Q -A pelican -o result-pelican
 
 
 pykube:
@@ -93,7 +93,7 @@ pykube:
 		-V 3.5 \
 		-r requirements.txt \
 		-O ../overrides.nix
-	nix-build -Q -A pykube -o result-pykube
+	nix-build --option sandbox true -Q -A pykube -o result-pykube
 
 
 pyramid:
@@ -102,7 +102,7 @@ pyramid:
 			-V 3.5 \
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -Q -A pyramid -o result-pyramid
+	nix-build --option sandbox true -Q -A pyramid -o result-pyramid
 
 pypi2nix:
 	cd pypi2nix/ && \
@@ -110,7 +110,7 @@ pypi2nix:
 			-V 3.5 \
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -A pypi2nix -o result-pypi2nix
+	nix-build --option sandbox true -A pypi2nix -o result-pypi2nix
 
 pypiserver:
 	cd pypiserver/ && \
@@ -118,7 +118,7 @@ pypiserver:
 			-V 3.5 \
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -Q -A pypiserver -o result-pypiserver
+	nix-build --option sandbox true -Q -A pypiserver -o result-pypiserver
 
 
 pytest:
@@ -127,7 +127,7 @@ pytest:
 			-V 3.5 \
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -Q -A pytest -o result-pytest
+	nix-build --option sandbox true -Q -A pytest -o result-pytest
 
 
 httpie:
@@ -140,7 +140,7 @@ httpie:
 			-E libffi \
 			-E kerberos \
 			-r requirements.txt
-	nix-build -Q -A httpie -o result-httpie
+	nix-build --option sandbox true -Q -A httpie -o result-httpie
 
 
 science:
@@ -156,7 +156,7 @@ science:
 			-E freetype.dev \
 			-E libpng \
 			-E agg
-	nix-build -Q -A science -o result-science
+	nix-build --option sandbox true -Q -A science -o result-science
 
 
 sphinx:
@@ -167,7 +167,7 @@ sphinx:
 			-O ../overrides.nix \
 			-E openssl.dev \
 			-r requirements.txt
-	nix-build -Q -A sphinx -o result-sphinx
+	nix-build --option sandbox true -Q -A sphinx -o result-sphinx
 
 
 openstackclient:
@@ -178,16 +178,16 @@ openstackclient:
 			-E which \
 			-E libffi \
 			-E openssl.dev
-	nix-build -A openstackclient -o result-openstackclient
+	nix-build --option sandbox true -A openstackclient -o result-openstackclient
 
 
 pypi2nix-bin:
 	if [ ! -e pypi2nix-src ]; then git clone https://github.com/garbas/pypi2nix pypi2nix-src; fi
-	cd pypi2nix-src && nix-build release.nix -Q -A build."x86_64-linux" -o $(PWD)/result-pypi2nix-bin && cd ..
+	cd pypi2nix-src && nix-build --option sandbox true release.nix -Q -A build."x86_64-linux" -o $(PWD)/result-pypi2nix-bin && cd ..
 
 
 static:
-	nix-build -Q static.nix -o result-static
+	nix-build --option sandbox true -Q static.nix -o result-static
 
 
 .PHONY: \
