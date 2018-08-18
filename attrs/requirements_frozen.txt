@@ -15,7 +15,7 @@ pluggy==0.7.1
 py==1.5.4
 Pygments==2.2.0
 pyparsing==2.2.0
-pytest==3.7.1
+pytest==3.7.2
 pytz==2018.5
 requests==2.19.1
 six==1.11.0
