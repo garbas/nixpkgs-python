@@ -28,8 +28,6 @@ flake8-html
 flake8-immediate
 flake8-import-order
 flake8-import-order-fuzeman
-# requires older flake8-import-order
-# flake8-import-order-spoqa
 flake8-imports
 flake8-isort
 flake8-junit-report
@@ -69,3 +67,7 @@ flake8_doubles
 flake8_strict
 flake8_truveris
 flake8_tuple
+
+# testing
+tox
+setuptools_scm

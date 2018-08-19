@@ -1,5 +1,8 @@
 attrs
 
+# needed for setup
+setuptools_scm
+
 # This is here to check for infinite recursion
 pytest
 Sphinx

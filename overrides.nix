@@ -182,6 +182,10 @@ in skipOverrides {
     buildInputs = old.buildInputs ++ [ pkgs.glibcLocales ];
   };
 
+  "py" = self: old: {
+    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
+  };
+
   "pygal" = self: old: {
     patchPhase = ''
       sed -i -e "s|setup_requires=\['pytest-runner'\],||" setup.py
@@ -267,4 +271,7 @@ in skipOverrides {
 
   };
 
+  "tox" = self: old: {
+    buildInputs = old.buildInputs ++ [self."setuptools-scm"];
+  };
 }
