@@ -18,8 +18,9 @@ pyparsing==2.2.0
 pytest==3.7.2
 pytz==2018.5
 requests==2.19.1
+setuptools-scm==3.1.0
 six==1.11.0
 snowballstemmer==1.2.1
-Sphinx==1.7.6
+Sphinx==1.7.7
 sphinxcontrib-websupport==1.1.0
 urllib3==1.23
