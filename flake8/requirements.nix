@@ -1525,6 +1525,21 @@ let
       };
     };
 
+    "pluggy" = python.mkDerivation {
+      name = "pluggy-0.7.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a1/83/ef7d976c12d67a5c7a5bc2a47f0501c926cabae9d9fcfdc26d72abc9ba15/pluggy-0.7.1.tar.gz"; sha256 = "95eb8364a4708392bae89035f45341871286a333f749c3141c20573d2b3876e1"; };
+      doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/pytest-dev/pluggy";
+        license = licenses.mit;
+        description = "plugin and hook calling mechanisms for python";
+      };
+    };
+
     "promise" = python.mkDerivation {
       name = "promise-2.1";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e2/23/ff9e53fb9a00f89573646729e04a2c0933e845dcca758113f0281c396cdf/promise-2.1.tar.gz"; sha256 = "95506bac89df7a495e0b8c813fd782dd1ae590decb52f95248e316c6659ca49b"; };
@@ -1540,6 +1555,21 @@ let
         homepage = "https://github.com/syrusakbary/promise";
         license = licenses.mit;
         description = "Promises/A+ implementation for Python";
+      };
+    };
+
+    "py" = python.mkDerivation {
+      name = "py-1.5.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/35/77/a0a2a4126cf454e6ac772942898379e2fe78f2b7885df0461a5b8f8a8040/py-1.5.4.tar.gz"; sha256 = "3fd59af7435864e1a243790d322d763925431213b6b8529c6ca71081ace3bbf7"; };
+      doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://py.readthedocs.io/";
+        license = licenses.mit;
+        description = "library with cross-python path, ini-parsing, io, code, log facilities";
       };
     };
 
@@ -1623,6 +1653,21 @@ let
       };
     };
 
+    "setuptools-scm" = python.mkDerivation {
+      name = "setuptools-scm-3.1.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/09/b4/d148a70543b42ff3d81d57381f33104f32b91f970ad7873f463e75bf7453/setuptools_scm-3.1.0.tar.gz"; sha256 = "1191f2a136b5e86f7ca8ab00a97ef7aef997131f1f6d4971be69a1ef387d8b40"; };
+      doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/pypa/setuptools_scm/";
+        license = licenses.mit;
+        description = "the blessed package to manage your versions by scm tags";
+      };
+    };
+
     "six" = python.mkDerivation {
       name = "six-1.11.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/16/d8/bc6316cf98419719bd59c91742194c111b6f2e85abac88e496adefaf7afe/six-1.11.0.tar.gz"; sha256 = "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"; };
@@ -1698,6 +1743,26 @@ let
       };
     };
 
+    "tox" = python.mkDerivation {
+      name = "tox-3.2.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ad/fe/55b245f4d4b30baafee29fe0f78dcd9eee89e0e222f4b22789f0fb84ae07/tox-3.2.1.tar.gz"; sha256 = "eb61aa5bcce65325538686f09848f04ef679b5cd9b83cc491272099b28739600"; };
+      doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."pluggy"
+      self."py"
+      self."six"
+      self."virtualenv"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://tox.readthedocs.org/";
+        license = licenses.mit;
+        description = "virtualenv-based automation of test activities";
+      };
+    };
+
     "typed-ast" = python.mkDerivation {
       name = "typed-ast-1.1.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/52/cf/2ebc7d282f026e21eed4987e42e10964a077c13cfc168b42f3573a7f178c/typed-ast-1.1.0.tar.gz"; sha256 = "57fe287f0cdd9ceaf69e7b71a2e94a24b5d268b35df251a88fef5cc241bf73aa"; };
@@ -1725,6 +1790,21 @@ let
         homepage = "https://docs.python.org/3/library/typing.html";
         license = licenses.psfl;
         description = "Type Hints for Python";
+      };
+    };
+
+    "virtualenv" = python.mkDerivation {
+      name = "virtualenv-16.0.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/33/bc/fa0b5347139cd9564f0d44ebd2b147ac97c36b2403943dbee8a25fd74012/virtualenv-16.0.0.tar.gz"; sha256 = "ca07b4c0b54e14a91af9f34d0919790b016923d157afda5efdde55c96718f752"; };
+      doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://virtualenv.pypa.io/";
+        license = licenses.mit;
+        description = "Virtual Python Environment builder";
       };
     };
   };
