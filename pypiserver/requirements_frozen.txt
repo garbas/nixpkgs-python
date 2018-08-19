@@ -1,2 +1,2 @@
 passlib==1.7.1
-pypiserver==1.2.2
+pypiserver==1.2.4

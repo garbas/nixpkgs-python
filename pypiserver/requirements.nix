@@ -5,7 +5,8 @@
 #   pypi2nix -W https://travis.garbas.si/wheels_cache/ -v -V 3.5 -O ../overrides.nix -r requirements.txt
 #
 
-{ pkgs ? import <nixpkgs> {}
+{ pkgs ? import <nixpkgs> {},
+  overrides ? ({ pkgs, python }: self: super: {})
 }:
 
 let
@@ -103,8 +104,8 @@ let
     };
 
     "pypiserver" = python.mkDerivation {
-      name = "pypiserver-1.2.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/9b/45/b7e52d041366573214427e6207a02460cdd0aeccfd2522a489618b7338c8/pypiserver-1.2.2.zip"; sha256 = "1630154e3fcbe211c787f7bef50fc9b07be707a52b4c0a26b9c158a9a605881d"; };
+      name = "pypiserver-1.2.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b6/14/b480c443f021ac148db0f642f6596daff7f2597999e2284fcac9946a2739/pypiserver-1.2.4.zip"; sha256 = "312a3e1b6c55affb9cf11a646bcf093c2370c902690f5136bd7625fdb1059179"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -120,13 +121,16 @@ let
     };
   };
   localOverridesFile = ./requirements_override.nix;
-  overrides = import localOverridesFile { inherit pkgs python; };
+  localOverrides = import localOverridesFile { inherit pkgs python; };
   commonOverrides = [
         (import ../overrides.nix { inherit pkgs python ; })
   ];
+  paramOverrides = [
+    (overrides { inherit pkgs python; })
+  ];
   allOverrides =
     (if (builtins.pathExists localOverridesFile)
-     then [overrides] else [] ) ++ commonOverrides;
+     then [localOverrides] else [] ) ++ commonOverrides ++ paramOverrides;
 
 in python.withPackages
    (fix' (pkgs.lib.fold

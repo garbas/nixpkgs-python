@@ -59,6 +59,12 @@ in skipOverrides {
       removeDependencies [ "Sphinx" ] old.propagatedBuildInputs;
   };
 
+  "botocore" = self: old: {
+    patchPhase = ''
+      sed -i -e "s|python-dateutil>=2.1,<3.0.0|python-dateutil|" setup.py
+    '';
+  };
+
   "async-timeout" = self: old: {
     patchPhase = ''
       sed -i -e "s|setup_requires=\['pytest-runner'\],||" setup.py
@@ -164,9 +170,6 @@ in skipOverrides {
         include_dirs = ${pkgs.openblasCompat}/include
         library_dirs = ${pkgs.openblasCompat}/lib
         EOF
-      '';
-      postInstall = ''
-        ln -s $out/bin/f2py* $out/bin/f2py
       '';
       passthru = {
         blas = pkgs.openblasCompat;

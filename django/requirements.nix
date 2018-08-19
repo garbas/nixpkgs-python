@@ -5,7 +5,8 @@
 #   pypi2nix -W https://travis.garbas.si/wheels_cache/ -v -V 3.5 -O ../overrides.nix -r requirements.txt
 #
 
-{ pkgs ? import <nixpkgs> {}
+{ pkgs ? import <nixpkgs> {},
+  overrides ? ({ pkgs, python }: self: super: {})
 }:
 
 let
@@ -88,8 +89,8 @@ let
 
   generated = self: {
     "Django" = python.mkDerivation {
-      name = "Django-2.0.7";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/58/4a/26f99e2b094a2edefb2cffbcdbaca9207835d4b2765dd8afa553a1714ea6/Django-2.0.7.tar.gz"; sha256 = "97886b8a13bbc33bfeba2ff133035d3eca014e2309dff2b6da0bdfc0b8656613"; };
+      name = "Django-2.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b6/cf/8cbe9bd4bb83ce2dd277564b43435edb7b151a099458e63706d10ec9e4fa/Django-2.1.tar.gz"; sha256 = "7f246078d5a546f63c28fc03ce71f4d7a23677ce42109219c24c9ffb28416137"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -120,13 +121,16 @@ let
     };
   };
   localOverridesFile = ./requirements_override.nix;
-  overrides = import localOverridesFile { inherit pkgs python; };
+  localOverrides = import localOverridesFile { inherit pkgs python; };
   commonOverrides = [
         (import ../overrides.nix { inherit pkgs python ; })
   ];
+  paramOverrides = [
+    (overrides { inherit pkgs python; })
+  ];
   allOverrides =
     (if (builtins.pathExists localOverridesFile)
-     then [overrides] else [] ) ++ commonOverrides;
+     then [localOverrides] else [] ) ++ commonOverrides ++ paramOverrides;
 
 in python.withPackages
    (fix' (pkgs.lib.fold

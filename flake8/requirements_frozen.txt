@@ -32,9 +32,8 @@ flake8-future-import==0.4.5
 flake8-graphql==0.2.5
 flake8-html==0.4.0
 flake8-immediate==0.2
-flake8-import-order==0.17.1
+flake8-import-order==0.18
 flake8-import-order-fuzeman==1.7.0
-flake8-import-order-spoqa==1.4.0
 flake8-imports==0.1.1
 flake8-isort==2.5
 flake8-junit-report==2.1.0
@@ -62,7 +61,7 @@ flake8-respect-noqa==0.3
 flake8-rst-docstrings==0.0.8
 flake8-snippets==0.2
 flake8-sorted-keys==0.2.0
-flake8-SQL==0.2.0
+flake8-SQL==0.3.0
 flake8-strict==0.2.1
 flake8-string-format==0.2.3
 flake8-tidy-imports==1.1.0
@@ -73,12 +72,12 @@ flake8-truveris==0.3.4
 flake8-tuple==0.2.13
 flake8-ugettext-alias==1.1
 flake8-user-model==1.1
-graphql-core==2.0
+graphql-core==2.1
 isort==4.3.4
 Jinja2==2.10
 MarkupSafe==1.0
 mccabe==0.6.1
-mypy==0.610
+mypy==0.620
 pep257==0.7.0
 pep8==1.7.1
 promise==2.1

@@ -5,7 +5,8 @@
 #   pypi2nix -W https://travis.garbas.si/wheels_cache/ -v -V 3.5 -O ../overrides.nix -r requirements.txt
 #
 
-{ pkgs ? import <nixpkgs> {}
+{ pkgs ? import <nixpkgs> {},
+  overrides ? ({ pkgs, python }: self: super: {})
 }:
 
 let
@@ -231,8 +232,8 @@ let
     };
 
     "greenlet" = python.mkDerivation {
-      name = "greenlet-0.4.13";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/13/de/ba92335e9e76040ca7274224942282a80d54f85e342a5e33c5277c7f87eb/greenlet-0.4.13.tar.gz"; sha256 = "0fef83d43bf87a5196c91e73cb9772f945a4caaff91242766c5916d1dd1381e4"; };
+      name = "greenlet-0.4.14";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/5d/82/2e53a8def6f99db51992ca3a0a2448c3bbec1a9db3a7cbf7d5dad011e138/greenlet-0.4.14.tar.gz"; sha256 = "f1cc268a15ade58d9a0c04569fe6613e19b8b0345b64453064e2c3c6d79051af"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -246,8 +247,8 @@ let
     };
 
     "more-itertools" = python.mkDerivation {
-      name = "more-itertools-4.2.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/c0/2f/6773347277d76c5ade4414a6c3f785ef27e7f5c4b0870ec7e888e66a8d83/more-itertools-4.2.0.tar.gz"; sha256 = "2b6b9893337bfd9166bee6a62c2b0c9fe7735dcf85948b387ec8cba30e85d8e8"; };
+      name = "more-itertools-4.3.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/88/ff/6d485d7362f39880810278bdc906c13300db05485d9c65971dec1142da6a/more-itertools-4.3.0.tar.gz"; sha256 = "c476b5d3a34e12d40130bc2f935028b5f636df8f372dc2c1c01dc19681b2039e"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -313,6 +314,23 @@ let
       };
     };
 
+    "pathlib2" = python.mkDerivation {
+      name = "pathlib2-2.3.2";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/db/a8/7d6439c1aec525ed70810abee5b7d7f3aa35347f59bc28343e8f62019aa2/pathlib2-2.3.2.tar.gz"; sha256 = "8eb170f8d0d61825e09a95b38be068299ddeda82f35e96c3301a8a5e7604cb83"; };
+      doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."six"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://pypi.python.org/pypi/pathlib2/";
+        license = licenses.mit;
+        description = "Object-oriented filesystem paths";
+      };
+    };
+
     "pep8" = python.mkDerivation {
       name = "pep8-1.7.1";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/01/a0/64ba19519db49e4094d82599412a9660dee8c26a7addbbb1bf17927ceefe/pep8-1.7.1.tar.gz"; sha256 = "fe249b52e20498e59e0b5c5256aa52ee99fc295b26ec9eaa85776ffdb9fe6374"; };
@@ -329,8 +347,8 @@ let
     };
 
     "pluggy" = python.mkDerivation {
-      name = "pluggy-0.6.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/11/bf/cbeb8cdfaffa9f2ea154a30ae31a9d04a1209312e2919138b4171a1f8199/pluggy-0.6.0.tar.gz"; sha256 = "7f8ae7f5bdf75671a718d2daf0a64b7885f74510bcd98b1a0bb420eb9a9d0cff"; };
+      name = "pluggy-0.7.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a1/83/ef7d976c12d67a5c7a5bc2a47f0501c926cabae9d9fcfdc26d72abc9ba15/pluggy-0.7.1.tar.gz"; sha256 = "95eb8364a4708392bae89035f45341871286a333f749c3141c20573d2b3876e1"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -374,8 +392,8 @@ let
     };
 
     "pytest" = python.mkDerivation {
-      name = "pytest-3.6.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/55/50/399419c03c39bf41faa7cbd5a8976c076037b2d76adf2535610919806d67/pytest-3.6.3.tar.gz"; sha256 = "0453c8676c2bee6feb0434748b068d5510273a916295fd61d306c4f22fbfd752"; };
+      name = "pytest-3.7.2";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/34/73/3ad0ffb79c312022fb6d81694aff5a32d83f55ae6d2174a0437c0298cf07/pytest-3.7.2.tar.gz"; sha256 = "3459a123ad5532852d36f6f4501dfe1acf4af1dd9541834a164666aa40395b02"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -384,6 +402,7 @@ let
       self."atomicwrites"
       self."attrs"
       self."more-itertools"
+      self."pathlib2"
       self."pluggy"
       self."py"
       self."six"
@@ -472,14 +491,16 @@ let
     };
 
     "pytest-django" = python.mkDerivation {
-      name = "pytest-django-3.3.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/be/1a/f26eb7192680671a100a558225b7212548473e0b3a7dd393222e93dace46/pytest-django-3.3.2.tar.gz"; sha256 = "3fea4d0a84bf3af1f1e82448b9a91b3ddb22b659d802e026ae843040da0c3220"; };
+      name = "pytest-django-3.4.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d5/7f/625742fd1ddba6edb2cb1497e3f9fd9f35d6ff1df43c088ac5389057e1d3/pytest-django-3.4.1.tar.gz"; sha256 = "85f840e319d7b4271d6f1a3d95c0fb900c7183f7a4414e0cceed75f92bf3bc75"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."pytest"
+      self."pytest-xdist"
+      self."six"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://pytest-django.readthedocs.io/";
@@ -489,8 +510,8 @@ let
     };
 
     "pytest-flakes" = python.mkDerivation {
-      name = "pytest-flakes-3.0.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/7c/d0/78bb26124f6de980206e941205cc11011a8bd4606c7294a259549af827e2/pytest-flakes-3.0.2.tar.gz"; sha256 = "763ec290b89e2dc8f25f49d71cb9b869b8df843697b730233f61c78f847f2e57"; };
+      name = "pytest-flakes-4.0.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e0/ba/c2615a68dcde242f313c95d39b70d54315891dcd442687c9a56e82312b9b/pytest-flakes-4.0.0.tar.gz"; sha256 = "341964bf5760ebbdde9619f68a17d5632c674c3f6903ef66daa0a4f540b3d143"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -498,7 +519,6 @@ let
       propagatedBuildInputs = [
       self."pyflakes"
       self."pytest"
-      self."pytest-cache"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/fschulze/pytest-flakes";
@@ -561,8 +581,8 @@ let
     };
 
     "pytest-timeout" = python.mkDerivation {
-      name = "pytest-timeout-1.3.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e9/de/ce1ed3e2c787080a66ef40e75ae13b13311a44374b652e9b1a014d4251ba/pytest-timeout-1.3.0.tar.gz"; sha256 = "08b550b498b9251901a3747f02aa2624ed53a9c8285ca482551346c85b47d641"; };
+      name = "pytest-timeout-1.3.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/12/71/5dad1e94ad5b96318b76e492682cc7a3a6d0f995d2713962091fd331787a/pytest-timeout-1.3.1.tar.gz"; sha256 = "4b261bec5782b603c98b4bb803484bc96bf1cdcb5480dae0999d21c7e0423a23"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -597,8 +617,8 @@ let
     };
 
     "pytest-xdist" = python.mkDerivation {
-      name = "pytest-xdist-1.22.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/5d/be/f3c5a5edf6161d17d90fe458281249bebb7aba1af076621a19b007d632fa/pytest-xdist-1.22.2.tar.gz"; sha256 = "e8f5744acc270b3e7d915bdb4d5f471670f049b6fbd163d4cbd52203b075d30f"; };
+      name = "pytest-xdist-1.22.5";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/0b/10/e2037ce5ed623fc32b05e23fa97f4874412f29e60acf34ec5c6bad1b1ec6/pytest-xdist-1.22.5.tar.gz"; sha256 = "3308c4f6221670432d01e0b393b333d77c1fd805532e1d64450e8140855eb51b"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -607,11 +627,12 @@ let
       self."execnet"
       self."pytest"
       self."pytest-forked"
+      self."six"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pytest-dev/pytest-xdist";
         license = licenses.mit;
-        description = "py.test xdist plugin for distributed testing and loop-on-failing modes";
+        description = "pytest xdist plugin for distributed testing and loop-on-failing modes";
       };
     };
 
@@ -631,13 +652,16 @@ let
     };
   };
   localOverridesFile = ./requirements_override.nix;
-  overrides = import localOverridesFile { inherit pkgs python; };
+  localOverrides = import localOverridesFile { inherit pkgs python; };
   commonOverrides = [
         (import ../overrides.nix { inherit pkgs python ; })
   ];
+  paramOverrides = [
+    (overrides { inherit pkgs python; })
+  ];
   allOverrides =
     (if (builtins.pathExists localOverridesFile)
-     then [overrides] else [] ) ++ commonOverrides;
+     then [localOverrides] else [] ) ++ commonOverrides ++ paramOverrides;
 
 in python.withPackages
    (fix' (pkgs.lib.fold

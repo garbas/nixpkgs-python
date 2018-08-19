@@ -5,7 +5,8 @@
 #   pypi2nix -W https://travis.garbas.si/wheels_cache/ -v -V 3.5 -O ../overrides.nix -r requirements.txt
 #
 
-{ pkgs ? import <nixpkgs> {}
+{ pkgs ? import <nixpkgs> {},
+  overrides ? ({ pkgs, python }: self: super: {})
 }:
 
 let
@@ -88,8 +89,8 @@ let
 
   generated = self: {
     "Chameleon" = python.mkDerivation {
-      name = "Chameleon-3.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/72/0d/149346fa6994bed004723050713b244891952c97f5036aa31ba043fd94fb/Chameleon-3.3.tar.gz"; sha256 = "77d1ae339caf4f8a0b2c19a4882e5cdf71367997d79c523a196dacfbfa365ec7"; };
+      name = "Chameleon-3.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/96/8c/f8bcdf3563d625f2e6e9c04d02d0fff828777e35484e19035d0e6b0aedda/Chameleon-3.4.tar.gz"; sha256 = "7750865a68b469b34cbc60b9927f7e5c609808b6b966bf75bf8556e6ed48912c"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -182,8 +183,8 @@ let
     };
 
     "SQLAlchemy" = python.mkDerivation {
-      name = "SQLAlchemy-1.2.9";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/28/99/ad4dd8240ff8a98c8786fef6d2b392fb2309b0c2bcf23fdfbf3a4cb1a499/SQLAlchemy-1.2.9.tar.gz"; sha256 = "e21e5561a85dcdf16b8520ae4daec7401c5c24558e0ce004f9b60be75c4b6957"; };
+      name = "SQLAlchemy-1.2.10";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/8a/c2/29491103fd971f3988e90ee3a77bb58bad2ae2acd6e8ea30a6d1432c33a3/SQLAlchemy-1.2.10.tar.gz"; sha256 = "72325e67fb85f6e9ad304c603d83626d1df684fdf0c7ab1f0352e71feeab69d8"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -254,8 +255,8 @@ let
     };
 
     "gevent" = python.mkDerivation {
-      name = "gevent-1.3.4";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f8/85/f92a8f43c9f15ffad49d743d929863a042ce3e8de5746c63bb4d6ce51a02/gevent-1.3.4.tar.gz"; sha256 = "53c4dc705886d028f5d81e698b1d1479994a421498cd6529cb9711b5e2a84f74"; };
+      name = "gevent-1.3.6";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/49/13/aa4bb3640b5167fe58875d3d7e65390cdb14f9682a41a741a566bb560842/gevent-1.3.6.tar.gz"; sha256 = "7b413c391e8ad6607b7f7540d698a94349abd64e4935184c595f7cdcc69904c6"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -309,8 +310,8 @@ let
     };
 
     "greenlet" = python.mkDerivation {
-      name = "greenlet-0.4.13";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/13/de/ba92335e9e76040ca7274224942282a80d54f85e342a5e33c5277c7f87eb/greenlet-0.4.13.tar.gz"; sha256 = "0fef83d43bf87a5196c91e73cb9772f945a4caaff91242766c5916d1dd1381e4"; };
+      name = "greenlet-0.4.14";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/5d/82/2e53a8def6f99db51992ca3a0a2448c3bbec1a9db3a7cbf7d5dad011e138/greenlet-0.4.14.tar.gz"; sha256 = "f1cc268a15ade58d9a0c04569fe6613e19b8b0345b64453064e2c3c6d79051af"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -848,13 +849,16 @@ let
     };
   };
   localOverridesFile = ./requirements_override.nix;
-  overrides = import localOverridesFile { inherit pkgs python; };
+  localOverrides = import localOverridesFile { inherit pkgs python; };
   commonOverrides = [
         (import ../overrides.nix { inherit pkgs python ; })
   ];
+  paramOverrides = [
+    (overrides { inherit pkgs python; })
+  ];
   allOverrides =
     (if (builtins.pathExists localOverridesFile)
-     then [overrides] else [] ) ++ commonOverrides;
+     then [localOverrides] else [] ) ++ commonOverrides ++ paramOverrides;
 
 in python.withPackages
    (fix' (pkgs.lib.fold

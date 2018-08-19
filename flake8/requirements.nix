@@ -5,7 +5,8 @@
 #   pypi2nix -W https://travis.garbas.si/wheels_cache/ -v -V 3 -r requirements.txt -O ../overrides.nix
 #
 
-{ pkgs ? import <nixpkgs> {}
+{ pkgs ? import <nixpkgs> {},
+  overrides ? ({ pkgs, python }: self: super: {})
 }:
 
 let
@@ -298,8 +299,8 @@ let
     };
 
     "flake8-SQL" = python.mkDerivation {
-      name = "flake8-SQL-0.2.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/48/da/0ff11f1e3460aa586981316ac388101f2dc979acbba46cf168ceed4852ee/flake8-SQL-0.2.0.tar.gz"; sha256 = "e6e970516b0c07932f291edfc9e8b0e4c66c88258370084c1beb10280b62dd85"; };
+      name = "flake8-SQL-0.3.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/41/7d/1d9cc003f2d9043802ecfb0d5142c260e4e2396cfcc28070f628c935d169/flake8-SQL-0.3.0.tar.gz"; sha256 = "5c2ff2c45333a104ec52a05f64668839be9484c081ea8a9b4abe215b383cad2c"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -307,6 +308,7 @@ let
       propagatedBuildInputs = [
       self."flake8"
       self."sqlparse"
+      self."typing"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pgjones/flake8-sql";
@@ -759,8 +761,8 @@ let
     };
 
     "flake8-import-order" = python.mkDerivation {
-      name = "flake8-import-order-0.17.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ba/50/f8a76dbb07e4bba0d6220fcfb6629206dc52b18d6e984066659b85e63728/flake8-import-order-0.17.1.tar.gz"; sha256 = "68d430781a9ef15c85a0121500cf8462f1a4bc7672acb2a32bfdbcab044ae0b7"; };
+      name = "flake8-import-order-0.18";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/5b/5b/fd248ea91880a7b5e4754f396f4598e8244f28df0d0f8790453acbafc7c4/flake8-import-order-0.18.tar.gz"; sha256 = "9be5ca10d791d458eaa833dd6890ab2db37be80384707b0f76286ddd13c16cbf"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -789,23 +791,6 @@ let
         homepage = "https://github.com/fuzeman/flake8-import-order-fuzeman";
         license = licenses.gpl3Plus;
         description = "@fuzeman's import order style for flake8-import-order";
-      };
-    };
-
-    "flake8-import-order-spoqa" = python.mkDerivation {
-      name = "flake8-import-order-spoqa-1.4.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/fb/5d/16ff73e585c1dde569907951232b608d707382c95927d71f0d8870bdde89/flake8-import-order-spoqa-1.4.0.tar.gz"; sha256 = "fe61d282a54945f317294df786b0c79ff1953ca49b185b8e69fd7de6224fe15e"; };
-      doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
-      buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."flake8-import-order"
-    ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/spoqa/flake8-import-order-spoqa";
-        license = licenses.gpl3Plus;
-        description = "Spoqa's import order style for flake8-import-order";
       };
     };
 
@@ -1444,8 +1429,8 @@ let
     };
 
     "graphql-core" = python.mkDerivation {
-      name = "graphql-core-2.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/fb/0a/f4a542c11802a309ad70481d260d3610d1af35b97349a138897c6a27dce0/graphql-core-2.0.tar.gz"; sha256 = "4830699be53f9154273fa15726fc8b0c90bc22bbb8fc7c932586503b3cb9330e"; };
+      name = "graphql-core-2.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d8/b7/7b16d70ca5f12c3877b098a2b6024813fb7a168b4c163fc425b123f5d48a/graphql-core-2.1.tar.gz"; sha256 = "889e869be5574d02af77baf1f30b5db9ca2959f1c9f5be7b2863ead5a3ec6181"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -1493,8 +1478,8 @@ let
     };
 
     "mypy" = python.mkDerivation {
-      name = "mypy-0.610";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d3/11/933d4f64d95bb3dae16162a115980293a9060f37af17e90e2b6bc848e508/mypy-0.610.tar.gz"; sha256 = "f472645347430282d62d1f97d12ccb8741f19f1572b7cf30b58280e4e0818739"; };
+      name = "mypy-0.620";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/c0/89/fab9d31ad01513a681a183cb9adf5bda66abc254bc59ed8295904b3457bf/mypy-0.620.tar.gz"; sha256 = "c770605a579fdd4a014e9f0a34b6c7a36ce69b08100ff728e96e27445cef3b3c"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -1744,13 +1729,16 @@ let
     };
   };
   localOverridesFile = ./requirements_override.nix;
-  overrides = import localOverridesFile { inherit pkgs python; };
+  localOverrides = import localOverridesFile { inherit pkgs python; };
   commonOverrides = [
         (import ../overrides.nix { inherit pkgs python ; })
   ];
+  paramOverrides = [
+    (overrides { inherit pkgs python; })
+  ];
   allOverrides =
     (if (builtins.pathExists localOverridesFile)
-     then [overrides] else [] ) ++ commonOverrides;
+     then [localOverrides] else [] ) ++ commonOverrides ++ paramOverrides;
 
 in python.withPackages
    (fix' (pkgs.lib.fold
