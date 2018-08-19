@@ -154,8 +154,8 @@ let
     };
 
     "Sphinx" = python.mkDerivation {
-      name = "Sphinx-1.7.6";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/eb/3c/702e89ad33529c0107d44ebc1a7eca97c4fd77ae2784060923a65864fcbd/Sphinx-1.7.6.tar.gz"; sha256 = "217ad9ece2156ed9f8af12b5d2c82a499ddf2c70a33c5f81864a08d8c67b9efc"; };
+      name = "Sphinx-1.7.7";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/18/66/5aabe11160435a905ca137788c12c3d58c8693ad71cf9e7bb86e84b77d2a/Sphinx-1.7.7.tar.gz"; sha256 = "71531900af3f68625a29c4e00381bee8f85255219a3d500a3e255076a45b735e"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
