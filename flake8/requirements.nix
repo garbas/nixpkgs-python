@@ -864,8 +864,8 @@ let
     };
 
     "flake8-logging-format" = python.mkDerivation {
-      name = "flake8-logging-format-0.4.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/89/da/2bf22faa6a6e3455f77cfe4f33669f2cfac0e99d83c5d956f63ed2a89079/flake8-logging-format-0.4.0.tar.gz"; sha256 = "0fd572122581cb8f097e329059c29a8d563181089e33ecf1508e1fed991227a0"; };
+      name = "flake8-logging-format-0.5.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a1/00/e5d3827a9c1a35baf0b084bad3a09dc070b4c35e9c4a31f2b34a380b4a2b/flake8-logging-format-0.5.0.tar.gz"; sha256 = "464b68b602fb034335b91a21b8968560f29f10e0e0f2618f2a8e2bb0ea01232f"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
