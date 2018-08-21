@@ -222,8 +222,8 @@ let
     };
 
     "cmd2" = python.mkDerivation {
-      name = "cmd2-0.8.8";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e8/ee/e9d450ae62cc0bb535c1f9e3f67530abfdb7892a68761d11819b0da65467/cmd2-0.8.8.tar.gz"; sha256 = "b08bc5088fdd131d659354e6b4f8cf7c01a70566f68aed146e00d296a24b687b"; };
+      name = "cmd2-0.8.9";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/21/48/d48fe56f794e9a3feef440e4fb5c80dd4309575e13e132265fc160e82033/cmd2-0.8.9.tar.gz"; sha256 = "145cb677ebd0e3cae546ab81c30f6c25e0b08ba0f1071df854d53707ea792633"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
