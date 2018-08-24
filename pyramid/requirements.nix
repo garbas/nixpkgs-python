@@ -355,15 +355,15 @@ let
     };
 
     "peppercorn" = python.mkDerivation {
-      name = "peppercorn-0.5";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/45/ec/a62ec317d1324a01567c5221b420742f094f05ee48097e5157d32be3755c/peppercorn-0.5.tar.gz"; sha256 = "921cba5d51fa211e6da0fbd2120b9a98d663422a80f5bb669ad81ffb0909774b"; };
+      name = "peppercorn-0.6";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e4/77/93085de7108cdf1a0b092ff443872a8f9442c736d7ddebdf2f27627935f4/peppercorn-0.6.tar.gz"; sha256 = "96d7681d7a04545cfbaf2c6fb66de67b29cfc42421aa263e4c78f2cbb85be4c6"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://docs.pylonsproject.org/projects/peppercorn/en/latest/";
+        homepage = "https://docs.pylonsproject.org/projects/peppercorn/en/latest/";
         license = "BSD-derived (http://www.repoze.org/LICENSE.txt)";
         description = "A library for converting a token stream into a data structure for use in web form posts";
       };

@@ -11,7 +11,7 @@ Jinja2==2.10
 Mako==1.0.7
 MarkupSafe==1.0
 PasteDeploy==1.5.2
-peppercorn==0.5
+peppercorn==0.6
 plaster==1.0
 plaster-pastedeploy==0.6
 psutil==5.4.3
