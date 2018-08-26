@@ -197,8 +197,8 @@ let
     };
 
     "atomicwrites" = python.mkDerivation {
-      name = "atomicwrites-1.1.5";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a1/e1/2d9bc76838e6e6667fde5814aa25d7feb93d6fa471bf6816daac2596e8b2/atomicwrites-1.1.5.tar.gz"; sha256 = "240831ea22da9ab882b551b31d4225591e5e447a68c5e188db5b89ca1d487585"; };
+      name = "atomicwrites-1.2.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/69/96/becfc14dcd4c216ef01205848dea19a42b7b5b9c16cc4997e8df075a583e/atomicwrites-1.2.0.tar.gz"; sha256 = "e16334d50fe0f90919ef7339c24b9b62e6abaa78cd2d226f3d94eb067eb89043"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -386,8 +386,8 @@ let
     };
 
     "pytest" = python.mkDerivation {
-      name = "pytest-3.7.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/34/73/3ad0ffb79c312022fb6d81694aff5a32d83f55ae6d2174a0437c0298cf07/pytest-3.7.2.tar.gz"; sha256 = "3459a123ad5532852d36f6f4501dfe1acf4af1dd9541834a164666aa40395b02"; };
+      name = "pytest-3.7.3";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/16/26/0b6ad8a13af3a6f20230e297d04214f221fe28f2a45b4d29562971d6210e/pytest-3.7.3.tar.gz"; sha256 = "2e7c330338b2732ddb992217962e3454aa7290434e75329b1a6739cea41bea6b"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
