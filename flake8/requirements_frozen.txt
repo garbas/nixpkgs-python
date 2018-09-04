@@ -94,7 +94,7 @@ setuptools-scm==3.1.0
 six==1.11.0
 snowballstemmer==1.2.1
 sqlparse==0.2.4
-testfixtures==6.2.0
+testfixtures==6.3.0
 toml==0.9.4
 tox==3.2.1
 typed-ast==1.1.0
