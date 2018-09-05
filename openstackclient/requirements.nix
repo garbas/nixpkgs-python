@@ -764,8 +764,8 @@ let
     };
 
     "oslo.utils" = python.mkDerivation {
-      name = "oslo.utils-3.36.4";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/5b/28/f249ceed4f7e12a5ccafcac008fb2f7bd96c52d77079407465476bd98c93/oslo.utils-3.36.4.tar.gz"; sha256 = "c9f5afb4055f60c5dc36341ed5ff09e536ca5e584d7278234c319c7cd38b55d9"; };
+      name = "oslo.utils-3.37.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/48/74/34f69e21c1c42d8701f50bd79c74560f98a36d63ba70c4a2fc5547703b36/oslo.utils-3.37.0.tar.gz"; sha256 = "9b7be66a01d67c203b11096c8bacf358add5272cebeb7c8e6c4a3b98731ff9bd"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -1004,8 +1004,8 @@ let
     };
 
     "python-openstackclient" = python.mkDerivation {
-      name = "python-openstackclient-3.16.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/3b/f9/d568ae9c5ce1dc43d22c7b94cd5d8937f72e4c6062ee0591a31a17304d2b/python-openstackclient-3.16.0.tar.gz"; sha256 = "2da55c7aa7219ecb723ce10f9c44ec88e6602f4092cceee3c6b6e387f5a30212"; };
+      name = "python-openstackclient-3.16.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ec/86/6dcee2a5118a0865a38b57796a0ff1b36ef366c0c406999295a99a071af0/python-openstackclient-3.16.1.tar.gz"; sha256 = "88ff37ca5525c0df3398ffc9ce47ded1a60a30c6ec01d384c774a00bf3bf444f"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
