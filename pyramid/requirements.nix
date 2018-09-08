@@ -213,8 +213,8 @@ let
     };
 
     "colander" = python.mkDerivation {
-      name = "colander-1.4";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/cc/e2/c4e716ac4a426d8ad4dfe306c34f0018a22275d2420815784005bf771c84/colander-1.4.tar.gz"; sha256 = "e20e9acf190e5711cf96aa65a5405dac04b6e841028fc361d953a9923dbc4e72"; };
+      name = "colander-1.5";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/76/45/e4bc697949cbcd2cd21180a99ef21450b01e74ef39a036f4188e759e7137/colander-1.5.tar.gz"; sha256 = "9336202a6bdb0220c5feec900f9aeb3e373ef485b10c185c2a9ae733843ad91e"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -224,7 +224,7 @@ let
       self."translationstring"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://docs.pylonsproject.org/projects/colander/en/latest/";
+        homepage = "https://docs.pylonsproject.org/projects/colander/en/latest/";
         license = "BSD-derived (http://www.repoze.org/LICENSE.txt)";
         description = "A simple schema-based serialization and deserialization library";
       };
@@ -310,8 +310,8 @@ let
     };
 
     "greenlet" = python.mkDerivation {
-      name = "greenlet-0.4.14";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/5d/82/2e53a8def6f99db51992ca3a0a2448c3bbec1a9db3a7cbf7d5dad011e138/greenlet-0.4.14.tar.gz"; sha256 = "f1cc268a15ade58d9a0c04569fe6613e19b8b0345b64453064e2c3c6d79051af"; };
+      name = "greenlet-0.4.15";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f8/e8/b30ae23b45f69aa3f024b46064c0ac8e5fcb4f22ace0dca8d6f9c8bbe5e7/greenlet-0.4.15.tar.gz"; sha256 = "9416443e219356e3c31f1f918a91badf2e37acf297e2fa13d24d1cc2380f8fbc"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
