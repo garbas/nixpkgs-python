@@ -1100,8 +1100,8 @@ let
     };
 
     "simplejson" = python.mkDerivation {
-      name = "simplejson-3.16.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e3/24/c35fb1c1c315fc0fffe61ea00d3f88e85469004713dab488dee4f35b0aff/simplejson-3.16.0.tar.gz"; sha256 = "b1f329139ba647a9548aa05fb95d046b4a677643070dc2afc05fa2e975d09ca5"; };
+      name = "simplejson-3.16.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/3f/cb/1ec6bdc933de7e83c650157ca1ab6c1dbb209265384ea560fbf6d0122f84/simplejson-3.16.1.tar.gz"; sha256 = "20c626174a3cfcc69c783930ac2d5daa72787a8e26398e33c978065a51cc8bf4"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
