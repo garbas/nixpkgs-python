@@ -420,8 +420,8 @@ let
     };
 
     "flake8-coding" = python.mkDerivation {
-      name = "flake8-coding-1.3.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ae/26/3c6304d646f8ee27d6c40bfcd9874fea870098c3ef3cf60e284ea9db29ef/flake8-coding-1.3.0.tar.gz"; sha256 = "ba01e96f879377766a3d71f3499a832b19386ce4831270bfe671ab57d0fe50be"; };
+      name = "flake8-coding-1.3.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f9/d7/889f7961ed549f15a280fa36edfc9b9016df38cd25cd0a8a7e4edc06efcf/flake8-coding-1.3.1.tar.gz"; sha256 = "549c2b22c08711feda11795fb49f147a626305b602c547837bab405e7981f844"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -1729,8 +1729,8 @@ let
     };
 
     "toml" = python.mkDerivation {
-      name = "toml-0.9.4";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f5/f9/044110c267e6408013b85166a7cfcd352cf85275aa8ce700aa5c0eb407ba/toml-0.9.4.tar.gz"; sha256 = "8e86bd6ce8cc11b9620cb637466453d94f5d57ad86f17e98a98d1f73e3baab2d"; };
+      name = "toml-0.9.6";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/0e/e8/1aa958599e5326b690a31334112da68a9b75e7563879e2c5103ca219d30a/toml-0.9.6.tar.gz"; sha256 = "380178cde50a6a79f9d2cf6f42a62a5174febe5eea4126fe4038785f1d888d42"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -1738,7 +1738,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/uiri/toml";
-        license = "License :: OSI Approved :: MIT License";
+        license = licenses.mit;
         description = "Python Library for Tom's Obvious, Minimal Language";
       };
     };
