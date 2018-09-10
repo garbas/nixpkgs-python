@@ -18,7 +18,7 @@ psutil==5.4.3
 Pygments==2.2.0
 pyramid==1.9.2
 pyramid-chameleon==0.3
-pyramid-debugtoolbar==4.4
+pyramid-debugtoolbar==4.5
 pyramid-deform==0.2
 pyramid-exclog==1.0
 pyramid-jinja2==2.7
@@ -40,5 +40,5 @@ zope.deprecation==4.3.0
 zope.event==4.3.0
 zope.i18nmessageid==4.1.0
 zope.interface==4.5.0
-zope.schema==4.6.0
+zope.schema==4.6.2
 zope.sqlalchemy==1.0

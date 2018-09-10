@@ -462,8 +462,8 @@ let
     };
 
     "pyramid-debugtoolbar" = python.mkDerivation {
-      name = "pyramid-debugtoolbar-4.4";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/00/6f/c04eb4e715a7a5a4b24079ab7ffd1dceb1f70b2e24fc17686a2922dbac0a/pyramid_debugtoolbar-4.4.tar.gz"; sha256 = "5f779aa242009c4aace848f67807da44af2970b303aa1c9682c2efab76b7e79e"; };
+      name = "pyramid-debugtoolbar-4.5";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/14/28/1f240239af340d19ee271ac62958158c79edb01a44ad8c9885508dd003d2/pyramid_debugtoolbar-4.5.tar.gz"; sha256 = "74c5f52ce33765423810e156949b0f97852c66056c97de8c35a6db9b00195774"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -812,14 +812,15 @@ let
     };
 
     "zope.schema" = python.mkDerivation {
-      name = "zope.schema-4.6.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d5/a7/35d579eae658807ed9896fccb9c89ab251aff2e496463e6afed4dcb3e332/zope.schema-4.6.0.tar.gz"; sha256 = "580b0282e86a15ba8e9eec0c9ae209016c26e5b7a289c31817b68b0c88ca0096"; };
+      name = "zope.schema-4.6.2";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/6b/8c/97a46cf169227dd3b5923ae8398d7f4a4ac0670a04761206900d8e84b95a/zope.schema-4.6.2.tar.gz"; sha256 = "bb89fdb466dab5024403adfb1ce71d3fa8362c5f05166aca4fd811b6d13b9711"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."zope.event"
+      self."zope.i18nmessageid"
       self."zope.interface"
     ];
       meta = with pkgs.stdenv.lib; {
