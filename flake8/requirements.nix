@@ -1744,8 +1744,8 @@ let
     };
 
     "tox" = python.mkDerivation {
-      name = "tox-3.2.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ad/fe/55b245f4d4b30baafee29fe0f78dcd9eee89e0e222f4b22789f0fb84ae07/tox-3.2.1.tar.gz"; sha256 = "eb61aa5bcce65325538686f09848f04ef679b5cd9b83cc491272099b28739600"; };
+      name = "tox-3.3.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/4e/9e/4a586cc3fc6bcd36b78aaeefca09a9fe6204752b9fb5a8c060e0bcc5fb40/tox-3.3.0.tar.gz"; sha256 = "433bb93c57edae263150767e672a0d468ab4fefcc1958eb4013e56a670bb851e"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -1754,6 +1754,7 @@ let
       self."pluggy"
       self."py"
       self."six"
+      self."toml"
       self."virtualenv"
     ];
       meta = with pkgs.stdenv.lib; {
