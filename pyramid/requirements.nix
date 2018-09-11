@@ -213,8 +213,8 @@ let
     };
 
     "colander" = python.mkDerivation {
-      name = "colander-1.5";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/76/45/e4bc697949cbcd2cd21180a99ef21450b01e74ef39a036f4188e759e7137/colander-1.5.tar.gz"; sha256 = "9336202a6bdb0220c5feec900f9aeb3e373ef485b10c185c2a9ae733843ad91e"; };
+      name = "colander-1.5.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ec/d1/fcca811a0a692c69d27e36b4d11a73acb98b4bab48323442642b6fd4386d/colander-1.5.1.tar.gz"; sha256 = "d86b9e1fb42c80c68b26040e32dad584aa168abf3175133b36f5dace392350a1"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -812,8 +812,8 @@ let
     };
 
     "zope.schema" = python.mkDerivation {
-      name = "zope.schema-4.6.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/6b/8c/97a46cf169227dd3b5923ae8398d7f4a4ac0670a04761206900d8e84b95a/zope.schema-4.6.2.tar.gz"; sha256 = "bb89fdb466dab5024403adfb1ce71d3fa8362c5f05166aca4fd811b6d13b9711"; };
+      name = "zope.schema-4.7.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/cf/5f/813fc8053f2c009ab2db0eab2a9a9009b3d3ea4a460f84fefb5c25f7b7ce/zope.schema-4.7.0.tar.gz"; sha256 = "01ff3ca033def2ca72aff19e9b623dedba23526b90219c28441d9cfb910f10bc"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
