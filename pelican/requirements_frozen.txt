@@ -11,6 +11,6 @@ python-dateutil==2.7.3
 pytz==2018.5
 six==1.11.0
 smartypants==2.0.0
-tornado==5.1
+tornado==5.1.1
 typogrify==2.0.7
 Unidecode==1.0.22
