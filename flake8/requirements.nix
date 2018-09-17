@@ -1478,13 +1478,14 @@ let
     };
 
     "mypy" = python.mkDerivation {
-      name = "mypy-0.620";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/c0/89/fab9d31ad01513a681a183cb9adf5bda66abc254bc59ed8295904b3457bf/mypy-0.620.tar.gz"; sha256 = "c770605a579fdd4a014e9f0a34b6c7a36ce69b08100ff728e96e27445cef3b3c"; };
+      name = "mypy-0.630";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/32/67/82af7c35be233b3a74fe3fe423607fe89830518d3f7727fd41c519273bd1/mypy-0.630.tar.gz"; sha256 = "6704586b4c2bf7dfa5e87a422be9ca57db622bab65008245759f3d4baeb219dd"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
+      self."mypy-extensions"
       self."typed-ast"
       self."typing"
     ];
@@ -1492,6 +1493,23 @@ let
         homepage = "http://www.mypy-lang.org/";
         license = licenses.mit;
         description = "Optional static typing for Python";
+      };
+    };
+
+    "mypy-extensions" = python.mkDerivation {
+      name = "mypy-extensions-0.4.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/c2/92/3cc05d1206237d54db7b2565a58080a909445330b4f90a6436302a49f0f8/mypy_extensions-0.4.1.tar.gz"; sha256 = "37e0e956f41369209a3d5f34580150bcacfabaa57b33a15c0b25f4b5725e0812"; };
+      doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."typing"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://www.mypy-lang.org/";
+        license = licenses.mit;
+        description = "Experimental type system extensions for programs checked with the mypy typechecker.";
       };
     };
 
