@@ -183,8 +183,8 @@ let
     };
 
     "SQLAlchemy" = python.mkDerivation {
-      name = "SQLAlchemy-1.2.11";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/aa/cc/348eec885d81f7260b07d961b3ececfc0aa82f7d4a8f45ff997e0d3f44ba/SQLAlchemy-1.2.11.tar.gz"; sha256 = "ef6569ad403520ee13e180e1bfd6ed71a0254192a934ec1dbd3dbf48f4aa9524"; };
+      name = "SQLAlchemy-1.2.12";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/25/c9/b0552098cee325425a61efdf380c51b5c721e459081c85bbb860f501c091/SQLAlchemy-1.2.12.tar.gz"; sha256 = "c5951d9ef1d5404ed04bae5a16b60a0779087378928f997a294d1229c6ca4d3e"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -812,8 +812,8 @@ let
     };
 
     "zope.schema" = python.mkDerivation {
-      name = "zope.schema-4.7.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/cf/5f/813fc8053f2c009ab2db0eab2a9a9009b3d3ea4a460f84fefb5c25f7b7ce/zope.schema-4.7.0.tar.gz"; sha256 = "01ff3ca033def2ca72aff19e9b623dedba23526b90219c28441d9cfb910f10bc"; };
+      name = "zope.schema-4.8.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f0/23/5e20f298792f5ce1f39b33ef2196375b603da3fb6f590f20ed19be054cf2/zope.schema-4.8.0.tar.gz"; sha256 = "334a2415bde5c2f2c9dbfe79de3b4067690eb19b70363086a05791c16a643f6d"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
