@@ -2,7 +2,7 @@ appdirs==1.4.3
 attrs==18.2.0
 black==18.6b4
 blessings==1.7
-click==6.7
+Click==7.0
 docutils==0.14
 enum-compat==0.0.2
 flake8==3.5.0
