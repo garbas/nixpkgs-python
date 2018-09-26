@@ -88,6 +88,21 @@ let
   python = withPackages {};
 
   generated = self: {
+    "Click" = python.mkDerivation {
+      name = "Click-7.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f8/5c/f60e9d8a1e77005f664b76ff8aeaee5bc05d0a91798afd7f53fc998dbc47/Click-7.0.tar.gz"; sha256 = "5b94b49521f6456670fdb30cd82a4eca9412788a93fa6dd6df72c94d5a8ff2d7"; };
+      doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://palletsprojects.com/p/click/";
+        license = licenses.bsdOriginal;
+        description = "Composable command line interface toolkit";
+      };
+    };
+
     "Jinja2" = python.mkDerivation {
       name = "Jinja2-2.10";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/56/e6/332789f295cf22308386cf5bbd1f4e00ed11484299c5d7383378cf48ba47/Jinja2-2.10.tar.gz"; sha256 = "f84be1bb0040caca4cea721fcbbbbd61f9be9464ca236387158b0feea01914a4"; };
@@ -167,21 +182,6 @@ let
       };
     };
 
-    "click" = python.mkDerivation {
-      name = "click-6.7";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/95/d9/c3336b6b5711c3ab9d1d3a80f1a3e2afeb9d8c02a7166462f6cc96570897/click-6.7.tar.gz"; sha256 = "f15516df478d5a56180fbf80e68f206010e6d160fc39fa508b65e035fd75130b"; };
-      doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
-      buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "http://github.com/mitsuhiko/click";
-        license = licenses.bsdOriginal;
-        description = "A simple wrapper around optparse for powerful command line utilities.";
-      };
-    };
-
     "effect" = python.mkDerivation {
       name = "effect-0.11.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/8a/9a/25a881d1a48847ae95742a30ad0471d9fd71f28a506d30e09dc8cdf4b3ac/effect-0.11.0.tar.gz"; sha256 = "0607530ef589b59f907cfebcb681b5ed4ed56bff1fc2a5de430dcfa72ae1e5e0"; };
@@ -223,9 +223,9 @@ let
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
+      self."Click"
       self."Jinja2"
       self."attrs"
-      self."click"
       self."effect"
       self."requests"
     ];
@@ -244,8 +244,8 @@ let
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
+      self."Click"
       self."Jinja2"
-      self."click"
       self."nix-prefetch-github"
       self."requests"
     ];
