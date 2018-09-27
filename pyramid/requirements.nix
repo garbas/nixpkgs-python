@@ -731,8 +731,8 @@ let
     };
 
     "zope.configuration" = python.mkDerivation {
-      name = "zope.configuration-4.2.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/41/82/830b9c99879c0d232a41fc6a6b573a0a2db26470ce295456df2cb911db48/zope.configuration-4.2.1.tar.gz"; sha256 = "533382f2dff4674fedc92d9bffea6a0fd925690c51d21100e41565cc4736ef9d"; };
+      name = "zope.configuration-4.2.2";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/2b/ec/964a962dffe48f7a5d2c7f38050c67ef0ee9c753be94fd35fec72eb40ab4/zope.configuration-4.2.2.tar.gz"; sha256 = "a1118c0a4bf478b3d831c03e2aa6d57d58ce31f9681962dc329d02f94ffc469d"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
