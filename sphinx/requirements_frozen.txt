@@ -1,4 +1,4 @@
-alabaster==0.7.11
+alabaster==0.7.12
 asn1crypto==0.24.0
 attrs==18.2.0
 Babel==2.6.0
