@@ -1747,8 +1747,8 @@ let
     };
 
     "toml" = python.mkDerivation {
-      name = "toml-0.9.6";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/0e/e8/1aa958599e5326b690a31334112da68a9b75e7563879e2c5103ca219d30a/toml-0.9.6.tar.gz"; sha256 = "380178cde50a6a79f9d2cf6f42a62a5174febe5eea4126fe4038785f1d888d42"; };
+      name = "toml-0.10.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b9/19/5cbd78eac8b1783671c40e34bb0fa83133a06d340a38b55c645076d40094/toml-0.10.0.tar.gz"; sha256 = "229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
