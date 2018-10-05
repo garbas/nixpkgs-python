@@ -308,7 +308,6 @@ let
       propagatedBuildInputs = [
       self."flake8"
       self."sqlparse"
-      self."typing"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pgjones/flake8-sql";
@@ -1487,7 +1486,6 @@ let
       propagatedBuildInputs = [
       self."mypy-extensions"
       self."typed-ast"
-      self."typing"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://www.mypy-lang.org/";
@@ -1503,9 +1501,7 @@ let
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."typing"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://www.mypy-lang.org/";
         license = licenses.mit;
@@ -1559,15 +1555,14 @@ let
     };
 
     "promise" = python.mkDerivation {
-      name = "promise-2.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e2/23/ff9e53fb9a00f89573646729e04a2c0933e845dcca758113f0281c396cdf/promise-2.1.tar.gz"; sha256 = "95506bac89df7a495e0b8c813fd782dd1ae590decb52f95248e316c6659ca49b"; };
+      name = "promise-2.2.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/5a/81/221d09d90176fd90aed4b530e31b8fedf207385767c06d1d46c550c5e418/promise-2.2.1.tar.gz"; sha256 = "348f5f6c3edd4fd47c9cd65aed03ac1b31136d375aa63871a57d3e444c85655c"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."six"
-      self."typing"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/syrusakbary/promise";
@@ -1794,21 +1789,6 @@ let
         homepage = "https://github.com/python/typed_ast";
         license = licenses.asl20;
         description = "a fork of Python 2 and 3 ast modules with type comment support";
-      };
-    };
-
-    "typing" = python.mkDerivation {
-      name = "typing-3.6.6";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/bf/9b/2bf84e841575b633d8d91ad923e198a415e3901f228715524689495b4317/typing-3.6.6.tar.gz"; sha256 = "4027c5f6127a6267a435201981ba156de91ad0d1d98e9ddc2aa173453453492d"; };
-      doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
-      buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://docs.python.org/3/library/typing.html";
-        license = licenses.psfl;
-        description = "Type Hints for Python";
       };
     };
 
