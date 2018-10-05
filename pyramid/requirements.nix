@@ -325,8 +325,8 @@ let
     };
 
     "hupper" = python.mkDerivation {
-      name = "hupper-1.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/51/0c/96335b1f2f32245fb871eea5bb9773196505ddb71fad15190056a282df9e/hupper-1.3.tar.gz"; sha256 = "20387760e4d32bd4813c2cabc8e51d92b2c22c546102a0af182c33c152cd7ede"; };
+      name = "hupper-1.3.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/cf/4b/467b826a84c8594b81f414b5ab6794e981951dac90ca40abaf9ea1cb36b0/hupper-1.3.1.tar.gz"; sha256 = "899a1da85b71b62d903b5732703cad7454425b4ba9a6453930ad9168ec08ae0e"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -765,8 +765,8 @@ let
     };
 
     "zope.event" = python.mkDerivation {
-      name = "zope.event-4.3.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/9e/d0/54ba59f19a0635f6591b74be259cf6fbf67e73f4edda27b5cd0cf4d26efa/zope.event-4.3.0.tar.gz"; sha256 = "e0ecea24247a837c71c106b0341a7a997e3653da820d21ef6c08b32548f733e7"; };
+      name = "zope.event-4.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/4c/b2/51c0369adcf5be2334280eed230192ab3b03f81f8efda9ddea6f65cc7b32/zope.event-4.4.tar.gz"; sha256 = "69c27debad9bdacd9ce9b735dad382142281ac770c4a432b533d6d65c4614bcf"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -780,8 +780,8 @@ let
     };
 
     "zope.i18nmessageid" = python.mkDerivation {
-      name = "zope.i18nmessageid-4.1.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/7e/1c/95949302c4a823c155539cf6fe0853e581cc98104dc603de97513f27b590/zope.i18nmessageid-4.1.0.tar.gz"; sha256 = "f72c00d53407626209b878333a24710e9afa69ae235233333581cc4f3cf1356e"; };
+      name = "zope.i18nmessageid-4.2";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/99/68/942e5e483ce0550e5b7fbfdf5658d575f8a2917afd4c0f60d462f8e86573/zope.i18nmessageid-4.2.tar.gz"; sha256 = "2903eb8c62df08d9f29bb17b97ef5a53914b9fe71b31df0bf6415b5b168dd500"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -812,8 +812,8 @@ let
     };
 
     "zope.schema" = python.mkDerivation {
-      name = "zope.schema-4.9.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/7f/d7/fd4bde3529fd8e22304dc9e3a41d56320522709479628fce0a88be85bb93/zope.schema-4.9.0.tar.gz"; sha256 = "0e0d5791c5de020fcddc3ac26c671d871c23f3b00592d3b7703fc66f8e6214a6"; };
+      name = "zope.schema-4.9.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/7e/8f/789374a560e8ea5e2c94e06fa755baeb2c370a1e9eaf2cd4a4667561d8a7/zope.schema-4.9.1.tar.gz"; sha256 = "36739efe40857581b9a1d2742b3ccc675fc0da0fef5854e6899d30d1757f0bf9"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
