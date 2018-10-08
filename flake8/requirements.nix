@@ -279,6 +279,21 @@ let
       };
     };
 
+    "filelock" = python.mkDerivation {
+      name = "filelock-3.0.9";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/8d/f0/cf5b0a7fbaab64f48667e48f93a56ce3b746d63da276f5efa97ad5d7d822/filelock-3.0.9.tar.gz"; sha256 = "97694f181bdf58f213cca0a7cb556dc7bf90e2f8eb9aa3151260adac56701afb"; };
+      doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/benediktschmitt/py-filelock";
+        license = "License";
+        description = "A platform independent file lock.";
+      };
+    };
+
     "flake8" = python.mkDerivation {
       name = "flake8-3.5.0";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/1e/ab/7730f6d6cdf73a3b7f98a2fe3b2cdf68e9e760a4a133e083607497d4c3a6/flake8-3.5.0.tar.gz"; sha256 = "7253265f7abd8b313e3892944044a365e3f4ac3fcdcfb4298f55ee9ddf188ba0"; };
@@ -1757,13 +1772,14 @@ let
     };
 
     "tox" = python.mkDerivation {
-      name = "tox-3.4.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/45/a6/c35e27a2c81b17b3af3043161671eaff3a0449937d534a6e1baaa3756bdb/tox-3.4.0.tar.gz"; sha256 = "7f802b37fffd3b5ef2aab104943fa5dad24bf9564bb7e732e54b8d0cfec2fca0"; };
+      name = "tox-3.5.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f6/78/aeb680ddb7611758bed736ab6faf9c57fe667013e83558842add4343be72/tox-3.5.1.tar.gz"; sha256 = "0cc11ff7a2c8d3f988bea9f760e14aae02957d4324cb09ef55b802d5cd4562c9"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
+      self."filelock"
       self."pluggy"
       self."py"
       self."six"
