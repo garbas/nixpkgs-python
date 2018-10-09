@@ -1772,8 +1772,8 @@ let
     };
 
     "tox" = python.mkDerivation {
-      name = "tox-3.5.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f6/78/aeb680ddb7611758bed736ab6faf9c57fe667013e83558842add4343be72/tox-3.5.1.tar.gz"; sha256 = "0cc11ff7a2c8d3f988bea9f760e14aae02957d4324cb09ef55b802d5cd4562c9"; };
+      name = "tox-3.5.2";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/38/ab/3674069bb1dadcd23e2e76c133cfa806026e68c97510224b3726562a8c44/tox-3.5.2.tar.gz"; sha256 = "4baeb3d8ebdcd9f43afce38aa67d06f1165a87d221d5bb21e8b39a0d4880c134"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";

@@ -98,6 +98,6 @@ snowballstemmer==1.2.1
 sqlparse==0.2.4
 testfixtures==6.3.0
 toml==0.10.0
-tox==3.5.1
+tox==3.5.2
 typed-ast==1.1.0
 virtualenv==16.0.0
