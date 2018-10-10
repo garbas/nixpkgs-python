@@ -522,8 +522,8 @@ let
     };
 
     "flake8-copyright" = python.mkDerivation {
-      name = "flake8-copyright-0.2.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/3a/22/2973cbdfd5c2df98bbd1b187c19c438653ffa75ea2ed1b0e610b344d70b6/flake8-copyright-0.2.0.tar.gz"; sha256 = "aeef26eb4d5223c9cd5b101e68175fcef6d2b353bf36da688fdde62fccfe2b73"; };
+      name = "flake8-copyright-0.2.2";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/66/35/3a5712611f8345329582817c71db68f6a1b6f4d500efeaeca1137b241417/flake8-copyright-0.2.2.tar.gz"; sha256 = "5c3632dd8c586547b25fff4272282005fdbcba56eeb77b7487564aa636b6e533"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
