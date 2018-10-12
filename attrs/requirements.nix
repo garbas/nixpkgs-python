@@ -356,8 +356,8 @@ let
     };
 
     "py" = python.mkDerivation {
-      name = "py-1.6.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/4f/38/5f427d1eedae73063ce4da680d2bae72014995f9fdeaa57809df61c968cd/py-1.6.0.tar.gz"; sha256 = "06a30435d058473046be836d3fc4f27167fd84c45b99704f2fb5509ef61f9af1"; };
+      name = "py-1.7.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/c7/fa/eb6dd513d9eb13436e110aaeef9a1703437a8efa466ce6bb2ff1d9217ac7/py-1.7.0.tar.gz"; sha256 = "bf92637198836372b520efcba9e020c330123be8ce527e535d185ed4b6f45694"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
