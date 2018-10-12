@@ -255,15 +255,14 @@ let
     };
 
     "gevent" = python.mkDerivation {
-      name = "gevent-1.3.6";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/49/13/aa4bb3640b5167fe58875d3d7e65390cdb14f9682a41a741a566bb560842/gevent-1.3.6.tar.gz"; sha256 = "7b413c391e8ad6607b7f7540d698a94349abd64e4935184c595f7cdcc69904c6"; };
+      name = "gevent-1.3.7";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/10/c1/9499b146bfa43aa4f1e0ed1bab1bd3209a4861d25650c11725036c731cf5/gevent-1.3.7.tar.gz"; sha256 = "3f06f4802824c577272960df003a304ce95b3e82eea01dad2637cc8609c80e2c"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."greenlet"
-      self."psutil"
       self."zope.event"
       self."zope.interface"
     ];
@@ -399,21 +398,6 @@ let
         homepage = "https://github.com/Pylons/plaster_pastedeploy";
         license = licenses.mit;
         description = "A loader implementing the PasteDeploy syntax to be used by plaster.";
-      };
-    };
-
-    "psutil" = python.mkDerivation {
-      name = "psutil-5.4.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e2/e1/600326635f97fee89bf8426fef14c5c29f4849c79f68fd79f433d8c1bd96/psutil-5.4.3.tar.gz"; sha256 = "e2467e9312c2fa191687b89ff4bc2ad8843be4af6fb4dc95a7cc5f7d7a327b18"; };
-      doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
-      buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/giampaolo/psutil";
-        license = licenses.bsdOriginal;
-        description = "Cross-platform lib for process and system monitoring in Python.";
       };
     };
 
@@ -812,8 +796,8 @@ let
     };
 
     "zope.schema" = python.mkDerivation {
-      name = "zope.schema-4.9.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ea/90/af5656de41667c2c2d0f47680758aaf6fa730d47e7fe6cac5d977d3d9654/zope.schema-4.9.2.tar.gz"; sha256 = "158fba5421b9792abfc20dcd607e192d7e1f63b31b4b47a1dd9c610dffb27356"; };
+      name = "zope.schema-4.9.3";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/42/eb/23663ac53661641340f74cb27647f5dcdde63fc4629b4a4c1a0a29c049dc/zope.schema-4.9.3.tar.gz"; sha256 = "2d971da8707cab47b1916534b9929dcd9d7f23aed790e6b4cbe3103d5b18069d"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
