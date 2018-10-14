@@ -1617,8 +1617,8 @@ let
     };
 
     "pydocstyle" = python.mkDerivation {
-      name = "pydocstyle-2.1.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ca/af/dbd99adec5704de451ae56d08024d7416dead997dedbd6be72cbc86efb08/pydocstyle-2.1.1.tar.gz"; sha256 = "4d5bcde961107873bae621f3d580c3e35a426d3687ffc6f8fb356f6628da5a97"; };
+      name = "pydocstyle-3.0.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e1/e6/a0669df17a97e462915a10a7d6c567658b60eceddebf62a3fb9975c00196/pydocstyle-3.0.0.tar.gz"; sha256 = "5741c85e408f9e0ddf873611085e819b809fca90b619f5fd7f34bd4959da3dd4"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
