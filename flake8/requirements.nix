@@ -1492,8 +1492,8 @@ let
     };
 
     "mypy" = python.mkDerivation {
-      name = "mypy-0.630";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/32/67/82af7c35be233b3a74fe3fe423607fe89830518d3f7727fd41c519273bd1/mypy-0.630.tar.gz"; sha256 = "6704586b4c2bf7dfa5e87a422be9ca57db622bab65008245759f3d4baeb219dd"; };
+      name = "mypy-0.641";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a1/b9/e2063c8f933c1cfebef5dcd7325e07b927cf5a5cef60772aaad5eb903a0f/mypy-0.641.tar.gz"; sha256 = "8e071ec32cc226e948a34bbb3d196eb0fd96f3ac69b6843a5aff9bd4efa14455"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
