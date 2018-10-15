@@ -198,8 +198,8 @@ let
     };
 
     "WebOb" = python.mkDerivation {
-      name = "WebOb-1.8.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f2/8a/dd4a3a32fba184e48a50be732aa390f9db2a725a535dcfb9fee781a2943c/WebOb-1.8.2.tar.gz"; sha256 = "1fe722f2ab857685fc96edec567dc40b1875b21219b3b348e58cd8c4d5ea7df3"; };
+      name = "WebOb-1.8.3";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/79/f1/81d397e07ef799794f81aee8ef48ccb942fd77324aee8b0f423deda2b40f/WebOb-1.8.3.tar.gz"; sha256 = "b0853dad347ca3777755b6d0659bb45efbeea71f995d8a395291ef6ad5d4f8b2"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
