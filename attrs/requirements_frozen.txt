@@ -11,7 +11,7 @@ Jinja2==2.10
 MarkupSafe==1.0
 more-itertools==4.3.0
 packaging==18.0
-pluggy==0.7.1
+pluggy==0.8.0
 py==1.7.0
 Pygments==2.2.0
 pyparsing==2.2.2
