@@ -89,8 +89,8 @@ let
 
   generated = self: {
     "Chameleon" = python.mkDerivation {
-      name = "Chameleon-3.4";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/96/8c/f8bcdf3563d625f2e6e9c04d02d0fff828777e35484e19035d0e6b0aedda/Chameleon-3.4.tar.gz"; sha256 = "7750865a68b469b34cbc60b9927f7e5c609808b6b966bf75bf8556e6ed48912c"; };
+      name = "Chameleon-3.5";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d0/59/ad925b5d098117fd6f339e6f7f29f98400ea11c5377f531ac55625909a5e/Chameleon-3.5.tar.gz"; sha256 = "cb0f97211faf03b46bf30e517c0e589bdc4a6cf678a9d1d68312d710849303a9"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
