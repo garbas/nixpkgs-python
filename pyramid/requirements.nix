@@ -683,6 +683,21 @@ let
       };
     };
 
+    "six" = python.mkDerivation {
+      name = "six-1.11.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/16/d8/bc6316cf98419719bd59c91742194c111b6f2e85abac88e496adefaf7afe/six-1.11.0.tar.gz"; sha256 = "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"; };
+      doCheck = commonDoCheck;
+      checkPhase = "";
+      installCheckPhase = "";
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://pypi.python.org/pypi/six/";
+        license = licenses.mit;
+        description = "Python 2 and 3 compatibility utilities";
+      };
+    };
+
     "transaction" = python.mkDerivation {
       name = "transaction-2.2.1";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a6/5e/09da91cb9373c73aae41721e5571c47db72fa9e11b259ca8fd3b01e306e9/transaction-2.2.1.tar.gz"; sha256 = "f2242070e437e5d555ea3df809cb517860513254c828f33847df1c5e4b776c7a"; };
@@ -780,13 +795,15 @@ let
     };
 
     "zope.i18nmessageid" = python.mkDerivation {
-      name = "zope.i18nmessageid-4.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/99/68/942e5e483ce0550e5b7fbfdf5658d575f8a2917afd4c0f60d462f8e86573/zope.i18nmessageid-4.2.tar.gz"; sha256 = "2903eb8c62df08d9f29bb17b97ef5a53914b9fe71b31df0bf6415b5b168dd500"; };
+      name = "zope.i18nmessageid-4.3";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/19/42/5099ba540a0e07df70267fa7176de318bd6e3ed9bddaa81617de76ba3b43/zope.i18nmessageid-4.3.tar.gz"; sha256 = "3b0cbf8237c7c820cdef990442905506d5985802fb9c065dfe9eb5fd3910dc98"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [ ];
+      propagatedBuildInputs = [
+      self."six"
+    ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://pypi.python.org/pypi/zope.i18nmessageid";
         license = licenses.zpl21;
