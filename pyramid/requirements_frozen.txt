@@ -39,7 +39,7 @@ WebOb==1.8.3
 zope.configuration==4.3.0
 zope.deprecation==4.3.0
 zope.event==4.4
-zope.i18nmessageid==4.3
+zope.i18nmessageid==4.3.1
 zope.interface==4.5.0
 zope.schema==4.9.3
 zope.sqlalchemy==1.0

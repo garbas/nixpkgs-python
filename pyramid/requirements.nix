@@ -795,8 +795,8 @@ let
     };
 
     "zope.i18nmessageid" = python.mkDerivation {
-      name = "zope.i18nmessageid-4.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/19/42/5099ba540a0e07df70267fa7176de318bd6e3ed9bddaa81617de76ba3b43/zope.i18nmessageid-4.3.tar.gz"; sha256 = "3b0cbf8237c7c820cdef990442905506d5985802fb9c065dfe9eb5fd3910dc98"; };
+      name = "zope.i18nmessageid-4.3.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d8/0b/2b09daacbe377581125e181b5db32156db1dc4accbeb6efbbdcdb22377f0/zope.i18nmessageid-4.3.1.tar.gz"; sha256 = "e511edff8e75d3a6f84d8256e1e468c85a4aa9d89c2ea264a919334fae7081e3"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -805,7 +805,7 @@ let
       self."six"
     ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://pypi.python.org/pypi/zope.i18nmessageid";
+        homepage = "https://github.com/zopefoundation/zope.i18nmessageid";
         license = licenses.zpl21;
         description = "Message Identifiers for internationalization";
       };
