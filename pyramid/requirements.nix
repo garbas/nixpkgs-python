@@ -699,8 +699,8 @@ let
     };
 
     "transaction" = python.mkDerivation {
-      name = "transaction-2.3.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/61/a2/79aa16998bf8641b81e3cc5e096ac820f4e7174b73eac54e533ef788c400/transaction-2.3.0.tar.gz"; sha256 = "f917cbdf9f730e9d7f312746c5724c7bce0c6d13b75b93db1d2c6fe5393b53d9"; };
+      name = "transaction-2.4.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/9d/7d/0e8af0d059e052b9dcf2bb5a08aad20ae3e238746bdd3f8701a60969b363/transaction-2.4.0.tar.gz"; sha256 = "726059c461b9ec4e69e5bead6680667a3db01bf2adf901f23e4031228a0f9f9f"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
