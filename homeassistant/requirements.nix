@@ -89,8 +89,8 @@ let
 
   generated = self: {
     "pytz" = python.mkDerivation {
-      name = "pytz-2018.5";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ca/a9/62f96decb1e309d6300ebe7eee9acfd7bccaeedd693794437005b9067b44/pytz-2018.5.tar.gz"; sha256 = "ffb9ef1de172603304d9d2819af6f5ece76f2e85ec10692a524dd876e72bf277"; };
+      name = "pytz-2018.6";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/c7/df/68a3331691a604a8241335064cf20742338d66eb008da96d4c9f3e3d4c41/pytz-2018.6.tar.gz"; sha256 = "642253af8eae734d1509fc6ac9c1aee5e5b69d76392660889979b9870610a46b"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
