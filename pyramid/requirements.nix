@@ -595,8 +595,8 @@ let
     };
 
     "pyramid-tm" = python.mkDerivation {
-      name = "pyramid-tm-2.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/9e/66/048cc82262e93fcca4f2bcf448723028f3848f21411438127ee0cfa074ac/pyramid_tm-2.2.tar.gz"; sha256 = "07d03bab7bdd265c3920db4e68dbaa8cbaff27da828700f404b1424244ad617f"; };
+      name = "pyramid-tm-2.2.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f3/06/bd2a87e1af0653a4f1800c508f5a9e63b822ddea8eb38d52628a27e78c1b/pyramid_tm-2.2.1.tar.gz"; sha256 = "fde97db9d92039a154ca6afffdd2485874c7d3e7a6432adb51b7a60810bad422"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -812,8 +812,8 @@ let
     };
 
     "zope.interface" = python.mkDerivation {
-      name = "zope.interface-4.5.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ac/8a/657532df378c2cd2a1fe6b12be3b4097521570769d4852ec02c24bd3594e/zope.interface-4.5.0.tar.gz"; sha256 = "57c38470d9f57e37afb460c399eb254e7193ac7fb8042bd09bdc001981a9c74c"; };
+      name = "zope.interface-4.6.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/4e/d0/c9d16bd5b38de44a20c6dc5d5ed80a49626fafcb3db9f9efdc2a19026db6/zope.interface-4.6.0.tar.gz"; sha256 = "1b3d0dcabc7c90b470e59e38a9acaa361be43b3a6ea644c0063951964717f0e5"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
