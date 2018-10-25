@@ -153,8 +153,8 @@ let
     };
 
     "boto3" = python.mkDerivation {
-      name = "boto3-1.9.30";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/c6/c1/c0bd1996bbdd7042c5611887b7e7daf836635f8814f382d7951aba2ff09e/boto3-1.9.30.tar.gz"; sha256 = "3b782268ebf09ae6ea811ba8b8bdfc38a58d27f4f7fc554658f07c11ddc4165d"; };
+      name = "boto3-1.9.31";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/75/e1/ee6cf3e1f4a3db96177907f545bb46822a3b8d588452afc8920f5fd94773/boto3-1.9.31.tar.gz"; sha256 = "bc7b8e65b9612ee7ff03f71e765d0f380c8db096d898213bb4ead5b389c31cde"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -172,8 +172,8 @@ let
     };
 
     "botocore" = python.mkDerivation {
-      name = "botocore-1.12.30";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/2f/16/f11604f387ac1a1dd739e14bbee0cd0e7a0e359be7557fc66efe96acbc6e/botocore-1.12.30.tar.gz"; sha256 = "5e1210f096637479061ebeb3640d0ba5bcdbfe385e36bd3132289d2d26ae83f6"; };
+      name = "botocore-1.12.31";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/9a/42/ef1d9586110bc25f6d72d0fc0b3e9a69f135754b7743515d19ac208e2ac8/botocore-1.12.31.tar.gz"; sha256 = "dea459bfa0418689f2dfd8241739e7bb071d1cc944ffcc9cce0c19ecaf3612f3"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -1042,8 +1042,8 @@ let
     };
 
     "python-dateutil" = python.mkDerivation {
-      name = "python-dateutil-2.7.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a0/b0/a4e3241d2dee665fea11baec21389aec6886655cd4db7647ddf96c3fad15/python-dateutil-2.7.3.tar.gz"; sha256 = "e27001de32f627c22380a688bcc43ce83504a7bc5da472209b4c70f02829f0b8"; };
+      name = "python-dateutil-2.7.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a5/15/37f2e39504a98ec4b3eba8c9a61755dd5374388201ee60d1ae5b8e7a3d09/python-dateutil-2.7.4.tar.gz"; sha256 = "2f13d3ea236aeb237e7258d5729c46eafe1506fd7f8507f34730734ed8b37454"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
