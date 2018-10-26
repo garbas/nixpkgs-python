@@ -325,8 +325,8 @@ let
     };
 
     "hupper" = python.mkDerivation {
-      name = "hupper-1.3.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/cf/4b/467b826a84c8594b81f414b5ab6794e981951dac90ca40abaf9ea1cb36b0/hupper-1.3.1.tar.gz"; sha256 = "899a1da85b71b62d903b5732703cad7454425b4ba9a6453930ad9168ec08ae0e"; };
+      name = "hupper-1.4";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/fb/8e/0e45729d54e88c3791fb7e8c0c99530c5b9204bae73156a28b258583609a/hupper-1.4.tar.gz"; sha256 = "f9d9ab2457fdd01ee20278d3d7dfc91c49cae329863f47571a4a2e78d90fa738"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
