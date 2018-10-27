@@ -257,8 +257,8 @@ let
     };
 
     "python-dateutil" = python.mkDerivation {
-      name = "python-dateutil-2.7.4";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a5/15/37f2e39504a98ec4b3eba8c9a61755dd5374388201ee60d1ae5b8e7a3d09/python-dateutil-2.7.4.tar.gz"; sha256 = "2f13d3ea236aeb237e7258d5729c46eafe1506fd7f8507f34730734ed8b37454"; };
+      name = "python-dateutil-2.7.5";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/0e/01/68747933e8d12263d41ce08119620d9a7e5eb72c876a3442257f74490da0/python-dateutil-2.7.5.tar.gz"; sha256 = "88f9287c0174266bb0d8cedd395cfba9c58e87e5ad86b2ce58859bc11be3cf02"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
