@@ -8,7 +8,7 @@ MarkupSafe==1.0
 pelican==3.7.1
 Pygments==2.2.0
 python-dateutil==2.7.5
-pytz==2018.6
+pytz==2018.7
 six==1.11.0
 smartypants==2.0.0
 tornado==5.1.1
