@@ -418,14 +418,13 @@ let
     };
 
     "pyramid" = python.mkDerivation {
-      name = "pyramid-1.9.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a0/c1/b321d07cfc4870541989ad131c86a1d593bfe802af0eca9718a0dadfb97a/pyramid-1.9.2.tar.gz"; sha256 = "cf89a48cb899291639686bf3d4a883b39e496151fa4871fb83cc1a3200d5b925"; };
+      name = "pyramid-1.10";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/6c/c6/152f01aab635d90020be418c31e6d6424cd0dbbf6145b3dbf318b089498d/pyramid-1.10.tar.gz"; sha256 = "3f91bcb8ee8ad3168eaf836d701b7b8c59481cec9ca085ab0251d1b953ffc46a"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
-      self."PasteDeploy"
       self."WebOb"
       self."hupper"
       self."plaster"
