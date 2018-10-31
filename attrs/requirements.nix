@@ -371,8 +371,8 @@ let
     };
 
     "pyparsing" = python.mkDerivation {
-      name = "pyparsing-2.2.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/1a/e2/4a7ad8f2808e03caebd3ec0a250b4afbb26d4ba063c39c3286185dd06dd1/pyparsing-2.2.2.tar.gz"; sha256 = "bc6c7146b91af3f567cf6daeaec360bc07d45ffec4cf5353f4d7a208ce7ca30a"; };
+      name = "pyparsing-2.3.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d0/09/3e6a5eeb6e04467b737d55f8bba15247ac0876f98fae659e58cd744430c6/pyparsing-2.3.0.tar.gz"; sha256 = "f353aab21fd474459d97b709e527b5571314ee5f067441dc9f88e33eecd96592"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
