@@ -505,8 +505,8 @@ let
     };
 
     "urllib3" = python.mkDerivation {
-      name = "urllib3-1.24";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a5/74/05ffd00b4b5c08306939c485869f5dc40cbc27357195b0a98b18e4c48893/urllib3-1.24.tar.gz"; sha256 = "41c3db2fc01e5b907288010dec72f9d0a74e37d6994e6eb56849f59fea2265ae"; };
+      name = "urllib3-1.24.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b1/53/37d82ab391393565f2f831b8eedbffd57db5a718216f82f1a8b4d381a1c1/urllib3-1.24.1.tar.gz"; sha256 = "de9529817c93f27c8ccbfead6985011db27bd0ddfcdb2d86f3f663385c6a9c22"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
