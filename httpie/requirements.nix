@@ -153,8 +153,8 @@ let
     };
 
     "boto3" = python.mkDerivation {
-      name = "boto3-1.9.35";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/1e/2a/c10f05b11831cf25b0dfa31e00badda5b2476f7354e8e7a959b8370ea2e2/boto3-1.9.35.tar.gz"; sha256 = "d71b276f5c5d48f429292d076099a6c4fbcc9015a158ac86cc5d36b16d5f0043"; };
+      name = "boto3-1.9.36";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/12/b8/608d2ca077d02276afd2914ba804c7602d5f7ad43734cde6844c8c7e8241/boto3-1.9.36.tar.gz"; sha256 = "2a9f3809b480803c1b1f28a19c554f1e1ceafd8db994a4236a0843b999ee6c56"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -172,8 +172,8 @@ let
     };
 
     "botocore" = python.mkDerivation {
-      name = "botocore-1.12.35";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/66/91/29488e68248b875c23ecb45480bdc6ad35d97a6da27126362578d62e2fff/botocore-1.12.35.tar.gz"; sha256 = "a5c93a7182b7f0c447014c15b1df6ac840677e9258f8505ecedff9b66a539a51"; };
+      name = "botocore-1.12.36";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/c3/0a/6ae2b416360445623c577f243141a670fbe8d7a504b7b6c58ea96c268f74/botocore-1.12.36.tar.gz"; sha256 = "4b85d15ff779442503e8e59700d7b8472d3ba209bdd7cae2f4ddb1b1f95e432e"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -345,8 +345,8 @@ let
     };
 
     "httpie" = python.mkDerivation {
-      name = "httpie-0.9.9";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/28/93/4ebf2de4bc74bd517a27a600b2b23a5254a20f28e6e36fc876fd98f7a51b/httpie-0.9.9.tar.gz"; sha256 = "f1202e6fa60367e2265284a53f35bfa5917119592c2ab08277efc7fffd744fcb"; };
+      name = "httpie-1.0.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/44/ee/7177b743400d7f82a69bf30cb3c24ea4bb1f4aea68878bc540f732bf4940/httpie-1.0.0.tar.gz"; sha256 = "1650342d2eca2622092196bf106ab8f68ea2dbb2ed265d37191185618e159a25"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -1202,8 +1202,8 @@ let
     };
 
     "urllib3" = python.mkDerivation {
-      name = "urllib3-1.24";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a5/74/05ffd00b4b5c08306939c485869f5dc40cbc27357195b0a98b18e4c48893/urllib3-1.24.tar.gz"; sha256 = "41c3db2fc01e5b907288010dec72f9d0a74e37d6994e6eb56849f59fea2265ae"; };
+      name = "urllib3-1.24.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/b1/53/37d82ab391393565f2f831b8eedbffd57db5a718216f82f1a8b4d381a1c1/urllib3-1.24.1.tar.gz"; sha256 = "de9529817c93f27c8ccbfead6985011db27bd0ddfcdb2d86f3f663385c6a9c22"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
