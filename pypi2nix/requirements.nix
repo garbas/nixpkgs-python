@@ -121,17 +121,17 @@ let
     };
 
     "MarkupSafe" = python.mkDerivation {
-      name = "MarkupSafe-1.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/4d/de/32d741db316d8fdb7680822dd37001ef7a448255de9699ab4bfcbdf4172b/MarkupSafe-1.0.tar.gz"; sha256 = "a6be69091dac236ea9c6bc7d012beab42010fa914c459791d627dad4910eb665"; };
+      name = "MarkupSafe-1.1.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ac/7e/1b4c2e05809a4414ebce0892fe1e32c14ace86ca7d50c70f00979ca9b3a3/MarkupSafe-1.1.0.tar.gz"; sha256 = "4e97332c9ce444b0c2c38dd22ddc61c743eb208d916e4265a2a3b575bdccb1d3"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://github.com/pallets/markupsafe";
+        homepage = "https://www.palletsprojects.com/p/markupsafe/";
         license = licenses.bsdOriginal;
-        description = "Implements a XML/HTML/XHTML Markup safe string for Python";
+        description = "Safely add untrusted strings to HTML/XML markup.";
       };
     };
 
