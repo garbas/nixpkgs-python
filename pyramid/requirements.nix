@@ -418,8 +418,8 @@ let
     };
 
     "pyramid" = python.mkDerivation {
-      name = "pyramid-1.10";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/6c/c6/152f01aab635d90020be418c31e6d6424cd0dbbf6145b3dbf318b089498d/pyramid-1.10.tar.gz"; sha256 = "3f91bcb8ee8ad3168eaf836d701b7b8c59481cec9ca085ab0251d1b953ffc46a"; };
+      name = "pyramid-1.10.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/0a/3e/22e3ac9be1b70a01139adba8906ee4b8f628bb469fea3c52f6c97b73063c/pyramid-1.10.1.tar.gz"; sha256 = "37c3e1c9eae72817e0365e2a38143543aee8b75240701fa5cb3a1be86c01a1c0"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
