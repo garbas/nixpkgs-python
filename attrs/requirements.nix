@@ -423,8 +423,8 @@ let
     };
 
     "requests" = python.mkDerivation {
-      name = "requests-2.20.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/97/10/92d25b93e9c266c94b76a5548f020f3f1dd0eb40649cb1993532c0af8f4c/requests-2.20.0.tar.gz"; sha256 = "99dcfdaaeb17caf6e526f32b6a7b780461512ab3f1d992187801694cba42770c"; };
+      name = "requests-2.20.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/40/35/298c36d839547b50822985a2cf0611b3b978a5ab7a5af5562b8ebe3e1369/requests-2.20.1.tar.gz"; sha256 = "ea881206e59f41dbd0bd445437d792e43906703fff75ca8ff43ccdb11f33f263"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
