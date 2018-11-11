@@ -183,8 +183,8 @@ let
     };
 
     "SQLAlchemy" = python.mkDerivation {
-      name = "SQLAlchemy-1.2.13";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/1e/98/4dba86354d271344e25fa01dc38a0bf0e0ba6407ad2d5e8426496a95b568/SQLAlchemy-1.2.13.tar.gz"; sha256 = "84412de3794acee05630e7788f25e80e81f78eb4837e7b71d0499129f660486a"; };
+      name = "SQLAlchemy-1.2.14";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e2/0a/05b7d13618ad41c108a6c2b886af83bf9bb7e35f8951227abb18b1330745/SQLAlchemy-1.2.14.tar.gz"; sha256 = "9de7c7dabcf06319becdb7e15099c44e5e34ba7062f9ba10bc00e562f5db3d04"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -325,8 +325,8 @@ let
     };
 
     "hupper" = python.mkDerivation {
-      name = "hupper-1.4";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/fb/8e/0e45729d54e88c3791fb7e8c0c99530c5b9204bae73156a28b258583609a/hupper-1.4.tar.gz"; sha256 = "f9d9ab2457fdd01ee20278d3d7dfc91c49cae329863f47571a4a2e78d90fa738"; };
+      name = "hupper-1.4.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/3d/8d/fa1367cf4713038e074083d557eede6ece89f9a35d50e325eacdd63e4190/hupper-1.4.1.tar.gz"; sha256 = "17dd6f59e7cd52166302b2a6a3112e03fb4612eaff9bb19cd0603cf67e03c5cf"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
