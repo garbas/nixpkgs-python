@@ -231,8 +231,8 @@ let
     };
 
     "deform" = python.mkDerivation {
-      name = "deform-2.0.6";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/44/89/0d734745d000492e2609e128923c066fa3e7954138ab12a6866ebe0b48a8/deform-2.0.6.tar.gz"; sha256 = "bda0b809c8a668e105e30650a6766103207eafdd12c313acd59274ccd2c4d297"; };
+      name = "deform-2.0.7";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/cf/a1/bc234527b8f181de9acd80e796483c00007658d1e32b7de78f1c2e004d9a/deform-2.0.7.tar.gz"; sha256 = "2ff29c32ebe544c0f0a77087e268b2cd9cb4b11fa35af3635d5b42913f88d74a"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -249,7 +249,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://docs.pylonsproject.org/projects/deform/en/latest/";
-        license = "BSD-derived (http://www.repoze.org/LICENSE.txt)";
+        license = "License :: Repoze Public License";
         description = "Form library with advanced features like nested forms";
       };
     };
