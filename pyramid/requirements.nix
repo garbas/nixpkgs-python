@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 1.8.1)
+# generated using pypi2nix tool (version: 2.0.0)
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
@@ -239,11 +239,9 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."Chameleon"
-      self."Pygments"
       self."colander"
       self."iso8601"
       self."peppercorn"
-      self."pyramid"
       self."translationstring"
       self."zope.deprecation"
     ];
@@ -264,8 +262,6 @@ let
       propagatedBuildInputs = [
       self."greenlet"
       self."psutil"
-      self."zope.event"
-      self."zope.interface"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://www.gevent.org/";
@@ -379,7 +375,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://docs.pylonsproject.org/projects/plaster/en/latest/";
-        license = licenses.mit;
+        license = "UNKNOWN";
         description = "A loader interface around multiple config file formats.";
       };
     };
@@ -397,7 +393,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/Pylons/plaster_pastedeploy";
-        license = licenses.mit;
+        license = "UNKNOWN";
         description = "A loader implementing the PasteDeploy syntax to be used by plaster.";
       };
     };
@@ -429,7 +425,6 @@ let
       self."hupper"
       self."plaster"
       self."plaster-pastedeploy"
-      self."repoze.lru"
       self."translationstring"
       self."venusian"
       self."zope.deprecation"
@@ -437,7 +432,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://trypyramid.com";
-        license = "License :: Repoze Public License";
+        license = "BSD-derived (http://www.repoze.org/LICENSE.txt)";
         description = "The Pyramid Web Framework, a Pylons project";
       };
     };
@@ -455,7 +450,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/Pylons/pyramid_chameleon";
-        license = "License :: Repoze Public License";
+        license = "BSD-derived (http://www.repoze.org/LICENSE.txt)";
         description = "pyramid_chameleon";
       };
     };
@@ -510,7 +505,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://docs.pylonsproject.org";
-        license = "License :: Repoze Public License";
+        license = "BSD-derived (http://www.repoze.org/LICENSE.txt)";
         description = "A package which logs to a Python logger when an exception is raised by a Pyramid application";
       };
     };
@@ -530,7 +525,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/Pylons/pyramid_jinja2";
-        license = "License :: Repoze Public License";
+        license = "BSD-derived (http://www.repoze.org/LICENSE.txt)";
         description = "Jinja2 template bindings for the Pyramid web framework";
       };
     };
@@ -548,7 +543,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/Pylons/pyramid_mako";
-        license = "License :: Repoze Public License";
+        license = "BSD-derived (http://www.repoze.org/LICENSE.txt)";
         description = "Mako template bindings for the Pyramid web framework";
       };
     };
@@ -569,7 +564,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/abourget/pyramid_socketio";
-        license = "";
+        license = "UNKNOWN";
         description = "Gevent-based Socket.IO pyramid integration and helpers";
       };
     };
@@ -583,7 +578,6 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."SQLAlchemy"
-      self."pyramid"
       self."zope.sqlalchemy"
     ];
       meta = with pkgs.stdenv.lib; {
@@ -606,7 +600,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://docs.pylonsproject.org/projects/pyramid-tm/en/latest/";
-        license = "License :: Repoze Public License";
+        license = "BSD-derived (http://www.repoze.org/LICENSE.txt)";
         description = "A package which allows Pyramid requests to join the active transaction";
       };
     };
@@ -638,13 +632,12 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."pyramid"
-      self."pyramid-mako"
       self."venusian"
       self."zope.configuration"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://docs.pylonsproject.org/projects/pyramid_zcml/en/latest/";
-        license = "License :: Repoze Public License";
+        license = "BSD-derived (http://www.repoze.org/LICENSE.txt)";
         description = "Zope Config Markup Language support for Pyramid";
       };
     };
@@ -659,7 +652,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://www.repoze.org";
-        license = "License :: Repoze Public License";
+        license = "BSD-derived (http://www.repoze.org/LICENSE.txt)";
         description = "A tiny LRU cache implementation and decorator";
       };
     };
@@ -817,9 +810,7 @@ let
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."zope.event"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/zopefoundation/zope.interface";
         license = licenses.zpl21;
@@ -836,7 +827,6 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."zope.event"
-      self."zope.i18nmessageid"
       self."zope.interface"
     ];
       meta = with pkgs.stdenv.lib; {
