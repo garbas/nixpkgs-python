@@ -113,7 +113,6 @@ let
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
-      self."Babel"
       self."MarkupSafe"
     ];
       meta = with pkgs.stdenv.lib; {
@@ -168,7 +167,6 @@ let
       self."docutils"
       self."imagesize"
       self."packaging"
-      self."pytest"
       self."requests"
       self."six"
       self."snowballstemmer"
@@ -191,7 +189,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://alabaster.readthedocs.io";
-        license = licenses.bsdOriginal;
+        license = "UNKNOWN";
         description = "A configurable sidebar-enabled Sphinx theme";
       };
     };
@@ -218,11 +216,7 @@ let
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."Sphinx"
-      self."pytest"
-      self."six"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://www.attrs.org/";
         license = licenses.mit;
@@ -255,7 +249,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/chardet/chardet";
-        license = licenses.lgpl2;
+        license = licenses.lgpl3;
         description = "Universal encoding detector for Python 2 and 3";
       };
     };
@@ -270,7 +264,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://docutils.sourceforge.net/";
-        license = licenses.publicDomain;
+        license = "public domain, Python, 2-Clause BSD, GPL 3 (see COPYING.txt)";
         description = "Docutils -- Python Documentation Utilities";
       };
     };
@@ -350,7 +344,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pytest-dev/pluggy";
-        license = licenses.mit;
+        license = "MIT license";
         description = "plugin and hook calling mechanisms for python";
       };
     };
@@ -365,7 +359,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://py.readthedocs.io/";
-        license = licenses.mit;
+        license = "MIT license";
         description = "library with cross-python path, ini-parsing, io, code, log facilities";
       };
     };
@@ -402,7 +396,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://docs.pytest.org/en/latest/";
-        license = licenses.mit;
+        license = "MIT license";
         description = "pytest: simple powerful testing with Python";
       };
     };
@@ -494,9 +488,7 @@ let
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."pytest"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://sphinx-doc.org/";
         license = licenses.bsdOriginal;
@@ -511,10 +503,7 @@ let
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."certifi"
-      self."idna"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://urllib3.readthedocs.io/";
         license = licenses.mit;
