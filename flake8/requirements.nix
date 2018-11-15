@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 1.8.1)
+# generated using pypi2nix tool (version: 2.0.0)
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
@@ -121,17 +121,17 @@ let
     };
 
     "MarkupSafe" = python.mkDerivation {
-      name = "MarkupSafe-1.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/4d/de/32d741db316d8fdb7680822dd37001ef7a448255de9699ab4bfcbdf4172b/MarkupSafe-1.0.tar.gz"; sha256 = "a6be69091dac236ea9c6bc7d012beab42010fa914c459791d627dad4910eb665"; };
+      name = "MarkupSafe-1.1.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ac/7e/1b4c2e05809a4414ebce0892fe1e32c14ace86ca7d50c70f00979ca9b3a3/MarkupSafe-1.1.0.tar.gz"; sha256 = "4e97332c9ce444b0c2c38dd22ddc61c743eb208d916e4265a2a3b575bdccb1d3"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://github.com/pallets/markupsafe";
+        homepage = "https://www.palletsprojects.com/p/markupsafe/";
         license = licenses.bsdOriginal;
-        description = "Implements a XML/HTML/XHTML Markup safe string for Python";
+        description = "Safely add untrusted strings to HTML/XML markup.";
       };
     };
 
@@ -160,7 +160,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://reactivex.io";
-        license = "License :: OSI Approved :: Apache Software License";
+        license = "Apache License";
         description = "Reactive Extensions (Rx) for Python";
       };
     };
@@ -202,9 +202,7 @@ let
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."six"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://www.attrs.org/";
         license = licenses.mit;
@@ -259,7 +257,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://docutils.sourceforge.net/";
-        license = licenses.publicDomain;
+        license = "public domain, Python, 2-Clause BSD, GPL 3 (see COPYING.txt)";
         description = "Docutils -- Python Documentation Utilities";
       };
     };
@@ -280,8 +278,8 @@ let
     };
 
     "filelock" = python.mkDerivation {
-      name = "filelock-3.0.9";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/8d/f0/cf5b0a7fbaab64f48667e48f93a56ce3b746d63da276f5efa97ad5d7d822/filelock-3.0.9.tar.gz"; sha256 = "97694f181bdf58f213cca0a7cb556dc7bf90e2f8eb9aa3151260adac56701afb"; };
+      name = "filelock-3.0.10";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/2a/bd/6a87635dba4906ae56377b22f64805b2f00d8cafb26e411caaf3559a5475/filelock-3.0.10.tar.gz"; sha256 = "d610c1bb404daf85976d7a82eb2ada120f04671007266b708606565dd03b5be6"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -295,8 +293,8 @@ let
     };
 
     "flake8" = python.mkDerivation {
-      name = "flake8-3.5.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/1e/ab/7730f6d6cdf73a3b7f98a2fe3b2cdf68e9e760a4a133e083607497d4c3a6/flake8-3.5.0.tar.gz"; sha256 = "7253265f7abd8b313e3892944044a365e3f4ac3fcdcfb4298f55ee9ddf188ba0"; };
+      name = "flake8-3.6.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d0/27/c0d1274b86a8f71ec1a6e4d4c1cfe3b20d6f95b090ec7545320150952c93/flake8-3.6.0.tar.gz"; sha256 = "6a35f5b8761f45c5513e3405f110a86bea57982c3b75b766ce7b65217abe1670"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -393,7 +391,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/gforcada/flake8-builtins";
-        license = licenses.gpl2;
+        license = "GPL version 2";
         description = "Check for python builtins being used as variables or parameters.";
       };
     };
@@ -479,7 +477,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/PyCQA/flake8-commas/";
-        license = licenses.mit;
+        license = "UNKNOWN";
         description = "Flake8 lint for trailing commas.";
       };
     };
@@ -496,7 +494,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/adamchainz/flake8-comprehensions";
-        license = licenses.isc;
+        license = "ISCL";
         description = "A flake8 plugin to help you write better list/set/dict comprehensions.";
       };
     };
@@ -531,7 +529,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/savoirfairelinux/flake8-copyright";
-        license = "";
+        license = "UNKNOWN";
         description = "Adds copyright checks to flake8";
       };
     };
@@ -566,7 +564,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/gforcada/flake8-deprecated";
-        license = licenses.gpl2;
+        license = "GPL version 2";
         description = "Warns about deprecated method calls.";
       };
     };
@@ -586,7 +584,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://dealertrack.github.io";
-        license = "";
+        license = "UNKNOWN";
         description = "Run flake8 across a set of changed files and filter out violations occurring only on the lines that were changed.";
       };
     };
@@ -620,7 +618,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://github.com/yandex-sysmon/flake8-double-quotes/";
-        license = licenses.mit;
+        license = "UNKNOWN";
         description = "Flake8 lint to forbide single quotes.";
       };
     };
@@ -635,7 +633,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/jiazou/flake8-doubles";
-        license = licenses.mit;
+        license = "Expat license";
         description = "flake8 doubles checker, ensures mock.patch is not used";
       };
     };
@@ -685,7 +683,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/jarshwah/flake8_formatter_abspath";
-        license = licenses.mit;
+        license = "MIT license";
         description = "A flake8 formatter plugin that shows the absolute path of files with warnings";
       };
     };
@@ -735,7 +733,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/michaelaquilina/flake8-graphql";
-        license = licenses.agpl3Plus;
+        license = "AGPLv3";
         description = "A flake8 plugin to lint your graphql queries";
       };
     };
@@ -754,7 +752,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/lordmauve/flake8-html";
-        license = "License :: OSI Approved :: Apache Software License";
+        license = "Apache Software License 2.0";
         description = "Generate HTML reports of flake8 violations";
       };
     };
@@ -786,7 +784,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/PyCQA/flake8-import-order";
-        license = licenses.mit;
+        license = "LGPLv3";
         description = "Flake8 and pylama plugin that checks the ordering of import statements.";
       };
     };
@@ -803,7 +801,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/fuzeman/flake8-import-order-fuzeman";
-        license = licenses.gpl3Plus;
+        license = "GPLv3 or later";
         description = "@fuzeman's import order style for flake8-import-order";
       };
     };
@@ -840,7 +838,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/gforcada/flake8-isort";
-        license = licenses.gpl2;
+        license = "GPL version 2";
         description = "flake8 plugin that integrates isort .";
       };
     };
@@ -855,7 +853,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/initios/flake8-junit-report";
-        license = licenses.bsdOriginal;
+        license = "BSD 3-Clause License";
         description = "Simple tool that converts a flake8 file to junit format";
       };
     };
@@ -887,7 +885,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/globality-corp/flake8-logging-format";
-        license = "";
+        license = "UNKNOWN";
         description = "Flake8 extension to validate (lack of) logging format strings";
       };
     };
@@ -919,7 +917,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/aleGpereira/flake8-mock";
-        license = licenses.gpl2;
+        license = "GNU";
         description = "Provides checking for non-existent mock methods";
       };
     };
@@ -1038,11 +1036,10 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
       self."flake8"
-      self."testfixtures"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/gforcada/flake8-pep3101";
-        license = licenses.gpl2;
+        license = "GPL version 2";
         description = "Checks for old string formatting.";
       };
     };
@@ -1059,7 +1056,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/gforcada/flake8-plone-api";
-        license = licenses.gpl2;
+        license = "GPL version 2";
         description = "Checks for code usages that can be replaced with Plone API method calls.";
       };
     };
@@ -1076,7 +1073,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/gforcada/flake8-plone-hasattr";
-        license = licenses.gpl2;
+        license = "GPL version 2";
         description = "Checks for hasattr, which is considered harmful in Plone projects.";
       };
     };
@@ -1194,7 +1191,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/aristiden7o/flake8-regex";
-        license = licenses.gpl2;
+        license = "GNU General Public License v2 (GPLv2)";
         description = "Arbitrary regex checker, extension for flake8";
       };
     };
@@ -1317,7 +1314,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/adamchainz/flake8-tidy-imports";
-        license = licenses.isc;
+        license = "ISCL";
         description = "A flake8 plugin that helps you write tidier imports.";
       };
     };
@@ -1351,7 +1348,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/graingert/flake8-trailing-commas/";
-        license = licenses.mit;
+        license = "UNKNOWN";
         description = "Flake8 lint for trailing commas.";
       };
     };
@@ -1486,7 +1483,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pycqa/mccabe";
-        license = licenses.mit;
+        license = "Expat license";
         description = "McCabe checker, plugin for flake8";
       };
     };
@@ -1549,14 +1546,14 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://pep8.readthedocs.org/";
-        license = licenses.mit;
+        license = "Expat license";
         description = "Python style guide checker";
       };
     };
 
     "pluggy" = python.mkDerivation {
-      name = "pluggy-0.7.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/a1/83/ef7d976c12d67a5c7a5bc2a47f0501c926cabae9d9fcfdc26d72abc9ba15/pluggy-0.7.1.tar.gz"; sha256 = "95eb8364a4708392bae89035f45341871286a333f749c3141c20573d2b3876e1"; };
+      name = "pluggy-0.8.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/65/25/81d0de17cd00f8ca994a4e74e3c4baf7cd25072c0b831dad5c7d9d6138f8/pluggy-0.8.0.tar.gz"; sha256 = "447ba94990e8014ee25ec853339faf7b0fc8050cdc3289d4d71f7f410fb90095"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -1564,7 +1561,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pytest-dev/pluggy";
-        license = licenses.mit;
+        license = "MIT license";
         description = "plugin and hook calling mechanisms for python";
       };
     };
@@ -1596,14 +1593,14 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://py.readthedocs.io/";
-        license = licenses.mit;
+        license = "MIT license";
         description = "library with cross-python path, ini-parsing, io, code, log facilities";
       };
     };
 
     "pycodestyle" = python.mkDerivation {
-      name = "pycodestyle-2.3.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/e1/88/0e2cbf412bd849ea6f1af1f97882add46a374f4ba1d2aea39353609150ad/pycodestyle-2.3.1.tar.gz"; sha256 = "682256a5b318149ca0d2a9185d365d8864a768a28db66a84a2ea946bcc426766"; };
+      name = "pycodestyle-2.4.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/28/ad/cae9654d7fd64eb3d2ab2c44c9bf8dc5bd4fb759625beab99532239aa6e8/pycodestyle-2.4.0.tar.gz"; sha256 = "cbfca99bd594a10f674d0cd97a3d802a1fdef635d4361e1a2658de47ed261e3a"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -1611,7 +1608,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://pycodestyle.readthedocs.io/";
-        license = licenses.mit;
+        license = "Expat license";
         description = "Python style guide checker";
       };
     };
@@ -1635,8 +1632,8 @@ let
     };
 
     "pyflakes" = python.mkDerivation {
-      name = "pyflakes-1.6.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/26/85/f6a315cd3c1aa597fb3a04cc7d7dbea5b3cc66ea6bd13dfa0478bf4876e6/pyflakes-1.6.0.tar.gz"; sha256 = "8d616a382f243dbf19b54743f280b80198be0bca3a5396f1d2e1fca6223e8805"; };
+      name = "pyflakes-2.0.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/92/9e/386c0d9deef14996eb90d9deebbcb9d3ceb70296840b09615cb61b2ae231/pyflakes-2.0.0.tar.gz"; sha256 = "9a7662ec724d0120012f6e29d6248ae3727d821bba522a0e6b356eff19126a49"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -1659,14 +1656,14 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://pygal.org/";
-        license = licenses.lgpl3Plus;
+        license = "GNU LGPL v3+";
         description = "A python svg graph plotting library";
       };
     };
 
     "restructuredtext-lint" = python.mkDerivation {
-      name = "restructuredtext-lint-1.1.3";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/7e/b5/d28da439210e7f35e4f58f743e2d1fa9c7f34fb5ab9a0532e0bb3a77274a/restructuredtext_lint-1.1.3.tar.gz"; sha256 = "c48ca9a84c312b262809f041fe47dcfaedc9ee4879b3e1f9532f745c182b4037"; };
+      name = "restructuredtext-lint-1.2.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/0d/91/62d0606d01a0e96bb2f660e270e49ed2db6c707ce4933d4fc948caa4d026/restructuredtext_lint-1.2.1.tar.gz"; sha256 = "8712f9066d2c748002ec24f6f7ddca13e0c37654ae4f1ba0dcf0e78ba453c387"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -1676,7 +1673,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/twolfson/restructuredtext-lint";
-        license = licenses.publicDomain;
+        license = "UNLICENSE";
         description = "reStructuredText linter";
       };
     };
@@ -1772,8 +1769,8 @@ let
     };
 
     "tox" = python.mkDerivation {
-      name = "tox-3.5.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/38/ab/3674069bb1dadcd23e2e76c133cfa806026e68c97510224b3726562a8c44/tox-3.5.2.tar.gz"; sha256 = "4baeb3d8ebdcd9f43afce38aa67d06f1165a87d221d5bb21e8b39a0d4880c134"; };
+      name = "tox-3.5.3";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/01/64/a1654cacb2f1dc291854b50df8570418135623c9c3445b0e1c78aeff8fee/tox-3.5.3.tar.gz"; sha256 = "513e32fdf2f9e2d583c2f248f47ba9886428c949f068ac54a0469cac55df5862"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -1788,7 +1785,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://tox.readthedocs.org/";
-        license = licenses.mit;
+        license = "https://opensource.org/licenses/MIT";
         description = "virtualenv-based automation of test activities";
       };
     };
@@ -1809,8 +1806,8 @@ let
     };
 
     "virtualenv" = python.mkDerivation {
-      name = "virtualenv-16.0.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/33/bc/fa0b5347139cd9564f0d44ebd2b147ac97c36b2403943dbee8a25fd74012/virtualenv-16.0.0.tar.gz"; sha256 = "ca07b4c0b54e14a91af9f34d0919790b016923d157afda5efdde55c96718f752"; };
+      name = "virtualenv-16.1.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/4e/8b/75469c270ac544265f0020aa7c4ea925c5284b23e445cf3aa8b99f662690/virtualenv-16.1.0.tar.gz"; sha256 = "f899fafcd92e1150f40c8215328be38ff24b519cd95357fa6e78e006c7638208"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
