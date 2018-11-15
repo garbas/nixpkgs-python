@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 1.8.1)
+# generated using pypi2nix tool (version: 2.0.0)
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
@@ -113,7 +113,6 @@ let
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
-      self."Babel"
       self."MarkupSafe"
     ];
       meta = with pkgs.stdenv.lib; {
@@ -190,7 +189,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://alabaster.readthedocs.io";
-        license = licenses.bsdOriginal;
+        license = "UNKNOWN";
         description = "A configurable sidebar-enabled Sphinx theme";
       };
     };
@@ -217,10 +216,7 @@ let
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."Sphinx"
-      self."six"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://www.attrs.org/";
         license = licenses.mit;
@@ -270,7 +266,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/chardet/chardet";
-        license = licenses.lgpl2;
+        license = licenses.lgpl3;
         description = "Universal encoding detector for Python 2 and 3";
       };
     };
@@ -283,11 +279,9 @@ let
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
-      self."Sphinx"
       self."asn1crypto"
       self."cffi"
       self."idna"
-      self."pytz"
       self."six"
     ];
       meta = with pkgs.stdenv.lib; {
@@ -307,7 +301,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://docutils.sourceforge.net/";
-        license = licenses.publicDomain;
+        license = "public domain, Python, 2-Clause BSD, GPL 3 (see COPYING.txt)";
         description = "Docutils -- Python Documentation Utilities";
       };
     };
@@ -415,7 +409,6 @@ let
       propagatedBuildInputs = [
       self."certifi"
       self."chardet"
-      self."cryptography"
       self."idna"
       self."urllib3"
     ];
@@ -478,11 +471,7 @@ let
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."certifi"
-      self."cryptography"
-      self."idna"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://urllib3.readthedocs.io/";
         license = licenses.mit;
