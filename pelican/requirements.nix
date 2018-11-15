@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 1.8.1)
+# generated using pypi2nix tool (version: 2.0.0)
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
@@ -144,8 +144,8 @@ let
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "";
-        license = licenses.gpl2Plus;
+        homepage = "UNKNOWN";
+        license = "GPL";
         description = "ASCII transliterations of Unicode text";
       };
     };
@@ -175,7 +175,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://docutils.sourceforge.net/";
-        license = licenses.publicDomain;
+        license = "public domain, Python, 2-Clause BSD, GPL 3 (see COPYING.txt)";
         description = "Docutils -- Python Documentation Utilities";
       };
     };
@@ -193,7 +193,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/getpelican/feedgenerator";
-        license = licenses.bsdOriginal;
+        license = "UNKNOWN";
         description = "Standalone version of django.utils.feedgenerator";
       };
     };
@@ -251,7 +251,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://getpelican.com/";
-        license = licenses.agpl3;
+        license = "AGPLv3";
         description = "Static site generator supporting reStructuredText and Markdown source content.";
       };
     };
@@ -268,7 +268,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://dateutil.readthedocs.io";
-        license = licenses.bsdOriginal;
+        license = "Dual License";
         description = "Extensions to the standard Python datetime module";
       };
     };
@@ -328,7 +328,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://www.tornadoweb.org/";
-        license = "License :: OSI Approved :: Apache Software License";
+        license = "http://www.apache.org/licenses/LICENSE-2.0";
         description = "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed.";
       };
     };
