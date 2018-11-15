@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 1.8.1)
+# generated using pypi2nix tool (version: 2.0.0)
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
@@ -95,9 +95,7 @@ let
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."cryptography"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://github.com/jpadilla/pyjwt";
         license = licenses.mit;
@@ -147,14 +145,19 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/davidmuller/aws-requests-auth";
-        license = licenses.bsdOriginal;
+        license = "UNKNOWN";
         description = "AWS signature version 4 signing process for the python requests module";
       };
     };
 
     "boto3" = python.mkDerivation {
+<<<<<<< Updated upstream
       name = "boto3-1.9.44";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/55/2e/7b6dc9672b1d24c962863eb761bc3f4ad40d0755592148bb70260d8b78f4/boto3-1.9.44.tar.gz"; sha256 = "4a1ac4afcb73a701c44fbba44ba7a385612c7ee76baf6f4f26da05928fa56e8a"; };
+=======
+      name = "boto3-1.9.45";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/39/09/54cda4c4aafcd7c64df4c0ff54074d8316b73277f969595661ebede10f1d/boto3-1.9.45.tar.gz"; sha256 = "dd2965f75f18d2ac002616a2c8033abdd48fe5558fec78f1ca20ccd9ccf93b91"; };
+>>>>>>> Stashed changes
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -172,8 +175,13 @@ let
     };
 
     "botocore" = python.mkDerivation {
+<<<<<<< Updated upstream
       name = "botocore-1.12.44";
       src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ee/7b/18eb71f13bbba8d20eca52217fd8a29a234595ed0767766a06c0314660d3/botocore-1.12.44.tar.gz"; sha256 = "44908f329d8ae02394559cb68dd09f5c2965bc5ef0b7b21e41dce017684756cd"; };
+=======
+      name = "botocore-1.12.45";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/6a/da/0de48f26b02cdb8230dd2ac69ea731f5a65765088df0380605f3eabbb574/botocore-1.12.45.tar.gz"; sha256 = "773050ec1b3e3d7e669c3aa77aa0f1ce5c33bb710f2dd39c500b23cf875577fe"; };
+>>>>>>> Stashed changes
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -233,7 +241,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/chardet/chardet";
-        license = licenses.lgpl2;
+        license = licenses.lgpl3;
         description = "Universal encoding detector for Python 2 and 3";
       };
     };
@@ -268,7 +276,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://docutils.sourceforge.net/";
-        license = licenses.publicDomain;
+        license = "public domain, Python, 2-Clause BSD, GPL 3 (see COPYING.txt)";
         description = "Docutils -- Python Documentation Utilities";
       };
     };
@@ -447,7 +455,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/iij/httpie-dag";
-        license = licenses.bsdOriginal;
+        license = licenses.mit;
         description = "HTTPie plugin for IIJ GIO Storage & Analysis Service(DAG).";
       };
     };
@@ -464,7 +472,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/chillaranand/httpie-django-auth";
-        license = licenses.mit;
+        license = "UNKNOWN";
         description = "django Auth plugin for HTTPie.";
       };
     };
@@ -554,7 +562,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pd/httpie-esni-auth";
-        license = licenses.mit;
+        license = "Apache2";
         description = "ESNI auth plugin for HTTPie.";
       };
     };
@@ -645,7 +653,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/banteg/httpie-image";
-        license = "";
+        license = "UNKNOWN";
         description = "iTerm2 image display plugin for HTTPie.";
       };
     };
@@ -788,7 +796,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/chillaranand/httpie-token-auth";
-        license = licenses.mit;
+        license = "UNKNOWN";
         description = "token Auth plugin for HTTPie.";
       };
     };
@@ -853,10 +861,8 @@ let
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [
-      self."cryptography"
       self."h2"
       self."hyperframe"
-      self."pyOpenSSL"
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://hyper.rtfd.org";
@@ -982,10 +988,7 @@ let
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."PyJWT"
-      self."cryptography"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/oauthlib/oauthlib";
         license = licenses.bsdOriginal;
@@ -1053,7 +1056,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://dateutil.readthedocs.io";
-        license = licenses.bsdOriginal;
+        license = "Dual License";
         description = "Extensions to the standard Python datetime module";
       };
     };
@@ -1068,9 +1071,7 @@ let
       propagatedBuildInputs = [
       self."certifi"
       self."chardet"
-      self."cryptography"
       self."idna"
-      self."pyOpenSSL"
       self."urllib3"
     ];
       meta = with pkgs.stdenv.lib; {
@@ -1109,7 +1110,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/requests/requests-f5auth";
-        license = licenses.bsdOriginal;
+        license = "ISC";
         description = "F5 REST Authentication support for Requests.";
       };
     };
@@ -1127,7 +1128,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/mozilla-services/requests-hawk";
-        license = "License :: OSI Approved :: Apache Software License";
+        license = "Apache License (2.0)";
         description = "requests-hawk";
       };
     };
@@ -1146,7 +1147,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/requests/requests-ntlm";
-        license = licenses.isc;
+        license = "ISC";
         description = "This package allows for HTTP NTLM authentication using the requests library.";
       };
     };
@@ -1164,7 +1165,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/requests/requests-oauthlib";
-        license = licenses.bsdOriginal;
+        license = "ISC";
         description = "OAuthlib authentication support for Requests.";
       };
     };
@@ -1208,12 +1209,7 @@ let
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."certifi"
-      self."cryptography"
-      self."idna"
-      self."pyOpenSSL"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://urllib3.readthedocs.io/";
         license = licenses.mit;
