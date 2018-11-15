@@ -247,7 +247,7 @@ let
     ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://docs.pylonsproject.org/projects/deform/en/latest/";
-        license = "License :: Repoze Public License";
+        license = "BSD-derived (http://www.repoze.org/LICENSE.txt)";
         description = "Form library with advanced features like nested forms";
       };
     };
