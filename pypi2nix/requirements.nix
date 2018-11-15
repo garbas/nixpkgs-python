@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 1.8.1)
+# generated using pypi2nix tool (version: 2.0.0)
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
@@ -142,9 +142,7 @@ let
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."six"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://www.attrs.org/";
         license = licenses.mit;
@@ -177,7 +175,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/chardet/chardet";
-        license = licenses.lgpl2;
+        license = licenses.lgpl3;
         description = "Universal encoding detector for Python 2 and 3";
       };
     };
@@ -237,8 +235,8 @@ let
     };
 
     "pypi2nix" = python.mkDerivation {
-      name = "pypi2nix-1.8.1";
-      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "0v12989csv4hhkblvl3mhq2xi0rxrvyqwcfgc5zw373z61ys31ap"; rev = "2c8c01d6b96d20b2b7c84c3e95156de5eb95af15"; };
+      name = "pypi2nix-2.0.0";
+      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "1kvl5pbg2vvfmkfhh344spqwppr4m3hx1kb971h5kq2rc2r13jyk"; rev = "117b5f6f227d2dbc70aa365f0002e875784a53c0"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -298,10 +296,7 @@ let
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
-      propagatedBuildInputs = [
-      self."certifi"
-      self."idna"
-    ];
+      propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://urllib3.readthedocs.io/";
         license = licenses.mit;
