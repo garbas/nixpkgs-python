@@ -136,8 +136,8 @@ let
     };
 
     "Unidecode" = python.mkDerivation {
-      name = "Unidecode-1.0.22";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/9d/36/49d0ee152b6a1631f03a541532c6201942430060aa97fe011cf01a2cce64/Unidecode-1.0.22.tar.gz"; sha256 = "8c33dd588e0c9bc22a76eaa0c715a5434851f726131bd44a6c26471746efabf5"; };
+      name = "Unidecode-1.0.23";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/9b/d8/c1b658ed7ff6e63a745eda483d7d917eb63a79c59fcb422469b85ff47e94/Unidecode-1.0.23.tar.gz"; sha256 = "8b85354be8fd0c0e10adbf0675f6dc2310e56fda43fa8fe049123b6c475e52fb"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
