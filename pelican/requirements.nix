@@ -214,8 +214,8 @@ let
     };
 
     "livereload" = python.mkDerivation {
-      name = "livereload-2.5.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f7/1b/aa5fb8c59fc683bbabdfdcfd4455673d07ac05f391d6b1244ad204b33ebc/livereload-2.5.2.tar.gz"; sha256 = "dd4469a8f5a6833576e9f5433f1439c306de15dbbfeceabd32479b1123380fa5"; };
+      name = "livereload-2.6.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/45/1b/8a8d59d6c20807cdb4c581a958a7ae7ceaee9e3b1714e64575382571bca5/livereload-2.6.0.tar.gz"; sha256 = "e632a6cd1d349155c1d7f13a65be873b38f43ef02961804a1bba8d817fa649a7"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
