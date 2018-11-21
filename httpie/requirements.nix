@@ -151,8 +151,8 @@ let
     };
 
     "boto3" = python.mkDerivation {
-      name = "boto3-1.9.48";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/78/43/434120c81c42e1571c51879c55c73cdd447a858ae5e2c06f8bcb1839ddc5/boto3-1.9.48.tar.gz"; sha256 = "b8a6d9beff31492bd135709d5fbfbe902931c2a6708c4ccbe01f704924f182b8"; };
+      name = "boto3-1.9.50";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/da/b4/854abfaf97f5708203d2a6abf3072170aa0e213a2c9fe0c8aad2070ff5e9/boto3-1.9.50.tar.gz"; sha256 = "177e9dd53db5028bb43050da20cc7956287889fc172e5e6275a634e42a10beeb"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -170,8 +170,8 @@ let
     };
 
     "botocore" = python.mkDerivation {
-      name = "botocore-1.12.48";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/6c/aa/526aca9aebab9a0eee34dc080319e061feb9d6b227b62c8230d62eb2601e/botocore-1.12.48.tar.gz"; sha256 = "7140e51ab0a7aa3b7fa9cf5fefa663e0cd097098fcbd51b12ff8884c8d967754"; };
+      name = "botocore-1.12.50";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/83/79/cfba55c9dd2aec96911e93ba13b99b58af39f75518be2112ec9c8a749662/botocore-1.12.50.tar.gz"; sha256 = "eeaa190f50ee05a56225ee78c64cb8bf0c3bf090ec605ca6c2f325aa3826a347"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -237,8 +237,8 @@ let
     };
 
     "cryptography" = python.mkDerivation {
-      name = "cryptography-2.4.1";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/d2/5f/6ed3135eb1e775187f7ecd4e7713f1415516725365e51f9786143f36e024/cryptography-2.4.1.tar.gz"; sha256 = "e85b410885addaeb31a867eabcefc9ef4a7e904ad45eac9e60a763a54b244626"; };
+      name = "cryptography-2.4.2";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/f3/39/d3904df7c56f8654691c4ae1bdb270c1c9220d6da79bd3b1fbad91afd0e1/cryptography-2.4.2.tar.gz"; sha256 = "05a6052c6a9f17ff78ba78f8e6eb1d777d25db3b763343a1ae89a7a8670386dd"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
