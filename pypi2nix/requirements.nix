@@ -236,7 +236,7 @@ let
 
     "pypi2nix" = python.mkDerivation {
       name = "pypi2nix-2.0.0";
-      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "1kvl5pbg2vvfmkfhh344spqwppr4m3hx1kb971h5kq2rc2r13jyk"; rev = "117b5f6f227d2dbc70aa365f0002e875784a53c0"; };
+      src = pkgs.fetchgit { url = "https://github.com/garbas/pypi2nix"; sha256 = "01356cmxk5qxhb224dpqd374mappair0q9nnqdchsbpyg6yzyxp0"; rev = "e0e77eeb32527dd63f24f690fa9650d198243e86"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
