@@ -6,7 +6,7 @@ Jinja2==2.10
 livereload==2.6.0
 MarkupSafe==1.1.0
 pelican==4.0.0
-Pygments==2.2.0
+Pygments==2.3.0
 python-dateutil==2.7.5
 pytz==2018.7
 six==1.11.0
