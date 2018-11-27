@@ -151,8 +151,8 @@ let
     };
 
     "boto3" = python.mkDerivation {
-      name = "boto3-1.9.51";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/8b/43/ff48f8f44f76f92dec4d21c7cf70b1ab0d7dcc2455169295884d49a00ea0/boto3-1.9.51.tar.gz"; sha256 = "40872be3cab0e1078e97aa0cfa8d836841d4e0acf40f5a4e59c6c33eacaea321"; };
+      name = "boto3-1.9.52";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/33/d2/7af1a59b01a9855ea0c0531ccefac58a6615cbf51d75a1c7e79c9645d263/boto3-1.9.52.tar.gz"; sha256 = "6d2720ec4b96ead53c6a1401741142209db474b02fda7aac1ad30afd52f17ff1"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -170,8 +170,8 @@ let
     };
 
     "botocore" = python.mkDerivation {
-      name = "botocore-1.12.51";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/93/4c/07f18aae1fc89d5b08dd610be6739b466a2829d86a317b47831df21bcce3/botocore-1.12.51.tar.gz"; sha256 = "4209c43f6913470371bda03aea01c933247dc9592421eb1abf1fb9f594f60a35"; };
+      name = "botocore-1.12.52";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/8f/a3/21e738b77a32f28d22827c34b5efa002bad1b11d0a742782f5fc9cc09253/botocore-1.12.52.tar.gz"; sha256 = "86c0712e0a5f496d6a252276a98be022af7f718127f30cc503e45e27c2179eb1"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
