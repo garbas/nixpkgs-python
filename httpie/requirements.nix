@@ -151,8 +151,8 @@ let
     };
 
     "boto3" = python.mkDerivation {
-      name = "boto3-1.9.54";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/9c/e9/78b90d70d73b3b2e47c9b324bba9cad5d9911f2d52d13ca29f6e63233543/boto3-1.9.54.tar.gz"; sha256 = "1c11a2c8a06a313d48e22127f807cd935a6eb3fdca5c60b22e7506109d4f1365"; };
+      name = "boto3-1.9.56";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/cd/93/a2210a2813d9d31349039778cf0ffc037745d92649dd7bc322c9aecb26ae/boto3-1.9.56.tar.gz"; sha256 = "83db18ec9c30563001aeecbcf6b35e011e99d01eb6c3a97a8c75a7c2c6bf52f3"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -170,8 +170,8 @@ let
     };
 
     "botocore" = python.mkDerivation {
-      name = "botocore-1.12.54";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/25/7a/f7472a0ca25cf029570946fdc7e72bd59bbb481c7279524d3619640093e7/botocore-1.12.54.tar.gz"; sha256 = "b22d5f3bff0efbd46a128348bdd8da9e8745ca4d0a2136f34066cc22a475556d"; };
+      name = "botocore-1.12.56";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/fb/d9/37d21f76656d7603e5f5c247cd399187a75e39698ce7d696c11087a0d552/botocore-1.12.56.tar.gz"; sha256 = "cca42d3526488136657c66da8000d6c28e4c2e3ef9e912d7322b7487c8ff68a0"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
@@ -190,15 +190,15 @@ let
     };
 
     "certifi" = python.mkDerivation {
-      name = "certifi-2018.10.15";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/41/b6/4f0cefba47656583217acd6cd797bc2db1fede0d53090fdc28ad2c8e0716/certifi-2018.10.15.tar.gz"; sha256 = "6d58c986d22b038c8c0df30d639f23a3e6d172a05c3583e766f4c0b785c0986a"; };
+      name = "certifi-2018.11.29";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/55/54/3ce77783acba5979ce16674fc98b1920d00b01d337cfaaf5db22543505ed/certifi-2018.11.29.tar.gz"; sha256 = "47f9c83ef4c0c621eaef743f133f09fa8a74a9b75f037e8624f83bd1b6626cb7"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://certifi.io/";
+        homepage = "https://certifi.io/";
         license = licenses.mpl20;
         description = "Python package for providing Mozilla's CA Bundle.";
       };
