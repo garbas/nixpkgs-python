@@ -153,15 +153,15 @@ let
     };
 
     "PasteDeploy" = python.mkDerivation {
-      name = "PasteDeploy-1.5.2";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/0f/90/8e20cdae206c543ea10793cbf4136eb9a8b3f417e04e40a29d72d9922cbd/PasteDeploy-1.5.2.tar.gz"; sha256 = "d5858f89a255e6294e63ed46b73613c56e3b9a2d82a42f1df4d06c8421a9e3cb"; };
+      name = "PasteDeploy-2.0.0";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/fc/83/3fc99651fe2da1d14180dc895a74fb62a8ccbad3ce8be0ccc5ea46646859/PasteDeploy-2.0.0.tar.gz"; sha256 = "8ac7aed091a46eee34bcbb687bfdce73327be1897f558534e6f49d2d4faf020e"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "http://pythonpaste.org/deploy/";
+        homepage = "https://pylonsproject.org/";
         license = licenses.mit;
         description = "Load, configure, and compose WSGI applications and servers";
       };

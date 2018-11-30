@@ -10,7 +10,7 @@ iso8601==0.1.12
 Jinja2==2.10
 Mako==1.0.7
 MarkupSafe==1.1.0
-PasteDeploy==1.5.2
+PasteDeploy==2.0.0
 peppercorn==0.6
 plaster==1.0
 plaster-pastedeploy==0.6
