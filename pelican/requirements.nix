@@ -232,8 +232,8 @@ let
     };
 
     "pelican" = python.mkDerivation {
-      name = "pelican-4.0.0";
-      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/3c/0f/6b1ce563674e6bba6e915559e20580029ad663dc531962492fb426509ab2/pelican-4.0.0.tar.gz"; sha256 = "ad22bf8f141ce0989855106c49a7ab55ca2bcc9541e71cc8fb8cf55f394407fe"; };
+      name = "pelican-4.0.1";
+      src = pkgs.fetchurl { url = "https://files.pythonhosted.org/packages/ac/16/7d3e5cef02c16c0a8ce5fb3a8790f0d193e954743b1177eb582107c3196d/pelican-4.0.1.tar.gz"; sha256 = "990aa8b62a7bcb34c7585e5a67d05a10690ab2fff3cb761d0a94826cec51cd17"; };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
