@@ -47,14 +47,6 @@ Pelican
 This is a collections of Pelican_ and Pelican extensions packages.
 
 
-HomeAssistant
-^^^^^^^^^^^^^
-
-:maintainers: ??? (Looking for maintainer)
-
-This is a collections of HomeAssistant_ and its components.
-
-
 Science
 ^^^^^^^^
 

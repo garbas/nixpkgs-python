@@ -42,11 +42,6 @@ in createSets [
     description = "python-attrs";
   }
 
-  { name = "ckan";
-    maintainers = [ maintainers.sorki ];
-    description = "CKAN";
-  }
-
   { name = "django";
     maintainers = [ maintainers.unknown ];
     description = "Django framework and its extensions.";
@@ -60,11 +55,6 @@ in createSets [
   { name = "flask";
     maintainers = [ maintainers.garbas ];
     description = "Flask framework and its extensions.";
-  }
-
-  { name = "homeassistant";
-    maintainers = [ maintainers.unknown ];
-    description = "Homeassistant framework and its components.";
   }
 
   { name = "pelican";

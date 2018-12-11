@@ -1,2 +1,0 @@
-https://github.com/ckan/ckan/archive/master.zip#egg=ckan
--r https://raw.githubusercontent.com/ckan/ckan/master/requirements.txt

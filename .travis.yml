@@ -1,38 +1,33 @@
+branches:
+  only:
+  - master
 language: nix
-
+sudo: required
 os:
-  - linux
-  # - osx
-
+- linux
+language: nix
 env:
-- PKGS_SET=attrs
-- PKGS_SET=ckan
-- PKGS_SET=django
-- PKGS_SET=flake8
-- PKGS_SET=flask
-- PKGS_SET=homeassistant
-- PKGS_SET=openstackclient
-- PKGS_SET=pelican
-- PKGS_SET=pykube
-- PKGS_SET=pypi2nix
-- PKGS_SET=pypiserver
-- PKGS_SET=pyramid
-- PKGS_SET=pytest
-- PKGS_SET=science
-- PKGS_SET=sphinx
-- PKGS_SET=httpie
-
-script:
-- travis_wait 60 make pypi2nix-bin $PKGS_SET;
-- mkdir nars/;
-- nix copy --to file://./nars/ ./result-pypi2nix-bin
-- nix copy --to file://./nars/ ./result-$PKGS_SET;
-
+  global:
+    secure: "KwRrujVomKcehzss5vFgEI0C0uVXwBdJD9Db7bH4FlOpisYM/TdJ5ysmV6ljiXfkeldL2N9PwraNJ1Cet6FwohVcQE/YVUKDz6tdP0jwPIAZwIqEKxMoprK8A4PURyIRpV/UAVEyMrbWoVcDo22AOuSCb8bsGzVW6idUtvig3ay7jJdM+b+BEmFccsEqiC69ZDG0Ai+zU79JHlL4OUEtpgJcjuMeH8ZHHlxTSdUKNDbpclcDMg7b0z6UD0q5UdGx9FckAqt9Y/cztSSij/JBwj47y9Z6YM8eN/UW+TfLzPXNPgWvg0Znu9lDoOtlboFC9OTyNrpOZNnCkV653GsFXBCKQUJPUQXpZVqWwFQ3pnBVnZip7bjhTneDGJzHBKAhcpMKDkLUdvv0XFVJIAMAuVCByOGSPpnB3vPA2YCNY6UueDBhUyLciSz+jUTpMiCltJnR+hTse2olLZ/Q8LSXmIBBwNY7+v1rEsOIFrtdBOn9m4XiEP14aMZnfsV0yDvXVS7EabFghMdscijfZZsgBf0bswXqR2xEsO2R9Bw4+6VOkk1k5JO4pBGVEtUW6rWKL0vJIAyjdW1RC7MUA+zq2l8TcHu49GSHgw2E5pPqVvHwJULgpQMAFisKaePflEnJaQWjcxwFdPz90wJjXTARGR0XVW16nCAuWpbsS1N12b8="
+  matrix:
+  - PYTHON_SET=science
+  - PYTHON_SET=attrs
+  - PYTHON_SET=django
+  - PYTHON_SET=flake8
+  - PYTHON_SET=flask
+  - PYTHON_SET=httpie
+  - PYTHON_SET=openstackclient
+  - PYTHON_SET=pelican
+  - PYTHON_SET=pykube
+  - PYTHON_SET=pypiserver
+  - PYTHON_SET=pyramid
+  - PYTHON_SET=pytest
+  - PYTHON_SET=sphinx
 before_install:
 - source .travis/before_install
-
-install:
-  - echo 'garbas.si ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPNIqf3Qgnwr/CMslsEK7qIFHOcWWdxvzJIZwBQPjulZ' >> $HOME/.ssh/known_hosts
-
+script:
+- nix-env -if https://github.com/garbas/pypi2nix/tarball/master
+- travis_wait 60 make $PYTHON_SET;
+- cachix push nixpkgs-python ./result-$PYTHON_SET
 after_success:
 - source .travis/after_success

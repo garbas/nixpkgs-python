@@ -49,204 +49,72 @@ let
 
 in skipOverrides {
 
-  "attrs" = self: old: {
-    propagatedBuildInputs =
-      removeDependencies [ "pytest" "Sphinx" ] old.propagatedBuildInputs;
-  };
-
-  "cryptography" = self: old: {
-    propagatedBuildInputs =
-      removeDependencies [ "Sphinx" ] old.propagatedBuildInputs;
-  };
-
-  "botocore" = self: old: {
-    patchPhase = ''
-      sed -i -e "s|python-dateutil>=2.1,<3.0.0|python-dateutil|" setup.py
-    '';
-  };
-
-  "async-timeout" = self: old: {
-    patchPhase = ''
-      sed -i -e "s|setup_requires=\['pytest-runner'\],||" setup.py
-    '';
+  "apipkg" = self: old: {
+    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
   };
 
   "clickclick" = self: old: {
-    patchPhase = ''
-      sed -i -e "s|setup_requires=\['six', 'flake8'\],||" setup.py
-      sed -i -e "s|command_options=command_options,||" setup.py
-    '';
+    buildInputs = old.buildInputs ++ [ self."six" self."flake8" ];
   };
 
-  "connexion" = self: old: {
-    patchPhase = ''
-      sed -i -e "s|setup_requires=\['flake8'\],||" setup.py
-      sed -i -e "s|jsonschema>=2.5.1|jsonschema|" setup.py
-      sed -i -e "s|.*python_version <.*||" setup.py
-    '';
-  };
-
-  "execnet" = self: old:
-  let
-    version = with builtins; (parseDrvName old.name).version;
-  in
-  {
-    patchPhase = ''
-      sed -i -e "s|.*setup_requires=.*,.*||" setup.py
-      sed -i -e "s|setup(|setup(version=\"${version}\",|" setup.py
-    '';
-  };
-
-  "flake8" = self: old: {
-    patchPhase = ''
-      sed -i -e "s|setup_requires=\['pytest-runner'\],||" setup.py
-    '';
+  "execnet" = self: old: {
+    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
   };
 
   "flake8-codeclimate" = self: old: {
-    patchPhase = ''
-      sed -i -e "s|'setuptools_scm',||" setup.py
-    '';
-  };
-
-  "flake8-debugger" = self: old: {
-    patchPhase = ''
-      sed -i -e "s|'pytest-runner'|'''|" setup.py
-    '';
+    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
   };
 
   "flake8-logging-format" = self: old: {
-    patchPhase = ''
-      sed -i -e "s|\"nose>=[0-9\.]*\"|\"\"|" setup.py
-    '';
+    buildInputs = old.buildInputs ++ [ self."nose" ];
   };
 
   "flake8-mutable" = self: old: {
-    patchPhase = ''
-      sed -i -e "s|'pytest-runner'|'''|" setup.py
-    '';
+    buildInputs = old.buildInputs ++ [ self."pytest-runner" ];
   };
 
   "flake8-print" = self: old: {
-    patchPhase = ''
-      sed -i -e "s|'pytest-runner'|'''|" setup.py
-    '';
+    buildInputs = old.buildInputs ++ [ self."pytest-runner" ];
   };
 
   "gevent-socketio" = self: old: {
-    patchPhase = ''
-      sed -i -e "s|setup_requires=('versiontools >= 1.7'),||" setup.py
-    '';
+    buildInputs = old.buildInputs ++ [ self."versiontools" ];
   };
 
-  "hpack" = self: old: {
-    patchPhase = ''
-      rm -f README.rst HISTORY.rst
-      touch README.rst
-      touch HISTORY.rst
-    '';
+  "PasteDeploy" = self: old: {
+    buildInputs = old.buildInputs ++ [ self."pytest-runner" ];
   };
 
-  "jsonschema" = self: old: {
-    patchPhase = ''
-      sed -i -e 's|setup_requires=\["vcversioner[><=0-9\.]*"\],||' setup.py
-    '';
-  };
-
-  "mccabe" = self: old: {
-    patchPhase = ''
-      sed -i -e "s|setup_requires=\['pytest-runner'\],||" setup.py
-    '';
-  };
-
-   "numpy" = self: old: {
-      preConfigure = ''
-        sed -i 's/-faltivec//' numpy/distutils/system_info.py
-      '';
-      preBuild = ''
-        echo "Creating site.cfg file..."
-        cat << EOF > site.cfg
-        [openblas]
-        include_dirs = ${pkgs.openblasCompat}/include
-        library_dirs = ${pkgs.openblasCompat}/lib
-        EOF
-      '';
-      passthru = {
-        blas = pkgs.openblasCompat;
-      };
-   };
-
-  "pelican" = self: old: {
-    # TODO: add this to every package
-    LANG = "en_US.UTF-8";
-    buildInputs = old.buildInputs ++ [ pkgs.glibcLocales ];
-  };
-
-  "py" = self: old: {
+  "pluggy" = self: old: {
     buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
   };
 
   "pygal" = self: old: {
-    patchPhase = ''
-      sed -i -e "s|setup_requires=\['pytest-runner'\],||" setup.py
-    '';
+    buildInputs = old.buildInputs ++ [ self."pytest-runner" ];
   };
 
   "pypiserver" = self: old: {
-    patchPhase = ''
-      sed -i -e "s|setup_requires *= \[.*|setup_requires=\[\]|" setup.py
-    '';
+    buildInputs = old.buildInputs ++ [ self."setuptools-git" ];
   };
 
-  "pyramid-who" = self: old: {
-    patchPhase = ''
-      rm -f CHANGES.txt
-      touch CHANGES.txt
-    '';
+  "pytest" = self: old: {
+    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
   };
 
-  "pytest" = self: old:
-  let
-    version = with builtins; (parseDrvName old.name).version;
-  in
-  {
-    patchPhase = ''
-      sed -i -e "s|.*setup_requires.*=.*,||" setup.py
-      sed -i -e "s|setup(|setup(version=\"${version}\",|" setup.py
-    '';
+  "pytest-forked" = self: old: {
+    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
   };
 
-  "pytest-django" = self: old:
-  {
-    patchPhase = ''
-      sed -i -e "s|.*setup_requires.*=.*,||" setup.py
-    '';
-  };
-  "pytest-forked" = self: old:
-  {
-    patchPhase = ''
-      sed -i -e "s|setup_requires=\['setuptools_scm'\],||" setup.py
-    '';
+  "pytest-xdist" = self: old: {
+    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
   };
 
-  "python-dateutil" = self: old:
-  {
-    patchPhase = ''
-      sed -i -e "s|setup_requires=\['setuptools_scm'\],||" setup.py
-    '';
+  "python-dateutil" = self: old: {
+    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
   };
 
-  "pytest-xdist" = self: old:
-  {
-    patchPhase = ''
-      sed -i -e "s|setup_requires=\['setuptools_scm'\],||" setup.py
-    '';
-  };
-
-  "python-magic" = self: old: {
-    patchPhase = ''
-      substituteInPlace magic.py --replace "ctypes.util.find_library('magic')" "'${pkgs.file}/lib/libmagic${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}'"
-    '';
+  "requestsexceptions" = self: old: {
+    buildInputs = old.buildInputs ++ [ self."pbr" ];
   };
 
   "scipy" = self: old: {
@@ -268,10 +136,27 @@ in skipOverrides {
      passthru = {
        blas = pkgs.openblasCompat;
      };
+  };
 
+  "numpy" = self: old: {
+      preConfigure = ''
+        sed -i 's/-faltivec//' numpy/distutils/system_info.py
+      '';
+      preBuild = ''
+        echo "Creating site.cfg file..."
+        cat << EOF > site.cfg
+        [openblas]
+        include_dirs = ${pkgs.openblasCompat}/include
+        library_dirs = ${pkgs.openblasCompat}/lib
+        EOF
+      '';
+      passthru = {
+        blas = pkgs.openblasCompat;
+      };
   };
 
   "tox" = self: old: {
-    buildInputs = old.buildInputs ++ [self."setuptools-scm"];
+    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
   };
+
 }

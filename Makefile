@@ -1,5 +1,8 @@
 NIX_PATH=nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
-PYPI2NIX=./../result-pypi2nix-bin/bin/pypi2nix -W https://travis.garbas.si/wheels_cache/
+PYPI2NIX=pypi2nix -W https://travis.garbas.si/wheels_cache/
+NIX_BUILD=nix-build --option sandbox true -Q -A
+PY3=3.7
+PY2=2.7
 
 
 all: \
@@ -7,205 +10,177 @@ all: \
 	django \
 	flake8 \
 	flask \
-	homeassistant \
+	httpie \
 	openstackclient \
 	pelican \
 	pykube \
-	pyramid \
-	pypi2nix \
 	pypiserver \
+	pyramid \
 	pytest \
 	science \
-	sphinx \
-	pypi2nix-bin \
-	static
+	sphinx
 
 attrs:
 	cd attrs/ && \
 		$(PYPI2NIX) -v \
-			-V 3 \
+			-V $(PY3) \
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix build -f default.nix attrs -o result-attrs
-
-ckan:
-	cd ckan/ && \
-		$(PYPI2NIX) -v \
-			-V 2.7 \
-			-O ../overrides.nix \
-			-r requirements.txt \
-			-E postgresql \
-			-E gcc \
-			-E openssl \
-			-E libffi
-	nix-build -Q -A ckan -o result-ckan
-
+	$(NIX_BUILD) attrs -o result-attrs
 
 django:
 	cd django/ && \
 		$(PYPI2NIX) -v \
-			-V 3.5 \
+			-V $(PY3) \
 			-O ../overrides.nix \
 			-r requirements.txt
-	nix-build -Q -A django -o result-django
+	$(NIX_BUILD) django -o result-django
 
 
 flake8:
 	cd flake8/ && \
 		$(PYPI2NIX) -v \
-			-V 3 \
-			-r requirements.txt \
-			-O ../overrides.nix
-	nix build -f default.nix flake8 -o result-flake8
+			-V $(PY3) \
+			-O ../overrides.nix \
+			-s nose \
+			-s pytest-runner \
+			-s setuptools-scm \
+			-r requirements.txt
+	$(NIX_BUILD) flake8 -o result-flake8
 
 
 flask:
 	cd flask/ && \
 		$(PYPI2NIX) -v \
-			-V 3.5 \
+			-V $(PY3) \
+			-s vcversioner \
+			-s flake8 \
+			-s pytest-runner \
+			-s setuptools-scm \
+			-s six \
 			-r requirements.txt \
 			-O ../overrides.nix
-	nix-build -Q -A flask -o result-flask
-
-
-homeassistant:
-	cd homeassistant/ && \
-		$(PYPI2NIX) -v \
-			-V 3.5 \
-			-s pytz
-			-O ../overrides.nix \
-			-r requirements.txt
-	nix-build -Q -A homeassistant -o result-homeassistant
-
-
-pelican:
-	cd pelican/ && \
-		$(PYPI2NIX) -v \
-			-V 3.5 \
-			-O ../overrides.nix \
-			-r requirements.txt
-	nix-build -Q -A pelican -o result-pelican
-
-
-pykube:
-	cd pykube/ && \
-		$(PYPI2NIX) -v \
-		-V 3.5 \
-		-r requirements.txt \
-		-O ../overrides.nix
-	nix-build -Q -A pykube -o result-pykube
-
-
-pyramid:
-	cd pyramid/ && \
-		$(PYPI2NIX) -v \
-			-V 3.5 \
-			-O ../overrides.nix \
-			-r requirements.txt
-	nix-build -Q -A pyramid -o result-pyramid
-
-pypi2nix:
-	cd pypi2nix/ && \
-		$(PYPI2NIX) -v \
-			-V 3.5 \
-			-O ../overrides.nix \
-			-r requirements.txt
-	nix-build -A pypi2nix -o result-pypi2nix
-
-pypiserver:
-	cd pypiserver/ && \
-		$(PYPI2NIX) -v \
-			-V 3.5 \
-			-O ../overrides.nix \
-			-r requirements.txt
-	nix-build -Q -A pypiserver -o result-pypiserver
-
-
-pytest:
-	cd pytest/ && \
-		$(PYPI2NIX) -v \
-			-V 3.5 \
-			-O ../overrides.nix \
-			-r requirements.txt
-	nix-build -Q -A pytest -o result-pytest
+	$(NIX_BUILD) flask -o result-flask
 
 
 httpie:
 	cd httpie/ && \
 		$(PYPI2NIX) -v \
-			-V 3.5 \
+			-V $(PY3) \
 			-O ../overrides.nix \
 			-E gcc \
 			-E openssl \
 			-E libffi \
 			-E kerberos \
+			-s setuptools-scm \
 			-r requirements.txt
-	nix-build -Q -A httpie -o result-httpie
+	$(NIX_BUILD) httpie -o result-httpie
+
+
+openstackclient:
+	cd openstackclient/ && \
+		$(PYPI2NIX) -v \
+			-V $(PY2) \
+			-O ../overrides.nix \
+			-E which \
+			-E libffi \
+			-E openssl.dev \
+			-s vcversioner \
+			-s pbr \
+			-e simplejson==3.16.0 \
+			-r requirements.txt
+	$(NIX_BUILD) openstackclient -o result-openstackclient
+
+
+pelican:
+	cd pelican/ && \
+		$(PYPI2NIX) -v \
+			-V $(PY3) \
+			-O ../overrides.nix \
+			-s setuptools-scm \
+			-r requirements.txt
+	$(NIX_BUILD) pelican -o result-pelican
+
+
+pykube:
+	cd pykube/ && \
+		$(PYPI2NIX) -v \
+			-V $(PY3) \
+			-r requirements.txt \
+			-O ../overrides.nix
+	$(NIX_BUILD) pykube -o result-pykube
+
+
+pyramid:
+	cd pyramid/ && \
+		$(PYPI2NIX) -v \
+			-V $(PY3) \
+			-O ../overrides.nix \
+			-s pytest-runner \
+			-s setuptools-scm \
+			-s versiontools \
+			-r requirements.txt
+	$(NIX_BUILD) pyramid -o result-pyramid
+
+pypiserver:
+	cd pypiserver/ && \
+		$(PYPI2NIX) -v \
+			-V $(PY3) \
+			-O ../overrides.nix \
+			-s setuptools-git \
+			-r requirements.txt
+	$(NIX_BUILD) pypiserver -o result-pypiserver
+
+
+pytest:
+	cd pytest/ && \
+		$(PYPI2NIX) -v \
+			-V $(PY3) \
+			-O ../overrides.nix \
+			-s setuptools-scm \
+			-r requirements.txt
+	$(NIX_BUILD) pytest -o result-pytest
 
 
 science:
 	cd science/ && \
 		$(PYPI2NIX) -v \
-			-V 3.5 \
-			-s numpy \
-			-r requirements.txt \
+			-V $(PY3) \
 			-O ../overrides.nix \
 			-E gfortran \
 			-E blas \
 			-E pkgconfig \
 			-E freetype.dev \
 			-E libpng \
-			-E agg
-	nix-build -Q -A science -o result-science
+			-E agg \
+			-s numpy \
+			-s setuptools-scm \
+			-r requirements.txt
+	$(NIX_BUILD) science -o result-science
 
 
 sphinx:
 	cd sphinx/ && \
 		$(PYPI2NIX) -v \
-			-V 3 \
-			-E libffi \
+			-V $(PY3) \
 			-O ../overrides.nix \
+			-E libffi \
 			-E openssl.dev \
 			-r requirements.txt
-	nix-build -Q -A sphinx -o result-sphinx
-
-
-openstackclient:
-	cd openstackclient/ && \
-		$(PYPI2NIX) -v \
-			-V 2.7 \
-			-r requirements.txt \
-			-E which \
-			-E libffi \
-			-E openssl.dev
-	nix-build -A openstackclient -o result-openstackclient
-
-
-pypi2nix-bin:
-	if [ ! -e pypi2nix-src ]; then git clone https://github.com/garbas/pypi2nix pypi2nix-src; fi
-	cd pypi2nix-src && nix-build release.nix -Q -A build."x86_64-linux" -o $(PWD)/result-pypi2nix-bin && cd ..
-
-
-static:
-	nix-build -Q static.nix -o result-static
+	$(NIX_BUILD) sphinx -o result-sphinx
 
 
 .PHONY: \
 	attrs \
-	ckan \
 	django \
 	flake8 \
 	flask \
-	homeassistant \
 	httpie \
 	openstackclient \
 	pelican \
 	pykube \
-	pypi2nix \
-	pypi2nix-bin \
 	pypiserver \
 	pyramid \
 	pytest \
 	science \
-	sphinx \
-	static
+	sphinx
