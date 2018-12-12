@@ -26,7 +26,7 @@ env:
 before_install:
 - source .travis/before_install
 script:
-- nix-env -if https://github.com/garbas/pypi2nix/tarball/master
+- nix-env -iQf https://github.com/garbas/pypi2nix/tarball/master
 - travis_wait 60 make $PYTHON_SET;
 - cachix push nixpkgs-python ./result-$PYTHON_SET
 after_success:
