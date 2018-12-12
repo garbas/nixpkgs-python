@@ -415,7 +415,6 @@ let
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [
         self."certifi"
-        self."idna"
       ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://urllib3.readthedocs.io/";
