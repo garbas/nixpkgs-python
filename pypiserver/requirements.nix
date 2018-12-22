@@ -95,8 +95,6 @@ let
         sha256 = "3d948f64138c25633613f303bcc471126eae67c04d5e3f6b7b8ce6242f8653e0";
       };
       doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -113,8 +111,6 @@ let
         sha256 = "7785e6bd2b8593722a6e40b8c25a9f67c2c3502ebbdff399c3d48deb92e0e7fa";
       };
       doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [
         self."passlib"
@@ -133,8 +129,6 @@ let
         sha256 = "ff64136da01aabba76ae88b050e7197918d8b2139ccbf6144e14d472b9c40445";
       };
       doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
