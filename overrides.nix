@@ -57,6 +57,10 @@ in skipOverrides {
     buildInputs = old.buildInputs ++ [ self."six" self."flake8" ];
   };
 
+  "connexion" = self: old: {
+    buildInputs = old.buildInputs ++ [ self."flake8" ];
+  };
+
   "execnet" = self: old: {
     buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
   };
@@ -79,6 +83,10 @@ in skipOverrides {
 
   "gevent-socketio" = self: old: {
     buildInputs = old.buildInputs ++ [ self."versiontools" ];
+  };
+
+  "jsonschema" = self: old: {
+    buildInputs = old.buildInputs ++ [ self."vcversioner" ];
   };
 
   "PasteDeploy" = self: old: {
