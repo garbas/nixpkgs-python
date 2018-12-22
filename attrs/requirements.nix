@@ -95,8 +95,6 @@ let
         sha256 = "10cbf6e27dbce8c30807caf056c8eb50917e0eaafe86347671b57254006c3e69";
       };
       doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
