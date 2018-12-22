@@ -95,8 +95,6 @@ let
         sha256 = "cd7b2d1018258d7247a71425e9f26463dfb444d411c39569972f4ce586b0c9d8";
       };
       doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [
         self."six"
@@ -115,8 +113,6 @@ let
         sha256 = "ce3be5d520b4d2c3e5eeb4cd2ef62b9b9ab8ac6b6fedbaa0e39cdb6f50644278";
       };
       doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -133,8 +129,6 @@ let
         sha256 = "c94b792af431f6adb6859eb218137acd9a35f4f7442cea57e4a59c54751c36af";
       };
       doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
       buildInputs = commonBuildInputs ++ [
         self."numpy"
       ];
@@ -159,8 +153,6 @@ let
         sha256 = "3d734559db35aa3697dadcea492a423118c5c55d176da2f3be9c98d4803fc2a7";
       };
       doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -177,8 +169,6 @@ let
         sha256 = "f353aab21fd474459d97b709e527b5571314ee5f067441dc9f88e33eecd96592";
       };
       doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -195,8 +185,6 @@ let
         sha256 = "88f9287c0174266bb0d8cedd395cfba9c58e87e5ad86b2ce58859bc11be3cf02";
       };
       doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [
         self."six"
@@ -215,8 +203,6 @@ let
         sha256 = "51a2424c8ed80e60bdb9a896806e7adaf24a58253b326fbad10f80a6d06f2214";
       };
       doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
       buildInputs = commonBuildInputs ++ [
         self."numpy"
       ];
@@ -237,8 +223,6 @@ let
         sha256 = "1191f2a136b5e86f7ca8ab00a97ef7aef997131f1f6d4971be69a1ef387d8b40";
       };
       doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -255,8 +239,6 @@ let
         sha256 = "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73";
       };
       doCheck = commonDoCheck;
-      checkPhase = "";
-      installCheckPhase = "";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
