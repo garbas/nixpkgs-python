@@ -36,7 +36,7 @@ deploy:
   secret_access_key:
     secure: brgzOwP4k/XmmWG0vpzjVMSOc+i0bw28Zk0i0zPT9YmFybWbQ17AXZj7OKnju4Wre2C192xG2u+jE9Jnge5nxbEPdRKKNvVvnLoHKcNg/SbOdU8yK8yKdsQDYYALu79WMsR6vw/YPRyEQBqVWNNY/ZRmGG5U9mzn18mkkyPY3lCsNTPLpf0WoNoIPfzY4ml7+UnzjM25t+eDZoOOWs8JHI4rTx/55YVqVCwH2aAWhzoxHq2amHcaqPX0l0hnsRG8tGjw0+3RLdtUQsymSJIIA72i76GvFbqML+pXix4Tyzgfec2qF+rZCnO+JmnjS6Lm9uuXdAFCDYUycBdH9jEpb2u+1TXQigoIVct9uvkvUr//CWYzWUOd2++xagVLP8ZeXdHMGWESkZnCPwt4WeJoMNFeqWo6nFVhw86NiFu4pggN3AOJb4Gag2iu/LmZGfUbTvjdqJrDnkGRw23IoNpYxllgh+CiVOMugPWQ5psfC7nqVlRqEji3kNs17G3H2InCeRVuyA21RQWdst06R21vOH0RnbPIJKIcLqRjK661myu3YrgSXWq7aVT8BCc1Sf3FqMGot2BZY4hZjoT0D7a4ADxq40AvGuCUpoGD2Ez/6gSh4CEoG+HE1Hdr+ZoiAD2E+qJsV/nXy3YShZG4e0vM78wGTPRiqP5/j6a+/8XUa/c=
   bucket: nixpkgs-python-wheels
-  local-dir: "/var/travis/wheels_cache/"
+  local-dir: "/tmp/pypi2nix/cache/wheel/"
   on:
     repo: garbas/nixpkgs-python
   skip_cleanup: true

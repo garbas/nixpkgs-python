@@ -1,6 +1,6 @@
 NIX_PATH=nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
-PYPI2NIX=pypi2nix -W https://travis.garbas.si/wheels_cache/
-NIX_BUILD=nix-build --option sandbox true -Q -A
+PYPI2NIX=pypi2nix -W https://console.cloud.google.com/storage/browser/nixpkgs-python-wheels/
+NIX_BUILD=nix-build --option sandbox true -Q -j 1 -A
 PY3=3.7
 PY2=2.7
 

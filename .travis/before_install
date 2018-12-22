@@ -1,6 +1,6 @@
 # -*- mode: sh -*-
 
+nix-env -iA nixpkgs.nix-prefetch-git nixpkgs.nix-prefetch-hg nixpkgs.cachix
+sudo mount -o remount,exec,size=4G,mode=755 /run/user || true
 cachix use pypi2nix
 cachix use nixpkgs-python
-sudo mount -o remount,exec,size=4G,mode=755 /run/user || true
-nix-env -iA nixpkgs.nix-prefetch-git nixpkgs.nix-prefetch-hg nixpkgs.cachix
