@@ -35,95 +35,58 @@ let
           )
           filteredNames
         );
-  removeDependencies = names: deps:
-    with builtins; with pkgs.lib;
-      filter
-      (drv: all
-        (suf:
-          ! hasSuffix ("-" + suf)
-          (parseDrvName drv.name).name
-        )
-        names
-      )
-      deps;
+
+  combineCorrections = corrections: self: old:
+    builtins.foldl'
+    (updatedDerivation: correction: correction self updatedDerivation)
+    old
+    corrections;
+
+  addBuildInputs = names: self: old: {
+    buildInputs = old.buildInputs ++ builtins.map (name: self."${name}") names;
+  };
 
 in skipOverrides {
 
-  "apipkg" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
-  };
+  "apipkg" = addBuildInputs ["setuptools-scm"];
 
-  "clickclick" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."six" self."flake8" ];
-  };
+  "clickclick" = addBuildInputs ["six" "flake8"];
 
-  "connexion" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."flake8" ];
-  };
+  "connexion" = addBuildInputs ["flake8"];
 
-  "execnet" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
-  };
+  "execnet" = addBuildInputs ["setuptools-scm"];
 
-  "flake8-codeclimate" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
-  };
+  "flake8-codeclimate" = addBuildInputs ["setuptools-scm"];
 
-  "flake8-logging-format" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."nose" ];
-  };
+  "flake8-logging-format" = addBuildInputs ["nose"];
 
-  "flake8-mutable" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."pytest-runner" ];
-  };
+  "flake8-mutable" = addBuildInputs ["pytest-runner"];
 
-  "flake8-print" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."pytest-runner" ];
-  };
+  "flake8-print" = addBuildInputs ["pytest-runner"];
 
-  "gevent-socketio" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."versiontools" ];
-  };
+  "gevent-socketio" = addBuildInputs ["versiontools"];
 
-  "jsonschema" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."vcversioner" ];
-  };
+  "jsonschema" = addBuildInputs ["vcversioner"];
 
-  "PasteDeploy" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."pytest-runner" ];
-  };
+  "PasteDeploy" = addBuildInputs ["pytest-runner"];
 
-  "pluggy" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
-  };
+  "pluggy" = addBuildInputs ["setuptools-scm"];
 
-  "pygal" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."pytest-runner" ];
-  };
+  "py" = addBuildInputs ["setuptools-scm"];
 
-  "pypiserver" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."setuptools-git" ];
-  };
+  "pygal" = addBuildInputs ["pytest-runner"];
 
-  "pytest" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
-  };
+  "pypiserver" = addBuildInputs ["setuptools-git"];
 
-  "pytest-forked" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
-  };
+  "pytest" = addBuildInputs ["setuptools-scm"];
 
-  "pytest-xdist" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
-  };
+  "pytest-forked" = addBuildInputs ["setuptools-scm"];
 
-  "python-dateutil" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
-  };
+  "pytest-xdist" = addBuildInputs ["setuptools-scm"];
 
-  "requestsexceptions" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."pbr" ];
-  };
+  "python-dateutil" = addBuildInputs ["setuptools-scm"];
+
+  "requestsexceptions" = addBuildInputs ["pbr"];
 
   "scipy" = self: old: {
      prePatch = ''
@@ -163,8 +126,6 @@ in skipOverrides {
       };
   };
 
-  "tox" = self: old: {
-    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
-  };
+  "tox" = addBuildInputs ["setuptools-scm"];
 
 }
