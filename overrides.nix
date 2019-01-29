@@ -35,17 +35,6 @@ let
           )
           filteredNames
         );
-  removeDependencies = names: deps:
-    with builtins; with pkgs.lib;
-      filter
-      (drv: all
-        (suf:
-          ! hasSuffix ("-" + suf)
-          (parseDrvName drv.name).name
-        )
-        names
-      )
-      deps;
 
   combineCorrections = corrections: self: old:
     builtins.foldl'
