@@ -77,7 +77,7 @@ in skipOverrides {
 
   "gevent-socketio" = addBuildInputs ["versiontools"];
 
-  "jsonschema" = addBuildInputs ["vcversions"];
+  "jsonschema" = addBuildInputs ["vcversioner"];
 
   "PasteDeploy" = addBuildInputs ["pytest-runner"];
 
